@@ -2,7 +2,7 @@
   "name": "@base-cms-websites/package-common",
   "version": "0.0.1",
   "author": "Jacob Bare <jacob@limit0.io>",
-  "repository": "https://github.com/base-cms-websites/endeavor-business-media/tree/master/packages/common",
+  "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/packages/common",
   "license": "MIT",
   "private": true,
   "scripts": {
