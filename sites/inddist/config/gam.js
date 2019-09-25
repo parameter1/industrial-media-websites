@@ -1,6 +1,7 @@
 const GAMConfiguration = require('@base-cms/marko-web-gam/config');
 
-const config = new GAMConfiguration('137873098', { basePath: 'ID' });
+// const config = new GAMConfiguration('137873098', { basePath: 'ID' });
+const config = new GAMConfiguration('21687441225', { basePath: 'demo' });
 
 config
   .setTemplate('LB', {
@@ -20,16 +21,8 @@ config
     { name: 'rail1', templateName: 'CONTENT', path: 'default/rail1' },
     { name: 'rail2', templateName: 'CONTENT', path: 'default/rail2' },
     { name: 'load-more', templateName: 'CONTENT', path: 'default/load-more' },
-    { name: 'reskin', path: 'default/reskin' },
-    { name: 'wa', path: 'default/wa' },
-  // ])
-  // .setAliasAdUnits('test-measurement', [
-  //   { name: 'lb1', templateName: 'LB', path: 'test-measurement/lb1' },
-  //   { name: 'lb2', templateName: 'LB', path: 'test-measurement/lb2' },
-  //   { name: 'rail1', templateName: 'CONTENT', path: 'test-measurement/rail1' },
-  //   { name: 'rail2', templateName: 'CONTENT', path: 'test-measurement/rail2' },
-  //   { name: 'load-more', templateName: 'CONTENT', path: 'test-measurement/load-more' },
-  //   { name: 'reskin', path: 'test-measurement/reskin' },
+    // { name: 'reskin', path: 'default/reskin' },
+    // { name: 'wa', path: 'default/wa' },
   ]);
 
 module.exports = config;
