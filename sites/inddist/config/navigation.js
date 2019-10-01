@@ -22,20 +22,9 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/page/about-us', label: 'About Us' },
-      { href: '/page/advertising-info', label: 'Advertising Info' },
-      { href: '/contact-us', label: 'Contact Us' },
-      { href: '/page/directory-faqs', label: 'Directory FAQs' },
-      { href: '/page/editorial-guidelines', label: 'Editorial Guidelines' },
-      { href: '/page/privacy-policy', label: 'Privacy Policy' },
-      { href: '/page/product-announcement-form', label: 'Product Announcement Form' },
-      { href: '/subscribe', label: 'Subscriptions' },
-      { href: '/page/terms-conditions', label: 'Terms & Conditions' },
+      { href: '/subscribe', label: 'Subscribe' },
       { href: '/magazine', label: 'Magazine' },
       { href: '/videos', label: 'Videos' },
-      { href: '/white-papers', label: 'White Papers' },
-      { href: '/events', label: 'Events' },
-      { href: '/webinars', label: 'Webinars' },
     ],
   },
   tertiary: {
@@ -74,19 +63,8 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/page/about-us', label: 'About Us' },
-        { href: '/page/advertising-info', label: 'Advertising Info' },
-        { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/directory-faqs', label: 'Directory FAQs' },
-        { href: '/page/editorial-guidelines', label: 'Editorial Guidelines' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
-        { href: '/page/product-announcement-form', label: 'Product Announcement Form' },
-        { href: '/subscribe', label: 'Subscriptions' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
         { href: '/magazine', label: 'Magazine' },
         { href: '/videos', label: 'Videos' },
-        { href: '/white-papers', label: 'White Papers' },
-        { href: '/events', label: 'Events' },
       ],
     },
     {
