@@ -733,27 +733,27 @@
     marko "^4.18.13"
     yargs "^14.1.0"
 
-"@base-cms/marko-web-gam@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gam/-/marko-web-gam-1.0.0-beta.1.tgz#1ee8ece68c7ecdb951861cf98d2e7f0d6d06f3b1"
-  integrity sha512-uCdIy3uBoiXS7lZ07bVhbtEMdpybwlD76ijxD7f/Md52qBZ+N/dBkryMPibOZnCdTANgLx38obWKV64QoAAflw==
+"@base-cms/marko-web-gam@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gam/-/marko-web-gam-1.0.0-beta.2.tgz#3ed6aef5ff1f688204d4453b39e1d4ce30e442f1"
+  integrity sha512-Cq9BRT8Uni6crE2/n3RPuiInj6FJf3SMvgCodUi66PzeSEgR5/7mkYxh+GoqNBxR8HvqUXmxgWhMqjl9TmQNZA==
   dependencies:
     "@base-cms/object-path" "^1.0.0-beta.1"
     "@base-cms/utils" "^1.0.0-beta.1"
     scrollmagic "^2.0.7"
 
-"@base-cms/marko-web-gcse@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gcse/-/marko-web-gcse-1.0.0-beta.1.tgz#93c4e604ceb7a38ec5770063faa90cc033f25f92"
-  integrity sha512-YoO4ZY4zNEe0/H80R0GaELEr82unI0DowxkQp9bj0bOg8EBJeF+pqqGVLvTPXHLwdlAsSONsx2UFNNL05gWPBQ==
+"@base-cms/marko-web-gcse@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gcse/-/marko-web-gcse-1.0.0-beta.2.tgz#6aaa161ddc92eaf37f65555dca532f97715801b9"
+  integrity sha512-8ZAmBqd5lpezOn9csf5cIQUK1PT1cmNJocQUqiLTxZ4iVDfdgNaKstMfKOreTznzhFgwtpsGE1nvWJZhRVtKlA==
   dependencies:
     "@base-cms/object-path" "^1.0.0-beta.1"
     "@base-cms/utils" "^1.0.0-beta.1"
 
-"@base-cms/marko-web-gtm@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gtm/-/marko-web-gtm-1.0.0-beta.1.tgz#895873db375f9eddde4ee799d7094a9c6b46df03"
-  integrity sha512-Ga0rkSDfhpr9MQTCpCeqGRrpgahPkzh2lxRMAg6ndlnMbZNd2XVctyWTNonNsBMvEY3zrn7Wo66vieMi16EAxQ==
+"@base-cms/marko-web-gtm@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gtm/-/marko-web-gtm-1.0.0-beta.3.tgz#9322873b26b52cab158b0f412daba94cac48b916"
+  integrity sha512-0XGJQ4EgX8oOd+IPSjha9PyotQKlCrAaun4stCCPYXECH0ekv/S3xM73BFvKLx5sT3ux4O7p41i3abJL57krHw==
   dependencies:
     "@base-cms/object-path" "^1.0.0-beta.1"
     "@base-cms/utils" "^1.0.0-beta.1"
@@ -765,27 +765,27 @@
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.0.0-beta.1.tgz#dfcc9e6e50e629bfee5475c2e97be66fbb68f9d8"
   integrity sha512-x6wYLka8cCHAObnv3dIopeZZdcpTTvT5oYdnT0hv4L/eKjcAUeOSLn+BY1BYf88yrpxGk7RDOsKtHuKX5O3ruQ==
 
-"@base-cms/marko-web-native-x@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-native-x/-/marko-web-native-x-1.0.0-beta.1.tgz#198b6a8d702ef98d3bf8a22b0fba66c9564284d7"
-  integrity sha512-YMQvUDvJlhpONpOPlkd9gCP/dNbVtcSKLWdDcNY9UQcAK1nN0AWriB4hRxa/SHiWFYV9EIzld2dEMIJqrzYASA==
+"@base-cms/marko-web-native-x@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-native-x/-/marko-web-native-x-1.0.0-beta.2.tgz#3e351a7804bcb9dd509134f49879fe49b6be7196"
+  integrity sha512-wxXpDbt+tV0IqE5cRDmFs3S1y7COfbySCOVbh85yYO3jThxeeHis/14u4K31jHOaHVhqCmdSPjznp0Qh4wXcSw==
   dependencies:
     "@base-cms/object-path" "^1.0.0-beta.1"
     "@base-cms/utils" "^1.0.0-beta.1"
     node-fetch "^2.6.0"
 
-"@base-cms/marko-web-reveal-ad@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-reveal-ad/-/marko-web-reveal-ad-1.0.0-beta.1.tgz#4533b2c409f1b49c00bb3c1c14eaa60d747c5405"
-  integrity sha512-f85LKopLsnEv3YruCZKF6Cpbctvz2Dxdt3MNA3muBHHtMCMCPsHBnSk9rAeSF8N/DdxDyfMsA1CVfgvJBbOGMA==
+"@base-cms/marko-web-reveal-ad@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-reveal-ad/-/marko-web-reveal-ad-1.0.0-beta.2.tgz#6bca442e1e410ff7aee17aa348988f6cd896f1d3"
+  integrity sha512-UIPgN0b0x9tiPgAMRB0pBG+4JwwnsHUDZcUt7XezSODncV1FvYO/hUBeMBwgb+kEfi0/zhTSdiahev7CUfRYWg==
   dependencies:
     "@base-cms/object-path" "^1.0.0-beta.1"
     "@base-cms/utils" "^1.0.0-beta.1"
 
-"@base-cms/marko-web-theme-default@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-theme-default/-/marko-web-theme-default-1.0.0-beta.1.tgz#5dd9440227c14fcd34bd7b82a3f5102cb5ae8374"
-  integrity sha512-nQAYgolmaSA1fbWId9kykDD+OQs7NpenhYoCD3vJW6xvmvs30kdrNdnorcNO0QAMF8Zml5IxFFWCSOSA3g1HQA==
+"@base-cms/marko-web-theme-default@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-theme-default/-/marko-web-theme-default-1.0.0-beta.2.tgz#14ac32c3805b6e28aeac270f181456ab8688d6db"
+  integrity sha512-jM1PxZbeqsMMlVfsAlAscw+0rCEzimvadyUc8Nbo2Ulrw9robKQFUAxaCHANMmLOo8yOw57Kl5SiIOg4qOvWVw==
   dependencies:
     "@base-cms/marko-web-icons" "^1.0.0-beta.1"
     "@base-cms/object-path" "^1.0.0-beta.1"
@@ -807,6 +807,32 @@
     "@base-cms/tenant-context" "^1.0.0-beta.1"
     "@base-cms/utils" "^1.0.0-beta.1"
     "@base-cms/web-common" "^1.0.0-beta.1"
+    "@godaddy/terminus" "^4.2.0"
+    cookie-parser "^1.4.4"
+    express "^4.17.1"
+    express-http-proxy "^1.5.1"
+    graphql "^14.5.4"
+    graphql-tag "^2.10.1"
+    helmet "^3.21.0"
+    http-errors "^1.7.3"
+    jquery "^3.4.1"
+    marko "^4.18.13"
+    moment "^2.24.0"
+    vue "^2.6.10"
+
+"@base-cms/marko-web@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.0.0-beta.3.tgz#6316eaed6add836c7905ac38c0781639580d8a40"
+  integrity sha512-M1YK5J34Rs6S6zuBVcgqx+vxxQGFIz0apIRCSvYfc7cfT7EMfMT2hMXOYjW4EywngFAVQigDrGnMaFJoU5AHbA==
+  dependencies:
+    "@base-cms/embedded-media" "^1.0.0-beta.1"
+    "@base-cms/express-apollo" "^1.0.0-beta.1"
+    "@base-cms/image" "^1.0.0-beta.1"
+    "@base-cms/inflector" "^1.0.0-beta.1"
+    "@base-cms/object-path" "^1.0.0-beta.1"
+    "@base-cms/tenant-context" "^1.0.0-beta.1"
+    "@base-cms/utils" "^1.0.0-beta.1"
+    "@base-cms/web-common" "^1.0.0-beta.3"
     "@godaddy/terminus" "^4.2.0"
     cookie-parser "^1.4.4"
     express "^4.17.1"
@@ -895,10 +921,77 @@
     webpack-stream "^5.2.1"
     yargs "^14.1.0"
 
+"@base-cms/web-cli@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/web-cli/-/web-cli-1.0.0-beta.3.tgz#df2ffa87a61fec3fa865757e70972cbe802477fc"
+  integrity sha512-zLc/qCuAlARH7rnCbXNk4WoMVVriGx6gGGPyKHWjJRp++oCyMhMuidFLxThTYxseHmm+oVwSlboEha5Op5jrKA==
+  dependencies:
+    "@babel/core" "^7.6.0"
+    "@babel/plugin-transform-runtime" "^7.6.0"
+    "@babel/preset-env" "^7.6.0"
+    "@babel/runtime" "^7.6.0"
+    "@babel/runtime-corejs2" "^7.6.0"
+    "@base-cms/express-apollo" "^1.0.0-beta.1"
+    "@base-cms/marko-web" "^1.0.0-beta.3"
+    autoprefixer "^9.6.1"
+    babel-loader "^8.0.6"
+    chalk "^2.4.2"
+    core-js "^2.6.9"
+    css-loader "^3.2.0"
+    cssnano "^4.1.10"
+    del "^4.0.0"
+    empty-dir "^2.0.0"
+    eslint "^5.16.0"
+    eslint-config-airbnb-base "^13.2.0"
+    eslint-plugin-import "^2.18.2"
+    eslint-plugin-vue "^5.2.3"
+    fancy-log "^1.3.3"
+    figlet "^1.2.4"
+    graphql "^14.5.4"
+    graphql-tag "^2.10.1"
+    gulp "^4.0.2"
+    gulp-cached "^1.1.1"
+    gulp-eslint "^5.0.0"
+    gulp-livereload "^4.0.1"
+    gulp-postcss "^8.0.0"
+    gulp-rev-all "^2.0.2"
+    gulp-rev-delete-original "^0.2.3"
+    gulp-sass "^4.0.2"
+    gulp-sourcemaps "^2.6.5"
+    gulp-stylelint "^9.0.0"
+    handlebars "^4.1.2"
+    ignore "^5.0.5"
+    inquirer "^6.5.2"
+    mkdirp "^0.5.1"
+    node-sass "^4.12.0"
+    pump "^3.0.0"
+    recursive-readdir "^2.2.2"
+    stylelint "^10.1.0"
+    stylelint-config-twbs-bootstrap "^0.4.0"
+    validate-npm-package-name "^3.0.0"
+    validator "^11.0.0"
+    vue-loader "^15.7.1"
+    vue-style-loader "^4.1.2"
+    vue-template-compiler "^2.6.10"
+    webpack "^4.39.3"
+    webpack-config-utils "^2.3.1"
+    webpack-stream "^5.2.1"
+    yargs "^14.1.0"
+
 "@base-cms/web-common@^1.0.0-beta.1":
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@base-cms/web-common/-/web-common-1.0.0-beta.1.tgz#86e414463567738a40c95559e4c1e54f9a77b766"
   integrity sha512-vIziQyhuK2pQEfegdDuLEnHh2+dAHkoHyf//HvCtkeGAj9+FvOEigo9xYgcechjB20FYmxZW+QkSwZPQ3vyZLA==
+  dependencies:
+    "@base-cms/inflector" "^1.0.0-beta.1"
+    "@base-cms/object-path" "^1.0.0-beta.1"
+    "@base-cms/utils" "^1.0.0-beta.1"
+    http-errors "^1.7.3"
+
+"@base-cms/web-common@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/web-common/-/web-common-1.0.0-beta.3.tgz#4161704d58045bd881b51660743724b6b1a8293a"
+  integrity sha512-a41F7fMjfwrUXyV1sr8iiLg+CaicLeST9kwMbebGlmPr2aWIqPfqItM+z9KqurwziQB7D2laEDrTHcBuOnkcvQ==
   dependencies:
     "@base-cms/inflector" "^1.0.0-beta.1"
     "@base-cms/object-path" "^1.0.0-beta.1"
