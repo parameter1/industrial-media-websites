@@ -794,32 +794,6 @@
     graphql "^14.5.4"
     graphql-tag "^2.10.1"
 
-"@base-cms/marko-web@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.0.0-beta.1.tgz#7e91a0c626a15a1b4c083309df99006ede79e838"
-  integrity sha512-GmNwSE2VJH9xxJr/wJGirSgPZAarOK/twDaEWKfxddq9PubwTfmjyYJyj6bLfhT655jrZnxUFjjQDKGJ4POrMg==
-  dependencies:
-    "@base-cms/embedded-media" "^1.0.0-beta.1"
-    "@base-cms/express-apollo" "^1.0.0-beta.1"
-    "@base-cms/image" "^1.0.0-beta.1"
-    "@base-cms/inflector" "^1.0.0-beta.1"
-    "@base-cms/object-path" "^1.0.0-beta.1"
-    "@base-cms/tenant-context" "^1.0.0-beta.1"
-    "@base-cms/utils" "^1.0.0-beta.1"
-    "@base-cms/web-common" "^1.0.0-beta.1"
-    "@godaddy/terminus" "^4.2.0"
-    cookie-parser "^1.4.4"
-    express "^4.17.1"
-    express-http-proxy "^1.5.1"
-    graphql "^14.5.4"
-    graphql-tag "^2.10.1"
-    helmet "^3.21.0"
-    http-errors "^1.7.3"
-    jquery "^3.4.1"
-    marko "^4.18.13"
-    moment "^2.24.0"
-    vue "^2.6.10"
-
 "@base-cms/marko-web@^1.0.0-beta.3":
   version "1.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.0.0-beta.3.tgz#6316eaed6add836c7905ac38c0781639580d8a40"
@@ -863,63 +837,6 @@
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@base-cms/utils/-/utils-1.0.0-beta.1.tgz#a3de167a7a248f024f10cfdd43329a54b4aba9f5"
   integrity sha512-UYKz5WvOsDFaM7FM9fthhV9XMy46riTVLprd3K5Y3IQDrCsSmYRGsK96qfn3wkQHuwdB9dPR1yk0Bb2zjk87oA==
-
-"@base-cms/web-cli@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/web-cli/-/web-cli-1.0.0-beta.1.tgz#ba42e294cc71d44eaaaeccc24463704467028bbb"
-  integrity sha512-Byj63RJzYxyJ/oUg37IrE6122Nv3Fydd7wHrqxb35gYaFakFmJPZiv8hw1+a1c6fvK+ixCAa6TpoByDd/MOkRA==
-  dependencies:
-    "@babel/core" "^7.6.0"
-    "@babel/plugin-transform-runtime" "^7.6.0"
-    "@babel/preset-env" "^7.6.0"
-    "@babel/runtime" "^7.6.0"
-    "@babel/runtime-corejs2" "^7.6.0"
-    "@base-cms/express-apollo" "^1.0.0-beta.1"
-    "@base-cms/marko-web" "^1.0.0-beta.1"
-    autoprefixer "^9.6.1"
-    babel-loader "^8.0.6"
-    chalk "^2.4.2"
-    core-js "^2.6.9"
-    css-loader "^3.2.0"
-    cssnano "^4.1.10"
-    del "^4.0.0"
-    empty-dir "^2.0.0"
-    eslint "^5.16.0"
-    eslint-config-airbnb-base "^13.2.0"
-    eslint-plugin-import "^2.18.2"
-    eslint-plugin-vue "^5.2.3"
-    fancy-log "^1.3.3"
-    figlet "^1.2.4"
-    graphql "^14.5.4"
-    graphql-tag "^2.10.1"
-    gulp "^4.0.2"
-    gulp-cached "^1.1.1"
-    gulp-eslint "^5.0.0"
-    gulp-livereload "^4.0.1"
-    gulp-postcss "^8.0.0"
-    gulp-rev-all "^2.0.2"
-    gulp-rev-delete-original "^0.2.3"
-    gulp-sass "^4.0.2"
-    gulp-sourcemaps "^2.6.5"
-    gulp-stylelint "^9.0.0"
-    handlebars "^4.1.2"
-    ignore "^5.0.5"
-    inquirer "^6.5.2"
-    mkdirp "^0.5.1"
-    node-sass "^4.12.0"
-    pump "^3.0.0"
-    recursive-readdir "^2.2.2"
-    stylelint "^10.1.0"
-    stylelint-config-twbs-bootstrap "^0.4.0"
-    validate-npm-package-name "^3.0.0"
-    validator "^11.0.0"
-    vue-loader "^15.7.1"
-    vue-style-loader "^4.1.2"
-    vue-template-compiler "^2.6.10"
-    webpack "^4.39.3"
-    webpack-config-utils "^2.3.1"
-    webpack-stream "^5.2.1"
-    yargs "^14.1.0"
 
 "@base-cms/web-cli@^1.0.0-beta.3":
   version "1.0.0-beta.3"
@@ -977,16 +894,6 @@
     webpack-config-utils "^2.3.1"
     webpack-stream "^5.2.1"
     yargs "^14.1.0"
-
-"@base-cms/web-common@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/web-common/-/web-common-1.0.0-beta.1.tgz#86e414463567738a40c95559e4c1e54f9a77b766"
-  integrity sha512-vIziQyhuK2pQEfegdDuLEnHh2+dAHkoHyf//HvCtkeGAj9+FvOEigo9xYgcechjB20FYmxZW+QkSwZPQ3vyZLA==
-  dependencies:
-    "@base-cms/inflector" "^1.0.0-beta.1"
-    "@base-cms/object-path" "^1.0.0-beta.1"
-    "@base-cms/utils" "^1.0.0-beta.1"
-    http-errors "^1.7.3"
 
 "@base-cms/web-common@^1.0.0-beta.3":
   version "1.0.0-beta.3"
