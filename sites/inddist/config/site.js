@@ -24,7 +24,7 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/user/InDistribution' },
   ],
   gtm: {
-    containerId: '<NOT_SET>',
+    containerId: 'GTM-M3QH8WQ',
   },
   wufoo: {
     userName: '<NOT_SET>',
