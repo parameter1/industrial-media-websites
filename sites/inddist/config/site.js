@@ -5,15 +5,15 @@ module.exports = {
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/all/id_logo.svg?h=40',
+      src: 'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=40',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/id_logo.svg?h=80 2x',
+        'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=80 2x',
       ],
     },
     footer: {
-      src: 'https://base.imgix.net/files/base/indm/all/id_logo.svg?h=60',
+      src: 'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=60',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/id_logo.svg?h=120 2x',
+        'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=120 2x',
       ],
     },
   },
@@ -24,7 +24,7 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/user/InDistribution' },
   ],
   gtm: {
-    containerId: '<NOT_SET>',
+    containerId: 'GTM-M3QH8WQ',
   },
   wufoo: {
     userName: '<NOT_SET>',

@@ -20,7 +20,7 @@ module.exports = {
   socialMediaLinks: [
   ],
   gtm: {
-    containerId: '<NOT_SET>',
+    containerId: 'GTM-K5Q4RP8',
   },
   wufoo: {
     userName: '<NOT_SET>',

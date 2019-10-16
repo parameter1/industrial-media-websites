@@ -1,13 +1,13 @@
 module.exports = {
   primary: {
     items: [
-      { href: '/ehs', label: 'EHS' },
       { href: '/inventory-management', label: 'Inventory Management' },
       { href: '/maintenance', label: 'Maintenance' },
       { href: '/material-handling', label: 'Material Handling' },
+      { href: '/operations', label: 'Operations' },
       { href: '/products', label: 'Products' },
+      { href: '/safety-compliance', label: 'Safety & Compliance' },
       { href: '/training-development', label: 'Training & Development' },
-      { href: '/warehouse', label: 'Warehouse' },
     ],
   },
   secondary: {
@@ -33,13 +33,13 @@ module.exports = {
     {
       label: 'Topics',
       items: [
-        { href: '/ehs', label: 'EHS' },
         { href: '/inventory-management', label: 'Inventory Management' },
         { href: '/maintenance', label: 'Maintenance' },
         { href: '/material-handling', label: 'Material Handling' },
+        { href: '/operations', label: 'Operations' },
         { href: '/products', label: 'Products' },
+        { href: '/safety-compliance', label: 'Safety & Compliance' },
         { href: '/training-development', label: 'Training & Development' },
-        { href: '/warehouse', label: 'Warehouse' },
       ],
     },
     {

@@ -23,7 +23,7 @@ module.exports = {
     { provider: 'youtube', href: 'http://www.youtube.com/Manufacturingdotnet' },
   ],
   gtm: {
-    containerId: '<NOT_SET>',
+    containerId: 'GTM-WSV9TGW',
   },
   wufoo: {
     userName: '<NOT_SET>',
