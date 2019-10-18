@@ -129,6 +129,7 @@ fragment ContentPageFragment on Content {
           siteContext {
             path
           }
+        }
       }
     }
   }
