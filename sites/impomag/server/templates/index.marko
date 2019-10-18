@@ -28,12 +28,28 @@ $ const { id, alias, name, pageNode } = data;
   <@page>
     <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
 
-    <marko-web-query|{ nodes }|
-      name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 5, queryFragment }
-    >
-      <website-content-hero-flow nodes=nodes />
-    </marko-web-query>
+    <div class="row">
+      <div class="col-lg-8 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-optioned-content"
+          params={ sectionAlias: "home", optionName: "Pinned", limit: 1, requiresImage: true, queryFragment }
+        >
+          <website-content-card-node node=nodes[0] image-width=630 title-modifiers=["large"] />
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-optioned-content"
+          params={ sectionAlias: "home", optionName: "Pinned", limit: 4, skip: 1, requiresImage: true, queryFragment }
+        >
+          <website-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link>Most Read</marko-web-link>
+            </@header>
+          </website-content-list-flow>
+        </marko-web-query>
+      </div>
+    </div>
 
   </@page>
   <@below-page>
