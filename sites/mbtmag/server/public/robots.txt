@@ -4,5 +4,5 @@
 User-agent: *
 Disallow: /__load-more
 
-Sitemap: https://www.foodmanufacturing.com/sitemap.xml
-Sitemap: https://www.foodmanufacturing.com/sitemap-google-news.xml
+Sitemap: https://www.mbtmag.com/sitemap.xml
+Sitemap: https://www.mbtmag.com/sitemap-google-news.xml
