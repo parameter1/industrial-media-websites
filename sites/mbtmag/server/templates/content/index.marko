@@ -1,5 +1,5 @@
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
-import { getAsObject } from "@base-cms/object-path";
+import { getAsObject, get } from "@base-cms/object-path";
 import queryFragment from "../../graphql/fragments/content-list";
 import GAM from "../../../config/gam";
 
@@ -69,7 +69,18 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                 <marko-web-content-embed-code block-name=blockName obj=content />
               </if>
               <else-if(displayPrimaryImage)>
-                <marko-web-page-image width=500 obj=content.primaryImage />
+                $ const isLogo = get(content, "primaryImage.isLogo");
+                <if(isLogo)>
+                  <marko-web-page-image
+                    modifiers=["primary-image-inline"]
+                    obj=content.primaryImage
+                    fluid=false
+                    width=250
+                  />
+                </if>
+                <else>
+                  <marko-web-page-image width=500 obj=content.primaryImage />
+                </else>
               </else-if>
               <else-if(type === "contact")>
                 <marko-web-page-image width=300 fluid=false obj=content.primaryImage />
