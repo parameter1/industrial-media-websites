@@ -35,6 +35,15 @@ $ const { id, alias, name, pageNode } = data;
       <website-content-hero-flow nodes=nodes />
     </marko-web-query>
 
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-query|{ nodes }|
+        name="website-scheduled-content"
+        params={ sectionId: id, limit: 14, skip: 5, queryFragment }
+      >
+        <website-content-load-more-flow nodes=nodes aliases=aliases />
+      </marko-web-query>
+    </marko-web-resolve-page>
   </@page>
   <@below-page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
@@ -44,7 +53,7 @@ $ const { id, alias, name, pageNode } = data;
         component-input={ aliases }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 14, skip: 5 }
+        query-params={ sectionId: id, limit: 14, skip: 19 }
         max-pages=0
         page-input={ for: "website-section", id }
       />
