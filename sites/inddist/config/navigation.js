@@ -27,11 +27,11 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/about-us', label: 'About Us' },
-      { href: '/page/advertising-info', label: 'Advertising Info' },
+      { href: '/page/id-about-us', label: 'About Us' },
+      { href: '/page/id-advertising', label: 'Advertising' },
       { href: '/contact-us', label: 'Contact Us' },
-      { href: '/page/privacy-policy', label: 'Privacy Policy' },
-      { href: '/page/terms-conditions', label: 'Terms & Conditions' },
+      { href: '/page/id-privacy-policy', label: 'Privacy Policy' },
+      { href: '/page/id-terms-conditions', label: 'Terms & Conditions' },
     ],
   },
   menu: [
@@ -61,10 +61,11 @@ module.exports = {
       label: 'User Tools',
       items: [
         { href: '/subscribe', label: 'Subscribe' },
-        { href: '/page/advertising-info', label: 'Advertising Info' },
-        { href: '/page/about-us', label: 'About Us' },
+        { href: '/page/id-advertising', label: 'Advertising' },
+        { href: '/page/id-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
+        { href: '/page/id-privacy-policy', label: 'Privacy Policy' },
+        { href: '/page/id-terms-conditions', label: 'Terms & Conditions' },
       ],
     },
   ],
