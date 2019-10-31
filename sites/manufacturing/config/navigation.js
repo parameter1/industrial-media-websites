@@ -34,9 +34,11 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/about-us', label: 'About Us' },
+      { href: '/page/mnet-about-us', label: 'About Us' },
       { href: '/contact-us', label: 'Contact Us' },
-      { href: '/page/advertise', label: 'Advertise' },
+      { href: '/page/mnet-advertise', label: 'Advertise' },
+      { href: '/page/mnet-privacy-policy', label: 'Privacy Policy' },
+      { href: '/page/mnet-terms-conditions', label: 'Terms & Conditions' },
     ],
   },
   menu: [
@@ -73,9 +75,11 @@ module.exports = {
       label: 'User Tools',
       items: [
         { href: '/subscribe', label: 'Subscribe' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/about-us', label: 'About Us' },
+        { href: '/page/mnet-advertise', label: 'Advertise' },
+        { href: '/page/mnet-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
+        { href: '/page/mnet-privacy-policy', label: 'Privacy Policy' },
+        { href: '/page/mnet-terms-conditions', label: 'Terms & Conditions' },
       ],
     },
   ],
