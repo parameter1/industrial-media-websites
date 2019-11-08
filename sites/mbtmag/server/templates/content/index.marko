@@ -22,7 +22,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
         "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
       }
-       <marko-web-gam-slots slots=adSlots />
+      <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
   </@head>
   <@above-container>
@@ -31,7 +31,6 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
       <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wa", aliases }) />
       <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin", aliases }) />
     </marko-web-resolve-page>
-
   </@above-container>
   <@page>
     <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
