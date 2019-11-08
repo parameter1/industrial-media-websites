@@ -4,13 +4,14 @@ const config = new GAMConfiguration('137873098', { basePath: 'MBT' });
 
 config
   .setTemplate('LB', {
-    size: [[970, 250], [970, 90], [970, 66], [728, 90], [320, 50], [300, 50], [300, 100]],
+    size: [[970, 90], [970, 66], [728, 90], [320, 50], [300, 50], [300, 100]],
     sizeMapping: [
-      { viewport: [980, 0], size: [[970, 250], [970, 90], [970, 66], [728, 90]] },
+      { viewport: [980, 0], size: [[970, 90], [970, 66], [728, 90]] },
       { viewport: [750, 0], size: [728, 90] },
       { viewport: [320, 0], size: [[300, 50], [320, 50], [300, 100]] },
     ],
   })
+  .setTemplate('BILLBOARD', { size: [970, 250] })
   .setTemplate('CONTENT', { size: [[300, 250], [300, 600]] });
 
 config
@@ -20,6 +21,7 @@ config
     { name: 'rail1', templateName: 'CONTENT', path: 'default_rail1' },
     { name: 'rail2', templateName: 'CONTENT', path: 'default_rail2' },
     { name: 'load-more', templateName: 'CONTENT', path: 'default_load-more' },
+    { name: 'billboard', templateName: 'BILLBOARD', path: 'default_billboard' },
     { name: 'reskin', path: 'default_reskin' },
     { name: 'wa', path: 'default_wa' },
   ]);
