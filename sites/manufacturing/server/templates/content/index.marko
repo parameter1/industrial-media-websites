@@ -21,6 +21,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         "gpt-ad-lb1":   GAM.getAdUnit({ name: "lb1", aliases }),
         "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
         "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+        "gpt-ad-billboard": GAM.getAdUnit({ name: "billboard", aliases }),
       }
       <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
@@ -115,6 +116,9 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
     </marko-web-resolve-page>
   </@page>
   <@below-page>
+    <if(type !== "video")>
+      <marko-web-gam-display-ad id="gpt-ad-billboard" modifiers=["bottom-of-page"] />
+    </if>
     <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
