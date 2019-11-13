@@ -10,7 +10,7 @@ module.exports = {
       { href: '/sales', label: 'Sales' },
       { href: '/staffing-changes', label: 'Staffing Changes' },
       { href: '/supply-chain', label: 'Supply Chain' },
-      { href: '/workforce-development', label: 'Workforce Development' },
+      { href: '/workforce-development', label: 'Workforce' },
     ],
   },
   secondary: {
@@ -47,7 +47,7 @@ module.exports = {
         { href: '/sales', label: 'Sales' },
         { href: '/staffing-changes', label: 'Staffing Changes' },
         { href: '/supply-chain', label: 'Supply Chain' },
-        { href: '/workforce-development', label: 'Workforce Development' },
+        { href: '/workforce-development', label: 'Workforce' },
       ],
     },
     {
