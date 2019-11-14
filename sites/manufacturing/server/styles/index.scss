@@ -24,6 +24,8 @@ $theme-site-header-breakpoints: (
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
 // @todo this should be remove once contact us is in core
 @import "../../node_modules/@base-cms-websites/package-common/scss/contact-us-form";
+@import "../../node_modules/@base-cms-websites/package-common/scss/core";
+
 
 .ad-container {
   &--bottom-of-page {

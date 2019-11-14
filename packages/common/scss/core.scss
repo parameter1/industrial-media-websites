@@ -1,0 +1,7 @@
+.page-contents {
+  &__content-body {
+    h3 {
+      margin-bottom: map-get($spacers, 2);
+    }
+  }
+}
