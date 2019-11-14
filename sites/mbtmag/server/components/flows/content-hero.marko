@@ -3,6 +3,10 @@
     <website-content-card-node node=node image-width=630 title-modifiers=["large"] />
   </@hero>
   <@list|{ nodes }|>
-    <website-content-list-flow nodes=nodes native-x=input.nativeX />
+    <website-content-list-flow nodes=nodes native-x=input.nativeX>
+      <if(input.listHeader)>
+        <@header ...input.listHeader />
+      </if>
+    </website-content-list-flow>
   </@list>
 </default-theme-hero-flow>

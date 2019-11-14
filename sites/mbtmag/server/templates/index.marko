@@ -32,7 +32,9 @@ $ const { id, alias, name, pageNode } = data;
       name="website-optioned-content"
       params={ sectionId: id, optionName: "Pinned", limit: 5, queryFragment }
     >
-      <website-content-hero-flow nodes=nodes />
+      <website-content-hero-flow nodes=nodes>
+        <@listHeader>Most Popular</@listHeader>
+      </website-content-hero-flow>
     </marko-web-query>
 
     <marko-web-resolve-page|{ data: section }| node=pageNode>
