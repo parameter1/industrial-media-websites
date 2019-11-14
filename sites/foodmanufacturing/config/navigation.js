@@ -7,14 +7,13 @@ module.exports = {
       { href: '/ingredients', label: 'Ingredients' },
       { href: '/labeling', label: 'Labeling' },
       { href: '/packaging', label: 'Packaging' },
-      { href: '/products', label: 'Products' },
+      { href: '/products', label: 'New Products' },
       { href: '/track-trace', label: 'Track \'N Trace' },
     ],
   },
   secondary: {
     items: [
       { href: '/subscribe', label: 'Subscribe' },
-      { href: '/magazine', label: 'Magazine' },
       { href: '/videos', label: 'Videos' },
     ],
   },
@@ -49,7 +48,6 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/magazine', label: 'Magazine' },
         { href: '/videos', label: 'Videos' },
       ],
     },
