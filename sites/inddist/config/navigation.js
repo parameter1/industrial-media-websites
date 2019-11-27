@@ -2,6 +2,7 @@ module.exports = {
   primary: {
     items: [
       { href: '/associations', label: 'Associations' },
+      { href: '/big-50', label: 'Big 50' },
       { href: '/business-technology', label: 'Business Technology' },
       { href: '/earnings', label: 'Earnings' },
       { href: '/economy', label: 'Economy' },
@@ -18,7 +19,6 @@ module.exports = {
       { href: 'https://ien.wufoo.com/forms/mlz32641lbd8mc/', label: 'Subscribe', target: '_blank' },
       { href: '/magazine', label: 'Magazine' },
       { href: '/videos', label: 'Videos' },
-      { href: '/big-50', label: 'Big 50' },
     ],
   },
   tertiary: {
@@ -40,6 +40,7 @@ module.exports = {
       label: 'Topics',
       items: [
         { href: '/associations', label: 'Associations' },
+        { href: '/big-50', label: 'Big 50' },
         { href: '/business-technology', label: 'Business Technology' },
         { href: '/earnings', label: 'Earnings' },
         { href: '/economy', label: 'Economy' },
@@ -56,7 +57,6 @@ module.exports = {
       items: [
         { href: '/magazine', label: 'Magazine' },
         { href: '/videos', label: 'Videos' },
-        { href: '/big-50', label: 'Big 50' },
       ],
     },
     {
