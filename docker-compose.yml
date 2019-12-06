@@ -73,10 +73,10 @@ services:
       - "9710:80"
       - "19710:19710"
 
-  manufacturing:
+  manufacturing.net:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/manufacturing
+    working_dir: /root/sites/manufacturing.net
     environment:
       <<: *env
       <<: *env-caprica
