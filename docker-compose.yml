@@ -57,10 +57,10 @@ services:
     environment:
       <<: *env
 
-  inddist:
+  inddist.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/inddist
+    working_dir: /root/sites/inddist.com
     environment:
       <<: *env
       <<: *env-caprica

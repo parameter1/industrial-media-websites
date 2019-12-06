@@ -1,8 +1,8 @@
 {
-  "name": "@base-cms-websites/inddist",
+  "name": "@industrial-media/inddist.com",
   "version": "1.0.12",
   "author": "Jacob Bare <jacob@limit0.io>",
-  "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/sites/inddist",
+  "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/sites/inddist.com",
   "license": "MIT",
   "private": true,
   "scripts": {
