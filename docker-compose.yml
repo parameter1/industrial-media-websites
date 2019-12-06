@@ -121,10 +121,10 @@ services:
       - "9713:80"
       - "19713:19713"
 
-  mbtmag:
+  mbtmag.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/mbtmag
+    working_dir: /root/sites/mbtmag.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -137,10 +137,10 @@ services:
       - "9714:80"
       - "19714:19714"
 
-  # ien:
+  # ien.com:
   #   <<: *node
   #   <<: *site-cmd
-  #   working_dir: /root/sites/ien
+  #   working_dir: /root/sites/ien.com
   #   environment:
   #     <<: *env
   #     <<: *env-caprica
@@ -153,10 +153,10 @@ services:
   #     - "9715:80"
   #     - "19715:19715"
 
-  # cannabisequipmentnews:
+  # cannabisequipmentnews.com:
   #   <<: *node
   #   <<: *site-cmd
-  #   working_dir: /root/sites/cannabisequipmentnews
+  #   working_dir: /root/sites/cannabisequipmentnews.com
   #   environment:
   #     <<: *env
   #     <<: *env-caprica
@@ -169,10 +169,10 @@ services:
   #     - "9716:80"
   #     - "19716:19716"
 
-  # designdevelopmenttoday:
+  # designdevelopmenttoday.com:
   #   <<: *node
   #   <<: *site-cmd
-  #   working_dir: /root/sites/designdevelopmenttoday
+  #   working_dir: /root/sites/designdevelopmenttoday.com
   #   environment:
   #     <<: *env
   #     <<: *env-caprica
