@@ -1,4 +1,4 @@
-const contactUsHandler = require('@base-cms-websites/package-common/contact-us');
+const contactUsHandler = require('@industrial-media/package-common/contact-us');
 const home = require('./home');
 const content = require('./content');
 const dynamicPages = require('./dynamic-page');

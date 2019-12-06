@@ -4,7 +4,7 @@ import GTM from '@base-cms/marko-web-gtm/browser';
 import GAM from '@base-cms/marko-web-gam/browser';
 import GCSE from '@base-cms/marko-web-gcse/browser';
 import RevealAd from '@base-cms/marko-web-reveal-ad/browser';
-import Common from '@base-cms-websites/package-common/browser';
+import Common from '@industrial-media/package-common/browser';
 
 DefaultTheme(Browser);
 GTM(Browser);
