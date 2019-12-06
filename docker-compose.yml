@@ -89,10 +89,10 @@ services:
       - "9711:80"
       - "19711:19711"
 
-  foodmanufacturing:
+  foodmanufacturing.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/foodmanufacturing
+    working_dir: /root/sites/foodmanufacturing.com
     environment:
       <<: *env
       <<: *env-caprica
