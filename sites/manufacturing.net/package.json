@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/manufacturing.net",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/sites/manufacturing.net",
   "license": "MIT",
@@ -15,7 +15,6 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@industrial-media/package-common": "^1.0.5",
     "@base-cms/marko-core": "^1.0.0-beta.19",
     "@base-cms/marko-web": "^1.0.0-beta.20",
     "@base-cms/marko-web-gam": "^1.0.0-beta.4",
@@ -28,6 +27,7 @@
     "@base-cms/object-path": "^1.0.0-beta.4",
     "@base-cms/utils": "^1.0.0-beta.4",
     "@base-cms/web-cli": "^1.0.0-beta.20",
+    "@industrial-media/package-common": "^1.0.14",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^5.11.0"
