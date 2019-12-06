@@ -57,10 +57,10 @@ services:
     environment:
       <<: *env
 
-  inddist:
+  inddist.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/inddist
+    working_dir: /root/sites/inddist.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -73,10 +73,10 @@ services:
       - "9710:80"
       - "19710:19710"
 
-  manufacturing:
+  manufacturing.net:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/manufacturing
+    working_dir: /root/sites/manufacturing.net
     environment:
       <<: *env
       <<: *env-caprica
@@ -89,10 +89,10 @@ services:
       - "9711:80"
       - "19711:19711"
 
-  foodmanufacturing:
+  foodmanufacturing.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/foodmanufacturing
+    working_dir: /root/sites/foodmanufacturing.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -105,10 +105,10 @@ services:
       - "9712:80"
       - "19712:19712"
 
-  impomag:
+  impomag.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/impomag
+    working_dir: /root/sites/impomag.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -121,10 +121,10 @@ services:
       - "9713:80"
       - "19713:19713"
 
-  mbtmag:
+  mbtmag.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/mbtmag
+    working_dir: /root/sites/mbtmag.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -137,10 +137,10 @@ services:
       - "9714:80"
       - "19714:19714"
 
-  # ien:
+  # ien.com:
   #   <<: *node
   #   <<: *site-cmd
-  #   working_dir: /root/sites/ien
+  #   working_dir: /root/sites/ien.com
   #   environment:
   #     <<: *env
   #     <<: *env-caprica
@@ -153,10 +153,10 @@ services:
   #     - "9715:80"
   #     - "19715:19715"
 
-  # cannabisequipmentnews:
+  # cannabisequipmentnews.com:
   #   <<: *node
   #   <<: *site-cmd
-  #   working_dir: /root/sites/cannabisequipmentnews
+  #   working_dir: /root/sites/cannabisequipmentnews.com
   #   environment:
   #     <<: *env
   #     <<: *env-caprica
@@ -169,10 +169,10 @@ services:
   #     - "9716:80"
   #     - "19716:19716"
 
-  # designdevelopmenttoday:
+  # designdevelopmenttoday.com:
   #   <<: *node
   #   <<: *site-cmd
-  #   working_dir: /root/sites/designdevelopmenttoday
+  #   working_dir: /root/sites/designdevelopmenttoday.com
   #   environment:
   #     <<: *env
   #     <<: *env-caprica
