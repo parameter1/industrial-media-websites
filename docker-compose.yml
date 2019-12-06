@@ -105,10 +105,10 @@ services:
       - "9712:80"
       - "19712:19712"
 
-  impomag:
+  impomag.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/impomag
+    working_dir: /root/sites/impomag.com
     environment:
       <<: *env
       <<: *env-caprica
