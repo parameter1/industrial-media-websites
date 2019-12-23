@@ -29,6 +29,7 @@ module.exports = {
       { href: '/page/fm-advertise', label: 'Advertise' },
       { href: '/page/fm-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/fm-terms-conditions', label: 'Terms & Conditions' },
+      { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
     ],
   },
   menu: [
@@ -60,6 +61,7 @@ module.exports = {
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/fm-privacy-policy', label: 'Privacy Policy' },
         { href: '/page/fm-terms-conditions', label: 'Terms & Conditions' },
+        { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
       ],
     },
   ],
