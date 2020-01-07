@@ -32,4 +32,13 @@ module.exports = {
   magazines: {
     description: '',
   },
+  contactUs: {
+    to: 'david@ien.com',
+    branding: {
+      logo: 'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=60',
+    },
+    support: {
+      email: 'reply@ien.com',
+    },
+  },
 };
