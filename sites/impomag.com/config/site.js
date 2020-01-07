@@ -28,4 +28,13 @@ module.exports = {
   magazines: {
     description: '',
   },
+  contactUs: {
+    to: 'david@ien.com',
+    branding: {
+      logo: 'https://base.imgix.net/files/base/indm/all/impo_logo.png?h=60',
+    },
+    support: {
+      email: 'reply@ien.com',
+    },
+  },
 };
