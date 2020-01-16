@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/inddist.com",
-  "version": "1.0.17",
+  "version": "1.1.0",
   "author": "Jacob Bare <jacob@limit0.io>",
   "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/sites/inddist.com",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "@base-cms/object-path": "^1.9.0",
     "@base-cms/utils": "^1.9.0",
     "@base-cms/web-cli": "^1.9.0",
-    "@industrial-media/package-common": "^1.0.17",
+    "@industrial-media/package-common": "^1.1.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^5.11.0"
