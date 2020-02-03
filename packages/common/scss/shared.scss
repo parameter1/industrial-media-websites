@@ -10,3 +10,7 @@
     margin-bottom: $theme-ad-margin;
   }
 }
+
+.social-sharing {
+  margin-bottom: map-get($spacers, block);
+}
