@@ -86,6 +86,10 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                 <marko-web-page-image width=300 fluid=false obj=content.primaryImage />
               </else-if>
               <default-theme-content-contact-details obj=content />
+              <marko-web-social-sharing
+                path=content.siteContext.path
+                providers=["facebook", "twitter", "pinterest", "linkedin", "email"]
+              />
               <marko-web-content-body block-name=blockName obj=content />
               <marko-web-content-sidebars block-name=blockName obj=content />
               <if(type === "document")>
