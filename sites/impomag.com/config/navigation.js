@@ -12,7 +12,7 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/subscribe', label: 'Subscribe' },
+      { href: 'https://ien.wufoo.com/forms/m3rig2e1uwzozj/', label: 'Subscribe', target: '_blank' },
       { href: '/magazine', label: 'Magazine' },
       { href: '/videos', label: 'Videos' },
     ],
@@ -55,7 +55,7 @@ module.exports = {
     {
       label: 'User Tools',
       items: [
-        { href: '/subscribe', label: 'Subscribe' },
+        { href: 'https://ien.wufoo.com/forms/m3rig2e1uwzozj/', label: 'Subscribe', target: '_blank' },
         { href: '/page/impo-advertise', label: 'Advertise' },
         { href: '/page/impo-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
