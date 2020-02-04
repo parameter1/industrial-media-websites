@@ -6,6 +6,7 @@ import GCSE from '@base-cms/marko-web-gcse/browser';
 import RevealAd from '@base-cms/marko-web-reveal-ad/browser';
 import SocialSharing from '@base-cms/marko-web-social-sharing/browser';
 import Common from '@industrial-media/package-common/browser';
+import PhotoSwipe from '@base-cms/marko-web-photoswipe/browser';
 
 DefaultTheme(Browser);
 GTM(Browser);
@@ -14,5 +15,6 @@ GCSE(Browser);
 RevealAd(Browser);
 SocialSharing(Browser);
 Common(Browser);
+PhotoSwipe(Browser);
 
 export default Browser;
