@@ -829,10 +829,10 @@
     marko "^4.18.30"
     yargs "^14.1.0"
 
-"@base-cms/marko-core@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-core/-/marko-core-1.9.0.tgz#1791a870738242d61aeb54528d5c249438c39840"
-  integrity sha512-fT3k58ronBL+r9oqX4n/wM4BCUntbh6r9/RNM1u1YCxSlMx3jQKenDtT3OOtTuZ/RsQVq0AQXfNxsCmBponAPQ==
+"@base-cms/marko-core@^1.15.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-core/-/marko-core-1.15.0.tgz#7b8a212fdeb968531c6214b11a3f3d16e145eff5"
+  integrity sha512-gOP9Lr0SqZ+oVPw6ZGog3olQ0tnH7ElBsaeT0x9ZOLVleq4flYQheaDqaeP+HTte76gX6RUXprDrHT7CMlCQYg==
   dependencies:
     "@base-cms/object-path" "^1.9.0"
     "@base-cms/utils" "^1.9.0"
@@ -882,6 +882,15 @@
     "@base-cms/object-path" "^1.9.0"
     "@base-cms/utils" "^1.9.0"
     node-fetch "^2.6.0"
+
+"@base-cms/marko-web-photoswipe@^1.16.1":
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-photoswipe/-/marko-web-photoswipe-1.16.1.tgz#982b654d2b9062ea14517dcf128cb37e3ccf69fd"
+  integrity sha512-acTCySE4E2dXg9UjdKdsROcTiRN0nBGLwiTyUR9z4B1gC4esqmRcV+eAdtuPJe2zrydPWjwHCK62xikYVDTEjA==
+  dependencies:
+    "@base-cms/image" "^1.6.3"
+    "@base-cms/object-path" "^1.9.0"
+    photoswipe "^4.1.3"
 
 "@base-cms/marko-web-reveal-ad@^1.12.1":
   version "1.12.1"
@@ -8559,6 +8568,11 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
+photoswipe@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/photoswipe/-/photoswipe-4.1.3.tgz#59f49494eeb9ddab5888d03392926a19bc197550"
+  integrity sha512-89Z43IRUyw7ycTolo+AaiDn3W1EEIfox54hERmm9bI12IB9cvRfHSHez3XhAyU8XW2EAFrC+2sKMhh7SJwn0bA==
 
 picomatch@^2.0.5:
   version "2.0.7"

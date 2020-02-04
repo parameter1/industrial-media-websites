@@ -8,6 +8,7 @@ $ const { id, type, pageNode } = data;
 
 $ const displayPrimaryImage = ["whitepaper", "media-gallery", "contact"].includes(type) ? false : true;
 $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? false : true;
+$ const displayPhotoswipe = ["contact"].includes(type) ? false : true;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -64,7 +65,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         </@section>
         <@section>
           <div class="row">
-            <default-theme-page-contents|{ blockName }| class="col-lg-8 mb-3 mb-lg-0">
+            <default-theme-page-contents|{ blockName }| class="col-lg-8 mb-3 mb-lg-0" attrs={ "data-gallery-id": id }>
               <if(content.embedCode)>
                 <marko-web-content-embed-code block-name=blockName obj=content />
               </if>
@@ -114,6 +115,11 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <marko-web-gam-display-ad id="gpt-ad-rail1" />
               <marko-web-gam-display-ad id="gpt-ad-rail2" />
             </aside>
+            <if(displayPhotoswipe)>
+              <marko-web-photoswipe-images images=resolved.getEdgeNodesFor("images")>
+                <@props thumbnail-click-selectors=`[data-gallery-id="${id}"] [data-image-id]` />
+              </marko-web-photoswipe-images>
+            </if>
           </div>
         </@section>
       </marko-web-page-wrapper>
