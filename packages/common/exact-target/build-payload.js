@@ -1,9 +1,15 @@
-module.exports = ({ req, source, config }) => {
+module.exports = ({
+  req,
+  source,
+  config,
+  correlator,
+}) => {
   const { query } = req;
   const href = `${req.protocol}//${req.get('host')}${req.originalUrl}`;
   return {
     e: 'exact-target-referrer',
     d: {
+      correlator,
       source,
       siteId: config.website('id'),
       siteName: config.website('name'),
