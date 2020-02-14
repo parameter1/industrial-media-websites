@@ -4,9 +4,10 @@ const buildPayload = require('./build-payload');
 const buildUrl = require('./build-url');
 
 module.exports = () => (req, res, next) => {
+  const { config } = req.app.locals;
   if (hasReferrer(req.query)) {
     try {
-      const payload = buildPayload({ req, source: 'server' });
+      const payload = buildPayload({ req, source: 'server', config });
       const url = buildUrl(payload);
       fetch(url).catch(() => next());
     } catch (e) {
