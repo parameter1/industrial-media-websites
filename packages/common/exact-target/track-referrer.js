@@ -4,7 +4,8 @@ const hasReferrer = require('./has-referrer');
 const buildPayload = require('./build-payload');
 const buildUrl = require('./build-url');
 
-module.exports = () => (req, res, next) => {
+module.exports = ({ onError } = {}) => (req, res, next) => {
+  const errorHandler = typeof onError === 'function' ? onError : () => {};
   const { config } = req.app.locals;
   if (hasReferrer(req.query)) {
     try {
@@ -17,8 +18,9 @@ module.exports = () => (req, res, next) => {
         correlator,
       });
       const url = buildUrl(payload);
-      fetch(url).catch(() => next());
+      fetch(url).catch(errorHandler);
     } catch (e) {
+      errorHandler(e);
       next();
     } finally {
       next();

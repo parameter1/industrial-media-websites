@@ -22,7 +22,7 @@ module.exports = startServer({
   version,
   onStart: (app) => {
     app.set('trust proxy', 'loopback, linklocal, uniquelocal');
-    app.use(trackReferrer());
+    app.use(trackReferrer({ onError: newrelic.noticeError }));
   },
   onAsyncBlockError: e => newrelic.noticeError(e),
 }).then(() => log('Website started!')).catch(e => setImmediate(() => { throw e; }));
