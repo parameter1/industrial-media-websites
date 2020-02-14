@@ -829,10 +829,10 @@
     marko "^4.18.30"
     yargs "^14.1.0"
 
-"@base-cms/marko-core@^1.16.2":
-  version "1.16.2"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-core/-/marko-core-1.16.2.tgz#91171d55f0ba17fc66949af33e8c879e44b745d3"
-  integrity sha512-80ju56BX9swex+8BNcvlMfoCJWFEBKac2hRErgg0P8fH9EDjmmGlY5sClL4DFNLCPOyXeEbGfCD3wlFIkf9INQ==
+"@base-cms/marko-core@^1.20.3":
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-core/-/marko-core-1.20.3.tgz#53f9c16a9412087e48898cd46f5a00f1c70bbd1b"
+  integrity sha512-zmYTOf3XLXXKa6flZFB9Hmicu5DK7Y2O0PTTbCR0wVldd1W5iQw330F1KDnSHwwAFEuR02Ih07ARcdwGYr6f8g==
   dependencies:
     "@base-cms/object-path" "^1.9.0"
     "@base-cms/utils" "^1.9.0"
@@ -883,34 +883,34 @@
     "@base-cms/utils" "^1.9.0"
     node-fetch "^2.6.0"
 
-"@base-cms/marko-web-photoswipe@^1.16.1":
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-photoswipe/-/marko-web-photoswipe-1.16.1.tgz#982b654d2b9062ea14517dcf128cb37e3ccf69fd"
-  integrity sha512-acTCySE4E2dXg9UjdKdsROcTiRN0nBGLwiTyUR9z4B1gC4esqmRcV+eAdtuPJe2zrydPWjwHCK62xikYVDTEjA==
+"@base-cms/marko-web-photoswipe@^1.20.3":
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-photoswipe/-/marko-web-photoswipe-1.20.3.tgz#14715165a713495e618cc5aa31bff4fc90544e7e"
+  integrity sha512-ktmfZrS859qwBBtkkdBeW5fnLy+RH31V0TQXJqVRlE43sAHjrEK/Bbm/ini0yOiJcvhpb1hdIfWsCcZRljZ8cg==
   dependencies:
     "@base-cms/image" "^1.6.3"
     "@base-cms/object-path" "^1.9.0"
     photoswipe "^4.1.3"
 
-"@base-cms/marko-web-reveal-ad@^1.16.2":
-  version "1.16.2"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-reveal-ad/-/marko-web-reveal-ad-1.16.2.tgz#53cdc8c1481dac779baceb09c82089a95694d7ba"
-  integrity sha512-ecB92psXgybz8IE8pUeVcqgN5EmukA0ggZ8pf1TJs04b84RnhnVclJ1Y42rop8ldQtGrgV2ybBazaBNt5rK8cw==
+"@base-cms/marko-web-reveal-ad@^1.19.2":
+  version "1.19.2"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-reveal-ad/-/marko-web-reveal-ad-1.19.2.tgz#15370a4039c597cb1b3385703e7d06718b5dad54"
+  integrity sha512-Mw5ZvJFkKjzg+08OFGViuq04gcYzgGC5RwOiy1BK1KICcRRnXv+N+SerpNFw2iAGohWO0vYHUCLy69OyvTOXWg==
   dependencies:
     "@base-cms/object-path" "^1.9.0"
     "@base-cms/utils" "^1.9.0"
 
-"@base-cms/marko-web-social-sharing@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-social-sharing/-/marko-web-social-sharing-1.9.0.tgz#4dde93fdd573a022d4358fdf84a61b1b62201965"
-  integrity sha512-Za1BE+zBVZY+jhLuQ59vdZZr10E8ceTp4EoW2eu6hKDI2g/7aN/OLdPkPm6cGcBdOXeGmZivI0Gh15sXd6yVjg==
+"@base-cms/marko-web-social-sharing@^1.19.3":
+  version "1.19.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-social-sharing/-/marko-web-social-sharing-1.19.3.tgz#8b0d75a93ee9f15a1be2cff641d86786dc95887a"
+  integrity sha512-vWu0mBZFQHD9zVPh9qrwh5ZUXVmKyjhvDEbi0dXhEUAIvKJCaNCAyzry/K3C47HNY1FxVqbgDVviH8ZdPKugOA==
   dependencies:
     "@base-cms/utils" "^1.9.0"
 
-"@base-cms/marko-web-theme-default@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-theme-default/-/marko-web-theme-default-1.9.0.tgz#7422e8707ae038bc88da87e62a6323ce6d620920"
-  integrity sha512-s2eK0DxTvVquzfQGv/XI7iosg1taGSd1FB5wtnf7j7SRibmNHhJU7fEA2dXlbAEpuhmISG9AEsgW9ahBj/zPKQ==
+"@base-cms/marko-web-theme-default@^1.20.0":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-theme-default/-/marko-web-theme-default-1.20.0.tgz#f00838455a14697ae8a71e66af368473b88160b7"
+  integrity sha512-et0dUp3KGT0xJBuwB8DiyFKLVGguoz9geHnxOEBsIBOTaxRb7BA+AI6af8wE0ktt1nuouJjtAkGwd+nni6134Q==
   dependencies:
     "@base-cms/marko-web-icons" "^1.0.0"
     "@base-cms/object-path" "^1.9.0"
@@ -919,10 +919,10 @@
     graphql "^14.5.4"
     graphql-tag "^2.10.1"
 
-"@base-cms/marko-web@^1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.17.0.tgz#889e609e3fe73d351178967e29bed46e6d5449dc"
-  integrity sha512-oXsGOZqRDiCmc6iCoRS2t3cacbI5BWBgnCFa9VGFD7zCcYBC9DD60QXrqKcTod4UcFTTiFSe2ftQbD7NXZj5MQ==
+"@base-cms/marko-web@^1.20.3":
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.20.3.tgz#f8de974b1ef327e55fa4d10fc04a0e90dbd9a55f"
+  integrity sha512-rimRv0HdroiAcnu9g6HZP5I/IFKuLs+/N13LekSjBMUQhx2aJ+4Txd1PivApLyKT/8djlWezP1t0lwtPNH86kQ==
   dependencies:
     "@base-cms/embedded-media" "^1.6.3"
     "@base-cms/express-apollo" "^1.9.0"
@@ -969,10 +969,10 @@
   resolved "https://registry.yarnpkg.com/@base-cms/utils/-/utils-1.9.0.tgz#fb208c11b155d019876806855e7a8bb1c56041fd"
   integrity sha512-mo3sRxE/KL1i1haP8MrZa32aZaKz4dOqtUb84DOHSlNrhyoPEJ0wq/+KKi6gLjYAY6j2ECxmDcgBztcYjamIEg==
 
-"@base-cms/web-cli@^1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/web-cli/-/web-cli-1.17.0.tgz#7e29bedb7be9d31d74d754193aa88912b24bf965"
-  integrity sha512-fgcHMWIvP5BWuDpYs9yKVD/zptFZiDPjH6YYu2nI74bxvyQcYqolXbdETnpJDZ0Hgq5mKFttEPK9wVx8TEiZMQ==
+"@base-cms/web-cli@^1.20.3":
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/web-cli/-/web-cli-1.20.3.tgz#5c336e0cc2a8c685ad26e2ce563ab8ad7824e3f2"
+  integrity sha512-2Ez2fAG9IRhrgj6ZT7YvF7eYbMyQxQEj3BN3f0O129BwTJgm7O7RZgG7YAwx1m0lGIt2zKBVuleGzs/TZDBsZA==
   dependencies:
     "@babel/core" "^7.6.0"
     "@babel/plugin-transform-runtime" "^7.6.0"
@@ -981,7 +981,7 @@
     "@babel/runtime-corejs2" "^7.6.0"
     "@base-cms/cli-utils" "^1.13.0"
     "@base-cms/express-apollo" "^1.9.0"
-    "@base-cms/marko-web" "^1.17.0"
+    "@base-cms/marko-web" "^1.20.3"
     autoprefixer "^9.6.1"
     babel-eslint "^10.0.3"
     babel-loader "^8.0.6"
@@ -11180,6 +11180,11 @@ unique-filename@^1.1.1:
   integrity sha512-Vmp0jIp2ln35UTXuryvjzkjGdRyf9b2lTXuSYUiPmzRcl3FDtYqAwOnTJkAngD9SWhnoJzDbTKwaOrZ+STtxNQ==
   dependencies:
     unique-slug "^2.0.0"
+
+unique-push-id@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/unique-push-id/-/unique-push-id-1.0.2.tgz#7f08de6a5f6444e03e286213f0a17d50f9cad5a2"
+  integrity sha1-fwjeal9kROA+KGIT8KF9UPnK1aI=
 
 unique-slug@^2.0.0:
   version "2.0.2"
