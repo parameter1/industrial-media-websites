@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/foodmanufacturing.com",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "author": "Jacob Bare <jacob@limit0.io>",
   "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/sites/foodmanufacturing.com",
   "license": "MIT",
@@ -29,7 +29,7 @@
     "@base-cms/object-path": "^1.9.0",
     "@base-cms/utils": "^1.9.0",
     "@base-cms/web-cli": "^1.20.4",
-    "@industrial-media/package-common": "^1.4.1",
+    "@industrial-media/package-common": "^1.4.2",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^5.11.0"
