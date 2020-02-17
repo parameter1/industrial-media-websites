@@ -13,7 +13,7 @@
     "@base-cms/env": "^1.0.0",
     "@base-cms/marko-core": "^1.20.3",
     "@base-cms/marko-web": "^1.20.4",
-    "@base-cms/marko-web-gtm": "^1.20.4",
+    "@base-cms/marko-web-gtm": "^1.21.2",
     "@base-cms/marko-web-icons": "^1.0.0",
     "@base-cms/marko-web-theme-default": "^1.20.0",
     "@base-cms/object-path": "^1.9.0",
