@@ -153,22 +153,6 @@ services:
       - "9715:80"
       - "19715:19715"
 
-
-  # designdevelopmenttoday.com:
-  #   <<: *node
-  #   <<: *site-cmd
-  #   working_dir: /root/sites/designdevelopmenttoday.com
-  #   environment:
-  #     <<: *env
-  #     <<: *env-caprica
-  #     PORT: 80
-  #     EXPOSED_PORT: 9717
-  #     LIVERELOAD_PORT: 19717
-  #     TENANT_KEY: indm_ddt
-  #     SITE_ID: 5af4890775a254af9e0041a7
-  #   ports:
-  #     - "9717:80"
-  #     - "19717:19717"
   cannabisequipmentnews.com:
     <<: *node
     <<: *site-cmd
@@ -184,3 +168,19 @@ services:
     ports:
       - "9716:80"
       - "19716:19716"
+
+  designdevelopmenttoday.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/designdevelopmenttoday.com
+    environment:
+      <<: *env
+      <<: *env-caprica
+      PORT: 80
+      EXPOSED_PORT: 9717
+      LIVERELOAD_PORT: 19717
+      TENANT_KEY: indm_multi
+      SITE_ID: 5af4890775a254af9e0041a7
+    ports:
+      - "9717:80"
+      - "19717:19717"

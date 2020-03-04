@@ -40,18 +40,6 @@ jobs:
     # vvv ADD SITES HERE vvv #
     ##########################
 
-
-    # - stage: production
-    #   name: designdevelopmenttoday.com
-    #   script: npx @base-cms/website-deployment-tool deploy designdevelopmenttoday.com caprica
-    #   install: skip
-    #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    # - stage: staging
-    #   name: designdevelopmenttoday.com
-    #   script: npx @base-cms/website-deployment-tool deploy designdevelopmenttoday.com caprica
-    #   install: skip
-    #   env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
     - stage: production
       name: cannabisequipmentnews.com
       script: npx @base-cms/website-deployment-tool deploy cannabisequipmentnews.com caprica
@@ -61,6 +49,18 @@ jobs:
     - stage: staging
       name: cannabisequipmentnews.com
       script: npx @base-cms/website-deployment-tool deploy cannabisequipmentnews.com caprica
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: designdevelopmenttoday.com
+      script: npx @base-cms/website-deployment-tool deploy designdevelopmenttoday.com caprica
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: designdevelopmenttoday.com
+      script: npx @base-cms/website-deployment-tool deploy designdevelopmenttoday.com caprica
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
