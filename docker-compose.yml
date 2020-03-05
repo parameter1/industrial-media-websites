@@ -137,50 +137,50 @@ services:
       - "9714:80"
       - "19714:19714"
 
-  # ien.com:
-  #   <<: *node
-  #   <<: *site-cmd
-  #   working_dir: /root/sites/ien.com
-  #   environment:
-  #     <<: *env
-  #     <<: *env-caprica
-  #     PORT: 80
-  #     EXPOSED_PORT: 9715
-  #     LIVERELOAD_PORT: 19715
-  #     TENANT_KEY: indm_ien
-  #     SITE_ID: 5669a4f16cdeeaf8598b4579
-  #   ports:
-  #     - "9715:80"
-  #     - "19715:19715"
+  ien.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/ien.com
+    environment:
+      <<: *env
+      <<: *env-caprica
+      PORT: 80
+      EXPOSED_PORT: 9715
+      LIVERELOAD_PORT: 19715
+      TENANT_KEY: indm_multi
+      SITE_ID: 5669a4f16cdeeaf8598b4579
+    ports:
+      - "9715:80"
+      - "19715:19715"
 
-  # cannabisequipmentnews.com:
-  #   <<: *node
-  #   <<: *site-cmd
-  #   working_dir: /root/sites/cannabisequipmentnews.com
-  #   environment:
-  #     <<: *env
-  #     <<: *env-caprica
-  #     PORT: 80
-  #     EXPOSED_PORT: 9716
-  #     LIVERELOAD_PORT: 19716
-  #     TENANT_KEY: indm_cen
-  #     SITE_ID: 5bc762d5adff35d154716639
-  #   ports:
-  #     - "9716:80"
-  #     - "19716:19716"
+  cannabisequipmentnews.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/cannabisequipmentnews.com
+    environment:
+      <<: *env
+      <<: *env-caprica
+      PORT: 80
+      EXPOSED_PORT: 9716
+      LIVERELOAD_PORT: 19716
+      TENANT_KEY: indm_multi
+      SITE_ID: 5bc762d5adff35d154716639
+    ports:
+      - "9716:80"
+      - "19716:19716"
 
-  # designdevelopmenttoday.com:
-  #   <<: *node
-  #   <<: *site-cmd
-  #   working_dir: /root/sites/designdevelopmenttoday.com
-  #   environment:
-  #     <<: *env
-  #     <<: *env-caprica
-  #     PORT: 80
-  #     EXPOSED_PORT: 9717
-  #     LIVERELOAD_PORT: 19717
-  #     TENANT_KEY: indm_ddt
-  #     SITE_ID: 5af4890775a254af9e0041a7
-  #   ports:
-  #     - "9717:80"
-  #     - "19717:19717"
+  designdevelopmenttoday.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/designdevelopmenttoday.com
+    environment:
+      <<: *env
+      <<: *env-caprica
+      PORT: 80
+      EXPOSED_PORT: 9717
+      LIVERELOAD_PORT: 19717
+      TENANT_KEY: indm_multi
+      SITE_ID: 5af4890775a254af9e0041a7
+    ports:
+      - "9717:80"
+      - "19717:19717"
