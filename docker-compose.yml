@@ -57,6 +57,20 @@ services:
     environment:
       <<: *env
 
+  mc-refresh-data-extensions:
+    <<: *node
+    working_dir: /root/services/marketing-cloud
+    entrypoint: ["node", "./data-extensions/refresh.js"]
+    environment:
+      FUEL_API_CLIENT_ID: ${FUEL_API_CLIENT_ID}
+      FUEL_API_CLIENT_SECRET: ${FUEL_API_CLIENT_SECRET}
+      FUEL_API_AUTH_URL: ${FUEL_API_AUTH_URL}
+      FUEL_API_ACCOUNT_ID: ${FUEL_API_ACCOUNT_ID}
+      NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
+      NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
+      NODE_ENV: development
+      YARN_CACHE_FOLDER: /.yarn-cache
+
   inddist.com:
     <<: *node
     <<: *site-cmd
