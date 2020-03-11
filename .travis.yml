@@ -36,6 +36,26 @@ jobs:
       install: skip
       env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
+    #############################
+    # vvv ADD SERVICES HERE vvv #
+    #############################
+
+    - stage: production
+      name: Marketing Cloud Service
+      script: npx @base-cms/website-deployment-tool deploy-service indm-marketing-cloud caprica
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: Marketing Cloud Service
+      script: npx @base-cms/website-deployment-tool deploy-service indm-marketing-cloud caprica
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    #############################
+    # ^^^ ADD SERVICES HERE ^^^ #
+    #############################
+
     ##########################
     # vvv ADD SITES HERE vvv #
     ##########################
