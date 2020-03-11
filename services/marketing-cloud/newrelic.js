@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['industrial-media/tasks-service'],
+  app_name: ['industrial-media/marketing-cloud-service'],
   /**
    * Your New Relic license key.
    */
