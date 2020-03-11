@@ -1,3 +1,5 @@
+const eachSeries = require('async/eachSeries');
+const { get } = require('@base-cms/object-path');
 const newrelic = require('../nr');
 const rest = require('../rest');
 const soap = require('../soap');
@@ -9,15 +11,18 @@ const run = async () => {
   const { Results } = await soap.retrieve('DataExtension', ['ObjectID', 'Name']);
   const extensions = Results.filter(r => /API Opt/.test(r.Name));
 
-  await Promise.all(extensions.map(async (ext) => {
+  await eachSeries(extensions, async (ext) => {
     const { ObjectID } = ext;
     log(`Sending refresh request for ${ext.Name} (${ObjectID})`);
-    return rest.request({
+    const response = await rest.request({
       endpoint: `/email/v1/filteredCustomObjects/${ObjectID}/refresh`,
       method: 'POST',
     });
-  }));
-  log('Refresh complete.');
+    const asyncId = get(response, 'filterActivityInstance.asyncID');
+    if (!asyncId) throw new Error(`No asyncId was found in the refresh response for ${ObjectID}`);
+    log(`Refresh complete. Async ID ${asyncId}`);
+  });
+  log('DONE!');
 };
 
 run().catch(e => newrelic.noticeError(e));
