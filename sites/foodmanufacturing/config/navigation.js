@@ -8,7 +8,9 @@ module.exports = {
       { href: '/labeling', label: 'Labeling' },
       { href: '/packaging', label: 'Packaging' },
       { href: '/products', label: 'New Products' },
-      { href: '/track-trace', label: 'Track \'N Trace' },
+      { href: '/supply-chain', label: 'Supply Chain' },
+      { href: '/recalls-alerts', label: 'Recalls/Alerts' },
+      { href: '/safety', label: 'Safety' },
     ],
   },
   secondary: {
@@ -42,7 +44,9 @@ module.exports = {
         { href: '/labeling', label: 'Labeling' },
         { href: '/packaging', label: 'Packaging' },
         { href: '/products', label: 'Products' },
-        { href: '/track-trace', label: 'Track \'N Trace' },
+        { href: '/supply-chain', label: 'Supply Chain' },
+        { href: '/recalls-alerts', label: 'Recalls/Alerts' },
+        { href: '/safety', label: 'Safety' },
       ],
     },
     {
