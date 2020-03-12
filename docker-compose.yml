@@ -57,10 +57,24 @@ services:
     environment:
       <<: *env
 
-  inddist:
+  mc-refresh-data-extensions:
+    <<: *node
+    working_dir: /root/services/marketing-cloud
+    entrypoint: ["node", "./data-extensions/refresh.js"]
+    environment:
+      FUEL_API_CLIENT_ID: ${FUEL_API_CLIENT_ID}
+      FUEL_API_CLIENT_SECRET: ${FUEL_API_CLIENT_SECRET}
+      FUEL_API_AUTH_URL: ${FUEL_API_AUTH_URL}
+      FUEL_API_ACCOUNT_ID: ${FUEL_API_ACCOUNT_ID}
+      NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
+      NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
+      NODE_ENV: development
+      YARN_CACHE_FOLDER: /.yarn-cache
+
+  inddist.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/inddist
+    working_dir: /root/sites/inddist.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -73,10 +87,10 @@ services:
       - "9710:80"
       - "19710:19710"
 
-  manufacturing:
+  manufacturing.net:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/manufacturing
+    working_dir: /root/sites/manufacturing.net
     environment:
       <<: *env
       <<: *env-caprica
@@ -89,10 +103,10 @@ services:
       - "9711:80"
       - "19711:19711"
 
-  foodmanufacturing:
+  foodmanufacturing.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/foodmanufacturing
+    working_dir: /root/sites/foodmanufacturing.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -105,10 +119,10 @@ services:
       - "9712:80"
       - "19712:19712"
 
-  impomag:
+  impomag.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/impomag
+    working_dir: /root/sites/impomag.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -121,10 +135,10 @@ services:
       - "9713:80"
       - "19713:19713"
 
-  mbtmag:
+  mbtmag.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/mbtmag
+    working_dir: /root/sites/mbtmag.com
     environment:
       <<: *env
       <<: *env-caprica
@@ -137,50 +151,50 @@ services:
       - "9714:80"
       - "19714:19714"
 
-  # ien:
-  #   <<: *node
-  #   <<: *site-cmd
-  #   working_dir: /root/sites/ien
-  #   environment:
-  #     <<: *env
-  #     <<: *env-caprica
-  #     PORT: 80
-  #     EXPOSED_PORT: 9715
-  #     LIVERELOAD_PORT: 19715
-  #     TENANT_KEY: indm_ien
-  #     SITE_ID: 5669a4f16cdeeaf8598b4579
-  #   ports:
-  #     - "9715:80"
-  #     - "19715:19715"
+  ien.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/ien.com
+    environment:
+      <<: *env
+      <<: *env-caprica
+      PORT: 80
+      EXPOSED_PORT: 9715
+      LIVERELOAD_PORT: 19715
+      TENANT_KEY: indm_multi
+      SITE_ID: 5669a4f16cdeeaf8598b4579
+    ports:
+      - "9715:80"
+      - "19715:19715"
 
-  # cannabisequipmentnews:
-  #   <<: *node
-  #   <<: *site-cmd
-  #   working_dir: /root/sites/cannabisequipmentnews
-  #   environment:
-  #     <<: *env
-  #     <<: *env-caprica
-  #     PORT: 80
-  #     EXPOSED_PORT: 9716
-  #     LIVERELOAD_PORT: 19716
-  #     TENANT_KEY: indm_cen
-  #     SITE_ID: 5bc762d5adff35d154716639
-  #   ports:
-  #     - "9716:80"
-  #     - "19716:19716"
+  cannabisequipmentnews.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/cannabisequipmentnews.com
+    environment:
+      <<: *env
+      <<: *env-caprica
+      PORT: 80
+      EXPOSED_PORT: 9716
+      LIVERELOAD_PORT: 19716
+      TENANT_KEY: indm_multi
+      SITE_ID: 5bc762d5adff35d154716639
+    ports:
+      - "9716:80"
+      - "19716:19716"
 
-  # designdevelopmenttoday:
-  #   <<: *node
-  #   <<: *site-cmd
-  #   working_dir: /root/sites/designdevelopmenttoday
-  #   environment:
-  #     <<: *env
-  #     <<: *env-caprica
-  #     PORT: 80
-  #     EXPOSED_PORT: 9717
-  #     LIVERELOAD_PORT: 19717
-  #     TENANT_KEY: indm_ddt
-  #     SITE_ID: 5af4890775a254af9e0041a7
-  #   ports:
-  #     - "9717:80"
-  #     - "19717:19717"
+  designdevelopmenttoday.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/designdevelopmenttoday.com
+    environment:
+      <<: *env
+      <<: *env-caprica
+      PORT: 80
+      EXPOSED_PORT: 9717
+      LIVERELOAD_PORT: 19717
+      TENANT_KEY: indm_multi
+      SITE_ID: 5af4890775a254af9e0041a7
+    ports:
+      - "9717:80"
+      - "19717:19717"

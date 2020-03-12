@@ -1,5 +1,5 @@
 {
-  "name": "@base-cms-websites/industrial-media",
+  "name": "@industrial-media/websites",
   "description": "Websites for Industrial Media",
   "repository": "https://github.com/base-cms-websites/industrial-media.git",
   "author": "Jacob Bare <jacob@limit0.io>",
@@ -8,6 +8,7 @@
   "root": true,
   "workspaces": [
     "packages/*",
+    "services/*",
     "sites/*"
   ],
   "scripts": {
@@ -18,7 +19,7 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "@base-cms/marko-compiler": "^1.0.0-beta.1",
+    "@base-cms/marko-compiler": "^1.8.0",
     "lerna": "^3.16.4"
   }
 }
