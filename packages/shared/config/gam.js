@@ -1,11 +1,8 @@
 const GAMConfiguration = require('@base-cms/marko-web-gam/config');
-const { asArray } = require('@base-cms/utils');
-const { get, getAsObject } = require('@base-cms/object-path');
 
 module.exports = ({
   accountId = '137873098',
   basePath,
-  pathMaps = [],
 } = {}) => {
   const config = new GAMConfiguration(accountId, { basePath });
 
@@ -57,32 +54,5 @@ module.exports = ({
       ],
     });
 
-  const templates = {
-    lb1: 'LB',
-    'lb-sticky-bottom': 'LB-STICKY-BOTTOM',
-    billboard1: 'BILLBOARD',
-    rail1: 'RAIL1',
-    rail2: 'RAIL2',
-    'infinite-rail': 'INFINITE-RAIL',
-    'infinite-interstitial': 'INFINITE-INTERSTITIAL',
-    'in-content': 'IN-CONTENT',
-    reskin: undefined,
-    wa: undefined,
-  };
-  const adunitNames = Object.keys(templates);
-
-  asArray(pathMaps).forEach((obj) => {
-    const alias = get(obj, 'alias');
-    const map = getAsObject(obj, 'map');
-    const definitions = adunitNames.reduce((arr, name) => {
-      const templateName = templates[name];
-      const path = map[name];
-      if (path) arr.push({ name, templateName, path });
-      return arr;
-    }, []);
-    if (alias && definitions.length) {
-      config.setAliasAdUnits(alias, definitions);
-    }
-  });
   return config;
 };
