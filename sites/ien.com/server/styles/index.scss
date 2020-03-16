@@ -12,14 +12,24 @@ $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 832px,
-  hide-secondary: 906px,
-  small-logo: 1015px,
-  small-text-primary: 932px,
-  small-text-secondary: 1105px
+  hide-primary: 1015px,
+  hide-secondary: 612px,
+  small-logo: 375px,
+  small-text-primary: 0,
+  small-text-secondary: 0
 );
 
 // Site Section Colors
-$website-section-colors: ();
+$website-section-colors: (
+  advanced-manufacturing: #a75deb,
+  automation: #77d2d5,
+  finishing-world: lighten(#3e569f, 5%),
+  operations: #0da8db,
+  product-development: lighten(#bc0070, 2%),
+  new-products: #4fba73,
+  safety: #e77765,
+  supply-chain: #c9e765,
+  food-beverage: lighten(#008a51, 5%),
+);
 
 @import "../../node_modules/@industrial-media/package-shared/scss/core";
