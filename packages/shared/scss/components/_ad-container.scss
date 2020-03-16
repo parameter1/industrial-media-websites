@@ -36,6 +36,11 @@
     }
   }
 
+  &--bottom-of-page {
+    margin-top: $theme-ad-margin;
+    margin-bottom: $theme-ad-margin;
+  }
+
   &__wrapper {
     position: relative;
     padding-top: 15px;
