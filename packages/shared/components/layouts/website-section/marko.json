@@ -1,0 +1,28 @@
+{
+  "<shared-website-section-page-default-layout>": {
+    "template": "./default.marko",
+    "<head>": {},
+    "<in-head>": {},
+    "<above-container>": {},
+
+    "<page>": {},
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@alias": {
+      "type": "string",
+      "required": true
+    },
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@page-node": {
+      "type": "object",
+      "required": true
+    },
+    "@ad-slots": "function",
+    "@with-oop-ads": "boolean"
+  }
+}

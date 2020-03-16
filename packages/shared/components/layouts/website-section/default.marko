@@ -1,0 +1,76 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import { isFunction } from "@base-cms/utils";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const { GAM } = out.global;
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = data;
+
+$ const withOopAds = defaultValue(input.withOopAds, true);
+
+$ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-lb2": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-lb3": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+  "gpt-ad-rail-infinite": GAM.getAdUnit({ name: "infinite-rail", aliases }),
+});
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <if(input.head)>
+      <${input.head} />
+    </if>
+    <else>
+      <marko-web-gtm-website-section-context|{ context }| alias=alias>
+        <marko-web-gtm-push data=context />
+      </marko-web-gtm-website-section-context>
+      <marko-web-resolve-page|{ data: section }| node=pageNode>
+        $ const aliases = hierarchyAliases(section);
+        <marko-web-gam-slots slots=adSlots({ aliases }) />
+      </marko-web-resolve-page>
+      <if(input.inHead)>
+        <${input.inHead} />
+      </if>
+    </else>
+  </@head>
+
+  <@above-container>
+    <if(input.aboveContainer)>
+      <${input.aboveContainer} />
+    </if>
+    <else>
+      <if(withOopAds)>
+        <marko-web-resolve-page|{ data: section }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
+          <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin", aliases }) />
+        </marko-web-resolve-page>
+      </if>
+    </else>
+  </@above-container>
+
+  <@page>
+    <if(input.page)>
+      <${input.page} />
+    </if>
+    <else>
+      <marko-web-resolve-page|{ data: section, resolved }| node=pageNode>
+        $ const aliases = hierarchyAliases(section);
+        <marko-web-page-wrapper modifiers=["no-bottom-padding"]>
+          <@section>
+            <marko-web-node-list collapsible=false>
+              <@header tag="h1" modifiers=["website-section-title", section.alias]>
+                <marko-web-website-section-name tag=null obj=section />
+              </@header>
+            </marko-web-node-list>
+          </@section>
+        </marko-web-page-wrapper>
+      </marko-web-resolve-page>
+    </else>
+  </@page>
+</marko-web-website-section-page-layout>
