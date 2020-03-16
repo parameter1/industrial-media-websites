@@ -1,0 +1,14 @@
+{
+  "<shared-content-hero-block>": {
+    "template": "./content-hero.marko",
+    "<query-params>": {},
+    "<hero>": {
+      "<card>": {},
+      "<list>": {}
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    }
+  }
+}

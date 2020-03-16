@@ -1,6 +1,6 @@
 .node {
   $title-spacer: 18px;
-  $title-spacer-sm: 14px;
+  $title-spacer-sm: 16px;
   $image-border: 1px solid rgba(239, 239, 239, .9);
   $self: &;
 
@@ -48,6 +48,7 @@
 
   &__footer-left,
   &__footer-right {
+    line-height: 1.5;
     &:empty {
       display: block;
     }

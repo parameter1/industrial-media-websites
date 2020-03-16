@@ -1,0 +1,19 @@
+import { getAsObject } from "@base-cms/object-path";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const queryParams = {
+  optionName: "Pinned",
+  limit: 5,
+  requiresImage: true,
+  queryFragment,
+  ...getAsObject(input, "queryParams"),
+  sectionId: input.sectionId,
+};
+
+<marko-web-query|{ nodes }| name="website-optioned-content" params=queryParams>
+  <shared-content-hero-flow ...input.hero nodes=nodes>
+    <@list>
+      <@header>Top Headlines</@header>
+    </@list>
+  </shared-content-hero-flow>
+</marko-web-query>

@@ -1,6 +1,9 @@
 {
   "taglib-imports": [
-    "./layouts/marko.json"
+    "./blocks/marko.json",
+    "./flows/marko.json",
+    "./layouts/marko.json",
+    "./nodes/marko.json"
   ],
   "<shared-document>": {
     "template": "./document.marko",

@@ -1,0 +1,25 @@
+{
+  "<shared-content-list-flow>": {
+    "template": "./list.marko",
+    "<header>": {},
+    "<body>": {},
+    "<node>": {
+      "<attribution>": {},
+      "<image>": {}
+    },
+    "@nodes": "array",
+    "@inner-justified": "boolean",
+    "@flush-x": "boolean",
+    "@flush-y": "boolean",
+    "@class": "string",
+    "@modifiers": "array"
+  },
+  "<shared-content-hero-flow>": {
+    "template": "./hero.marko",
+    "<card>": {},
+    "<list>": {
+      "<node>": {}
+    },
+    "@nodes": "array"
+  }
+}
