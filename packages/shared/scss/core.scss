@@ -21,3 +21,7 @@ $theme-related-content-border-color: #dee2e6;
 @import "./components/page";
 @import "./components/site-navbar";
 @import "./components/theme";
+
+body {
+  letter-spacing: .1px;
+}
