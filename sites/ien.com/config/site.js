@@ -1,13 +1,17 @@
 const navigation = require('./navigation');
+const gam = require('./gam');
+const gcse = require('./gcse');
 
 module.exports = {
   navigation,
+  gam,
+  gcse,
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=40',
+      src: 'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=45',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=80 2x',
+        'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=90 2x',
       ],
     },
     footer: {

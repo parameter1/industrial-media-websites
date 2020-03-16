@@ -1,3 +1,1 @@
-module.exports = {
-  siteName: 'Industrial Engineering News',
-};
+module.exports = {};
