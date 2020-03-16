@@ -1,7 +1,8 @@
 // Theme start!
-@import url("https://fonts.googleapis.com/css?family=Arimo:400,400i,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
 
 $black:           #000 !default;
+$white:           #fff !default;
 $body-color:      $black !default;
 $block-spacer:    1.25rem !default;
 
@@ -12,10 +13,9 @@ $marko-web-page-padding: 0 !default;
 $marko-web-page-wrapper-padding: $marko-web-document-container-gutter !default;
 $marko-web-node-list-padding: 15px !default;
 
-// Fonts (reset all to Arimo, including serif font)
-$theme-font-family-sans-serif: "Arimo", sans-serif !default;
-$theme-font-family-serif: "Arimo", sans-serif !default;
-$theme-font-family-page-title: $theme-font-family-sans-serif !default;
+// Fonts (reset all to Roboto and Roboto Slab)
+$theme-font-family-sans-serif: "Roboto", sans-serif !default;
+$theme-font-family-serif: "Roboto Slab", sans-serif !default;
 
 // General
 $body-bg: #fff !default;
@@ -44,6 +44,9 @@ $theme-site-navbar-secondary-padding-y: 5px !default;
 
 $theme-site-navbar-secondary-link-hover-decoration: none !default;
 $theme-site-navbar-secondary-link-active-decoration: none !default;
+
+$theme-site-navbar-light-color: rgba($black, .78) !default;
+$theme-site-navbar-dark-color: rgba($white, .78) !default;
 
 // General Heading Defaults
 $theme-heading-font-weight: $font-weight-bold !default;
