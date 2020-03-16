@@ -1,0 +1,114 @@
+.node {
+  $title-spacer: 18px;
+  $title-spacer-sm: 14px;
+  $image-border: 1px solid rgba(239, 239, 239, .9);
+  $self: &;
+
+  &__header-left {
+    @include theme-line-height-crop($theme-item-header-line-height);
+  }
+
+  &__title {
+    padding-bottom: $title-spacer;
+    &--small {
+      font-size: $title-spacer-sm;
+    }
+  }
+
+  &__title + &__text--event-details {
+    margin-top: -$title-spacer;
+    margin-bottom: .5rem;
+  }
+
+  &__title--small + &__text--event-details {
+    margin-top: -$title-spacer-sm;
+  }
+
+  &__text {
+    &--event-details {
+      font-size: 14px;
+      color: $theme-item-footer-color;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &--body {
+      flex-grow: 1;
+    }
+
+    &--spec-guide-link-button + &--spec-guide-link-button {
+      margin-top: .75rem;
+    }
+  }
+
+  &__content-link-url {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+
+  &__footer-left,
+  &__footer-right {
+    &:empty {
+      display: block;
+    }
+  }
+
+  &__footer-left {
+    max-width: 70%;
+  }
+
+  &__footer-left:not(:empty) + &__footer-right {
+    margin-left: .25rem;
+  }
+
+  &__image-inner-wrapper--fluid-16by9 {
+    #{ $self } {
+      &__image {
+        border: $image-border;
+      }
+    }
+  }
+
+  &__image {
+    border: $image-border;
+  }
+
+  &__upcoming-archived {
+    font-weight: $font-weight-bold;
+    color: #444;
+    text-transform: uppercase;
+  }
+
+  &__content-start-date {
+    &::before {
+      color: $black;
+      content: "Date: ";
+    }
+  }
+
+  &--related-content {
+    background-color: $theme-related-content-bg-color;
+  }
+
+  &--image-left {
+    @include media-breakpoint-down(xs) {
+      #{ $self } {
+        &__image-wrapper + #{ $self }__body {
+          margin-top: $marko-web-node-spacer * 2;
+          margin-left: 0;
+        }
+        &__body {
+          &--overlay {
+            margin-top: 0;
+          }
+        }
+        &__contents {
+          flex-direction: column;
+          &--body {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
