@@ -1,0 +1,16 @@
+import { getAsObject } from "@base-cms/object-path";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const params = {
+  limit: 8,
+  ...getAsObject(input.queryParams),
+  queryFragment,
+  sectionId: input.sectionId,
+};
+
+<marko-web-query|{ nodes }|
+  name="website-scheduled-content"
+  params=params
+>
+  <shared-content-list-feed-flow with-header=true ...input.list nodes=nodes />
+</marko-web-query>

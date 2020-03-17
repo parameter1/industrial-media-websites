@@ -21,5 +21,26 @@
       "<node>": {}
     },
     "@nodes": "array"
+  },
+  "<shared-content-card-deck-flow>": {
+    "template": "./card-deck.marko",
+    "<node>": {
+      "<image>": {},
+      "<title>": {}
+    },
+    "@nodes": "array",
+    "@cols": "number",
+    "@tag": "string",
+    "@class": "string",
+    "@modifiers": "array",
+    "@attrs": "object"
+  },
+  "<shared-content-list-feed-flow>": {
+    "template": "./list-feed.marko",
+    "<adunit>": {},
+    "@nodes": "array",
+    "@header": "string",
+    "@with-header": "boolean",
+    "@modifiers": "array"
   }
 }

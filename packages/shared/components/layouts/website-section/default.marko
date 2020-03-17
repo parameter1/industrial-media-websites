@@ -61,6 +61,7 @@ $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => (
     <else>
       <marko-web-resolve-page|{ data: section, resolved }| node=pageNode>
         $ const aliases = hierarchyAliases(section);
+        $ const slots = adSlots({ aliases });
         <marko-web-page-wrapper modifiers=["no-bottom-padding"]>
           <@section>
             <marko-web-node-list collapsible=false>
@@ -73,6 +74,53 @@ $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => (
               <div class="col">
                 <shared-content-hero-block section-id=id />
               </div>
+            </div>
+          </@section>
+
+          <@section>
+            <div class="row">
+              <div class="col">
+                <marko-web-gam-display-ad
+                  id="gpt-ad-lb1"
+                  slots=slots
+                  modifiers=["max-width-970", "margin-auto-x", "center"]
+                />
+              </div>
+            </div>
+          </@section>
+
+          <@section modifiers=["card-deck"]>
+            <shared-featured-content-block />
+          </@section>
+
+          <@section>
+            <div class="row">
+              <div class="col">
+                <marko-web-gam-display-ad
+                  id="gpt-ad-lb2"
+                  slots=slots
+                  modifiers=["max-width-970", "margin-auto-x", "center"]
+                />
+              </div>
+            </div>
+          </@section>
+
+          <@section>
+            <div class="row">
+              <div class="col-lg-8">
+                <shared-latest-content-feed-block section-id=id>
+                  <@query-params skip=9 />
+                </shared-latest-content-feed-block>
+              </div>
+              <aside class="col-lg-4 page-rail">
+                <shared-follow-us-block />
+
+                <marko-web-gam-display-ad
+                  id="gpt-ad-rail1"
+                  modifiers=["sticky-top", "max-width-300", "margin-auto-x-md"]
+                  slots=slots
+                />
+              </aside>
             </div>
           </@section>
         </marko-web-page-wrapper>

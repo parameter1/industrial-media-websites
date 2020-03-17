@@ -10,5 +10,23 @@
       "type": "number",
       "required": true
     }
+  },
+  "<shared-featured-content-block>": {
+    "template": "./featured-content.marko",
+    "<query-params>": {},
+    "<card-deck>": {},
+    "@header": "string"
+  },
+  "<shared-latest-content-feed-block>": {
+    "template": "./latest-content-feed.marko",
+    "<query-params>": {},
+    "<list>": {},
+    "@section-id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "<shared-follow-us-block>": {
+    "template": "./follow-us.marko"
   }
 }

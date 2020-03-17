@@ -1,0 +1,25 @@
+import { asObject } from "@base-cms/utils";
+
+$ const { site } = out.global;
+
+$ const items = site.getAsArray("socialMediaLinks");
+$ const blockName = "follow-us";
+
+<if(items.length)>
+  <marko-web-block name=blockName>
+    <marko-web-node-list collapsible=false>
+      <@header modifiers=["padding-y"]>Follow Us</@header>
+    </marko-web-node-list>
+    <marko-web-element name="icons" block-name=blockName>
+      <for|item| of=items>
+        $ const link = asObject(item);
+        <default-theme-social-icon-link
+          provider=link.provider
+          href=link.href
+          modifiers=["dark", "xl"]
+          target=link.target
+        />
+      </for>
+    </marko-web-element>
+  </marko-web-block>
+</if>
