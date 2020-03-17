@@ -15,9 +15,6 @@ $ const withOopAds = defaultValue(input.withOopAds, true);
 
 $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
   "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
-  "gpt-ad-lb2": GAM.getAdUnit({ name: "lb1", aliases }),
-  "gpt-ad-lb3": GAM.getAdUnit({ name: "lb1", aliases }),
-  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
   "gpt-ad-rail-infinite": GAM.getAdUnit({ name: "infinite-rail", aliases }),
 });
 
@@ -92,39 +89,67 @@ $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => (
           <@section modifiers=["card-deck"]>
             <shared-featured-content-block />
           </@section>
-
-          <@section>
-            <div class="row">
-              <div class="col">
-                <marko-web-gam-display-ad
-                  id="gpt-ad-lb2"
-                  slots=slots
-                  modifiers=["max-width-970", "margin-auto-x", "center"]
-                />
-              </div>
-            </div>
-          </@section>
-
-          <@section>
-            <div class="row">
-              <div class="col-lg-8">
-                <shared-latest-content-feed-block section-id=id>
-                  <@query-params skip=9 />
-                </shared-latest-content-feed-block>
-              </div>
-              <aside class="col-lg-4 page-rail">
-                <shared-follow-us-block />
-
-                <marko-web-gam-display-ad
-                  id="gpt-ad-rail1"
-                  modifiers=["sticky-top", "max-width-300", "margin-auto-x-md"]
-                  slots=slots
-                />
-              </aside>
-            </div>
-          </@section>
         </marko-web-page-wrapper>
       </marko-web-resolve-page>
     </else>
   </@page>
+
+  <@below-page>
+    <if(input.belowPage)>
+      <${input.belowPage} />
+    </if>
+    <else>
+      <marko-web-page-container for="website-section" tag="div" id=id modifiers=["below"]>
+        <!-- Refresh sticky, right-rail infinite scroll ad -->
+        <marko-web-gam-refresh-ad on="load-more-in-view" slot-id="gpt-ad-rail-infinite" />
+
+        <marko-web-resolve-page|{ data: section, resolved }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
+          $ const slots = adSlots({ aliases });
+          <marko-web-page-wrapper>
+            <@section>
+              <div class="row">
+                <div class="col-lg-8 infinite-scroll-target">
+
+                  <shared-latest-content-feed-block section-id=id>
+                    <@query-params limit=6 skip=9 />
+                  </shared-latest-content-feed-block>
+
+                  <shared-latest-content-feed-load-more-block max-pages=4>
+                    <@query
+                      name="website-scheduled-content"
+                      params={ sectionId: id, limit: 12, skip: 15 }
+                    />
+                    <@page for="website-section" id=id />
+                    <@adunit
+                      ...GAM.getAdUnit({ name: "infinite-interstitial", aliases })
+                      modifiers=["max-width-300", "margin-auto-x"]
+                    />
+                  </shared-latest-content-feed-load-more-block>
+                </div>
+
+                <aside class="col-lg-4 page-rail">
+                  <shared-follow-us-block />
+                  <!-- <refresh-theme-most-read-block /> -->
+
+                  <marko-web-gam-display-ad
+                    id="gpt-ad-rail-infinite"
+                    modifiers=["sticky-top", "max-width-300", "margin-auto-x-md"]
+                    slots=slots
+                  />
+                </aside>
+              </div>
+            </@section>
+          </marko-web-page-wrapper>
+        </marko-web-resolve-page>
+
+      </marko-web-page-container>
+    </else>
+  </@below-page>
+
+  <@foot>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <shared-fixed-ad-bottom aliases=hierarchyAliases(section) />
+    </marko-web-resolve-page>
+  </@foot>
 </marko-web-website-section-page-layout>

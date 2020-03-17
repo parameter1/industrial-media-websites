@@ -1,8 +1,8 @@
 import { getAsObject } from "@base-cms/object-path";
-import queryFragment from "../../graphql/fragments/content-list";
+import queryFragment from "../../graphql/fragments/content-latest";
 
 $ const params = {
-  limit: 8,
+  limit: 12,
   ...getAsObject(input.queryParams),
   queryFragment,
   sectionId: input.sectionId,

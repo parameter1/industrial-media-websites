@@ -1,0 +1,9 @@
+{
+  "<shared-latest-content-feed-load-more-block>": {
+    "template": "./latest-content-feed.marko",
+    "<query>": {},
+    "<page>": {},
+    "<adunit>": {},
+    "@max-pages": "number"
+  }
+}

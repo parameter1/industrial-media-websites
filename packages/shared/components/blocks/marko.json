@@ -1,4 +1,7 @@
 {
+  "taglib-imports": [
+    "./load-more/marko.json"
+  ],
   "<shared-content-hero-block>": {
     "template": "./content-hero.marko",
     "<query-params>": {},
