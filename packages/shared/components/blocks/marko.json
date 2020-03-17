@@ -4,20 +4,22 @@
   ],
   "<shared-content-hero-block>": {
     "template": "./content-hero.marko",
-    "<query-params>": {},
-    "<hero>": {
-      "<card>": {},
-      "<list>": {}
-    },
+    "<hero-params>": {},
+    "<list-params>": {},
     "@section-id": {
       "type": "number",
       "required": true
-    }
+    },
+    "@list-header": "string"
   },
   "<shared-featured-content-block>": {
     "template": "./featured-content.marko",
     "<query-params>": {},
     "<card-deck>": {},
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
     "@header": "string"
   },
   "<shared-latest-content-feed-block>": {

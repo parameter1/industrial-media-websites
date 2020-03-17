@@ -87,7 +87,9 @@ $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => (
           </@section>
 
           <@section modifiers=["card-deck"]>
-            <shared-featured-content-block />
+            <shared-featured-content-block section-id=id>
+              <@query-params skip=1 />
+            </shared-featured-content-block>
           </@section>
         </marko-web-page-wrapper>
       </marko-web-resolve-page>
@@ -112,13 +114,13 @@ $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => (
                 <div class="col-lg-8 infinite-scroll-target">
 
                   <shared-latest-content-feed-block section-id=id>
-                    <@query-params limit=6 skip=9 />
+                    <@query-params limit=6 skip=4 />
                   </shared-latest-content-feed-block>
 
                   <shared-latest-content-feed-load-more-block max-pages=4>
                     <@query
                       name="website-scheduled-content"
-                      params={ sectionId: id, limit: 12, skip: 15 }
+                      params={ sectionId: id, limit: 12, skip: 10 }
                     />
                     <@page for="website-section" id=id />
                     <@adunit

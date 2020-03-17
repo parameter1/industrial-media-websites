@@ -5,15 +5,15 @@ import queryFragment from "../../graphql/fragments/content-list";
 $ const header = defaultValue(input.header, "Featured");
 
 $ const params = {
-  sectionAlias: "home",
   optionName: "Pinned",
   limit: 3,
   requiresImage: true,
   ...getAsObject(input.queryParams),
+  sectionId: input.sectionId,
   queryFragment,
 };
 
-<marko-web-query|{ nodes }| name="website-scheduled-content" params=params>
+<marko-web-query|{ nodes }| name="website-optioned-content" params=params>
   <marko-web-node-list collapsible=false>
     <@header modifiers=["padding-y"]>${header}</@header>
   </marko-web-node-list>
