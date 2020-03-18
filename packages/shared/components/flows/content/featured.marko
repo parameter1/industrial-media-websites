@@ -7,7 +7,13 @@ $ const listNodes = nodes.slice(1);
 
 <if(heroNode)>
   <div class="mb-block">
-    <shared-content-card-node with-dates=false ...input.card node=heroNode full-height=false>
+    <shared-content-card-node
+      with-dates=false
+      ...input.card
+      node=heroNode
+      full-height=false
+      modifiers=["section-tag"]
+    >
       <@image width=630 />
       <@title modifiers=["large"] />
       <@teaser modifiers=["large"] />
@@ -19,5 +25,7 @@ $ const listNodes = nodes.slice(1);
   <marko-web-node-list collapsible=false>
     <@header modifiers=["padding-y"]>Featured</@header>
   </marko-web-node-list>
-  <shared-content-card-deck-flow ...input.cardDeck nodes=listNodes />
+  <shared-content-card-deck-flow ...input.cardDeck nodes=listNodes>
+    <@node modifiers=["section-tag"] />
+  </shared-content-card-deck-flow>
 </if>

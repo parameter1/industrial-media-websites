@@ -22,6 +22,7 @@ fragment WebsiteContentListFragment on Content {
   primarySection {
     id
     name
+    alias
     fullName
     canonicalPath
   }

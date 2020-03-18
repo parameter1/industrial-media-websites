@@ -29,7 +29,7 @@ $ const { linkAttrs } = input;
   flush=defaultValue(input.flush, true)
   full-height=defaultValue(input.fullHeight, false)
   attrs=input.attrs
-  modifiers=input.modifiers
+  modifiers=[`section-${primarySection.alias}`, ...getAsArray(input, "modifiers")]
 >
   <if(defaultValue(input.displayImage, true))>
     <@image
