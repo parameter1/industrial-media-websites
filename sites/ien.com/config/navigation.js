@@ -34,7 +34,7 @@ module.exports = {
       { href: '/page/advertise', label: 'Advertise' },
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      { href: '/page/CCPA', label: 'CA Consumer Privacy Act' },
+      { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act' },
     ],
   },
   menu: [
@@ -72,7 +72,7 @@ module.exports = {
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/privacy-policy', label: 'Privacy Policy' },
         { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-        { href: '/page/CCPA', label: 'CA Consumer Privacy Act' },
+        { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act' },
       ],
     },
   ],
