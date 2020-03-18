@@ -54,6 +54,22 @@
   }
 }
 
+.featured-flow {
+  &__featured {
+    .node {
+      &__footer-left {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.magazine-publication-buttons {
+  &__button {
+    margin-bottom: $marko-web-node-spacer;
+  }
+}
+
 .inquiry-form {
   padding: $block-spacer;
   margin-top: 0;

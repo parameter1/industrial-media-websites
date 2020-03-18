@@ -42,7 +42,7 @@ $ const { id, pageNode } = data;
         component-name="shared-magazine-issue-archive-flow"
         fragment-name="shared-magazine-issue-archive"
         query-name="magazine-active-issues"
-        query-params={ publicationId: id, limit: 12 }
+        query-params={ publicationId: id, limit: 12, requiresCoverImage: true }
         page-input={ for: "magazine-publication", id }
       />
     </marko-web-resolve-page>

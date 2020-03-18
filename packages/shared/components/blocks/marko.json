@@ -27,6 +27,7 @@
     "template": "./most-recent.marko"
   },
   "<shared-magazine-publications-block>": {
-    "template": "./magazine-publications.marko"
+    "template": "./magazine-publications.marko",
+    "<publication-params>": {}
   }
 }

@@ -1,39 +1,7 @@
-$ const { site, GAM } = out.global;
+$ const {
+  id,
+  name,
+  pageNode,
+} = data;
 
-$ const type = "magazines";
-$ const title = "Magazines";
-$ const description = site.get("magazines.description");
-
-<marko-web-default-page-layout type=type title=title description=description>
-  <@head>
-    <marko-web-gtm-default-context|{ context }| type=type>
-      <marko-web-gtm-push data=context />
-    </marko-web-gtm-default-context>
-  </@head>
-  <@above-container>
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
-  </@above-container>
-  <@page>
-    <marko-web-page-wrapper>
-      <@section>
-        <marko-web-gam-define-display-ad
-          ...GAM.getAdUnit({ name: "lb1" })
-          modifiers=["max-width-970", "center"]
-        />
-      </@section>
-      <@section>
-        <div class="row">
-          <div class="col">
-            <h1 class="page-wrapper__title">${title}</h1>
-            <if(description)>
-              <p class="page-wrapper__deck">${description}</p>
-            </if>
-          </div>
-        </div>
-      </@section>
-      <@section>
-        <shared-magazine-publications-block />
-      </@section>
-    </marko-web-page-wrapper>
-  </@page>
-</marko-web-default-page-layout>
+<shared-magazine-page-layout id=id name=name page-node=pageNode />
