@@ -1,9 +1,9 @@
 const { withMagazineIssue, withMagazinePublication } = require('@base-cms/marko-web/middleware');
-const index = require('../templates/magazine');
-const publication = require('../templates/magazine/publication');
-const publicationFragment = require('../graphql/fragments/magazine-publication-page');
-const issue = require('../templates/magazine/issue');
-const issueFragment = require('../graphql/fragments/magazine-issue-page');
+const index = require('@industrial-media/package-shared/templates/magazine');
+const publication = require('@industrial-media/package-shared/templates/magazine/publication');
+const publicationFragment = require('@industrial-media/package-shared/graphql/fragments/magazine-publication-page');
+const issue = require('@industrial-media/package-shared/templates/magazine/issue');
+const issueFragment = require('@industrial-media/package-shared/graphql/fragments/magazine-issue-page');
 
 module.exports = (app) => {
   app.get('/magazine', (req, res) => {

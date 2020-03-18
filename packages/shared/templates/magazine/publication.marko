@@ -1,5 +1,4 @@
-import GAM from "../../../config/gam";
-
+$ const { GAM } = out.global;
 $ const { id, pageNode } = data;
 
 <marko-web-magazine-publication-page-layout id=id>
@@ -9,12 +8,16 @@ $ const { id, pageNode } = data;
     </marko-web-gtm-magazine-publication-context>
   </@head>
   <@above-container>
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wa" }) />
     <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
   </@above-container>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "lb1" }) modifiers=["top-of-page"] />
-    <marko-web-page-wrapper>
+    <marko-web-page-wrapper class="mb-block">
+      <@section>
+        <marko-web-gam-define-display-ad
+          ...GAM.getAdUnit({ name: "lb1" })
+          modifiers=["max-width-970", "center"]
+        />
+      </@section>
       <@section>
         <div class="row">
           <div class="col">
@@ -36,8 +39,8 @@ $ const { id, pageNode } = data;
   <@below-page>
     <marko-web-resolve-page|{ data: issue }| node=pageNode>
       <marko-web-load-more
-        component-name="magazine-issue-archive-flow"
-        fragment-name="magazine-issue-archive"
+        component-name="shared-magazine-issue-archive-flow"
+        fragment-name="shared-magazine-issue-archive"
         query-name="magazine-active-issues"
         query-params={ publicationId: id, limit: 12 }
         page-input={ for: "magazine-publication", id }

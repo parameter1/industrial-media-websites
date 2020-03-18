@@ -5,6 +5,7 @@ module.exports = gql`
 fragment MagazineIssueArchiveFragment on MagazineIssue {
   id
   name
+  description
   canonicalPath
   coverImage {
     id

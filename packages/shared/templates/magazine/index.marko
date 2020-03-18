@@ -1,6 +1,4 @@
-import GAM from "../../../config/gam";
-
-$ const { site } = out.global;
+$ const { site, GAM } = out.global;
 
 $ const type = "magazines";
 $ const title = "Magazines";
@@ -13,18 +11,19 @@ $ const description = site.get("magazines.description");
     </marko-web-gtm-default-context>
   </@head>
   <@above-container>
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wa" }) />
     <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
   </@above-container>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "lb1" }) modifiers=["top-of-page"] />
-    <marko-web-page-wrapper class="mb-block">
+    <marko-web-page-wrapper>
+      <@section>
+        <marko-web-gam-define-display-ad
+          ...GAM.getAdUnit({ name: "lb1" })
+          modifiers=["max-width-970", "center"]
+        />
+      </@section>
       <@section>
         <div class="row">
           <div class="col">
-            <default-theme-breadcrumbs-with-home>
-              <@item>${title}</@item>
-            </default-theme-breadcrumbs-with-home>
             <h1 class="page-wrapper__title">${title}</h1>
             <if(description)>
               <p class="page-wrapper__deck">${description}</p>
@@ -33,7 +32,7 @@ $ const description = site.get("magazines.description");
         </div>
       </@section>
       <@section>
-        <website-magazine-publications-block />
+        <shared-magazine-publications-block />
       </@section>
     </marko-web-page-wrapper>
   </@page>

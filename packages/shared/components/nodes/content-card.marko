@@ -2,7 +2,7 @@ import { get, getAsArray } from "@base-cms/object-path";
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const hasImage = Boolean(get(input, "node.primaryImage.src"));
-$ const modifiers = [...getAsArray(input, "modifiers")];
+$ const modifiers = [...getAsArray(input, "modifiers"), "content-card"];
 $ if (!hasImage) modifiers.push("zoomed");
 
 <shared-content-list-node

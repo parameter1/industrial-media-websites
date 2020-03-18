@@ -1,5 +1,4 @@
-import GAM from "../../../config/gam";
-
+$ const { GAM } = out.global;
 $ const { id, alias, pageNode } = data;
 
 <marko-web-dynamic-page-layout id=id alias=alias>
@@ -9,13 +8,17 @@ $ const { id, alias, pageNode } = data;
     </marko-web-gtm-dynamic-page-context>
   </@head>
   <@above-container>
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wa" }) />
     <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
   </@above-container>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "lb1" }) modifiers=["top-of-page"] />
     <marko-web-resolve-page|{ data: page }| node=pageNode>
       <marko-web-page-wrapper>
+        <@section>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "lb1" })
+            modifiers=["max-width-970", "center"]
+          />
+        </@section>
         <@section>
           <div class="row">
             <div class="col">
@@ -39,6 +42,6 @@ $ const { id, alias, pageNode } = data;
     </marko-web-resolve-page>
   </@page>
   <@foot>
-    <marko-web-gam-fixed-ad-bottom ...GAM.getAdUnit({ name: "lb2" }) refresh-interval=0 />
+    <shared-fixed-ad-bottom />
   </@foot>
 </marko-web-dynamic-page-layout>

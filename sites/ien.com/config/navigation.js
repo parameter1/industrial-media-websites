@@ -19,6 +19,7 @@ module.exports = {
       { href: '/made-in-america', label: 'Made in America' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: '/advertise', label: 'Advertise' },
+      { href: '/magazine', label: 'Magazine' },
     ],
   },
   tertiary: {
@@ -57,6 +58,7 @@ module.exports = {
         { href: '/video', label: 'Video' },
         { href: '/software', label: 'Software' },
         { href: '/made-in-america', label: 'Made in America' },
+        { href: '/magazine', label: 'Magazine' },
         { href: '/contact-us', label: 'Contact Us' },
       ],
     },
