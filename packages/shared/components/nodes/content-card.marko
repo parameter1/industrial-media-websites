@@ -11,7 +11,7 @@ $ if (!hasImage) modifiers.push("zoomed");
   display-image=defaultValue(input.displayImage, true)
   flush=defaultValue(input.flush, true)
   card=true
-  full-height=true
+  full-height=defaultValue(input.fullHeight, true)
   attrs=input.attrs
   link-attrs=input.linkAttrs
   modifiers=modifiers
@@ -21,6 +21,7 @@ $ if (!hasImage) modifiers.push("zoomed");
   with-attribution=defaultValue(input.withAttribution, true)
   with-dates=defaultValue(input.withDates, true)
   title=input.title
+  teaser=input.teaser
   attribution=input.attribution
 >
   <@image

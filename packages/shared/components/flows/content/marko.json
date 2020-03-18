@@ -14,10 +14,10 @@
     "@class": "string",
     "@modifiers": "array"
   },
-  "<shared-content-hero-flow>": {
-    "template": "./hero.marko",
+  "<shared-content-featured-flow>": {
+    "template": "./featured.marko",
     "<card>": {},
-    "<list>": {
+    "<card-deck>": {
       "<node>": {}
     },
     "@nodes": "array"
@@ -29,6 +29,7 @@
       "<title>": {}
     },
     "@nodes": "array",
+    "@display-ads": "boolean",
     "@cols": "number",
     "@tag": "string",
     "@class": "string",

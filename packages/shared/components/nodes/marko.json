@@ -3,6 +3,9 @@
     "template": "./content-list.marko",
     "<image>": {},
     "<title>": {},
+    "<teaser>": {
+      "@modifiers": "array"
+    },
     "<attribution>": {},
     "@node": "object",
 
@@ -26,12 +29,16 @@
     "template": "./content-card.marko",
     "<image>": {},
     "<title>": {},
+    "<teaser>": {
+      "@modifiers": "array"
+    },
     "<attribution>": {},
     "@node": "object",
 
     "@display-image": "boolean",
     "@image-position": "string",
     "@flush": "boolean",
+    "@full-height": "boolean",
 
     "@with-teaser": "boolean",
     "@with-body": "boolean",

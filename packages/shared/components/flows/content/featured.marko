@@ -1,0 +1,23 @@
+import { getAsArray } from "@base-cms/object-path";
+
+$ const nodes = getAsArray(input, "nodes");
+$ const heroNode = nodes[0];
+$ const listNodes = nodes.slice(1);
+
+
+<if(heroNode)>
+  <div class="mb-block">
+    <shared-content-card-node with-dates=false ...input.card node=heroNode full-height=false>
+      <@image width=630 />
+      <@title modifiers=["large"] />
+      <@teaser modifiers=["large"] />
+    </shared-content-card-node>
+  </div>
+</if>
+
+<if(listNodes.length)>
+  <marko-web-node-list collapsible=false>
+    <@header modifiers=["padding-y"]>Featured</@header>
+  </marko-web-node-list>
+  <shared-content-card-deck-flow ...input.cardDeck nodes=listNodes />
+</if>

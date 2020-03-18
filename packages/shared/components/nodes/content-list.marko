@@ -1,4 +1,4 @@
-import { getAsObject, get } from "@base-cms/object-path";
+import { getAsObject, getAsArray, get } from "@base-cms/object-path";
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const content = getAsObject(input, "node");
@@ -91,7 +91,7 @@ $ const { linkAttrs } = input;
       </if>
     </@text>
     <@text
-      modifiers=["teaser"]
+      modifiers=["teaser", ...getAsArray(input, "teaser.modifiers").map(mod => `teaser-${mod}`)]
       show=(Boolean(withTeaser && content.teaser))
     >
       <marko-web-content-teaser tag=null obj=content link={ attrs: linkAttrs } />
