@@ -1,13 +1,13 @@
 .node {
-  $title-spacer: 14px;
-  $title-spacer-sm: 12px;
+  $title-spacer: 6px;
+  $title-spacer-sm: 4px;
   $image-border: 1px solid rgba(239, 239, 239, .9);
   $self: &;
 
   &__title {
     padding-bottom: $title-spacer;
     &--small {
-      font-size: $title-spacer-sm;
+      font-size: 16px;
     }
   }
 
@@ -150,7 +150,7 @@
         padding-bottom: 2px;
         padding-left: .75rem;
         font-family: "Roboto Condensed", sans-serif;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: $font-weight-bold;
         line-height: 1.5;
         color: #dfded4;
