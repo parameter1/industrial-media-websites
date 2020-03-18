@@ -16,7 +16,7 @@ const loadFeaturedContent = async (apolloClient, params = {}) => {
 
 const loadStandardContent = async (apolloClient, params = {}) => {
   const defaults = {
-    limit: 5,
+    limit: 4,
     optionName: ['Featured Content', 'Standard Web'],
     queryFragment: defaultFragment,
   };
