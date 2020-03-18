@@ -68,5 +68,9 @@
     "@flush": "boolean",
     "@card": "boolean",
     "@with-title": "boolean"
+  },
+  "<shared-contact-us-list-node>": {
+    "template": "./contact-us-list.marko",
+    "@node": "object"
   }
 }
