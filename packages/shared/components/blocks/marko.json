@@ -22,5 +22,8 @@
   },
   "<shared-follow-us-block>": {
     "template": "./follow-us.marko"
+  },
+  "<shared-most-recent-block>": {
+    "template": "./most-recent.marko"
   }
 }
