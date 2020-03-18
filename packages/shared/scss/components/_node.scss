@@ -113,6 +113,10 @@
     }
   }
 
+  &--hero {
+    margin-bottom: 1.75rem;
+  }
+
   &--section-tag {
     #{ $self } {
       &__image-wrapper + #{ $self }__body {
