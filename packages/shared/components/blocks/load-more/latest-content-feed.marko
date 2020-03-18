@@ -6,13 +6,13 @@ $ const page = getAsObject(input, "page");
 <marko-web-load-more
   append-to=".infinite-scroll-target"
   expand=500
-  component-name="shared-content-list-feed-flow"
+  component-name="shared-content-card-deck-feed-flow"
   component-input={
     withHeader: false,
     modifiers: ["infinite-scroll"],
     adunit: input.adunit,
   }
-  fragment-name="shared-content-latest"
+  fragment-name="shared-content-list"
   max-pages=input.maxPages
   query-name=query.name
   query-params=query.params

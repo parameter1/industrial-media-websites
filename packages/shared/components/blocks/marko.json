@@ -5,7 +5,16 @@
   "<shared-latest-content-feed-block>": {
     "template": "./latest-content-feed.marko",
     "<query-params>": {},
-    "<list>": {},
+    "<flow>": {},
+    "@section-id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "<shared-latest-content-card-deck-block>": {
+    "template": "./latest-content-card-deck.marko",
+    "<query-params>": {},
+    "<flow>": {},
     "@section-id": {
       "type": "number",
       "required": true

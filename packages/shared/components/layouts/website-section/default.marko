@@ -2,6 +2,7 @@ import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 import { isFunction } from "@base-cms/utils";
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 import websiteSectionContentLoader from "../../../loaders/website-section-content";
+import queryFragment from "../../../graphql/fragments/content-list";
 
 $ const { GAM, apollo } = out.global;
 
@@ -130,9 +131,9 @@ $ const promise = websiteSectionContentLoader(apollo, { sectionId: id });
                 <div class="row">
                   <div class="col-lg-8 infinite-scroll-target">
 
-                    <shared-latest-content-feed-block section-id=id>
+                    <shared-latest-content-card-deck-block section-id=id>
                       <@query-params option-name=["Featured Content", "Standard Web"] limit=6 excludeContentIds=sectionContent.ids />
-                    </shared-latest-content-feed-block>
+                    </shared-latest-content-card-deck-block>
 
                     <shared-latest-content-feed-load-more-block max-pages=4>
                       <@query

@@ -43,5 +43,13 @@
     "@header": "string",
     "@with-header": "boolean",
     "@modifiers": "array"
+  },
+  "<shared-content-card-deck-feed-flow>": {
+    "template": "./card-deck-feed.marko",
+    "<card-deck>": {},
+    "<adunit>": {},
+    "@nodes": "array",
+    "@header": "string",
+    "@with-header": "boolean"
   }
 }

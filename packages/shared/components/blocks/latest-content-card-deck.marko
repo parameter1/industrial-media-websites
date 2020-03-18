@@ -1,5 +1,5 @@
 import { getAsObject } from "@base-cms/object-path";
-import queryFragment from "../../graphql/fragments/content-latest";
+import queryFragment from "../../graphql/fragments/content-list";
 
 $ const params = {
   optionName: "Standard Web",
@@ -13,5 +13,5 @@ $ const params = {
   name="website-scheduled-content"
   params=params
 >
-  <shared-content-list-feed-flow with-header=true ...input.flow nodes=nodes />
+  <shared-content-card-deck-feed-flow with-header=true ...input.flow nodes=nodes />
 </marko-web-query>
