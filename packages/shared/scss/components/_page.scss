@@ -133,4 +133,12 @@
   > :first-child {
     margin-top: 0;
   }
+
+  &--featured {
+    display: flex;
+    flex-direction: column;
+    > :last-child {
+      margin-bottom: auto;
+    }
+  }
 }

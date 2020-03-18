@@ -29,6 +29,11 @@
     margin-left: auto;
   }
 
+  &--margin-auto-y {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   &--margin-auto-x-md {
     @include media-breakpoint-down(md) {
       margin-right: auto;

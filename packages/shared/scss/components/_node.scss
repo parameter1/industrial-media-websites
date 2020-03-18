@@ -36,6 +36,10 @@
       flex-grow: 1;
     }
 
+    &--teaser-large {
+      font-size: 16px;
+    }
+
     &--spec-guide-link-button + &--spec-guide-link-button {
       margin-top: .75rem;
     }
