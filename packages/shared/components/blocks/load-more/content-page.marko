@@ -58,7 +58,13 @@ $ const createAttrs = () => {
   return {
     header: `More in ${section.name}`,
     queryName: "website-scheduled-content",
-    queryParams: { sectionId: section.id, excludeContentIds: [content.id], limit, skip },
+    queryParams: {
+      sectionId: section.id,
+      optionName: ["Standard", "Featured Content"],
+      excludeContentIds: [content.id],
+      limit,
+      skip,
+    },
   };
 };
 $ const attrs = createAttrs();
