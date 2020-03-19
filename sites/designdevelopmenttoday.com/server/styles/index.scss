@@ -9,7 +9,7 @@ $theme-site-navbar-primary-bg-color: #00b3e3;
 $theme-site-navbar-secondary-type: dark;
 
 $theme-site-navbar-logo-height: 45px;
-$theme-site-navbar-logo-height-sm: 25px;
+$theme-site-navbar-logo-height-sm: 30px;
 
 $theme-site-header-breakpoints: (
   hide-primary: 832px,
@@ -19,16 +19,4 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 1105px
 );
 
-$theme-content-heading-h3-margin-bottom: .5rem;
-
-@import "../../node_modules/@base-cms/marko-web-gam/scss/fixed-ad-bottom";
-@import "../../node_modules/@base-cms/marko-web-reveal-ad/scss/reveal-ad";
-@import "../../node_modules/@base-cms/marko-web-social-sharing/scss/buttons";
-@import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
-
-$pswp__root-z-index: $theme-site-header-z-index + 1 !default;
-@import "../../node_modules/@base-cms/marko-web-photoswipe/scss/main";
-
-// @todo this should be removed once contact us is in core
-@import "../../node_modules/@industrial-media/package-common/scss/contact-us-form";
-@import "../../node_modules/@industrial-media/package-common/scss/shared";
+@import "../../node_modules/@industrial-media/package-shared/scss/core";
