@@ -72,6 +72,10 @@
   &:empty {
     display: none;
   }
+
+  > div {
+    margin-right: map-get($spacers, 2);
+  }
 }
 
 .page-attribution-wrapper {
