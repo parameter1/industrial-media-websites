@@ -5,16 +5,15 @@ $dark: #212529 !default; // equivalent to default gray-900
 $info: #6c757d !default; // equivalent to default gray-600
 
 $theme-site-navbar-secondary-bg-color: #fff;
-$theme-site-navbar-primary-bg-color: #fff;
-$theme-site-navbar-primary-type: light;
+$theme-site-navbar-primary-bg-color: #000;
 $theme-site-navbar-secondary-type: light;
 
 $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 1015px,
-  hide-secondary: 612px,
+  hide-primary: 650px,
+  hide-secondary: 375px,
   small-logo: 375px,
   small-text-primary: 0,
   small-text-secondary: 0
@@ -22,7 +21,7 @@ $theme-site-header-breakpoints: (
 
 // Site Section Colors
 $website-section-colors: (
-  cultivation: #154735,
+  cultivation: lighten(#154735, 12%),
   distribution: #00af40,
   extraction: #3baf29,
   manufacturing: #c3d600,
