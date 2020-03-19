@@ -50,6 +50,7 @@
     "<adunit>": {},
     "@nodes": "array",
     "@header": "string",
-    "@with-header": "boolean"
+    "@with-header": "boolean",
+    "@page-number": "number"
   }
 }

@@ -8,7 +8,8 @@ $ const page = getAsObject(input, "page");
   expand=500
   component-name="shared-content-card-deck-feed-flow"
   component-input={
-    withHeader: false,
+    withHeader: true,
+    header: input.header,
     modifiers: ["infinite-scroll"],
     adunit: input.adunit,
   }

@@ -4,13 +4,14 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 $ const nodes = getAsArray(input, "nodes");
 $ const header = defaultValue(input.header, "Latest");
 $ const withHeader = defaultValue(input.withHeader, false);
+$ const pageNumber = defaultValue(input.pageNumber, 1);
 $ const adunit = getAsObject(input, "adunit");
 
 <if(adunit.path)>
   <marko-web-gam-define-display-ad ...adunit class="mb-block" />
 </if>
 
-<if(nodes.length && withHeader)>
+<if(nodes.length && withHeader && pageNumber === 1)>
   <marko-web-node-list collapsible=false>
     <@header modifiers=["padding-y"]>${header}</@header>
   </marko-web-node-list>
