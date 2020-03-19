@@ -1,20 +1,6 @@
 import Browser from '@base-cms/marko-web/browser';
-import DefaultTheme from '@base-cms/marko-web-theme-default/browser';
-import GTM from '@base-cms/marko-web-gtm/browser';
-import GAM from '@base-cms/marko-web-gam/browser';
-import GCSE from '@base-cms/marko-web-gcse/browser';
-import RevealAd from '@base-cms/marko-web-reveal-ad/browser';
-import SocialSharing from '@base-cms/marko-web-social-sharing/browser';
-import Common from '@industrial-media/package-common/browser';
-import PhotoSwipe from '@base-cms/marko-web-photoswipe/browser';
+import Shared from '@industrial-media/package-shared/browser';
 
-DefaultTheme(Browser);
-GTM(Browser);
-GAM(Browser);
-GCSE(Browser);
-RevealAd(Browser);
-SocialSharing(Browser);
-Common(Browser);
-PhotoSwipe(Browser);
+Shared(Browser);
 
 export default Browser;

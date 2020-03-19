@@ -1,13 +1,15 @@
 const navigation = require('./navigation');
+const gam = require('./gam');
 
 module.exports = {
   navigation,
+  gam,
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/all/ddt_logo.png?h=40',
+      src: 'https://base.imgix.net/files/base/indm/all/ddt_logo.png?h=45',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/ddt_logo.png?h=80 2x',
+        'https://base.imgix.net/files/base/indm/all/ddt_logo.png?h=90 2x',
       ],
     },
     footer: {
@@ -18,18 +20,18 @@ module.exports = {
     },
   },
   socialMediaLinks: [
-    // { provider: 'facebook', href: 'https://www.facebook.com/Industrial-Equipment-News-153179218105048' },
-    // { provider: 'twitter', href: 'https://twitter.com/IEN_Now' },
-    // { provider: 'youtube', href: 'https://www.youtube.com/channel/UCwKursTtvT5lmEJBhdYeRbQ' },
-    // { provider: 'instagram', href: 'https://www.instagram.com/ien_now/' },
-    // { provider: 'radio-tower', href: 'https://radio.ien.com' },
-    // { provider: 'mic', href: 'https://radio.ien.com' },
+    { provider: 'facebook', href: 'https://www.facebook.com/designdevelopmenttoday/' },
+    { provider: 'twitter', href: 'https://twitter.com/DesignDevelop12' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/groups/13611964' },
   ],
   gtm: {
     containerId: 'GTM-W633TCR',
   },
+  gcse: {
+    id: '003355913687346718228:r1crm7ykq4y',
+  },
   wufoo: {
-    userName: '<NOT_SET>',
+    userName: 'ien',
   },
   magazines: {
     description: '',

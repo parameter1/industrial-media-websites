@@ -873,10 +873,10 @@
     "@base-cms/object-path" "^1.25.0"
     photoswipe "^4.1.3"
 
-"@base-cms/marko-web-reveal-ad@^1.25.0":
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-reveal-ad/-/marko-web-reveal-ad-1.25.0.tgz#78fd83e6db91e95b269e50c177c0cb48d6e50484"
-  integrity sha512-JKeewYcXCgu5wdpEoKwBtQ2ZlkZFw37yyHDyTDMDYybrl+ZMhxrDKpQQQGpEK7KPEX69wKbBUS9Cg8r00gOCdg==
+"@base-cms/marko-web-reveal-ad@^1.25.6":
+  version "1.25.6"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-reveal-ad/-/marko-web-reveal-ad-1.25.6.tgz#75c7a5207443e0afc1c1f1eb5fe727b9f5fc3548"
+  integrity sha512-bHrkd4L0QYymGVtGeCTO0fhRp0nWWP4fWlA3LJFRjN8CbDpr7DPtTR7HTva3hVz1RDzhrSf4dSqWoUAkj7tA8A==
   dependencies:
     "@base-cms/object-path" "^1.25.0"
     "@base-cms/utils" "^1.25.0"

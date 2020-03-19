@@ -12,7 +12,7 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/videos', label: 'Videos' },
+      { href: '/video', label: 'Video' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: '/advertise', label: 'Advertise' },
     ],
@@ -48,7 +48,7 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/videos', label: 'Videos' },
+        { href: '/video', label: 'Video' },
         { href: '/contact-us', label: 'Contact Us' },
       ],
     },
