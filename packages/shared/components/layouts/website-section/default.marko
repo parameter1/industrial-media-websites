@@ -130,11 +130,6 @@ $ const promise = websiteSectionContentLoader(apollo, { sectionId: id });
               <@section>
                 <div class="row">
                   <div class="col-lg-8 infinite-scroll-target">
-
-                    <!-- <shared-latest-content-card-deck-block section-id=id>
-                      <@query-params option-name=["Featured Content", "Standard"] limit=6 excludeContentIds=sectionContent.ids />
-                    </shared-latest-content-card-deck-block> -->
-
                     <shared-latest-content-feed-load-more-block max-pages=4>
                       <@query
                         name="website-scheduled-content"
