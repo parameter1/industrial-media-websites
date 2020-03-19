@@ -1,7 +1,9 @@
 const navigation = require('./navigation');
+const gam = require('./gam');
 
 module.exports = {
   navigation,
+  gam,
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
@@ -24,8 +26,11 @@ module.exports = {
   gtm: {
     containerId: 'GTM-NQ37376',
   },
+  gcse: {
+    id: '003355913687346718228:2spsdy3uaup',
+  },
   wufoo: {
-    userName: '<NOT_SET>',
+    userName: 'ien',
   },
   magazines: {
     description: '',
