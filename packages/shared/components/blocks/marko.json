@@ -29,5 +29,9 @@
   "<shared-magazine-publications-block>": {
     "template": "./magazine-publications.marko",
     "<publication-params>": {}
+  },
+  "<shared-related-content-block>": {
+    "template": "./related-content.marko",
+    "@content-id": "number"
   }
 }
