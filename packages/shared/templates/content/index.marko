@@ -191,27 +191,21 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
                   target="_blank"
                 />
               </if>
-              <!-- <if(displayInquiry(content))>
-                <refresh-theme-inquiry-form node=content />
-              </if> -->
 
               <shared-related-content-block content-id=id />
 
             </default-theme-page-contents>
             <aside class="col-lg-4 page-rail">
+              <shared-latest-in-section-block>
+                <@content id=id />
+                <@section id=section.id name=section.name />
+              </shared-latest-in-section-block>
+
               <marko-web-gam-display-ad
                 id="gpt-ad-rail1"
                 modifiers=["max-width-300", "margin-auto-x-md"]
                 slots=slots
               />
-
-              <!-- <refresh-theme-latest-in-section-block
-                content-id=id
-                section-id=section.id
-                section-name=section.name
-              >
-                <@native-x index=0 name="default" aliases=aliases />
-              </refresh-theme-latest-in-section-block> -->
 
               <if(!isShortForm)>
                 <marko-web-gam-display-ad
@@ -228,14 +222,6 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
             </if>
           </div>
         </@section>
-
-        <!-- <if(displayFeatured)>
-          <@section modifiers=["card-deck"]>
-            <refresh-theme-recommended-block>
-              <@native-x index=2 name="default" aliases=aliases />
-            </refresh-theme-recommended-block>
-          </@section>
-        </if> -->
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
@@ -264,7 +250,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
           <@section>
             <div class="row">
               <div class="col-lg-8 infinite-scroll-target">
-                <shared-content-page-load-more-block aliases=aliases limit=12>
+                <shared-content-page-load-more-block aliases=aliases limit=12 skip=4>
                   <@content id=id type=type name=content.name />
                   <@section id=section.id name=section.name />
                 </shared-content-page-load-more-block>
