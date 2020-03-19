@@ -1,27 +1,20 @@
-const GAMConfiguration = require('@base-cms/marko-web-gam/config');
+const configureGAM = require('@industrial-media/package-shared/config/gam');
 
-const config = new GAMConfiguration('137873098');
-
-config
-  .setTemplate('LB', {
-    size: [[970, 90], [970, 66], [728, 90], [320, 50], [300, 50], [300, 100]],
-    sizeMapping: [
-      { viewport: [980, 0], size: [[970, 90], [970, 66], [728, 90]] },
-      { viewport: [750, 0], size: [728, 90] },
-      { viewport: [320, 0], size: [[300, 50], [320, 50], [300, 100]] },
-    ],
-  })
-  .setTemplate('BILLBOARD', { size: [970, 250] })
-  .setTemplate('CONTENT', { size: [[300, 250], [300, 600]] });
+const config = configureGAM({ basePath: '' });
 
 config
   .setAliasAdUnits('default', [
     { name: 'lb1', templateName: 'LB', path: 'DDT-SL' },
-    { name: 'lb2', templateName: 'LB', path: 'DDT-SL' },
-    { name: 'rail1', templateName: 'CONTENT', path: 'DDT-MR' },
-    { name: 'rail2', templateName: 'CONTENT', path: 'DDT-MR' },
-    { name: 'load-more', templateName: 'CONTENT', path: 'DDT-MR' },
-    { name: 'billboard', templateName: 'BILLBOARD', path: 'DDT-SL' },
+    { name: 'lb-sticky-bottom', templateName: 'LB-STICKY-BOTTOM', path: 'DDT-SL' },
+    { name: 'rail1', templateName: 'RAIL1', path: 'DDT-MR' },
+    { name: 'rail2', templateName: 'RAIL2', path: 'DDT-MR' },
+
+    { name: 'billboard1', templateName: 'BILLBOARD', path: 'DDT970x250' },
+
+    { name: 'infinite-rail', templateName: 'INFINITE-RAIL', path: 'DDT-MR' },
+    { name: 'infinite-interstitial', templateName: 'INFINITE-INTERSTITIAL', path: 'DDT-MR' },
+    { name: 'in-content', templateName: 'IN-CONTENT', path: 'DDT-MR' },
+
     { name: 'reskin', path: 'DDT-Reskin' },
     { name: 'wa', path: 'default_wa' },
   ]);
