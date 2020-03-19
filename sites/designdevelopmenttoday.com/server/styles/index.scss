@@ -1,12 +1,11 @@
-$primary: #00b3e3 !default;
+$primary: #00aeef !default;
 $secondary: #495057; // equivalent to default gray-700
 $light: #e9ecef !default; // equivalent to default gray-200
 $dark: #212529 !default; // equivalent to default gray-900
 $info: #6c757d !default; // equivalent to default gray-600
 
 $theme-site-navbar-secondary-bg-color: #000;
-$theme-site-navbar-primary-bg-color: #00b3e3;
-$theme-site-navbar-secondary-type: dark;
+$theme-site-navbar-primary-bg-color: #212121;
 
 $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
@@ -19,4 +18,44 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 1105px
 );
 
+// Site Section Colors
+$website-section-colors: ();
+
 @import "../../node_modules/@industrial-media/package-shared/scss/core";
+
+.site-navbar {
+  $self: &;
+  &__items {
+    &--primary {
+      font-family: "Roboto Slab", sans-serif;
+      font-size: 17px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+
+      #{ $self } {
+        &__link {
+          &--active {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    &--secondary {
+      font-family: "Roboto Slab", sans-serif;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+  }
+}
+
+.node {
+  &--section-tag {
+    .node {
+      &__header {
+        background-color: $primary;
+      }
+    }
+  }
+}
