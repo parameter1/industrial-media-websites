@@ -1,4 +1,4 @@
-const { websiteScheduledContent } = require('@base-cms/web-common/block-loaders');
+const { websiteOptionedContent } = require('@base-cms/web-common/block-loaders');
 const defaultFragment = require('../graphql/fragments/content-list');
 
 const loadFeaturedContent = async (apolloClient, params = {}) => {
@@ -8,7 +8,7 @@ const loadFeaturedContent = async (apolloClient, params = {}) => {
     queryFragment: defaultFragment,
   };
 
-  return websiteScheduledContent(apolloClient, {
+  return websiteOptionedContent(apolloClient, {
     ...defaults,
     ...params,
   });
@@ -21,7 +21,7 @@ const loadStandardContent = async (apolloClient, params = {}) => {
     queryFragment: defaultFragment,
   };
 
-  return websiteScheduledContent(apolloClient, {
+  return websiteOptionedContent(apolloClient, {
     ...defaults,
     ...params,
   });
