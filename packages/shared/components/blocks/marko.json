@@ -33,5 +33,15 @@
   "<shared-related-content-block>": {
     "template": "./related-content.marko",
     "@content-id": "number"
+  },
+  "<shared-latest-in-section-block>": {
+    "template": "./latest-in-section.marko",
+    "<content>": {
+      "@id": "number"
+    },
+    "<section>": {
+      "@id": "number",
+      "@name": "string"
+    }
   }
 }
