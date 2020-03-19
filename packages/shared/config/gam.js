@@ -26,7 +26,8 @@ module.exports = ({
     .setTemplate('BILLBOARD', {
       size: [970, 250],
       sizeMapping: [
-        { viewport: [980, 0], size: [[970, 90]] },
+        { viewport: [980, 0], size: [[970, 250]] },
+        { viewport: [0, 0], size: [] },
       ],
     })
     .setTemplate('RAIL1', { size: [[300, 250]] })

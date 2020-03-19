@@ -9,7 +9,7 @@ config
     { name: 'rail1', templateName: 'RAIL1', path: 'IEN-MR' },
     { name: 'rail2', templateName: 'RAIL2', path: 'IEN-MR' },
 
-    { name: 'billboard1', templateName: 'BILLBOARD', path: 'IEN-SL' },
+    { name: 'billboard1', templateName: 'BILLBOARD', path: 'IEN970x250' },
 
     { name: 'infinite-rail', templateName: 'INFINITE-RAIL', path: 'IEN-MR' },
     { name: 'infinite-interstitial', templateName: 'INFINITE-INTERSTITIAL', path: 'IEN-MR' },
