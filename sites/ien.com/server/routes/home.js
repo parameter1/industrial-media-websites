@@ -1,6 +1,7 @@
 const { withWebsiteSection } = require('@base-cms/marko-web/middleware');
-const home = require('@industrial-media/package-shared/templates/index');
 const queryFragment = require('@industrial-media/package-shared/graphql/fragments/website-section-page');
+
+const home = require('../templates/index');
 
 module.exports = (app) => {
   app.get('/', withWebsiteSection({

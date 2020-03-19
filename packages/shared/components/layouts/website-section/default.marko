@@ -1,3 +1,4 @@
+import { getAsObject } from "@base-cms/object-path";
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 import { isFunction } from "@base-cms/utils";
 import defaultValue from "@base-cms/marko-core/utils/default-value";
@@ -13,6 +14,9 @@ $ const {
   pageNode,
 } = input;
 
+$ const loader = getAsObject(input, "loader");
+
+$ const rightRailHeader = defaultValue(input.rightRailHeader, "Top Headlines");
 $ const withOopAds = defaultValue(input.withOopAds, true);
 
 $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
@@ -21,13 +25,18 @@ $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => (
   "gpt-ad-rail-infinite": GAM.getAdUnit({ name: "infinite-rail", aliases }),
 });
 
-$ const promise = websiteSectionContentLoader(apollo, { sectionId: id });
+$ const promise = websiteSectionContentLoader(apollo, {
+  sectionId: id,
+  featuredParams: loader.featuredParams,
+  standardParams: loader.standardParams,
+  withStandardQuery: defaultValue(loader.withStandardQuery, true),
+});
 <marko-web-resolve|{ resolved: sectionContent }| promise=promise>
   $ const { featured, standard } = sectionContent;
   <marko-web-website-section-page-layout id=id alias=alias name=name>
     <@head>
       <if(input.head)>
-        <${input.head} />
+        <${input.head} section-content=sectionContent />
       </if>
       <else>
         <marko-web-gtm-website-section-context|{ context }| alias=alias>
@@ -38,14 +47,14 @@ $ const promise = websiteSectionContentLoader(apollo, { sectionId: id });
           <marko-web-gam-slots slots=adSlots({ aliases }) />
         </marko-web-resolve-page>
         <if(input.inHead)>
-          <${input.inHead} />
+          <${input.inHead} section-content=sectionContent />
         </if>
       </else>
     </@head>
 
     <@above-container>
       <if(input.aboveContainer)>
-        <${input.aboveContainer} />
+        <${input.aboveContainer} section-content=sectionContent />
       </if>
       <else>
         <if(withOopAds)>
@@ -59,7 +68,7 @@ $ const promise = websiteSectionContentLoader(apollo, { sectionId: id });
 
     <@page>
       <if(input.page)>
-        <${input.page} />
+        <${input.page} section-content=sectionContent />
       </if>
       <else>
         <marko-web-resolve-page|{ data: section, resolved }| node=pageNode>
@@ -95,7 +104,7 @@ $ const promise = websiteSectionContentLoader(apollo, { sectionId: id });
                     nodes=standard.nodes
                     inner-justified=false
                   >
-                    <@header>Top Headlines</@header>
+                    <@header>${rightRailHeader}</@header>
                     <@node>
                       <@title modifiers=["small"] />
                     </@node>
@@ -116,7 +125,7 @@ $ const promise = websiteSectionContentLoader(apollo, { sectionId: id });
 
     <@below-page>
       <if(input.belowPage)>
-        <${input.belowPage} />
+        <${input.belowPage} section-content=sectionContent />
       </if>
       <else>
         <marko-web-page-container for="website-section" tag="div" id=id modifiers=["below"]>
@@ -130,15 +139,17 @@ $ const promise = websiteSectionContentLoader(apollo, { sectionId: id });
               <@section>
                 <div class="row">
                   <div class="col-lg-8 infinite-scroll-target">
+                    $ const loadMoreParams = {
+                      sectionId: id,
+                      optionName: ["Featured Content", "Standard"],
+                      excludeContentIds: sectionContent.ids,
+                      limit: 12,
+                    };
+                    $ if (alias === "home") delete loadMoreParams.sectionId;
                     <shared-latest-content-feed-load-more-block max-pages=4>
                       <@query
                         name="website-scheduled-content"
-                        params={
-                          sectionId: id,
-                          optionName: ["Featured Content", "Standard"],
-                          excludeContentIds: sectionContent.ids,
-                          limit: 12,
-                        }
+                        params=loadMoreParams
                       />
                       <@page for="website-section" id=id />
                       <@adunit
