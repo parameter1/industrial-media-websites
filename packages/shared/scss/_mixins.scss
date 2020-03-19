@@ -1,0 +1,18 @@
+@mixin overline-header() {
+  position: relative;
+  padding-top: $block-spacer;
+  margin-bottom: .75rem;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    content: "";
+    background: #000;
+  }
+}

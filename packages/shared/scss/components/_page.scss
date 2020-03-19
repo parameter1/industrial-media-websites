@@ -1,0 +1,148 @@
+.page-wrapper {
+  padding-top: $block-spacer;
+  padding-bottom: $block-spacer;
+  &__deck,
+  &__title {
+    $max: 920px;
+    // ensure readable line length is not too long.
+    padding-right: ($marko-web-document-container-max-width - ($marko-web-document-container-gutter * 2) - ($marko-web-page-wrapper-padding * 2)) - $max;
+    margin-bottom: 1.25rem;
+
+    @media (max-width: 920px) {
+      padding-right: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section {
+    padding-bottom: $grid-gutter-width;
+    margin-bottom: $grid-gutter-width + 5px;
+    border-bottom: 2px solid #ebebeb;
+
+    &--card-deck {
+      padding-bottom: 0;
+    }
+
+    &--text-center {
+      text-align: center;
+    }
+  }
+
+  &--no-bottom-padding {
+    padding-bottom: 0;
+  }
+}
+
+.page-dates {
+  display: flex;
+
+  // @todo this should be moved to the core theme
+  &__content-starts,
+  &__content-start-date,
+  &__content-ends,
+  &__content-end-date {
+    font-family: $theme-content-published-date-font-family;
+    font-size: $theme-content-published-date-font-size;
+    font-weight: $theme-content-published-date-font-weight;
+    line-height: $theme-content-published-date-line-height;
+    color: $theme-content-published-date-color;
+    text-transform: $theme-content-published-date-text-transform;
+  }
+}
+
+.page-attribution {
+  display: flex;
+
+  &__content-authors {
+    &::before {
+      content: "By";
+    }
+  }
+  a {
+    color: $primary;
+  }
+
+  div:last-child {
+    margin-bottom: 0;
+  }
+
+  &:empty {
+    display: none;
+  }
+
+  > div {
+    margin-right: map-get($spacers, 2);
+  }
+}
+
+.page-attribution-wrapper {
+  display: flex;
+}
+
+.page-dates + .page-attribution {
+  padding-left: .5rem;
+  margin-left: .5rem;
+  border-left: 1px solid #000;
+}
+
+.page-image {
+  $self: &;
+
+  &__image-caption,
+  &__image-credit {
+    text-align: right;
+  }
+
+  &__image-credit {
+    &::before {
+      margin-right: .25rem;
+      content: "Photo Credit:";
+    }
+  }
+
+  &--primary-image-inline {
+    margin-top: 0;
+  }
+
+  // @todo keep in skin
+  > :last-child:not(#{ $self }__wrapper) {
+    border-bottom: none;
+  }
+}
+
+.page-contents {
+  &__content-body {
+    margin-bottom: $block-spacer;
+    ul {
+      padding-left: $grid-gutter-width;
+    }
+
+    > p:first-child {
+      @include theme-line-height-crop($theme-page-body-line-height);
+      @include media-breakpoint-down($theme-responsive-text-breakpoint) {
+        @include theme-line-height-crop($theme-page-body-line-height-sm);
+      }
+    }
+  }
+
+  &__content-embed-code {
+    margin-bottom: map-get($spacers, block);
+  }
+}
+
+.page-rail {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  &--featured {
+    display: flex;
+    flex-direction: column;
+    > :last-child {
+      margin-bottom: auto;
+    }
+  }
+}

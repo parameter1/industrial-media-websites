@@ -1,0 +1,23 @@
+{
+  "<shared-magazine-page-layout>": {
+    "template": "./index.marko",
+    "<head>": {},
+    "<in-head>": {},
+    "<above-container>": {},
+
+    "<page>": {},
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@page-node": {
+      "type": "object",
+      "required": true
+    },
+    "@publication-ids": "array"
+  }
+}

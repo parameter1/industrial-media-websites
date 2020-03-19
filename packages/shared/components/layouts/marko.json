@@ -1,0 +1,6 @@
+{
+  "taglib-imports": [
+    "./magazine/marko.json",
+    "./website-section/marko.json"
+  ]
+}

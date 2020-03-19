@@ -1,0 +1,279 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import { getAsObject, get } from "@base-cms/object-path";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const { site, GAM } = out.global;
+$ const { id, type, pageNode } = data;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-billboard1": GAM.getAdUnit({ name: "billboard1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+  "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+  "gpt-ad-rail-infinite": GAM.getAdUnit({ name: "infinite-rail", aliases }),
+});
+$ const displayPrimaryImage = ["whitepaper", "media-gallery", "video"].includes(type) ? false : true;
+$ const displayPublishedDate = ["event", "webinar", "company", "contact"].includes(type) ? false : true;
+$ const displayFeatured = ["company", "product", "contact"].includes(type) ? false : true;
+$ const displayInquiry = (content) => {
+  if (type === "company" && get(content, "enableRmi")) return true;
+  if (type === "product" && get(content, "company.enableRmi")) return true;
+  return false;
+}
+$ const displayCompanyImage = ["product", "press-release"].includes(type) ? true : false;
+$ const displaySocialShare = ["contact"].includes(type) ? false : true;
+$ const displayPhotoswipe = ["contact"].includes(type) ? false : true;
+$ const isShortForm = ["contact"].includes(type) ? true : false;
+$ const injectAds = ["article", "news", "press-release", "blog"].includes(type) ? true : false;
+
+<marko-web-content-page-layout id=id type=type>
+  <@head>
+    <marko-web-gtm-content-context|{ context }| id=id>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-content-context>
+    <marko-web-gam-targeting key-values={ cont_id: id, cont_type: type } />
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+      <marko-web-gam-slots slots=adSlots({ aliases }) />
+    </marko-web-resolve-page>
+  </@head>
+  <@above-container>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin", aliases }) />
+    </marko-web-resolve-page>
+  </@above-container>
+  <@page>
+    <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+      $ const section = resolved.getAsObject("primarySection");
+      $ const aliases = hierarchyAliases(section);
+      $ const slots = adSlots({ aliases });
+      <marko-web-page-wrapper modifiers=["no-bottom-padding"]>
+        <@section>
+          <div class="row">
+            <div class="col">
+              <marko-web-gam-display-ad
+                id="gpt-ad-lb1"
+                slots=slots
+                modifiers=["max-width-970", "margin-auto-x", "center"]
+              />
+            </div>
+          </div>
+        </@section>
+
+        <@section>
+          <div class="row">
+            <div class="col">
+              <default-theme-website-section-breadcrumbs section=section />
+              <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
+              <marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=content />
+
+              <div class="page-attribution-wrapper">
+                <default-theme-page-dates|{ blockName }|>
+                  <if(content.type === "event")>
+                    <marko-web-content-start-date block-name=blockName obj=content />
+                    <marko-web-content-end-date block-name=blockName obj=content />
+                  </if>
+                  <if(content.type === "webinar")>
+                    <marko-web-content-start-date block-name=blockName obj=content />
+                  </if>
+                  <if(displayPublishedDate)>
+                    <marko-web-content-published block-name=blockName obj=content />
+                  </if>
+                </default-theme-page-dates>
+                <default-theme-content-attribution obj=content />
+              </div>
+
+              <if(displaySocialShare)>
+                <marko-web-social-sharing
+                  path=content.siteContext.path
+                  providers=["email", "facebook", "linkedin", "twitter"]
+                />
+              </if>
+            </div>
+          </div>
+        </@section>
+
+        <@section>
+          <div class="row">
+            <default-theme-page-contents|{ blockName }|
+              class="col-lg-8 mb-3 mb-lg-0"
+              attrs={ "data-gallery-id": id }
+            >
+              <if(content.embedCode)>
+                <marko-web-content-embed-code block-name=blockName obj=content />
+              </if>
+              <else-if(content.type === "whitepaper" || content.type === "document" || type === "company")>
+                <marko-web-page-image
+                  obj=content.primaryImage
+                  modifiers=["primary-image-inline"]
+                  fluid=false
+                  width=250
+                />
+              </else-if>
+              <else-if(displayPrimaryImage)>
+                $ const isLogo = get(content, "primaryImage.isLogo");
+                <if(isLogo || type === "contact")>
+                  <marko-web-page-image
+                    obj=content.primaryImage
+                    modifiers=(type === "contact" ? [] : ["primary-image-inline"])
+                    fluid=false
+                    width=250
+                  />
+                </if>
+                <else>
+                  <marko-web-page-image
+                    obj=content.primaryImage
+                    modifiers=["fluid-16by9"]
+                    options={ w: 700, h: 394, fit: "crop" }
+                  />
+                </else>
+              </else-if>
+              $ const companyImage = getAsObject(content, "company.primaryImage");
+              <if(displayCompanyImage && companyImage.src)>
+                <marko-web-link href=get(content, "company.siteContext.path")>
+                  <marko-web-page-image
+                    obj=companyImage
+                    modifiers=["primary-image-inline"]
+                    fluid=false
+                    width=250
+                  />
+                </marko-web-link>
+              </if>
+              <default-theme-content-contact-details obj=content />
+
+              $ const bodyId = `content-body-${id}`;
+              <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+              <if(injectAds)>
+                $ const atCount = 1750;
+                <marko-web-gam-inject-ads selector=`#${bodyId}`>
+                  <@inject
+                    at=atCount
+                    modifiers=["max-width-300", "in-content"]
+                    ...GAM.getAdUnit({ name: "in-content", aliases })
+                  />
+                  <@inject
+                    at=(atCount * 2)
+                    modifiers=["max-width-300", "in-content"]
+                    ...GAM.getAdUnit({ name: "in-content", aliases })
+                  />
+                  <@inject
+                    at=(atCount * 3)
+                    modifiers=["max-width-300", "in-content"]
+                    ...GAM.getAdUnit({ name: "in-content", aliases })
+                  />
+                  <@inject
+                    at=(atCount * 4)
+                    modifiers=["max-width-300", "in-content"]
+                    ...GAM.getAdUnit({ name: "in-content", aliases })
+                  />
+                </marko-web-gam-inject-ads>
+              </if>
+
+              <marko-web-content-sidebars block-name=blockName obj=content />
+              <if(type === "document" || type === "whitepaper")>
+                <default-theme-content-download obj=content>
+                  <@wufoo user-name=site.get("wufoo.userName") />
+                  <@link class="btn btn-lg btn-primary" />
+                </default-theme-content-download>
+              </if>
+              <if(displaySocialShare)>
+                <marko-web-social-sharing
+                  path=content.siteContext.path
+                  providers=["email", "facebook", "linkedin", "twitter"]
+                />
+              </if>
+              <if(type === "webinar")>
+                $ const isUpcoming = content.startDate > Date.now();
+                <default-theme-content-link-url
+                  obj=content
+                  label=(isUpcoming ? "Register for Webinar" : "View Webinar")
+                  target="_blank"
+                />
+              </if>
+
+              <shared-related-content-block content-id=id />
+
+            </default-theme-page-contents>
+            <aside class="col-lg-4 page-rail">
+              <shared-latest-in-section-block>
+                <@content id=id />
+                <@section id=section.id name=section.name />
+              </shared-latest-in-section-block>
+
+              <marko-web-gam-display-ad
+                id="gpt-ad-rail1"
+                modifiers=["max-width-300", "margin-auto-x"]
+                slots=slots
+              />
+
+              <if(!isShortForm)>
+                <marko-web-gam-display-ad
+                  id="gpt-ad-rail2"
+                  modifiers=["sticky-top", "max-width-300", "margin-auto-x"]
+                  slots=slots
+                />
+              </if>
+            </aside>
+            <if(displayPhotoswipe)>
+              <marko-web-photoswipe-images images=resolved.getEdgeNodesFor("images")>
+                <@props thumbnail-click-selectors=`[data-gallery-id="${id}"] [data-image-id]` />
+              </marko-web-photoswipe-images>
+            </if>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+  <@below-page>
+    <marko-web-page-container for="content" tag="div" id=id type=type modifiers=["below"]>
+      <!-- Refresh sticky, right-rail infinite scroll ad -->
+      <marko-web-gam-refresh-ad on="load-more-in-view" slot-id="gpt-ad-rail-infinite" />
+
+      <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+        $ const section = resolved.getAsObject("primarySection");
+        $ const aliases = hierarchyAliases(section);
+        $ const slots = adSlots({ aliases });
+        <marko-web-page-wrapper>
+          <@section>
+            <div class="row">
+              <div class="col">
+                <marko-web-gam-display-ad
+                  id="gpt-ad-billboard1"
+                  slots=slots
+                  modifiers=["max-width-970", "margin-auto-x", "center"]
+                />
+              </div>
+            </div>
+          </@section>
+
+          <@section>
+            <div class="row">
+              <div class="col-lg-8 infinite-scroll-target">
+                <shared-content-page-load-more-block aliases=aliases limit=12 skip=4>
+                  <@content id=id type=type name=content.name />
+                  <@section id=section.id name=section.name />
+                </shared-content-page-load-more-block>
+              </div>
+              <aside class="col-lg-4 page-rail">
+                <shared-follow-us-block />
+                <shared-most-recent-block />
+
+                <marko-web-gam-display-ad
+                  id="gpt-ad-rail-infinite"
+                  modifiers=["sticky-top", "max-width-300", "margin-auto-x"]
+                  slots=slots
+                />
+              </aside>
+            </div>
+          </@section>
+        </marko-web-page-wrapper>
+      </marko-web-resolve-page>
+    </marko-web-page-container>
+  </@below-page>
+  <@foot>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <shared-fixed-ad-bottom aliases=hierarchyAliases(section) />
+    </marko-web-resolve-page>
+  </@foot>
+</marko-web-content-page-layout>

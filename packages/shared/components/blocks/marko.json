@@ -1,0 +1,47 @@
+{
+  "taglib-imports": [
+    "./load-more/marko.json"
+  ],
+  "<shared-latest-content-feed-block>": {
+    "template": "./latest-content-feed.marko",
+    "<query-params>": {},
+    "<flow>": {},
+    "@section-id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "<shared-latest-content-card-deck-block>": {
+    "template": "./latest-content-card-deck.marko",
+    "<query-params>": {},
+    "<flow>": {},
+    "@section-id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "<shared-follow-us-block>": {
+    "template": "./follow-us.marko"
+  },
+  "<shared-most-recent-block>": {
+    "template": "./most-recent.marko"
+  },
+  "<shared-magazine-publications-block>": {
+    "template": "./magazine-publications.marko",
+    "<publication-params>": {}
+  },
+  "<shared-related-content-block>": {
+    "template": "./related-content.marko",
+    "@content-id": "number"
+  },
+  "<shared-latest-in-section-block>": {
+    "template": "./latest-in-section.marko",
+    "<content>": {
+      "@id": "number"
+    },
+    "<section>": {
+      "@id": "number",
+      "@name": "string"
+    }
+  }
+}

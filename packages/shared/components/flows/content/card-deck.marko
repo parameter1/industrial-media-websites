@@ -1,0 +1,17 @@
+import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const image = getAsObject(input, "node.image");
+
+<default-theme-card-deck-flow
+  tag=input.tag
+  class=input.class
+  modifiers=input.modifiers
+  attrs=input.attrs
+  cols=defaultValue(input.cols, 2)
+  nodes=input.nodes
+>
+  <@slot|{ node, index }|>
+    <shared-content-card-node ...input.node node=node />
+  </@slot>
+</default-theme-card-deck-flow>

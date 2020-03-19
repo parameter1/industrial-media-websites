@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+@import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
+
+$pswp__root-z-index: $theme-site-header-z-index + 1 !default;
+@import "../../node_modules/@base-cms/marko-web-photoswipe/scss/main";
+@import "../../node_modules/@base-cms/marko-web-gam/scss/fixed-ad-bottom";
+@import "../../node_modules/@base-cms/marko-web-social-sharing/scss/buttons";
+@import "../../node_modules/@base-cms/marko-web-reveal-ad/scss/reveal-ad";
+
+@import "../../node_modules/@industrial-media/package-common/scss/contact-us-form";
+
+$theme-related-content-bg-color: #f8f9fa;
+$theme-related-content-border-color: #dee2e6;
+
+@import "./components/ad-container";
+@import "./components/flows";
+@import "./components/node-list";
+@import "./components/node";
+@import "./components/page";
+@import "./components/site-navbar";
+@import "./components/theme";
+
+body {
+  letter-spacing: .1px;
+}

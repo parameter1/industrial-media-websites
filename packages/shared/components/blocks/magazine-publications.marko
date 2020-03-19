@@ -1,0 +1,20 @@
+import { getAsObject } from "@base-cms/object-path";
+import publicationListFragment from "../../graphql/fragments/magazine-publication-list";
+
+$ const params = {
+  queryFragment: publicationListFragment,
+  ...getAsObject(input.publicationParams),
+};
+
+<marko-web-query|{ nodes }| name="magazine-publications" params=params>
+  <for|publication| of=nodes>
+    <marko-web-query|{ node: latestIssue }| name="magazine-latest-issue" params={ publicationId: publication.id, requiresCoverImage: true }>
+      <default-theme-magazine-publication-card-block publication-id=publication.id issue-id=latestIssue.id requires-cover-image=true>
+        <@header|{ blockName }|>
+          <marko-web-magazine-publication-name tag=null obj=publication link=true />
+          <marko-web-magazine-publication-description tag="p" obj=publication block-name=blockName />
+        </@header>
+      </default-theme-magazine-publication-card-block>
+    </marko-web-query>
+  </for>
+</marko-web-query>

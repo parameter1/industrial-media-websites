@@ -1,0 +1,16 @@
+import queryFragment from "../../graphql/fragments/most-recent-block";
+
+<marko-web-query|{ nodes }|
+  name="all-published-content"
+  params={ excludeContentTypes: ["Contact", "Company", "Document"], limit: 5, queryFragment }
+>
+  <shared-content-list-flow
+    nodes=nodes
+    inner-justified=false
+  >
+    <@header>Most Recent</@header>
+    <@node with-dates=false>
+      <@title modifiers=["small"] />
+    </@node>
+  </shared-content-list-flow>
+</marko-web-query>

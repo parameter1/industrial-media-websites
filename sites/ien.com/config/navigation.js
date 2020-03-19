@@ -14,11 +14,12 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/videos', label: 'Video' },
+      { href: '/video', label: 'Video' },
       { href: '/software', label: 'Software' },
       { href: '/made-in-america', label: 'Made in America' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: '/advertise', label: 'Advertise' },
+      { href: '/magazine', label: 'Magazine' },
     ],
   },
   tertiary: {
@@ -33,7 +34,7 @@ module.exports = {
       { href: '/page/advertise', label: 'Advertise' },
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      { href: '/page/CCPA', label: 'CA Consumer Privacy Act' },
+      { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act' },
     ],
   },
   menu: [
@@ -54,23 +55,24 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/videos', label: 'Videos' },
+        { href: '/video', label: 'Video' },
         { href: '/software', label: 'Software' },
         { href: '/made-in-america', label: 'Made in America' },
+        { href: '/magazine', label: 'Magazine' },
         { href: '/contact-us', label: 'Contact Us' },
       ],
     },
     {
       label: 'User Tools',
       items: [
-        { href: '#', label: 'Newsletter sign up', target: '_blank' },
-        { href: '#', label: 'Subscribe to magazine', target: '_blank' },
+        { href: '#', label: 'Newsletter Sign Up', target: '_blank' },
+        { href: 'https://tcc.dragonforms.com/loading.do?omedasite=TCC1_IEnew', label: 'Subscribe to Magazine', target: '_blank' },
         { href: '/page/advertise', label: 'Advertise' },
         { href: '/page/about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/privacy-policy', label: 'Privacy Policy' },
         { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-        { href: '/page/CCPA', label: 'CA Consumer Privacy Act' },
+        { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act' },
       ],
     },
   ],

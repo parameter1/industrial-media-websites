@@ -1,0 +1,119 @@
+.document-container {
+  flex-grow: 0;
+}
+
+.with-reveal-ad {
+  .page {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    .page {
+      // Do not add box shadow to appended pages
+      box-shadow: none;
+    }
+  }
+}
+
+.anchor {
+  // offset link anchors to account for fixed header
+  position: relative;
+  top: -100px;
+  display: block;
+  visibility: hidden;
+}
+
+.social-sharing {
+  margin-top: map-get($spacers, block);
+  margin-bottom: map-get($spacers, block);
+}
+
+.follow-us {
+  &__icons {
+    padding-bottom: 20px;
+    @include marko-web-node-list-border(border-bottom);
+
+    > a {
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.magazine-publication-card-block {
+  &__header,
+  &__body {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &__magazine-publication-description {
+    margin-top: map-get($spacers, 2);
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: $font-weight-normal;
+    color: $gray-700;
+  }
+}
+
+.featured-flow {
+  &__featured {
+    .node {
+      &__footer-left {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.magazine-publication-buttons {
+  &__button {
+    margin-bottom: $marko-web-node-spacer;
+  }
+}
+
+.inquiry-form {
+  padding: $block-spacer;
+  margin-top: 0;
+  margin-bottom: $block-spacer;
+  background-color: #f8f9fa;
+  border-top: 0;
+
+  &__header {
+    @include overline-header();
+    font-size: 20px;
+  }
+
+  &__description {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  &__content-name {
+    font-weight: 600;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.media-center-section {
+  &__header {
+    margin-bottom: map-get($spacers, block);
+    font-family: $theme-font-family-sans-serif;
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+  }
+
+  &__view-more {
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    a {
+      &::after {
+        margin-left: .25rem;
+        content: "\00BB";
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+import { getAsObject } from "@base-cms/object-path";
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import { isFunction } from "@base-cms/utils";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import websiteSectionContentLoader from "../../../loaders/website-section-content";
+import queryFragment from "../../../graphql/fragments/content-list";
+
+$ const { GAM, apollo } = out.global;
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = input;
+
+$ const loader = getAsObject(input, "loader");
+
+$ const rightRailHeader = defaultValue(input.rightRailHeader, "Top Headlines");
+$ const withOopAds = defaultValue(input.withOopAds, true);
+
+$ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+  "gpt-ad-rail-infinite": GAM.getAdUnit({ name: "infinite-rail", aliases }),
+});
+
+$ const promise = websiteSectionContentLoader(apollo, {
+  sectionId: id,
+  featuredParams: loader.featuredParams,
+  standardParams: loader.standardParams,
+  withStandardQuery: defaultValue(loader.withStandardQuery, true),
+});
+<marko-web-resolve|{ resolved: sectionContent }| promise=promise>
+  $ const { featured, standard } = sectionContent;
+  <marko-web-website-section-page-layout id=id alias=alias name=name>
+    <@head>
+      <if(input.head)>
+        <${input.head} section-content=sectionContent />
+      </if>
+      <else>
+        <marko-web-gtm-website-section-context|{ context }| alias=alias>
+          <marko-web-gtm-push data=context />
+        </marko-web-gtm-website-section-context>
+        <marko-web-resolve-page|{ data: section }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
+          <marko-web-gam-slots slots=adSlots({ aliases }) />
+        </marko-web-resolve-page>
+        <if(input.inHead)>
+          <${input.inHead} section-content=sectionContent />
+        </if>
+      </else>
+    </@head>
+
+    <@above-container>
+      <if(input.aboveContainer)>
+        <${input.aboveContainer} section-content=sectionContent />
+      </if>
+      <else>
+        <if(withOopAds)>
+          <marko-web-resolve-page|{ data: section }| node=pageNode>
+            $ const aliases = hierarchyAliases(section);
+            <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin", aliases }) />
+          </marko-web-resolve-page>
+        </if>
+      </else>
+    </@above-container>
+
+    <@page>
+      <if(input.page)>
+        <${input.page} section-content=sectionContent />
+      </if>
+      <else>
+        <marko-web-resolve-page|{ data: section, resolved }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
+          $ const slots = adSlots({ aliases });
+          <marko-web-page-wrapper modifiers=["no-bottom-padding"]>
+            <@section>
+              <div class="row">
+                <div class="col">
+                  <marko-web-gam-display-ad
+                    id="gpt-ad-lb1"
+                    slots=slots
+                    modifiers=["max-width-970", "margin-auto-x", "center"]
+                  />
+                </div>
+              </div>
+            </@section>
+
+            <@section>
+              <marko-web-node-list collapsible=false>
+                <@header tag="h1" modifiers=["website-section-title", section.alias]>
+                  <marko-web-website-section-name tag=null obj=section />
+                </@header>
+              </marko-web-node-list>
+
+              <div class="row">
+                <div class="col-lg-8">
+                  <shared-content-featured-flow nodes=featured.nodes />
+                </div>
+
+                <div class="col-lg-4 page-rail page-rail--featured">
+                  <shared-content-list-flow
+                    nodes=standard.nodes
+                    inner-justified=false
+                  >
+                    <@header>${rightRailHeader}</@header>
+                    <@node>
+                      <@title modifiers=["small"] />
+                    </@node>
+                  </shared-content-list-flow>
+
+                  <marko-web-gam-display-ad
+                    id="gpt-ad-rail1"
+                    slots=slots
+                    modifiers=["max-width-300", "margin-auto-x", "center", "margin-auto-y"]
+                  />
+                </div>
+              </div>
+            </@section>
+          </marko-web-page-wrapper>
+        </marko-web-resolve-page>
+      </else>
+    </@page>
+
+    <@below-page>
+      <if(input.belowPage)>
+        <${input.belowPage} section-content=sectionContent />
+      </if>
+      <else>
+        <marko-web-page-container for="website-section" tag="div" id=id modifiers=["below"]>
+          <!-- Refresh sticky, right-rail infinite scroll ad -->
+          <marko-web-gam-refresh-ad on="load-more-in-view" slot-id="gpt-ad-rail-infinite" />
+
+          <marko-web-resolve-page|{ data: section, resolved }| node=pageNode>
+            $ const aliases = hierarchyAliases(section);
+            $ const slots = adSlots({ aliases });
+            <marko-web-page-wrapper>
+              <@section>
+                <div class="row">
+                  <div class="col-lg-8 infinite-scroll-target">
+                    $ const loadMoreParams = {
+                      sectionId: id,
+                      optionName: ["Featured Content", "Standard"],
+                      excludeContentIds: sectionContent.ids,
+                      limit: 12,
+                    };
+                    $ if (alias === "home") delete loadMoreParams.sectionId;
+                    <shared-latest-content-feed-load-more-block max-pages=4>
+                      <@query
+                        name="website-scheduled-content"
+                        params=loadMoreParams
+                      />
+                      <@page for="website-section" id=id />
+                      <@adunit
+                        ...GAM.getAdUnit({ name: "infinite-interstitial", aliases })
+                        modifiers=["max-width-300", "margin-auto-x"]
+                      />
+                    </shared-latest-content-feed-load-more-block>
+                  </div>
+
+                  <aside class="col-lg-4 page-rail">
+                    <shared-follow-us-block />
+                    <shared-most-recent-block />
+
+                    <marko-web-gam-display-ad
+                      id="gpt-ad-rail-infinite"
+                      modifiers=["sticky-top", "max-width-300", "margin-auto-x"]
+                      slots=slots
+                    />
+                  </aside>
+                </div>
+              </@section>
+            </marko-web-page-wrapper>
+          </marko-web-resolve-page>
+
+        </marko-web-page-container>
+      </else>
+    </@below-page>
+
+    <@foot>
+      <marko-web-resolve-page|{ data: section }| node=pageNode>
+        <shared-fixed-ad-bottom aliases=hierarchyAliases(section) />
+      </marko-web-resolve-page>
+    </@foot>
+  </marko-web-website-section-page-layout>
+</marko-web-resolve>

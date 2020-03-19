@@ -1,0 +1,19 @@
+import queryFragment from "../../graphql/fragments/related-content-block";
+
+<marko-web-query|{ nodes }|
+  name="related-published-content"
+  params={ contentId: input.contentId, limit: 4, queryFragment }
+>
+  <shared-content-list-flow
+    nodes=nodes
+    inner-justified=false
+    flush-y=true
+    flush-x=false
+    modifiers=["rows", "related-content"]
+  >
+    <@header>Related</@header>
+    <@node modifiers=["related-content"]>
+      <@title modifiers=["small"] />
+    </@node>
+  </shared-content-list-flow>
+</marko-web-query>

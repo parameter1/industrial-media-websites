@@ -1,0 +1,169 @@
+// Theme start!
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@700&display=swap");
+
+$black:           #000 !default;
+$white:           #fff !default;
+$body-color:      $black !default;
+$block-spacer:    1.25rem !default;
+
+// Marko Web Settings
+$marko-web-document-container-max-width: 1100px !default;
+$marko-web-document-container-gutter: 10px !default;
+$marko-web-page-padding: 0 !default;
+$marko-web-page-wrapper-padding: $marko-web-document-container-gutter !default;
+$marko-web-node-list-padding: 15px !default;
+
+// Fonts (reset all to Roboto and Roboto Slab)
+$theme-font-family-sans-serif: "Roboto", sans-serif !default;
+$theme-font-family-serif: "Roboto Slab", sans-serif !default;
+
+// General
+$body-bg: #fff !default;
+$breadcrumb-divider: "|" !default;
+$font-weight-bold: 700 !default;
+$grid-gutter-width: 20px !default;
+
+// Settings
+$enable-shadows: false !default;
+$enable-rounded: false !default;
+
+// Navbar
+$theme-site-navbar-primary-font-size: 15px !default;
+$theme-site-navbar-primary-font-size-sm: 15px !default;
+$theme-site-navbar-primary-line-height: 1.6 !default;
+$theme-site-navbar-primary-line-height-sm: 1.6 !default;
+
+$theme-site-navbar-primary-link-hover-decoration: none !default;
+$theme-site-navbar-primary-link-active-decoration: none !default;
+
+$theme-site-navbar-secondary-font-size: 14px !default;
+$theme-site-navbar-secondary-font-size-sm: 14px !default;
+$theme-site-navbar-secondary-line-height: 1.6 !default;
+$theme-site-navbar-secondary-line-height-sm: 1.6 !default;
+$theme-site-navbar-secondary-padding-y: 5px !default;
+
+$theme-site-navbar-secondary-link-hover-decoration: none !default;
+$theme-site-navbar-secondary-link-active-decoration: none !default;
+
+$theme-site-navbar-light-color: rgba($black, .78) !default;
+$theme-site-navbar-dark-color: rgba($white, .78) !default;
+
+// General Heading Defaults
+$theme-heading-font-weight: $font-weight-bold !default;
+
+$theme-heading-large-font-size:       22px !default;
+$theme-heading-large-font-size-sm:    22px !default;
+$theme-heading-large-line-height:     1.3 !default;
+$theme-heading-large-line-height-sm:  1.3 !default;
+
+$theme-heading-h4-font-size:          20px !default;
+$theme-heading-h4-font-size-sm:       20px !default;
+$theme-heading-h4-line-height:        1.3 !default;
+$theme-heading-h4-line-height-sm:     1.3 !default;
+
+$theme-heading-h5-font-size:          18px !default;
+$theme-heading-h5-font-size-sm:       18px !default;
+$theme-heading-h5-line-height:        1.3 !default;
+$theme-heading-h5-line-height-sm:     1.3 !default;
+
+$theme-heading-h6-font-size:          16px !default;
+$theme-heading-h6-font-size-sm:       16px !default;
+$theme-heading-h6-line-height:        1.3 !default;
+$theme-heading-h6-line-height-sm:     1.3 !default;
+
+// Content Headings
+$theme-content-heading-large-margin-bottom:     1rem !default;
+$theme-content-heading-large-margin-bottom-sm:  1rem !default;
+
+$theme-content-heading-h3-margin-bottom:        .5rem;
+$theme-content-heading-h3-margin-bottom-sm:     .5rem !default;
+
+$theme-content-heading-h4-margin-bottom:        1rem !default;
+$theme-content-heading-h4-margin-bottom-sm:     1rem !default;
+
+$theme-content-heading-h5-margin-bottom:        1rem !default;
+$theme-content-heading-h5-margin-bottom-sm:     1rem !default;
+
+$theme-content-heading-h6-margin-bottom:        1rem !default;
+$theme-content-heading-h6-margin-bottom-sm:     1rem !default;
+
+// Content Paragraphs
+$theme-content-paragraph-margin-bottom: 1.25rem !default;
+$theme-content-paragraph-margin-bottom-sm: 1.25rem !default;
+
+
+// Page Wrapper
+$theme-page-title-font-weight: $font-weight-bold !default;
+$theme-page-title-font-size: 24px !default;
+$theme-page-title-font-size-sm: 24px !default;
+$theme-page-title-line-height: 1.2 !default;
+$theme-page-title-line-height-sm: 1.2 !default;
+
+$theme-page-deck-color: #000 !default;
+$theme-page-deck-font-size: 18px !default;
+$theme-page-deck-font-size-sm: 18px !default;
+$theme-page-deck-line-height: 1.5 !default;
+$theme-page-deck-line-height-sm: 1.5 !default;
+
+$marko-web-page-image-margin: 1.25rem !default;
+
+// Media Caption/Credit
+$theme-media-footer-padding-y: 5px !default;
+$theme-media-footer-line-height: 1.2 !default;
+
+$theme-media-caption-color: #9e9e9e !default;
+$theme-media-caption-font-size: 11px !default;
+$theme-media-credit-color: #9e9e9e !default;
+$theme-media-credit-font-size: 11px !default;
+
+// Breadcrumbs
+$theme-breadcrumbs-font-size: 14px !default;
+$theme-breadcrumbs-font-weight: $font-weight-bold !default;
+
+// Content Published Date
+$theme-content-published-date-font-size: 14px !default;
+$theme-content-published-date-line-height: 1.2 !default;
+
+// Content Attribution
+$theme-content-attribution-font-size: 14px !default;
+$theme-content-attribution-prefix-spacer-content: none !default;
+$theme-content-attribution-prefix-font-weight: 400 !default;
+$theme-content-attribution-line-height: 1.2 !default;
+
+// Content Body
+$theme-page-body-font-size-sm: 16px !default;
+$theme-page-body-font-size: 16px !default;
+$theme-page-body-font-weight: 400 !default;
+$theme-page-body-line-height-sm: 1.8 !default;
+$theme-page-body-line-height: 1.8 !default;
+
+// Card / Node List Header
+$theme-card-header-text-transform: none !default;
+$theme-card-header-color: $black !default;
+$theme-card-header-font-size: 24px !default;
+$theme-card-header-font-weight: $font-weight-bold !default;
+$theme-card-header-letter-spacing: normal !default;
+$theme-card-header-background-color: transparent !default;
+$theme-card-header-border: none !default;
+
+// Item / Node
+$theme-item-title-font-size: 18px !default;
+$theme-item-title-font-size-sm: 18px !default;
+$theme-item-title-font-weight: $font-weight-bold !default;
+$theme-item-title-line-height: 1.4 !default;
+$theme-item-title-line-height-sm: 1.4 !default;
+
+$theme-item-title-large-font-size: 22px;
+$theme-item-title-large-font-size-sm: 22px;
+$theme-item-title-large-line-height: 1.4 !default;
+$theme-item-title-large-line-height-sm: 1.4 !default;
+
+$theme-item-description-font-size: 14px !default;
+$theme-item-description-font-size-sm: 14px !default;
+$theme-item-description-line-height: 1.5 !default;
+$theme-item-description-line-height-sm: 1.5 !default;
+$theme-item-description-max-lines: 3 !default;
+
+$theme-item-header-font-size: 12px !default;
+
+$theme-item-footer-font-size: 12px !default;
