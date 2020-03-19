@@ -2,7 +2,7 @@ const home = require('./home');
 const content = require('./content');
 const dynamicPages = require('./dynamic-page');
 const magazine = require('./magazine');
-// const search = require('./search');
+const search = require('./search');
 const websiteSections = require('./website-section');
 
 module.exports = (app) => {
@@ -18,8 +18,8 @@ module.exports = (app) => {
   // Content Pages
   content(app);
 
-  // // Search
-  // search(app);
+  // Search
+  search(app);
 
   // Website Sections
   websiteSections(app);

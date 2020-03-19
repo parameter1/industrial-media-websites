@@ -1,11 +1,9 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
-const gcse = require('./gcse');
 
 module.exports = {
   navigation,
   gam,
-  gcse,
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
@@ -32,8 +30,11 @@ module.exports = {
   gtm: {
     containerId: 'GTM-NMWJZK3',
   },
+  gcse: {
+    id: '003355913687346718228:go0ftwgyb8x',
+  },
   wufoo: {
-    userName: '<NOT_SET>',
+    userName: 'ien',
   },
   magazines: {
     description: '',
