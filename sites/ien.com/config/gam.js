@@ -8,7 +8,7 @@ config
     { name: 'lb-sticky-bottom', templateName: 'LB-STICKY-BOTTOM', path: 'default_lb1' },
     { name: 'billboard1', templateName: 'BILLBOARD', path: 'default_billboard' },
     { name: 'rail1', templateName: 'RAIL1', path: 'default_rail1' },
-    { name: 'rail2', templateName: 'RAIL2', path: 'default_rail2' },
+    { name: 'rail2', templateName: 'RAIL2', path: 'default_rail1' },
     { name: 'infinite-rail', templateName: 'INFINITE-RAIL', path: 'default_rail1' },
     { name: 'infinite-interstitial', templateName: 'INFINITE-INTERSTITIAL', path: 'default_rail1' },
     { name: 'in-content', templateName: 'IN-CONTENT', path: 'default_rail1' },
