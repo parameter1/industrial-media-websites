@@ -22,11 +22,19 @@ module.exports = {
     { provider: 'twitter', href: 'http://www.twitter.com/mnetnews' },
     { provider: 'youtube', href: 'http://www.youtube.com/Manufacturingdotnet' },
   ],
+  identityX: {
+    appId: '5e28a3dd58e67b229e55ae43',
+    enabled: true,
+    comments: { enabled: true },
+    options: {
+      appContextId: '5e83669a6eabae9f989e63c4',
+    },
+  },
   gtm: {
     containerId: 'GTM-WSV9TGW',
   },
   wufoo: {
-    userName: '<NOT_SET>',
+    userName: 'ien',
   },
   magazines: {
     description: '',

@@ -23,11 +23,19 @@ module.exports = {
     { provider: 'twitter', href: 'http://www.twitter.com/indistwebsite' },
     { provider: 'youtube', href: 'https://www.youtube.com/user/InDistribution' },
   ],
+  identityX: {
+    appId: '5e28a3dd58e67b229e55ae43',
+    enabled: true,
+    comments: { enabled: true },
+    options: {
+      appContextId: '5e8366c2da9f229f3d6852b6',
+    },
+  },
   gtm: {
     containerId: 'GTM-M3QH8WQ',
   },
   wufoo: {
-    userName: '<NOT_SET>',
+    userName: 'ien',
   },
   magazines: {
     description: '',

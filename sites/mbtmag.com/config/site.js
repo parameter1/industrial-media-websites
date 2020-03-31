@@ -19,11 +19,19 @@ module.exports = {
   },
   socialMediaLinks: [
   ],
+  identityX: {
+    appId: '5e28a3dd58e67b229e55ae43',
+    enabled: true,
+    comments: { enabled: true },
+    options: {
+      appContextId: '5e8366b1da9f22f7ee6852b4',
+    },
+  },
   gtm: {
     containerId: 'GTM-K5Q4RP8',
   },
   wufoo: {
-    userName: '<NOT_SET>',
+    userName: 'ien',
   },
   magazines: {
     description: '',

@@ -24,6 +24,14 @@ module.exports = {
     { provider: 'twitter', href: 'https://twitter.com/DesignDevelop12' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/groups/13611964' },
   ],
+  identityX: {
+    appId: '5e28a3dd58e67b229e55ae43',
+    enabled: true,
+    comments: { enabled: true },
+    options: {
+      appContextId: '5e7e610375a0950125baf2b3',
+    },
+  },
   gtm: {
     containerId: 'GTM-W633TCR',
   },
