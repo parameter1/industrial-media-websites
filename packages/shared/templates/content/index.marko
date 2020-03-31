@@ -1,6 +1,7 @@
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
-import { getAsObject, get } from "@base-cms/object-path";
+import { getAsObject, get, getAsArray } from "@base-cms/object-path";
 import queryFragment from "../../graphql/fragments/content-list";
+import getContentPreview from "../../utils/get-content-preview";
 
 $ const { site, GAM } = out.global;
 $ const { id, type, pageNode } = data;
@@ -143,55 +144,78 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
               </if>
               <default-theme-content-contact-details obj=content />
 
-              $ const bodyId = `content-body-${id}`;
-              <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
-              <if(injectAds)>
-                $ const atCount = 1750;
-                <marko-web-gam-inject-ads selector=`#${bodyId}`>
-                  <@inject
-                    at=atCount
-                    modifiers=["max-width-300", "in-content"]
-                    ...GAM.getAdUnit({ name: "in-content", aliases })
-                  />
-                  <@inject
-                    at=(atCount * 2)
-                    modifiers=["max-width-300", "in-content"]
-                    ...GAM.getAdUnit({ name: "in-content", aliases })
-                  />
-                  <@inject
-                    at=(atCount * 3)
-                    modifiers=["max-width-300", "in-content"]
-                    ...GAM.getAdUnit({ name: "in-content", aliases })
-                  />
-                  <@inject
-                    at=(atCount * 4)
-                    modifiers=["max-width-300", "in-content"]
-                    ...GAM.getAdUnit({ name: "in-content", aliases })
-                  />
-                </marko-web-gam-inject-ads>
-              </if>
+              $ const requiresRegistration = get(content, "userRegistration.isRequired");
+              $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
+              <marko-web-identity-x-access|context|
+                enabled=requiresRegistration
+                required-access-level-ids=accessLevels
+              >
+                <if(!context.canAccess || context.requiresUserInput)>
+                  $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
+                  <marko-web-content-body block-name=blockName obj={ body } />
 
-              <marko-web-content-sidebars block-name=blockName obj=content />
-              <if(type === "document" || type === "whitepaper")>
-                <default-theme-content-download obj=content>
-                  <@wufoo user-name=site.get("wufoo.userName") />
-                  <@link class="btn btn-lg btn-primary" />
-                </default-theme-content-download>
-              </if>
-              <if(displaySocialShare)>
-                <marko-web-social-sharing
-                  path=content.siteContext.path
-                  providers=["email", "facebook", "linkedin", "twitter"]
-                />
-              </if>
-              <if(type === "webinar")>
-                $ const isUpcoming = content.startDate > Date.now();
-                <default-theme-content-link-url
-                  obj=content
-                  label=(isUpcoming ? "Register for Webinar" : "View Webinar")
-                  target="_blank"
-                />
-              </if>
+                  <div class="content-page-preview-overlay" />
+                  <shared-content-page-gate
+                    can-access=context.canAccess
+                    is-logged-in=context.isLoggedIn
+                    has-required-access-level=context.hasRequiredAccessLevel
+                    requires-access-level=context.requiresAccessLevel
+                    requires-user-input=context.requiresUserInput
+                    messages=context.messages
+                  />
+                </if>
+                <else>
+                  $ const bodyId = `content-body-${id}`;
+                  <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+                  <if(injectAds)>
+                    $ const atCount = 1750;
+                    <marko-web-gam-inject-ads selector=`#${bodyId}`>
+                      <@inject
+                        at=atCount
+                        modifiers=["max-width-300", "in-content"]
+                        ...GAM.getAdUnit({ name: "in-content", aliases })
+                      />
+                      <@inject
+                        at=(atCount * 2)
+                        modifiers=["max-width-300", "in-content"]
+                        ...GAM.getAdUnit({ name: "in-content", aliases })
+                      />
+                      <@inject
+                        at=(atCount * 3)
+                        modifiers=["max-width-300", "in-content"]
+                        ...GAM.getAdUnit({ name: "in-content", aliases })
+                      />
+                      <@inject
+                        at=(atCount * 4)
+                        modifiers=["max-width-300", "in-content"]
+                        ...GAM.getAdUnit({ name: "in-content", aliases })
+                      />
+                    </marko-web-gam-inject-ads>
+                  </if>
+
+                  <marko-web-content-sidebars block-name=blockName obj=content />
+                  <if(type === "document" || type === "whitepaper")>
+                    <default-theme-content-download obj=content>
+                      <@wufoo user-name=site.get("wufoo.userName") />
+                      <@link class="btn btn-lg btn-primary" />
+                    </default-theme-content-download>
+                  </if>
+                  <if(displaySocialShare)>
+                    <marko-web-social-sharing
+                      path=content.siteContext.path
+                      providers=["email", "facebook", "linkedin", "twitter"]
+                    />
+                  </if>
+                  <if(type === "webinar")>
+                    $ const isUpcoming = content.startDate > Date.now();
+                    <default-theme-content-link-url
+                      obj=content
+                      label=(isUpcoming ? "Register for Webinar" : "View Webinar")
+                      target="_blank"
+                    />
+                  </if>
+                </else>
+              </marko-web-identity-x-access>
 
               <shared-content-page-comments should-display=displayComments>
                 <@content id=id name=content.name teaser=content.teaser url=content.siteContext.canonicalUrl />
