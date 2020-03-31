@@ -1833,10 +1833,10 @@
     "@marketing-cloud/auth" "^0.1.0"
     node-fetch "^2.6.0"
 
-"@marketing-cloud/soap@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@marketing-cloud/soap/-/soap-0.1.1.tgz#4f0952088061a69d1053f18d28979c11fc05a8b1"
-  integrity sha512-zFZJhfQ4KAIzoQYPsaWZXWodD00X7BgSh1pnz7WbeQ9SjDmh2AcEkr49ARRMTlwZRptw/SmJxOW4iNjKmK5ehw==
+"@marketing-cloud/soap@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@marketing-cloud/soap/-/soap-0.1.2.tgz#a45dc524010621ff1c1f0930cb97ce9aa6c0fe28"
+  integrity sha512-plP2f52ByurOZotNS76MtGcC5JGav4qz52bXGlHHLI+5Lxjv2U6aO5NeNzZpyfsvZLuDfSmTOPaSbDGXrpNo/g==
   dependencies:
     "@marketing-cloud/auth" "^0.1.0"
     moment "^2.24.0"
