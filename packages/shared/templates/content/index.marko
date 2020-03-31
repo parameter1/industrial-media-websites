@@ -23,6 +23,7 @@ $ const displayInquiry = (content) => {
 $ const displayCompanyImage = ["product", "press-release"].includes(type) ? true : false;
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 $ const displayPhotoswipe = ["contact"].includes(type) ? false : true;
+$ const displayComments = ["contact", "document", "whitepaper", "product", "company"].includes(type) ? false : true;
 $ const isShortForm = ["contact"].includes(type) ? true : false;
 $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) ? true : false;
 
@@ -191,6 +192,10 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
                   target="_blank"
                 />
               </if>
+
+              <shared-content-page-comments should-display=displayComments>
+                <@content id=id name=content.name teaser=content.teaser url=content.siteContext.canonicalUrl />
+              </shared-content-page-comments>
 
               <shared-related-content-block content-id=id />
 
