@@ -1,16 +1,34 @@
 .idx-comment-stream {
   @include theme-card();
   margin-top: map-get($spacers, block);
+  margin-bottom: map-get($spacers, block);
   background-color: $marko-web-node-list-bg-color;
-
-  &__header {
-    @include theme-card-header();
-    @include border-top-radius($theme-item-list-border-radius);
-  }
 
   &__header,
   &__body {
-    padding: $marko-web-node-list-padding;
+    padding-top: $marko-web-node-list-padding;
+    padding-bottom: $marko-web-node-list-padding;
+  }
+
+  &__header {
+    @include theme-card-header();
+    position: relative;
+    padding-top: 1.25rem;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    font-size: 22px;
+    line-height: 1.3;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 4px;
+      content: "";
+      background: #333;
+    }
   }
 
   &__body {
@@ -52,7 +70,8 @@
 
   &__loading,
   &__error {
-    padding: $marko-web-node-list-padding;
+    padding-top: $marko-web-node-list-padding;
+    padding-bottom: $marko-web-node-list-padding;
   }
 
   &__create-post {
@@ -61,12 +80,14 @@
 
   &__no-posts {
     @include marko-web-node-list-border($property: border-top);
-    padding: $marko-web-node-list-padding;
+    padding-top: $marko-web-node-list-padding;
+    padding-bottom: $marko-web-node-list-padding;
   }
 
   &__post {
     @include marko-web-node-list-border($property: border-bottom);
-    padding: $marko-web-node-list-padding;
+    padding-top: $marko-web-node-list-padding;
+    padding-bottom: $marko-web-node-list-padding;
     &:first-child {
       @include marko-web-node-list-border($property: border-top);
     }
