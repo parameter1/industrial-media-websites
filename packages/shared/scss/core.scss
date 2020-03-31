@@ -15,7 +15,9 @@ $theme-related-content-bg-color: #f8f9fa;
 $theme-related-content-border-color: #dee2e6;
 
 @import "./components/ad-container";
+@import "./components/content-page";
 @import "./components/flows";
+@import "./components/identity-x";
 @import "./components/node-list";
 @import "./components/node";
 @import "./components/page";
