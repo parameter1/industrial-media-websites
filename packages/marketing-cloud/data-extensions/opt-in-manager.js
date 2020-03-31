@@ -2,7 +2,7 @@ const soap = require('../soap');
 
 module.exports = {
   /**
-   *
+   * If the DE does not exist, this method will return null.
    */
   getDataExtension: ({
     customerKey,
@@ -10,7 +10,8 @@ module.exports = {
   } = {}) => soap.retrieveByCustomerKey('DataExtension', customerKey, props),
 
   /**
-   *
+   * If the DE does not exist, this method will throw an error.
+   * If the subscriber is not found on the DE, this method will return null.
    */
   getDataExtensionSubscriber: async ({ customerKey, subscriberKey, field = 'email' } = {}) => {
     const filter = {
