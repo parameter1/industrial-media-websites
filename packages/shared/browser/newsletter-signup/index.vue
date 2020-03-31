@@ -82,7 +82,7 @@
               <label for="signup.first-name">First Name *</label>
               <input
                 id="signup.first-name"
-                v-model="form.firstName"
+                v-model="form.row.firstName"
                 required="true"
                 class="form-control"
                 type="text"
@@ -92,7 +92,7 @@
               <label for="signup.last-name">Last Name *</label>
               <input
                 id="signup.last-name"
-                v-model="form.lastName"
+                v-model="form.row.lastName"
                 required="true"
                 class="form-control"
                 type="text"
@@ -102,7 +102,7 @@
               <label for="signup.company-name">Company Name</label>
               <input
                 id="signup.company-name"
-                v-model="form.companyName"
+                v-model="form.row.companyName"
                 class="form-control"
                 type="text"
               >
@@ -111,7 +111,7 @@
               <label for="signup.job-title">Job Title</label>
               <input
                 id="signup.job-title"
-                v-model="form.jobTitle"
+                v-model="form.row.title"
                 class="form-control"
                 type="text"
               >
@@ -120,7 +120,7 @@
               <label for="signup.phone-number">Phone #</label>
               <input
                 id="signup.phone-number"
-                v-model="form.phoneNumber"
+                v-model="form.row.phone"
                 class="form-control"
                 type="tel"
               >
@@ -144,6 +144,10 @@
 <script>
 export default {
   props: {
+    /**
+     * Note: each newsletter.id **must** be setup as the marketing
+     * cloud data extension customer key.
+     */
     newsletters: {
       type: Array,
       default: () => [],
@@ -154,11 +158,16 @@ export default {
     form: {
       email: '',
       confirmEmail: '',
-      firstName: '',
-      lastName: '',
-      companyName: '',
-      jobTitle: '',
-      phoneNumber: '',
+      /**
+       * Note: these fields **must** be supported by the marketing cloud data extension.
+       */
+      row: {
+        firstName: '',
+        lastName: '',
+        companyName: '',
+        title: '',
+        phone: '',
+      },
       choices: {},
     },
     isLoading: false,
