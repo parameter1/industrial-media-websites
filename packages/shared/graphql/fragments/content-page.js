@@ -55,10 +55,6 @@ fragment ContentPageFragment on Content {
     isRequired
     accessLevels
   }
-  userRegistration {
-    isRequired
-    accessLevels
-  }
   ... on ContentVideo {
     embedCode
   }
