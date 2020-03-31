@@ -9,6 +9,8 @@ import IdentityX from '@base-cms/marko-web-identity-x/browser';
 
 import ContactUs from '@industrial-media/package-contact-us/browser';
 
+const NewsletterSignup = () => import(/* webpackChunkName: "shared-newsletter-signup" */ './newsletter-signup/index.vue');
+
 export default (Browser) => {
   DefaultTheme(Browser);
   GTM(Browser);
@@ -19,4 +21,6 @@ export default (Browser) => {
   PhotoSwipe(Browser);
   ContactUs(Browser);
   IdentityX(Browser);
+
+  Browser.register('SharedNewsletterSignup', NewsletterSignup);
 };
