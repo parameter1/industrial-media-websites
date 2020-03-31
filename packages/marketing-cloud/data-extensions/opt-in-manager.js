@@ -60,20 +60,55 @@ const sendOptStatus = async ({
     optedIn: Number(optedIn),
   };
 
+  const props = Object.keys(row).map((key) => {
+    const value = row[key];
+    return `<Property><Name>${key}</Name><Value>${value}</Value></Property>`;
+  });
+
+  const requestType = extensionSubscriber ? 'Update' : 'Create';
+  const xml = `
+    <Objects xsi:type="DataExtensionObject">
+      <CustomerKey>${extensionKey}</CustomerKey>
+      <Properties>
+        ${props.join('\n')}
+      </Properties>
+    </Objects>
+  `;
+  return soap.raw(xml, requestType);
+};
+
+const upsertSubscriber = async ({ email, data = {} }) => {
+  const subscriber = await soap.retrieveOne('Subscriber', {
+    attributes: { 'xsi:type': 'SimpleFilterPart' },
+    Property: 'SubscriberKey',
+    SimpleOperator: 'equals',
+    Value: email,
+  }, ['ID']);
+
+  const map = {
+    firstName: 'First Name',
+    lastName: 'Last Name',
+    companyName: 'Company Name',
+    phone: 'Phone Number',
+    title: 'Title',
+  };
+
   const payload = {
-    CustomerKey: extensionKey,
-    Properties: Object.keys(row).map((key) => {
-      const value = row[key];
-      return { Property: { Name: key, Value: value } };
+    EmailAddress: email,
+    SubscriberKey: email,
+    Attributes: Object.keys(map).filter(key => data[key]).map((key) => {
+      const value = data[key];
+      return { Name: map[key], Value: value };
     }),
   };
 
-  if (extensionSubscriber) return soap.update('DataExtensionObject', payload);
-  return soap.create('DataExtensionObject', payload);
+  if (subscriber) return soap.update('Subscriber', payload);
+  return soap.create('Subscriber', payload);
 };
 
 module.exports = {
   sendOptStatus,
   getDataExtension,
   getDataExtensionSubscriber,
+  upsertSubscriber,
 };
