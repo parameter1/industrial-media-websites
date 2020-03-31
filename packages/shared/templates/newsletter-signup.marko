@@ -1,0 +1,40 @@
+import { getAsArray } from "@base-cms/object-path";
+import query from "../graphql/queries/newsletter-signup";
+
+$ const { config, site, apollo } = out.global;
+
+$ const type = "newsletter-signup";
+$ const title = "Newsletter Signup";
+$ const description = "Manage Newsletter Subscriptions";
+
+$ const variables = { siteId: config.website('id') };
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper class="mb-block">
+      <@section>
+        <div class="row">
+          <div class="col">
+            <default-theme-breadcrumbs-with-home>
+              <@item>${title}</@item>
+            </default-theme-breadcrumbs-with-home>
+            <h1 class="page-wrapper__title">${description}</h1>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <marko-web-resolve|{ resolved }| promise=apollo.query({ query, variables })>
+          $ const nodes = getAsArray(resolved, "data.emailNewsletters.edges").map(edge => edge.node);
+          <if(nodes.length)>
+            <marko-web-browser-component name="SharedNewsletterSignup" props={ newsletters: nodes } />
+          </if>
+        </marko-web-resolve>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
