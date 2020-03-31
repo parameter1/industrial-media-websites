@@ -855,6 +855,23 @@
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.24.0.tgz#f03f3afa456d9d1229a217f2c7efe15065fac02c"
   integrity sha512-hU6A/4nr/QmwO5ePCboe/oWl/NW6eCZcZVHKLMoYQ+tfO46BhwcKiUz5CAMZJorx5rveAwoAd8eT9g6f4SRVAw==
 
+"@base-cms/marko-web-identity-x@^1.25.8":
+  version "1.25.8"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-identity-x/-/marko-web-identity-x-1.25.8.tgz#1cb24e6a36be31c80c955eeb95b373cae3e512ef"
+  integrity sha512-6m2gNmfpWkFsuLAiZqGtlOvBU9FXt7fMRIDMDgKG2noQDNcku5+OoPpf0DGWf1Cl59JfU0bN0x/epoZasnLyEA==
+  dependencies:
+    "@base-cms/object-path" "^1.25.0"
+    "@base-cms/utils" "^1.25.0"
+    apollo-cache-inmemory "^1.6.3"
+    apollo-client "^2.6.4"
+    apollo-link-http "^1.5.16"
+    body-parser "^1.19.0"
+    cookie "0.3.1"
+    express "^4.17.1"
+    graphql-tag "^2.10.1"
+    moment "^2.24.0"
+    node-fetch "^2.6.0"
+
 "@base-cms/marko-web-native-x@^1.25.0":
   version "1.25.0"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-native-x/-/marko-web-native-x-1.25.0.tgz#667a694b524361699adc984c58e8ebbbc0d6eb65"

@@ -22,8 +22,10 @@ $ const {
     <marko-web-browser-component name="TriggerScreenChangeEvent" />
     <marko-web-gtm-track-bus-event on="screen_change" />
     <marko-web-gtm-track-load-more />
-    <default-theme-site-header />
-    <default-theme-site-menu />
+    <marko-web-identity-x-context|{ hasUser, isEnabled }|>
+      <default-theme-site-header has-user=hasUser reg-enabled=isEnabled />
+      <default-theme-site-menu has-user=hasUser reg-enabled=isEnabled />
+    </marko-web-identity-x-context>
     <${input.aboveContainer} />
   </@above-container>
   <@below-container>

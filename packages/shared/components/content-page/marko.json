@@ -1,0 +1,23 @@
+{
+  "<shared-content-page-gate>": {
+    "template": "./gate.marko",
+    "@can-access": "boolean",
+    "@is-logged-in": "boolean",
+    "@has-required-access-level": "boolean",
+    "@requires-access-level": "boolean",
+    "@requires-user-input": "boolean",
+    "@messages": "object",
+    "@title": "string",
+    "@user-input-title": "string"
+  },
+  "<shared-content-page-comments>": {
+    "template": "./comments.marko",
+    "<content>": {
+      "@id": "number",
+      "@name": "string",
+      "@teaser": "string",
+      "@url": "string"
+    },
+    "@should-display": "boolean"
+  }
+}

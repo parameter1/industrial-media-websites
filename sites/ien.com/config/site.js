@@ -25,8 +25,15 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCwKursTtvT5lmEJBhdYeRbQ' },
     { provider: 'instagram', href: 'https://www.instagram.com/ien_now/' },
     { provider: 'radio-tower', href: 'https://radio.ien.com' },
-    // { provider: 'mic', href: 'https://radio.ien.com' },
   ],
+  identityX: {
+    appId: '5e28a3dd58e67b229e55ae43',
+    enabled: true,
+    comments: { enabled: true },
+    options: {
+      appContextId: '5e7e5fac88f2fa00cdebab24',
+    },
+  },
   gtm: {
     containerId: 'GTM-NMWJZK3',
   },

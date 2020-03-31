@@ -23,6 +23,14 @@ module.exports = {
     { provider: 'facebook', href: 'https://www.facebook.com/CannaEquipmentNews/' },
     { provider: 'twitter', href: 'https://twitter.com/news_cen' },
   ],
+  identityX: {
+    appId: '5e28a3dd58e67b229e55ae43',
+    enabled: true,
+    comments: { enabled: true },
+    options: {
+      appContextId: '5e8203df75a0950125baf2b5',
+    },
+  },
   gtm: {
     containerId: 'GTM-NQ37376',
   },
