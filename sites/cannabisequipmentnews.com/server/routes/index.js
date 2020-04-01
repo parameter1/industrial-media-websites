@@ -7,6 +7,7 @@ const websiteSections = require('./website-section');
 module.exports = (app) => {
   // Homepage
   home(app);
+
   // Dynamic Pages
   dynamicPages(app);
 
