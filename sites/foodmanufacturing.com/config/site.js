@@ -7,9 +7,9 @@ module.exports = {
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/all/fm_logo.png?h=40',
+      src: 'https://base.imgix.net/files/base/indm/all/fm_logo.png?h=45',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/fm_logo.png?h=80 2x',
+        'https://base.imgix.net/files/base/indm/all/fm_logo.png?h=90 2x',
       ],
     },
     footer: {
