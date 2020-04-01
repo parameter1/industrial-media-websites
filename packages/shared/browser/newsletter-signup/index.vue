@@ -129,7 +129,7 @@
               {{ buttonLabel }}
             </button>
             <div v-if="error" class="alert alert-danger mt-3">
-              An error occurred: {{ error.message }}
+              Error: {{ error.message }}
             </div>
             <div v-if="hasSubmitted" class="alert alert-success mt-3">
               Your email preferences has been saved. Thank you!
@@ -197,8 +197,8 @@ export default {
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(this.form),
         });
-        if (!response.ok) throw new Error('An error occurred when saving your email preferences.');
-        await response.json();
+        const json = await response.json();
+        if (!response.ok) throw new Error(json.message || 'An unknown, fatal error occurred.');
         this.hasSubmitted = true;
       } catch (e) {
         this.error = e;
