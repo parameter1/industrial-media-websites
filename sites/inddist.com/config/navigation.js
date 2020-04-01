@@ -16,7 +16,7 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: 'https://ien.wufoo.com/forms/mlz32641lbd8mc/', label: 'Subscribe', target: '_blank' },
+      { href: '/newsletter-signup', label: 'Newsletter Signup' },
       { href: '/magazine', label: 'Magazine' },
       { href: '/videos', label: 'Videos' },
     ],
@@ -63,7 +63,7 @@ module.exports = {
     {
       label: 'User Tools',
       items: [
-        { href: 'https://ien.wufoo.com/forms/mlz32641lbd8mc/', label: 'Subscribe', target: '_blank' },
+        { href: '/newsletter-signup', label: 'Newsletter Signup' },
         { href: '/page/id-advertising', label: 'Advertising' },
         { href: '/page/id-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },

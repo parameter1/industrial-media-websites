@@ -1,13 +1,16 @@
 const navigation = require('./navigation');
+const gam = require('./gam');
+
 
 module.exports = {
   navigation,
+  gam,
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=40',
+      src: 'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=45',
       srcset: [
-        'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=80 2x',
+        'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=90 2x',
       ],
     },
     footer: {
@@ -33,6 +36,9 @@ module.exports = {
   },
   gtm: {
     containerId: 'GTM-M3QH8WQ',
+  },
+  gcse: {
+    id: '003355913687346718228:aa7spjxlyeg',
   },
   wufoo: {
     userName: 'ien',
