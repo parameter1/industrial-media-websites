@@ -10,6 +10,7 @@ module.exports = {
   },
   secondary: {
     items: [
+      { href: '/newsletter-signup', label: 'Newsletter Signup' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: '/advertise', label: 'Advertise' },
     ],
@@ -52,7 +53,7 @@ module.exports = {
     {
       label: 'User Tools',
       items: [
-        { href: '#', label: 'Subscribe to magazine', target: '_blank' },
+        { href: '/newsletter-signup', label: 'Newsletter Signup' },
         { href: '/page/advertise', label: 'Advertise' },
         { href: '/page/about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
