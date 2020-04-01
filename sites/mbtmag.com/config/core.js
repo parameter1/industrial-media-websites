@@ -1,3 +1,1 @@
-module.exports = {
-  siteName: 'Manufacturing Business Technology',
-};
+module.exports = {};

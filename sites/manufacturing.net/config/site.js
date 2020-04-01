@@ -1,7 +1,6 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
 
-
 module.exports = {
   navigation,
   gam,

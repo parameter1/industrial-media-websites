@@ -13,7 +13,7 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: 'https://ien.wufoo.com/forms/m14o0t6z0foprwa/', label: 'Subscribe', target: '_blank' },
+      { href: '/newsletter-signup', label: 'Newsletter Signup' },
       { href: '/videos', label: 'Videos' },
     ],
   },
@@ -55,7 +55,7 @@ module.exports = {
     {
       label: 'User Tools',
       items: [
-        { href: 'https://ien.wufoo.com/forms/m14o0t6z0foprwa/', label: 'Subscribe', target: '_blank' },
+        { href: '/newsletter-signup', label: 'Newsletter Signup' },
         { href: '/page/mbt-advertise', label: 'Advertise' },
         { href: '/page/mbt-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
