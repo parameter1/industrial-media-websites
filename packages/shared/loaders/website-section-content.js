@@ -44,8 +44,8 @@ module.exports = async (apolloClient, {
   let standard = { nodes: [] };
   if (withStandardQuery) {
     standard = await loadStandardContent(apolloClient, {
-      ...standardParams,
       sectionId,
+      ...standardParams,
       excludeContentIds: featuredIds,
     });
   }

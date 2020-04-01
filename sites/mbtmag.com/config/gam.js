@@ -1,27 +1,17 @@
-const GAMConfiguration = require('@base-cms/marko-web-gam/config');
+const configureGAM = require('@industrial-media/package-shared/config/gam');
 
-const config = new GAMConfiguration('137873098', { basePath: 'MBT' });
-
-config
-  .setTemplate('LB', {
-    size: [[970, 90], [970, 66], [728, 90], [320, 50], [300, 50], [300, 100]],
-    sizeMapping: [
-      { viewport: [980, 0], size: [[970, 90], [970, 66], [728, 90]] },
-      { viewport: [750, 0], size: [728, 90] },
-      { viewport: [320, 0], size: [[300, 50], [320, 50], [300, 100]] },
-    ],
-  })
-  .setTemplate('BILLBOARD', { size: [970, 250] })
-  .setTemplate('CONTENT', { size: [[300, 250], [300, 600]] });
+const config = configureGAM({ basePath: 'MBT' });
 
 config
   .setAliasAdUnits('default', [
     { name: 'lb1', templateName: 'LB', path: 'default_lb1' },
-    { name: 'lb2', templateName: 'LB', path: 'default_lb2' },
-    { name: 'rail1', templateName: 'CONTENT', path: 'default_rail1' },
-    { name: 'rail2', templateName: 'CONTENT', path: 'default_rail2' },
-    { name: 'load-more', templateName: 'CONTENT', path: 'default_load-more' },
-    { name: 'billboard', templateName: 'BILLBOARD', path: 'default_billboard' },
+    { name: 'lb-sticky-bottom', templateName: 'LB-STICKY-BOTTOM', path: 'default_lb1' },
+    { name: 'billboard1', templateName: 'BILLBOARD', path: 'default_billboard' },
+    { name: 'rail1', templateName: 'RAIL1', path: 'default_rail1' },
+    { name: 'rail2', templateName: 'RAIL2', path: 'default_rail1' },
+    { name: 'infinite-rail', templateName: 'INFINITE-RAIL', path: 'default_rail1' },
+    { name: 'infinite-interstitial', templateName: 'INFINITE-INTERSTITIAL', path: 'default_rail1' },
+    { name: 'in-content', templateName: 'IN-CONTENT', path: 'default_rail1' },
     { name: 'reskin', path: 'default_reskin' },
     { name: 'wa', path: 'default_wa' },
   ]);

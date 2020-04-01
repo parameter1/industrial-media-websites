@@ -9,7 +9,7 @@ $theme-site-navbar-primary-bg-color: #ec1a23;
 $theme-site-navbar-secondary-type: light;
 
 $theme-site-navbar-logo-height: 45px;
-$theme-site-navbar-logo-height-sm: 25px;
+$theme-site-navbar-logo-height-sm: 30px;
 
 $theme-site-header-breakpoints: (
   hide-primary: 832px,
@@ -19,16 +19,25 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 1105px
 );
 
-$theme-content-heading-h3-margin-bottom: .5rem;
+// Site Section Colors
+$website-section-colors: (
+  advanced-manufacturing: #a75deb,
+  automation: #77d2d5,
+  finishing-world: lighten(#3e569f, 5%),
+  operations: #0da8db,
+  product-development: lighten(#bc0070, 2%),
+  new-products: #4fba73,
+  safety: #e77765,
+  supply-chain: #c9e765,
+  food-beverage: lighten(#008a51, 5%),
+);
 
-@import "../../node_modules/@base-cms/marko-web-gam/scss/fixed-ad-bottom";
-@import "../../node_modules/@base-cms/marko-web-reveal-ad/scss/reveal-ad";
-@import "../../node_modules/@base-cms/marko-web-social-sharing/scss/buttons";
-@import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
+@import "../../node_modules/@industrial-media/package-shared/scss/core";
 
-$pswp__root-z-index: $theme-site-header-z-index + 1 !default;
-@import "../../node_modules/@base-cms/marko-web-photoswipe/scss/main";
 
-// @todo this should be removed once contact us is in core
-@import "../../node_modules/@industrial-media/package-common/scss/contact-us-form";
-@import "../../node_modules/@industrial-media/package-common/scss/shared";
+
+$primary: #ec1a23 !default;
+$secondary: #495057; // equivalent to default gray-700
+$light: #e9ecef !default; // equivalent to default gray-200
+$dark: #212529 !default; // equivalent to default gray-900
+$info: #6c757d !default; // equivalent to default gray-600

@@ -1,3 +1,1 @@
-module.exports = {
-  siteName: 'Food Manufacturing',
-};
+module.exports = {};

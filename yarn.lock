@@ -872,15 +872,6 @@
     moment "^2.24.0"
     node-fetch "^2.6.0"
 
-"@base-cms/marko-web-native-x@^1.25.0":
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-native-x/-/marko-web-native-x-1.25.0.tgz#667a694b524361699adc984c58e8ebbbc0d6eb65"
-  integrity sha512-BXaJ6cuTuShIRjjav+EgWrBWBkYRWCIakbxVttGxFOHgCxBGof9JolwgyRh39zvuAm0Zl1lhQkGSdNtvuU6VPg==
-  dependencies:
-    "@base-cms/object-path" "^1.25.0"
-    "@base-cms/utils" "^1.25.0"
-    node-fetch "^2.6.0"
-
 "@base-cms/marko-web-photoswipe@^1.25.0":
   version "1.25.0"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-photoswipe/-/marko-web-photoswipe-1.25.0.tgz#d00e27af9d2ad25762e887513a3b219e92835333"
@@ -1858,27 +1849,12 @@
   resolved "https://registry.yarnpkg.com/@newrelic/aws-sdk/-/aws-sdk-1.1.2.tgz#bccb81bb5ac35e51c60750d4a8866caac821b553"
   integrity sha512-1YX9Q8xGR/j6Ia7bEAlxiWP0IKS39EaXAuOvW4KimruirQPAFp2EECCQqtkg5psnhGrLELyMCDKNQSJaCUQk8Q==
 
-"@newrelic/koa@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@newrelic/koa/-/koa-1.0.8.tgz#59bf54e86cef700427e32dbdc7c931a213146ac1"
-  integrity sha512-kY//FlLQkGdUIKEeGJlyY3dJRU63EG77YIa48ACMGZxQbWRd3WZMikyft33f8XScTq6WpCDo9xa0viNo8zeYkg==
-  dependencies:
-    methods "^1.1.2"
-
 "@newrelic/koa@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@newrelic/koa/-/koa-3.0.0.tgz#048f636c6c06ab4e823674a2ed3d67677a22ed50"
   integrity sha512-SxfcMqSxiKa3pi7dRmVoCXnh/VLc196GmwyGU2Fr5+vMxS5jPVj2a15v1mn2DGu04XngfXDvyt9Xa6u1JVRDpQ==
   dependencies:
     methods "^1.1.2"
-
-"@newrelic/native-metrics@^4.0.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@newrelic/native-metrics/-/native-metrics-4.1.0.tgz#cb1641e55179cd6ec058441ae0b0eedfa36ee0eb"
-  integrity sha512-7CZlKMLuaYQW7mV9qVyo9b9HVe2xBnyn+kkETRJoZGs5P7gdfv9AAE3RPhtOBUopTfbmc8ju7njYadjui9J1XA==
-  dependencies:
-    nan "^2.12.1"
-    semver "^5.5.1"
 
 "@newrelic/native-metrics@^5.0.0":
   version "5.0.0"
@@ -1887,13 +1863,6 @@
   dependencies:
     nan "^2.14.0"
     semver "^5.5.1"
-
-"@newrelic/superagent@^1.0.2":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@newrelic/superagent/-/superagent-1.0.3.tgz#8c6ea84f8b463275c58e740204bf2939c2e2a649"
-  integrity sha512-lJbsqKa79qPLbHZsbiRaXl1jfzaXAN7zqqnLRqBY+zI/O5zcfyNngTmdi+9y+qIUq7xHYNaLsAxCXerrsoINKg==
-  dependencies:
-    methods "^1.1.2"
 
 "@newrelic/superagent@^2.0.1":
   version "2.0.1"
@@ -7910,23 +7879,6 @@ neo-async@^2.5.0, neo-async@^2.6.0, neo-async@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
-
-newrelic@^5.11.0:
-  version "5.11.0"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-5.11.0.tgz#51dc124867f9f8ef4bf797143319c2d28c4c1eb7"
-  integrity sha512-KGWYdQkCIovYW8rtKE1aVu7Sl44xEGHtqXsSuInVWJJyfbI9KN0ZjnZUzdUA7SHlMM6XrW+TPY0bphSjUV2kWw==
-  dependencies:
-    "@newrelic/koa" "^1.0.8"
-    "@newrelic/superagent" "^1.0.2"
-    "@tyriar/fibonacci-heap" "^2.0.7"
-    async "^2.1.4"
-    concat-stream "^2.0.0"
-    https-proxy-agent "^2.2.1"
-    json-stringify-safe "^5.0.0"
-    readable-stream "^3.1.1"
-    semver "^5.3.0"
-  optionalDependencies:
-    "@newrelic/native-metrics" "^4.0.0"
 
 newrelic@^6.4.1:
   version "6.4.2"

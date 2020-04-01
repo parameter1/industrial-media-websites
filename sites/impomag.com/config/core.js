@@ -1,3 +1,1 @@
-module.exports = {
-  siteName: 'IMPO',
-};
+module.exports = {};
