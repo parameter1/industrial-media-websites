@@ -23,6 +23,12 @@ x-env-defaults: &env
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
 
+x-env-marketing-cloud: &env-marketing-cloud
+  FUEL_API_CLIENT_ID: ${FUEL_API_CLIENT_ID}
+  FUEL_API_CLIENT_SECRET: ${FUEL_API_CLIENT_SECRET}
+  FUEL_API_AUTH_URL: ${FUEL_API_AUTH_URL}
+  FUEL_API_ACCOUNT_ID: ${FUEL_API_ACCOUNT_ID}
+
 x-env-caprica: &env-caprica
   GRAPHQL_URI: ${GRAPHQL_URI-https://caprica.graphql.base-cms.io}
   OEMBED_URI: ${OEMBED_URI-https://caprica.oembed.base-cms.io}
@@ -62,10 +68,7 @@ services:
     working_dir: /root/services/marketing-cloud
     entrypoint: ["node", "./data-extensions/refresh.js"]
     environment:
-      FUEL_API_CLIENT_ID: ${FUEL_API_CLIENT_ID}
-      FUEL_API_CLIENT_SECRET: ${FUEL_API_CLIENT_SECRET}
-      FUEL_API_AUTH_URL: ${FUEL_API_AUTH_URL}
-      FUEL_API_ACCOUNT_ID: ${FUEL_API_ACCOUNT_ID}
+      <<: *env-marketing-cloud
       NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
       NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
       NODE_ENV: development
@@ -78,6 +81,7 @@ services:
     environment:
       <<: *env
       <<: *env-caprica
+      <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
@@ -94,6 +98,7 @@ services:
     environment:
       <<: *env
       <<: *env-caprica
+      <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
@@ -110,6 +115,7 @@ services:
     environment:
       <<: *env
       <<: *env-caprica
+      <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
@@ -126,6 +132,7 @@ services:
     environment:
       <<: *env
       <<: *env-caprica
+      <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
@@ -142,6 +149,7 @@ services:
     environment:
       <<: *env
       <<: *env-caprica
+      <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
@@ -158,6 +166,7 @@ services:
     environment:
       <<: *env
       <<: *env-caprica
+      <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9715
       LIVERELOAD_PORT: 19715
@@ -174,6 +183,7 @@ services:
     environment:
       <<: *env
       <<: *env-caprica
+      <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9716
       LIVERELOAD_PORT: 19716
@@ -190,6 +200,7 @@ services:
     environment:
       <<: *env
       <<: *env-caprica
+      <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9717
       LIVERELOAD_PORT: 19717

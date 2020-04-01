@@ -14,6 +14,7 @@ module.exports = {
   },
   secondary: {
     items: [
+      { href: '/newsletter-signup', label: 'Newsletter Signup' },
       { href: '/video', label: 'Video' },
       { href: '/software', label: 'Software' },
       { href: '/made-in-america', label: 'Made in America' },
@@ -65,7 +66,7 @@ module.exports = {
     {
       label: 'User Tools',
       items: [
-        { href: '#', label: 'Newsletter Sign Up', target: '_blank' },
+        { href: '/newsletter-signup', label: 'Newsletter Signup' },
         { href: 'https://tcc.dragonforms.com/loading.do?omedasite=TCC1_IEnew', label: 'Subscribe to Magazine', target: '_blank' },
         { href: '/page/advertise', label: 'Advertise' },
         { href: '/page/about-us', label: 'About Us' },

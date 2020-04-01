@@ -8,12 +8,15 @@ const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
 const userRoutes = require('./routes/user');
+const newsletterRoute = require('./routes/newsletter-signup');
 
 const routes = siteRoutes => (app) => {
   // Handle contact submissions on /__contact-us
   contactUsHandler(app);
   // Load user routes.
   userRoutes(app);
+  // Load newsletter signup.
+  newsletterRoute(app);
   // Load site routes.
   siteRoutes(app);
 };
