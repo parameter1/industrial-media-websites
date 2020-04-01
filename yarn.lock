@@ -872,15 +872,6 @@
     moment "^2.24.0"
     node-fetch "^2.6.0"
 
-"@base-cms/marko-web-native-x@^1.25.0":
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-native-x/-/marko-web-native-x-1.25.0.tgz#667a694b524361699adc984c58e8ebbbc0d6eb65"
-  integrity sha512-BXaJ6cuTuShIRjjav+EgWrBWBkYRWCIakbxVttGxFOHgCxBGof9JolwgyRh39zvuAm0Zl1lhQkGSdNtvuU6VPg==
-  dependencies:
-    "@base-cms/object-path" "^1.25.0"
-    "@base-cms/utils" "^1.25.0"
-    node-fetch "^2.6.0"
-
 "@base-cms/marko-web-photoswipe@^1.25.0":
   version "1.25.0"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-photoswipe/-/marko-web-photoswipe-1.25.0.tgz#d00e27af9d2ad25762e887513a3b219e92835333"
