@@ -1,9 +1,11 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
+const socialMediaLinks = require('./social-links');
 
 module.exports = {
   navigation,
   gam,
+  socialMediaLinks,
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
@@ -19,13 +21,6 @@ module.exports = {
       ],
     },
   },
-  socialMediaLinks: [
-    { provider: 'facebook', href: 'https://www.facebook.com/Industrial-Equipment-News-153179218105048' },
-    { provider: 'twitter', href: 'https://twitter.com/IEN_Now' },
-    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCwKursTtvT5lmEJBhdYeRbQ' },
-    { provider: 'instagram', href: 'https://www.instagram.com/ien_now/' },
-    { provider: 'radio-tower', href: 'https://radio.ien.com' },
-  ],
   identityX: {
     appId: '5e28a3dd58e67b229e55ae43',
     enabled: true,
