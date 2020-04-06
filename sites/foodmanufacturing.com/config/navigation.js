@@ -1,3 +1,6 @@
+const mapSocialLinks = require('@industrial-media/package-shared/utils/map-nav-social-links');
+const socialLinks = require('./social-links');
+
 module.exports = {
   primary: {
     items: [
@@ -22,6 +25,7 @@ module.exports = {
   },
   tertiary: {
     items: [
+      ...mapSocialLinks({ links: socialLinks }),
       { href: '/search', label: 'Search', icon: 'search' },
     ],
   },

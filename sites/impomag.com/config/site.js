@@ -1,9 +1,11 @@
 const navigation = require('./navigation');
+const socialMediaLinks = require('./social-links');
 const gam = require('./gam');
 
 module.exports = {
   navigation,
   gam,
+  socialMediaLinks,
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
@@ -19,8 +21,6 @@ module.exports = {
       ],
     },
   },
-  socialMediaLinks: [
-  ],
   identityX: {
     appId: '5e28a3dd58e67b229e55ae43',
     enabled: true,

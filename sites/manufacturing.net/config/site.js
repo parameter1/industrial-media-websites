@@ -1,9 +1,11 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
+const socialMediaLinks = require('./social-links');
 
 module.exports = {
   navigation,
   gam,
+  socialMediaLinks,
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
@@ -19,11 +21,6 @@ module.exports = {
       ],
     },
   },
-  socialMediaLinks: [
-    { provider: 'facebook', href: 'http://www.facebook.com/pages/Manufacturingnet/382208778857' },
-    { provider: 'twitter', href: 'http://www.twitter.com/mnetnews' },
-    { provider: 'youtube', href: 'http://www.youtube.com/Manufacturingdotnet' },
-  ],
   identityX: {
     appId: '5e28a3dd58e67b229e55ae43',
     enabled: true,
