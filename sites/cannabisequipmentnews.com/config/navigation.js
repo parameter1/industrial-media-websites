@@ -8,6 +8,7 @@ module.exports = {
       { href: '/packaging', label: 'Packaging' },
       { href: '/news', label: 'News' },
       { href: '/processing', label: 'Processing' },
+      { href: '/new-products', label: 'New Products' },
     ],
   },
   secondary: {

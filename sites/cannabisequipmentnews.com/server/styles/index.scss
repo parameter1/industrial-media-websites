@@ -12,7 +12,7 @@ $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 650px,
+  hide-primary: 770px,
   hide-secondary: 375px,
   small-logo: 375px,
   small-text-primary: 0,
@@ -28,6 +28,7 @@ $website-section-colors: (
   packaging: #3f5364,
   news: #748693,
   processing: #a3bcc4,
+  new-products: #a3bcc4
 );
 
 @import "../../node_modules/@industrial-media/package-shared/scss/core";
