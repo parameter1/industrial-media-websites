@@ -1,7 +1,11 @@
 module.exports = {
   primary: {
     items: [
-      { href: '/industries', label: 'Industries' },
+      { href: '/industries/aerospace', label: 'Aerospace' },
+      { href: '/industries/automotive', label: 'Automotive' },
+      { href: '/industries/manufacturing', label: 'Manufacturing' },
+      { href: '/industries/medical', label: 'Medical' },
+      { href: '/industries/military', label: 'Military' },
       { href: '/news', label: 'News' },
       { href: '/exclusives', label: 'Exclusives' },
       { href: '/video', label: 'Video' },
