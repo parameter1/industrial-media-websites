@@ -88,11 +88,13 @@ $ const promise = websiteSectionContentLoader(apollo, {
             </@section>
 
             <@section>
-              <marko-web-node-list collapsible=false>
-                <@header tag="h1" modifiers=["website-section-title", section.alias]>
-                  <marko-web-website-section-name tag=null obj=section />
-                </@header>
-              </marko-web-node-list>
+              <if(alias !== "home")>
+                <marko-web-node-list collapsible=false>
+                  <@header tag="h1" modifiers=["website-section-title", section.alias]>
+                    <marko-web-website-section-name tag=null obj=section />
+                  </@header>
+                </marko-web-node-list>
+              </if>
 
               <div class="row">
                 <div class="col-lg-8">
