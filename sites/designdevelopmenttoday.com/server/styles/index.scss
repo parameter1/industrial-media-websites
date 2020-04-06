@@ -11,7 +11,7 @@ $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 1060px,
+  hide-primary: 592px,
   hide-secondary: 592px,
   small-logo: 375px,
   small-text-primary: 0,
@@ -28,15 +28,11 @@ $website-section-colors: ();
   &__items {
     &--primary {
       font-family: "Roboto Slab", sans-serif;
-      font-size: 16px;
+      font-size: 17px;
       text-transform: uppercase;
-      letter-spacing: .6px;
+      letter-spacing: .8px;
 
       #{ $self } {
-        &__item {
-          padding-right: 4px;
-          padding-left: 4px;
-        }
         &__link {
           &--active {
             color: $primary;
