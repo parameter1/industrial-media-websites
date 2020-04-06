@@ -10,14 +10,14 @@ module.exports = {
       { href: '/safety', label: 'Safety' },
       { href: '/supply-chain', label: 'Supply Chain' },
       { href: '/food-beverage', label: 'Food & Beverage' },
+      { href: '/software', label: 'Software' },
+      { href: '/made-in-america', label: 'Made in America' },
     ],
   },
   secondary: {
     items: [
       { href: '/newsletter-signup', label: 'Newsletter Signup' },
       { href: '/video', label: 'Video' },
-      { href: '/software', label: 'Software' },
-      { href: '/made-in-america', label: 'Made in America' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: '/advertise', label: 'Advertise' },
       { href: '/magazine', label: 'Magazine' },
