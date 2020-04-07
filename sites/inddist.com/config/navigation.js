@@ -1,9 +1,10 @@
 const mapSocialLinks = require('@industrial-media/package-shared/utils/map-nav-social-links');
+const sortNavItems = require('@industrial-media/package-shared/utils/sort-nav-items');
 const socialLinks = require('./social-links');
 
 module.exports = {
   primary: {
-    items: [
+    items: sortNavItems([
       { href: '/associations', label: 'Associations' },
       { href: '/big-50', label: 'Big 50' },
       { href: '/business-technology', label: 'Business Technology' },
@@ -15,7 +16,7 @@ module.exports = {
       { href: '/staffing-changes', label: 'Staffing Changes' },
       { href: '/supply-chain', label: 'Supply Chain' },
       { href: '/workforce-development', label: 'Workforce' },
-    ],
+    ]),
   },
   secondary: {
     items: [
@@ -43,7 +44,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
+      items: sortNavItems([
         { href: '/associations', label: 'Associations' },
         { href: '/big-50', label: 'Big 50' },
         { href: '/business-technology', label: 'Business Technology' },
@@ -55,7 +56,7 @@ module.exports = {
         { href: '/staffing-changes', label: 'Staffing Changes' },
         { href: '/supply-chain', label: 'Supply Chain' },
         { href: '/workforce-development', label: 'Workforce' },
-      ],
+      ]),
     },
     {
       label: 'Resources',

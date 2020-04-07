@@ -1,9 +1,10 @@
 const mapSocialLinks = require('@industrial-media/package-shared/utils/map-nav-social-links');
+const sortNavItems = require('@industrial-media/package-shared/utils/sort-nav-items');
 const socialLinks = require('./social-links');
 
 module.exports = {
   primary: {
-    items: [
+    items: sortNavItems([
       { href: '/industries/aerospace', label: 'Aerospace' },
       { href: '/industries/automotive', label: 'Automotive' },
       { href: '/industries/manufacturing', label: 'Manufacturing' },
@@ -13,7 +14,7 @@ module.exports = {
       { href: '/exclusives', label: 'Exclusives' },
       { href: '/video', label: 'Video' },
       { href: '/new-products', label: 'New Products' },
-    ],
+    ]),
   },
   secondary: {
     items: [
@@ -41,13 +42,17 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
-        { href: '/industries', label: 'Industries' },
+      items: sortNavItems([
+        { href: '/industries/aerospace', label: 'Aerospace' },
+        { href: '/industries/automotive', label: 'Automotive' },
+        { href: '/industries/manufacturing', label: 'Manufacturing' },
+        { href: '/industries/medical', label: 'Medical' },
+        { href: '/industries/military', label: 'Military' },
         { href: '/news', label: 'News' },
         { href: '/exclusives', label: 'Exclusives' },
         { href: '/video', label: 'Video' },
         { href: '/new-products', label: 'New Products' },
-      ],
+      ]),
     },
     {
       label: 'Resources',
