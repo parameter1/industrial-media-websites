@@ -1,6 +1,10 @@
+const mapSocialLinks = require('@industrial-media/package-shared/utils/map-nav-social-links');
+const sortNavItems = require('@industrial-media/package-shared/utils/sort-nav-items');
+const socialLinks = require('./social-links');
+
 module.exports = {
   primary: {
-    items: [
+    items: sortNavItems([
       { href: '/best-practices', label: 'Best Practices' },
       { href: '/business-intelligence', label: 'Business Intelligence' },
       { href: '/cloud-computing', label: 'Cloud Computing' },
@@ -9,7 +13,7 @@ module.exports = {
       { href: '/global', label: 'Global' },
       { href: '/quality-control', label: 'Quality Control' },
       { href: '/security', label: 'Security' },
-    ],
+    ]),
   },
   secondary: {
     items: [
@@ -19,6 +23,7 @@ module.exports = {
   },
   tertiary: {
     items: [
+      ...mapSocialLinks({ links: socialLinks }),
       { href: '/search', label: 'Search', icon: 'search' },
     ],
   },
@@ -35,7 +40,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
+      items: sortNavItems([
         { href: '/best-practices', label: 'Best Practices' },
         { href: '/business-intelligence', label: 'Business Intelligence' },
         { href: '/cloud-computing', label: 'Cloud Computing' },
@@ -44,7 +49,7 @@ module.exports = {
         { href: '/global', label: 'Global' },
         { href: '/quality-control', label: 'Quality Control' },
         { href: '/security', label: 'Security' },
-      ],
+      ]),
     },
     {
       label: 'Resources',

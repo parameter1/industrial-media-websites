@@ -1,6 +1,10 @@
+const mapSocialLinks = require('@industrial-media/package-shared/utils/map-nav-social-links');
+const sortNavItems = require('@industrial-media/package-shared/utils/sort-nav-items');
+const socialLinks = require('./social-links');
+
 module.exports = {
   primary: {
-    items: [
+    items: sortNavItems([
       { href: '/aerospace', label: 'Aerospace' },
       { href: '/automotive', label: 'Automotive' },
       { href: '/energy', label: 'Energy' },
@@ -9,7 +13,7 @@ module.exports = {
       { href: '/operations', label: 'Operations' },
       { href: '/software', label: 'Software' },
       { href: '/supply-chain', label: 'Supply Chain' },
-    ],
+    ]),
   },
   secondary: {
     items: [
@@ -19,6 +23,7 @@ module.exports = {
   },
   tertiary: {
     items: [
+      ...mapSocialLinks({ links: socialLinks }),
       { href: '/search', label: 'Search', icon: 'search' },
     ],
   },
@@ -35,7 +40,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
+      items: sortNavItems([
         { href: '/aerospace', label: 'Aerospace' },
         { href: '/automotive', label: 'Automotive' },
         { href: '/energy', label: 'Energy' },
@@ -44,7 +49,7 @@ module.exports = {
         { href: '/operations', label: 'Operations' },
         { href: '/software', label: 'Software' },
         { href: '/supply-chain', label: 'Supply Chain' },
-      ],
+      ]),
     },
     {
       label: 'Resources',

@@ -1,9 +1,10 @@
 const mapSocialLinks = require('@industrial-media/package-shared/utils/map-nav-social-links');
+const sortNavItems = require('@industrial-media/package-shared/utils/sort-nav-items');
 const socialLinks = require('./social-links');
 
 module.exports = {
   primary: {
-    items: [
+    items: sortNavItems([
       { href: '/inventory-management', label: 'Inventory Management' },
       { href: '/maintenance', label: 'Maintenance' },
       { href: '/material-handling', label: 'Material Handling' },
@@ -11,7 +12,7 @@ module.exports = {
       { href: '/products', label: 'Products' },
       { href: '/safety', label: 'Safety' },
       { href: '/training-development', label: 'Training & Development' },
-    ],
+    ]),
   },
   secondary: {
     items: [
@@ -38,7 +39,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
+      items: sortNavItems([
         { href: '/inventory-management', label: 'Inventory Management' },
         { href: '/maintenance', label: 'Maintenance' },
         { href: '/material-handling', label: 'Material Handling' },
@@ -46,7 +47,7 @@ module.exports = {
         { href: '/products', label: 'Products' },
         { href: '/safety', label: 'Safety' },
         { href: '/training-development', label: 'Training & Development' },
-      ],
+      ]),
     },
     {
       label: 'Resources',
