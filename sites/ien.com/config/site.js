@@ -7,6 +7,7 @@ module.exports = {
   gam,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
+  simpleFavicon: true,
   logos: {
     navbar: {
       src: 'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=45',
