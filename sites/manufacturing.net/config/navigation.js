@@ -1,4 +1,6 @@
+const mapSocialLinks = require('@industrial-media/package-shared/utils/map-nav-social-links');
 const sortNavItems = require('@industrial-media/package-shared/utils/sort-nav-items');
+const socialLinks = require('./social-links');
 
 module.exports = {
   primary: {
@@ -21,6 +23,7 @@ module.exports = {
   },
   tertiary: {
     items: [
+      ...mapSocialLinks({ links: socialLinks }),
       { href: '/search', label: 'Search', icon: 'search' },
     ],
   },
