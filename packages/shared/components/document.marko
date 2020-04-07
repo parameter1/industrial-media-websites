@@ -1,3 +1,5 @@
+import { get } from "@base-cms/object-path";
+
 $ const {
   config,
   site,
@@ -13,10 +15,15 @@ $ const siteContext = {
 
 <marko-web-document ...input>
   <@head>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <if(site.get('simpleFavicon'))>
+      <link rel="shortcut icon" href="/favicon.ico">
+    </if>
+    <else>
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="manifest" href="/site.webmanifest">
+    </else>
     <marko-web-gam-init />
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
     <marko-web-gtm-push data={ site: siteContext } />
