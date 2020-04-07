@@ -4,7 +4,6 @@ const socialLinks = require('./social-links');
 module.exports = {
   primary: {
     items: [
-      { href: '/advanced-manufacturing', label: 'Advanced MFG' },
       { href: '/automation', label: 'Automation' },
       { href: '/finishing-world', label: 'Finishing World' },
       { href: '/operations', label: 'Operations' },
@@ -12,7 +11,6 @@ module.exports = {
       { href: '/new-products', label: 'New Products' },
       { href: '/safety', label: 'Safety' },
       { href: '/supply-chain', label: 'Supply Chain' },
-      { href: '/food-beverage', label: 'Food & Beverage' },
       { href: '/software', label: 'Software' },
       { href: '/made-in-america', label: 'Made in America' },
     ],
