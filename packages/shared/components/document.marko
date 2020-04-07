@@ -1,8 +1,15 @@
 $ const {
+  config,
   site,
   req,
   GAM,
 } = out.global;
+
+$ const siteContext = {
+  id: config.website("id"),
+  name: config.website("name"),
+  origin: config.website("origin"),
+};
 
 <marko-web-document ...input>
   <@head>
@@ -12,6 +19,7 @@ $ const {
     <link rel="manifest" href="/site.webmanifest">
     <marko-web-gam-init />
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
+    <marko-web-gtm-push data={ site: siteContext } />
     <${input.head} />
     <marko-web-gtm-start />
     <marko-web-gam-enable />
