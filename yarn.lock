@@ -822,10 +822,10 @@
     moment "^2.24.0"
     moment-timezone "^0.5.26"
 
-"@base-cms/marko-web-gam@^1.25.0":
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gam/-/marko-web-gam-1.25.0.tgz#f17be1d0b2ba6b785bd0bf5b94ef63b9b94c28f0"
-  integrity sha512-6Eo6w+zI+seFM1CUmb6er+FgPL4RvLInDz3jl2nbsqC9vejMrPhtkYxdIkFdyrTe6rLlyC4+hNE3lCPyyO6Z2A==
+"@base-cms/marko-web-gam@^1.25.10":
+  version "1.25.10"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gam/-/marko-web-gam-1.25.10.tgz#f40f44f4d68ebab4c51d8ce0b42efc139bd618ee"
+  integrity sha512-QC2UaGQaozbrElM2mjaNpuEL+3ifKkRStOIv3/jn1yd4jVuUv6m8bbtfDOpNxEF0+66e6aFWVCnVOlqPwDjfxQ==
   dependencies:
     "@base-cms/object-path" "^1.25.0"
     "@base-cms/utils" "^1.25.0"
@@ -855,10 +855,10 @@
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.24.0.tgz#f03f3afa456d9d1229a217f2c7efe15065fac02c"
   integrity sha512-hU6A/4nr/QmwO5ePCboe/oWl/NW6eCZcZVHKLMoYQ+tfO46BhwcKiUz5CAMZJorx5rveAwoAd8eT9g6f4SRVAw==
 
-"@base-cms/marko-web-identity-x@^1.25.8":
-  version "1.25.8"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-identity-x/-/marko-web-identity-x-1.25.8.tgz#1cb24e6a36be31c80c955eeb95b373cae3e512ef"
-  integrity sha512-6m2gNmfpWkFsuLAiZqGtlOvBU9FXt7fMRIDMDgKG2noQDNcku5+OoPpf0DGWf1Cl59JfU0bN0x/epoZasnLyEA==
+"@base-cms/marko-web-identity-x@^1.25.11":
+  version "1.25.11"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-identity-x/-/marko-web-identity-x-1.25.11.tgz#1ab6d32223fa9acdf92713d6dc2d236a6a87cafd"
+  integrity sha512-UD/pPLCdDxu22ptZu8x1gxlX6tJiW/I39isvBdtqICn+hFbsIMhdpFX63UzZstcuyUnQL9bik0x9zq2c0h3dHQ==
   dependencies:
     "@base-cms/object-path" "^1.25.0"
     "@base-cms/utils" "^1.25.0"
@@ -896,10 +896,10 @@
   dependencies:
     "@base-cms/utils" "^1.25.0"
 
-"@base-cms/marko-web-theme-default@^1.25.4":
-  version "1.25.4"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-theme-default/-/marko-web-theme-default-1.25.4.tgz#1057b9b753052b6c54b4eecf284d5fad7667b8a1"
-  integrity sha512-6ule5MCPRUhgn4VRP2TK/7kcLhFfjHmeOy3P3g2Cib5+IstQGQI6a7zTFOiefT3ssBxnoqwmSCzqhwlT/qaGeg==
+"@base-cms/marko-web-theme-default@^1.26.1":
+  version "1.26.1"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-theme-default/-/marko-web-theme-default-1.26.1.tgz#5b205c1ca36746dc7f4b617e833923d055f73141"
+  integrity sha512-U2jYsQF1WSj5dxuXUN6Qd/cOHtApnxc2GqkO2TGycSnlwd3AxSkJ1+M5zG/h80xUiudgYrpsLdwhINGFW62P5w==
   dependencies:
     "@base-cms/marko-web-icons" "^1.24.0"
     "@base-cms/object-path" "^1.25.0"
