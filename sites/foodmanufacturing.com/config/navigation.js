@@ -20,7 +20,6 @@ module.exports = {
   secondary: {
     items: [
       { href: '/newsletter-signup', label: 'Newsletter Signup' },
-      { href: 'https://ien.wufoo.com/forms/m1789xl4052dm1c/', label: 'Subscribe', target: '_blank' },
       { href: '/videos', label: 'Videos' },
     ],
   },
