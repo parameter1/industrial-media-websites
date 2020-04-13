@@ -21,10 +21,30 @@ module.exports = (app) => {
     IdentityX(app, config);
 
     const navConfig = [
-      { href: config.getEndpointFor('login'), label: 'Log In', when: 'logged-out' },
-      { href: config.getEndpointFor('profile'), label: 'My Profile', when: 'logged-in' },
-      { href: config.getEndpointFor('logout'), label: 'Log Out', when: 'logged-in' },
-      { href: config.getEndpointFor('register'), label: 'Register', when: 'logged-out' },
+      {
+        href: config.getEndpointFor('login'),
+        label: 'Log In',
+        when: 'logged-out',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('profile'),
+        label: 'My Profile',
+        when: 'logged-in',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('logout'),
+        label: 'Log Out',
+        when: 'logged-in',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('register'),
+        label: 'Register',
+        when: 'logged-out',
+        modifiers: ['user'],
+      },
     ];
 
     const navItems = site.get('navigation.tertiary.items');
