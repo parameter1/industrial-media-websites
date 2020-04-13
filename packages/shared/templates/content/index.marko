@@ -279,7 +279,11 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
           <@section>
             <div class="row">
               <div class="col-lg-8 infinite-scroll-target">
-                <shared-content-page-load-more-block aliases=aliases limit=12 skip=4>
+                <shared-content-page-load-more-block
+                  aliases=aliases
+                  limit=12
+                  skip=(["company", "contact"].includes(type) ? 0 : 4)
+                >
                   <@content id=id type=type name=content.name />
                   <@section id=section.id name=section.name />
                 </shared-content-page-load-more-block>
