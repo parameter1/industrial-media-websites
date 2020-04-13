@@ -23,6 +23,7 @@ module.exports = {
       { href: '/newsletter-signup', label: 'Newsletter Signup' },
       { href: '/magazine', label: 'Magazine' },
       { href: '/videos', label: 'Videos' },
+      { href: 'https://www.cdsreportnow.com/renew/now?idm', label: 'Subscribe to Magazine', target: '_blank' },
     ],
   },
   tertiary: {
@@ -69,6 +70,7 @@ module.exports = {
       label: 'User Tools',
       items: [
         { href: '/newsletter-signup', label: 'Newsletter Signup' },
+        { href: 'https://www.cdsreportnow.com/renew/now?idm', label: 'Subscribe to Magazine', target: '_blank' },
         { href: '/page/id-advertising', label: 'Advertising' },
         { href: '/page/id-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
