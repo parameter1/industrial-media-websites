@@ -11,11 +11,13 @@ $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 1060px,
-  hide-secondary: 592px,
-  small-logo: 375px,
+  hide-primary: 1120px,
+  hide-secondary: 788px,
+  small-logo: 842px,
   small-text-primary: 0,
-  small-text-secondary: 0
+  small-text-secondary: 0,
+  hide-social-icons: 500px,
+  hide-user-links: 414px,
 );
 
 // Site Section Colors

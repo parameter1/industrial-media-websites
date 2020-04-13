@@ -23,7 +23,7 @@ module.exports = {
   },
   tertiary: {
     items: [
-      ...mapSocialLinks({ links: socialLinks }),
+      ...mapSocialLinks({ links: socialLinks, modifiers: ['social-icon'] }),
       { href: '/search', label: 'Search', icon: 'search' },
     ],
   },
