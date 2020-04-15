@@ -8,16 +8,16 @@ $theme-site-navbar-secondary-bg-color: #fff;
 $theme-site-navbar-primary-bg-color: #000;
 $theme-site-navbar-secondary-type: light;
 
-$theme-site-navbar-logo-height: 45px;
-$theme-site-navbar-logo-height-sm: 30px;
+$theme-site-navbar-logo-height: 65px;
+$theme-site-navbar-logo-height-sm: 45px;
 
 $theme-site-header-breakpoints: (
   hide-primary: 1005px,
-  hide-secondary: 910px,
-  small-logo: 945px,
+  hide-secondary: 965px,
+  small-logo: 1005px,
   small-text-primary: 0,
   small-text-secondary: 0,
-  hide-social-icons: 525px,
+  hide-social-icons: 560px,
   hide-user-links: 414px,
 );
 

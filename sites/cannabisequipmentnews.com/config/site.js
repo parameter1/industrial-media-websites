@@ -10,9 +10,9 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=45',
+      src: 'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=70',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=90 2x',
+        'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=140 2x',
       ],
     },
     footer: {
