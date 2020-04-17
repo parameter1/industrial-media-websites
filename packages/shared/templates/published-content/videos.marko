@@ -1,0 +1,13 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const title = defaultValue(data.title, "Videos");
+
+<shared-published-content-page-default-layout title=title description=data.description>
+  <@query
+    name="all-published-content"
+    params={
+      contentTypes: ["Video"],
+      limit: 12,
+    }
+  />
+</shared-published-content-page-default-layout>
