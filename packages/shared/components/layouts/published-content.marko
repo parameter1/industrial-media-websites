@@ -1,0 +1,122 @@
+import defaultDescription from "@base-cms/marko-web/utils/published-content/description";
+import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const { config, GAM } = out.global;
+
+$ const { title } = input;
+$ const type = "published-content";
+$ const description = defaultValue(input.description, defaultDescription(title, config));
+
+$ const adSlots = () => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1" }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1" }),
+  "gpt-ad-rail-infinite": GAM.getAdUnit({ name: "infinite-rail" }),
+});
+
+$ const query = getAsObject(input, "query");
+$ const params = getAsObject(query, "params");
+$ const limit = defaultValue(params.limit, 12);
+$ const skip = defaultValue(params.skip, 0);
+
+$ const initialParams = { ...params, queryFragment: queryFragment };
+$ const loadMoreParams = { ...params, limit, skip: skip + limit };
+$ delete loadMoreParams.queryFragment;
+
+$ const withOopAds = defaultValue(input.withOopAds, true);
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+    <marko-web-gam-slots slots=adSlots() />
+  </@head>
+
+  <@above-container>
+    <if(withOopAds)>
+      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
+    </if>
+  </@above-container>
+
+  <@page>
+    <marko-web-page-wrapper modifiers=["no-bottom-padding"]>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <marko-web-gam-display-ad
+              id="gpt-ad-lb1"
+              modifiers=["max-width-970", "margin-auto-x", "center"]
+            />
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__title">${title}</h1>
+            <div class="page-wrapper__deck">${description}</div>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col-lg-8">
+            <marko-web-query|{ nodes }|
+              name="all-published-content"
+              params=initialParams
+            >
+              <shared-content-card-deck-feed-flow with-header=false nodes=nodes />
+            </marko-web-query>
+          </div>
+
+          <div class="col-lg-4 page-rail">
+            <marko-web-gam-display-ad
+              id="gpt-ad-rail1"
+              modifiers=["max-width-300", "margin-auto-x", "center", "sticky-top"]
+            />
+          </div>
+        </div>
+
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+
+  <@below-page>
+    <marko-web-page-container for="default" tag="div" type=type modifiers=["below"]>
+      <marko-web-gam-refresh-ad on="load-more-in-view" slot-id="gpt-ad-rail-infinite" />
+
+      <marko-web-page-wrapper>
+        <@section>
+          <div class="row">
+            <div class="col-lg-8 infinite-scroll-target">
+              <shared-latest-content-feed-load-more-block max-pages=4>
+                <@query
+                  name="all-published-content"
+                  params=loadMoreParams
+                />
+                <@page for="published-content" />
+                <@adunit
+                  ...GAM.getAdUnit({ name: "infinite-interstitial" })
+                  modifiers=["max-width-300", "margin-auto-x"]
+                />
+              </shared-latest-content-feed-load-more-block>
+            </div>
+
+            <aside class="col-lg-4 page-rail">
+              <marko-web-gam-display-ad
+                id="gpt-ad-rail-infinite"
+                modifiers=["sticky-top", "max-width-300", "margin-auto-x"]
+              />
+            </aside>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+
+    </marko-web-page-container>
+  </@below-page>
+  <@foot>
+    <shared-fixed-ad-bottom />
+  </@foot>
+</marko-web-default-page-layout>
