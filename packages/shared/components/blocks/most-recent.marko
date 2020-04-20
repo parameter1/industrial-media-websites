@@ -1,8 +1,15 @@
 import queryFragment from "../../graphql/fragments/most-recent-block";
 
+$ const excludeContentTypes = [
+  "Contact",
+  "Company",
+  "Document",
+  "TextAd",
+];
+
 <marko-web-query|{ nodes }|
   name="all-published-content"
-  params={ excludeContentTypes: ["Contact", "Company", "Document"], limit: 5, queryFragment }
+  params={ excludeContentTypes, limit: 5, queryFragment }
 >
   <shared-content-list-flow
     nodes=nodes
