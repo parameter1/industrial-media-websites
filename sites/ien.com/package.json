@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/ien.com",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/sites/ien.com",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "@base-cms/object-path": "^1.25.0",
     "@base-cms/utils": "^1.25.0",
     "@base-cms/web-cli": "^1.25.5",
-    "@industrial-media/package-shared": "^1.8.1",
+    "@industrial-media/package-shared": "^1.8.2",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
