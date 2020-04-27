@@ -15,7 +15,14 @@ $ const section = getAsObject(input, "section");
   }
 >
   <shared-content-list-flow nodes=nodes inner-justified=false>
-    <@header>Latest in ${section.name}</@header>
+    <@header>
+      <if(section.name === "Home")>
+        Latest
+      </if>
+      <else>
+        Latest in ${section.name}
+      </else>
+    </@header>
     <@node>
       <@title modifiers=["small"] />
     </@node>
