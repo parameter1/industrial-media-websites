@@ -36,6 +36,12 @@
       font-size: 16px;
     }
 
+    &--teaser {
+      a {
+        max-height: 4.5rem;
+      }
+    }
+
     &--spec-guide-link-button + &--spec-guide-link-button {
       margin-top: .75rem;
     }
