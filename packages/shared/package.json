@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/package-shared",
-  "version": "1.8.7",
+  "version": "1.8.8",
   "author": "Jacob Bare <jacob@limit0.io>",
   "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/packages/shared",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "@base-cms/utils": "^1.25.0",
     "@base-cms/web-cli": "^1.32.0",
     "@base-cms/web-common": "^1.30.2",
-    "@industrial-media/package-contact-us": "^1.8.5",
+    "@industrial-media/package-contact-us": "^1.8.8",
     "@industrial-media/package-marketing-cloud": "^1.8.0",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
