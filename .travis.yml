@@ -43,49 +43,49 @@ jobs:
 
     - stage: production
       name: cannabisequipmentnews.com
-      script: npx @base-cms/website-deployment-tool deploy cannabisequipmentnews.com caprica
+      script: npx @base-cms/website-deployment-tool deploy cannabisequipmentnews.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: designdevelopmenttoday.com
-      script: npx @base-cms/website-deployment-tool deploy designdevelopmenttoday.com caprica
+      script: npx @base-cms/website-deployment-tool deploy designdevelopmenttoday.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: foodmanufacturing.com
-      script: npx @base-cms/website-deployment-tool deploy foodmanufacturing.com caprica
+      script: npx @base-cms/website-deployment-tool deploy foodmanufacturing.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: ien.com
-      script: npx @base-cms/website-deployment-tool deploy ien.com caprica
+      script: npx @base-cms/website-deployment-tool deploy ien.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: impomag.com
-      script: npx @base-cms/website-deployment-tool deploy impomag.com caprica
+      script: npx @base-cms/website-deployment-tool deploy impomag.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: inddist.com
-      script: npx @base-cms/website-deployment-tool deploy inddist.com caprica
+      script: npx @base-cms/website-deployment-tool deploy inddist.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: manufacturing.net
-      script: npx @base-cms/website-deployment-tool deploy manufacturing.net caprica
+      script: npx @base-cms/website-deployment-tool deploy manufacturing.net websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: mbtmag.com
-      script: npx @base-cms/website-deployment-tool deploy mbtmag.com caprica
+      script: npx @base-cms/website-deployment-tool deploy mbtmag.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
