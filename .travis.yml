@@ -12,13 +12,6 @@ stages:
   - name: production-finished
     if: tag =~ /^v\d+\.\d+\.\d+$/
 
-  - name: staging-started
-    if: tag is present
-  - name: staging
-    if: tag is present
-  - name: staging-finished
-    if: tag is present
-
 jobs:
   include:
     - stage: test
@@ -28,13 +21,7 @@ jobs:
       name: Deployment Started
       script: npx @base-cms/website-deployment-tool notify-started
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging-started
-      name: Deployment Started
-      script: npx @base-cms/website-deployment-tool notify-started
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     #############################
     # vvv ADD SERVICES HERE vvv #
@@ -44,13 +31,7 @@ jobs:
       name: Marketing Cloud Service
       script: npx @base-cms/website-deployment-tool deploy-service marketing-cloud indm-marketing-cloud
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: Marketing Cloud Service
-      script: npx @base-cms/website-deployment-tool deploy-service marketing-cloud indm-marketing-cloud
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #
@@ -64,97 +45,49 @@ jobs:
       name: cannabisequipmentnews.com
       script: npx @base-cms/website-deployment-tool deploy cannabisequipmentnews.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: cannabisequipmentnews.com
-      script: npx @base-cms/website-deployment-tool deploy cannabisequipmentnews.com caprica
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     - stage: production
       name: designdevelopmenttoday.com
       script: npx @base-cms/website-deployment-tool deploy designdevelopmenttoday.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: designdevelopmenttoday.com
-      script: npx @base-cms/website-deployment-tool deploy designdevelopmenttoday.com caprica
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     - stage: production
       name: foodmanufacturing.com
       script: npx @base-cms/website-deployment-tool deploy foodmanufacturing.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: foodmanufacturing.com
-      script: npx @base-cms/website-deployment-tool deploy foodmanufacturing.com caprica
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     - stage: production
       name: ien.com
       script: npx @base-cms/website-deployment-tool deploy ien.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: ien.com
-      script: npx @base-cms/website-deployment-tool deploy ien.com caprica
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     - stage: production
       name: impomag.com
       script: npx @base-cms/website-deployment-tool deploy impomag.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: impomag.com
-      script: npx @base-cms/website-deployment-tool deploy impomag.com caprica
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     - stage: production
       name: inddist.com
       script: npx @base-cms/website-deployment-tool deploy inddist.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: inddist.com
-      script: npx @base-cms/website-deployment-tool deploy inddist.com caprica
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     - stage: production
       name: manufacturing.net
       script: npx @base-cms/website-deployment-tool deploy manufacturing.net caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: manufacturing.net
-      script: npx @base-cms/website-deployment-tool deploy manufacturing.net caprica
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     - stage: production
       name: mbtmag.com
       script: npx @base-cms/website-deployment-tool deploy mbtmag.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging
-      name: mbtmag.com
-      script: npx @base-cms/website-deployment-tool deploy mbtmag.com caprica
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
 
     ##########################
     # ^^^ ADD SITES HERE ^^^ #
@@ -164,10 +97,4 @@ jobs:
       name: Deployment Finished
       script: npx @base-cms/website-deployment-tool notify-finished
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
-
-    - stage: staging-finished
-      name: Deployment Finished
-      script: npx @base-cms/website-deployment-tool notify-finished
-      install: skip
-      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=production]
