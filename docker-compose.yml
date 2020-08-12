@@ -22,6 +22,7 @@ x-env-defaults: &env
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
+  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://idx.parameter1.io/graphql}
 
 x-env-marketing-cloud: &env-marketing-cloud
   FUEL_API_CLIENT_ID: ${FUEL_API_CLIENT_ID}

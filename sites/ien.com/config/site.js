@@ -24,7 +24,7 @@ module.exports = {
   },
   identityX: {
     appId: '5e28a3dd58e67b229e55ae43',
-    enabled: false,
+    enabled: true,
     comments: { enabled: true },
     options: {
       appContextId: '5e7e5fac88f2fa00cdebab24',
