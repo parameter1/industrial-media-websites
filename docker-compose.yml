@@ -29,11 +29,11 @@ x-env-marketing-cloud: &env-marketing-cloud
   FUEL_API_AUTH_URL: ${FUEL_API_AUTH_URL}
   FUEL_API_ACCOUNT_ID: ${FUEL_API_ACCOUNT_ID}
 
-x-env-caprica: &env-caprica
-  GRAPHQL_URI: ${GRAPHQL_URI-https://caprica.graphql.base-cms.io}
-  OEMBED_URI: ${OEMBED_URI-https://caprica.oembed.base-cms.io}
-  RSS_URI: ${RSS_URI-https://caprica.rss.base-cms.io}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://caprica.sitemaps.base-cms.io}
+x-env-tauron: &env-tauron
+  GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://tauron.rss.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
 
 x-env-development: &env-development
   GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
@@ -80,7 +80,7 @@ services:
     working_dir: /root/sites/inddist.com
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-tauron
       <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9710
@@ -97,7 +97,7 @@ services:
     working_dir: /root/sites/manufacturing.net
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-tauron
       <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9711
@@ -114,7 +114,7 @@ services:
     working_dir: /root/sites/foodmanufacturing.com
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-tauron
       <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9712
@@ -131,7 +131,7 @@ services:
     working_dir: /root/sites/impomag.com
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-tauron
       <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9713
@@ -148,7 +148,7 @@ services:
     working_dir: /root/sites/mbtmag.com
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-tauron
       <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9714
@@ -165,7 +165,7 @@ services:
     working_dir: /root/sites/ien.com
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-tauron
       <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9715
@@ -182,7 +182,7 @@ services:
     working_dir: /root/sites/cannabisequipmentnews.com
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-tauron
       <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9716
@@ -199,7 +199,7 @@ services:
     working_dir: /root/sites/designdevelopmenttoday.com
     environment:
       <<: *env
-      <<: *env-caprica
+      <<: *env-tauron
       <<: *env-marketing-cloud
       PORT: 80
       EXPOSED_PORT: 9717
