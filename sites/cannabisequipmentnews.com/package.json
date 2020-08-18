@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/cannabisequipmentnews.com",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/base-cms-websites/industrial-media/tree/master/sites/cannabisequipmentnews.com",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "@base-cms/object-path": "^1.25.0",
     "@base-cms/utils": "^1.25.0",
     "@base-cms/web-cli": "^1.32.0",
-    "@industrial-media/package-shared": "^1.9.0",
+    "@industrial-media/package-shared": "^1.9.4",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
