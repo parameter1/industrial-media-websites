@@ -29,7 +29,8 @@ $ const variables = { siteId: config.website("id") };
       </@section>
       <@section>
         <marko-web-resolve|{ resolved }| promise=apollo.query({ query, variables })>
-          $ const nodes = getAsArray(resolved, "data.emailNewsletters.edges").map(edge => edge.node);
+          $ const exclude = ['5ef4c023a3c32d2d008b45e5'];
+          $ const nodes = getAsArray(resolved, "data.emailNewsletters.edges").map(edge => edge.node).filter(node => !exclude.includes(node.id));
           <if(nodes.length)>
             <marko-web-browser-component name="SharedNewsletterSignup" props={ newsletters: nodes } />
           </if>
