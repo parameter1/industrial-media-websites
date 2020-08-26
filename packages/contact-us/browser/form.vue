@@ -125,7 +125,7 @@ export default {
     },
     sitekey: {
       type: String,
-      default: '6LeZOaIUAAAAANDsX4PCYCYQeYfqdoabuev5chYk',
+      default: '6LdQfAEVAAAAAAbhCVAKTIAcpGDyAaoT0VoToAjn',
     },
   },
   data: () => ({
