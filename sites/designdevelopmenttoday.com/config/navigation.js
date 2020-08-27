@@ -57,10 +57,6 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/videos', label: 'Videos' },
-        { href: '/software', label: 'Software' },
-        { href: '/made-in-america', label: 'Made in America' },
-        { href: '/contact-us', label: 'Contact Us' },
       ],
     },
     {
