@@ -62,11 +62,15 @@ fragment ContentPageFragment on Content {
     source
     byline
   }
+  ... on ContentBlog {
+    byline: customAttribute(input: { path: "byline" })
+  }
   ... on ContentEvent {
     endDate
     startDate
   }
   ... on ContentArticle {
+    byline: customAttribute(input: { path: "byline" })
     sidebars
   }
   ... on ContentWebinar {
