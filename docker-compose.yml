@@ -15,6 +15,8 @@ x-node-defaults: &node
 x-env-defaults: &env
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
+  DD_TRACE_ENABLED: ${DD_TRACE_ENABLED-0}
+  DD_SERVICE: ${DD_SERVICE-@industrial-media/websites}
   NODE_ENV: development
   # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
   RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY-(unset)}

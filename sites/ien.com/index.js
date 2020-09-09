@@ -1,3 +1,4 @@
+require('@industrial-media/package-shared/datadog');
 const startServer = require('@industrial-media/package-shared/start-server');
 
 const routes = require('./server/routes');
