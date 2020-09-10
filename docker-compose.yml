@@ -24,13 +24,19 @@ x-env-defaults: &env
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
-  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://idx.parameter1.io/graphql}
+  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://identity-x.parameter1.com/graphql}
 
-x-env-marketing-cloud: &env-marketing-cloud
-  FUEL_API_CLIENT_ID: ${FUEL_API_CLIENT_ID}
-  FUEL_API_CLIENT_SECRET: ${FUEL_API_CLIENT_SECRET}
-  FUEL_API_AUTH_URL: ${FUEL_API_AUTH_URL}
-  FUEL_API_ACCOUNT_ID: ${FUEL_API_ACCOUNT_ID}
+x-env-marketing-cloud-indm: &env-marketing-cloud-indm
+  FUEL_API_CLIENT_ID: ${INDM_FUEL_API_CLIENT_ID}
+  FUEL_API_CLIENT_SECRET: ${INDM_FUEL_API_CLIENT_SECRET}
+  FUEL_API_AUTH_URL: ${INDM_FUEL_API_AUTH_URL}
+  FUEL_API_ACCOUNT_ID: ${INDM_FUEL_API_ACCOUNT_ID}
+
+x-env-marketing-cloud-lynch: &env-marketing-cloud-lynch
+  FUEL_API_CLIENT_ID: ${LYNCH_FUEL_API_CLIENT_ID}
+  FUEL_API_CLIENT_SECRET: ${LYNCH_FUEL_API_CLIENT_SECRET}
+  FUEL_API_AUTH_URL: ${LYNCH_FUEL_API_AUTH_URL}
+  FUEL_API_ACCOUNT_ID: ${LYNCH_FUEL_API_ACCOUNT_ID}
 
 x-env-tauron: &env-tauron
   GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
@@ -66,25 +72,36 @@ services:
     environment:
       <<: *env
 
-  mc-refresh-data-extensions:
+  mc-refresh-data-extensions-indm:
     <<: *node
     working_dir: /root/services/marketing-cloud
     entrypoint: ["node", "./data-extensions/refresh.js"]
     environment:
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-indm
       NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
       NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
       NODE_ENV: development
       YARN_CACHE_FOLDER: /.yarn-cache
 
-  inddist.com:
+  mc-refresh-data-extensions-lynch:
+    <<: *node
+    working_dir: /root/services/marketing-cloud
+    entrypoint: ["node", "./data-extensions/refresh.js"]
+    environment:
+      <<: *env-marketing-cloud-lynch
+      NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
+      NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
+      NODE_ENV: development
+      YARN_CACHE_FOLDER: /.yarn-cache
+
+  id:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/inddist.com
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
@@ -94,14 +111,14 @@ services:
       - "9710:80"
       - "19710:19710"
 
-  manufacturing.net:
+  mnet:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/manufacturing.net
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
@@ -111,14 +128,14 @@ services:
       - "9711:80"
       - "19711:19711"
 
-  foodmanufacturing.com:
+  fm:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/foodmanufacturing.com
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
@@ -128,14 +145,14 @@ services:
       - "9712:80"
       - "19712:19712"
 
-  impomag.com:
+  impo:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/impomag.com
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
@@ -145,14 +162,14 @@ services:
       - "9713:80"
       - "19713:19713"
 
-  mbtmag.com:
+  mbt:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/mbtmag.com
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
@@ -162,14 +179,14 @@ services:
       - "9714:80"
       - "19714:19714"
 
-  ien.com:
+  ien:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/ien.com
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9715
       LIVERELOAD_PORT: 19715
@@ -179,14 +196,14 @@ services:
       - "9715:80"
       - "19715:19715"
 
-  cannabisequipmentnews.com:
+  cen:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/cannabisequipmentnews.com
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-lynch
       PORT: 80
       EXPOSED_PORT: 9716
       LIVERELOAD_PORT: 19716
@@ -196,14 +213,14 @@ services:
       - "9716:80"
       - "19716:19716"
 
-  designdevelopmenttoday.com:
+  ddt:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/designdevelopmenttoday.com
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud
+      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9717
       LIVERELOAD_PORT: 19717
