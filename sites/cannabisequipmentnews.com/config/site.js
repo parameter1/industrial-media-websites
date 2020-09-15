@@ -31,7 +31,7 @@ module.exports = {
     },
   },
   gtm: {
-    containerId: 'GTM-NQ37376',
+    containerId: 'GTM-KFBRN7Q',
   },
   gcse: {
     id: '003355913687346718228:2spsdy3uaup',
