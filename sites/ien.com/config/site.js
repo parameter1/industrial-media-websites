@@ -10,15 +10,15 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=65',
+      src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=65',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=130 2x',
+        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=130 2x',
       ],
     },
     footer: {
-      src: 'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=60',
+      src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=120 2x',
+        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=120 2x',
       ],
     },
   },
@@ -45,7 +45,7 @@ module.exports = {
   contactUs: {
     to: 'david@ien.com',
     branding: {
-      logo: 'https://base.imgix.net/files/base/indm/all/ien_logo.png?h=60',
+      logo: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60',
     },
     support: {
       email: 'reply@ien.com',

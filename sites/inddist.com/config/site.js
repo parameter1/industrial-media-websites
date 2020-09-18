@@ -9,15 +9,15 @@ module.exports = {
   company: 'Industrial Media, LLC',
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=45',
+      src: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=45',
       srcset: [
-        'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=90 2x',
+        'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=90 2x',
       ],
     },
     footer: {
-      src: 'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=60',
+      src: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60',
       srcset: [
-        'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=120 2x',
+        'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=120 2x',
       ],
     },
   },
@@ -44,7 +44,7 @@ module.exports = {
   contactUs: {
     to: 'david@ien.com',
     branding: {
-      logo: 'https://base.imgix.net/files/base/indm/id/static/id_logo.png?h=60',
+      logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60',
     },
     support: {
       email: 'reply@ien.com',
