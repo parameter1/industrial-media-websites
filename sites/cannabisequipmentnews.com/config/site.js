@@ -10,15 +10,15 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=70',
+      src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=70',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=140 2x',
+        'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=140 2x',
       ],
     },
     footer: {
-      src: 'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=60',
+      src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=60',
       srcset: [
-        'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=120 2x',
+        'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=120 2x',
       ],
     },
   },
@@ -37,18 +37,18 @@ module.exports = {
     id: '003355913687346718228:2spsdy3uaup',
   },
   wufoo: {
-    userName: 'ien',
+    userName: 'cannabisequipmentnews',
   },
   magazines: {
     description: '',
   },
   contactUs: {
-    to: 'david@ien.com',
+    to: 'david@cannabisequipmentnews.com',
     branding: {
-      logo: 'https://base.imgix.net/files/base/indm/all/cen_logo.jpg?h=60',
+      logo: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=60',
     },
     support: {
-      email: 'reply@ien.com',
+      email: 'reply@cannabisequipmentnews.com',
     },
   },
 };
