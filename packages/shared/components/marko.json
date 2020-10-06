@@ -21,5 +21,10 @@
   "<shared-fixed-ad-bottom>": {
     "template": "./fixed-ad-bottom.marko",
     "@aliases": "array"
+  },
+  "<shared-content-embed-code>": {
+    "template": "./elements/embed-code.marko",
+    "@content": "object",
+    "@block-name": "string"
   }
 }

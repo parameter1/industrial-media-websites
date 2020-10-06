@@ -103,7 +103,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
               attrs={ "data-gallery-id": id }
             >
               <if(content.embedCode)>
-                <marko-web-content-embed-code block-name=blockName obj=content />
+                <shared-content-embed-code block-name=blockName content=content />
               </if>
               <else-if(content.type === "whitepaper" || content.type === "document" || type === "company")>
                 <marko-web-page-image
