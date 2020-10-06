@@ -30,7 +30,11 @@ $ const siteContext = {
     <${input.head} />
     <marko-web-gtm-start />
     <marko-web-gam-enable />
-    <marko-web-gam-targeting key-values={ uri: req.path } />
+    $ const keyValues = {
+      uri: req.path,
+      ...(req.cookies["et-usr"] && { et_usr: req.cookies["et-usr"] }),
+    };
+    <marko-web-gam-targeting key-values=keyValues />
   </@head>
   <@above-container>
     <marko-web-reveal-ad-listener select-all-targets=true />
