@@ -26,7 +26,7 @@ $ const scripts = $('script[src*="players.brightcove.net"]');
 
             var el = document.createElement('a');
             el.href = url;
-            var customParams = 'cust_params=et_usr%3D=' + cookie.value;
+            var customParams = 'cust_params=et_usr%3D' + cookie.value;
             console.log('VIDEOJS: Setting custom params', customParams);
             el.search = el.search ? el.search + '&' + customParams : '?' + customParams;
             return el.href;
