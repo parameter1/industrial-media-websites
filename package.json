@@ -1,7 +1,7 @@
 {
   "name": "@industrial-media/websites",
   "description": "Websites for Industrial Media",
-  "repository": "https://github.com/base-cms-websites/industrial-media.git",
+  "repository": "https://github.com/parameter1/industrial-media-websites.git",
   "author": "Jacob Bare <jacob@limit0.io>",
   "license": "MIT",
   "private": true,
