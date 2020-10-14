@@ -6,7 +6,7 @@ module.exports = {
   navigation,
   gam,
   socialMediaLinks,
-  company: 'Industrial Media, LLC',
+  company: 'Lynch Media',
   simpleFavicon: true,
   logos: {
     navbar: {
