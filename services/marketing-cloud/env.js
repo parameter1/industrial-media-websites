@@ -3,7 +3,7 @@ const {
   validators,
   bool,
   num,
-} = require('@base-cms/env');
+} = require('@parameter1/base-cms-env');
 
 const { nonemptystr } = validators;
 

@@ -1,5 +1,5 @@
 const { json } = require('body-parser');
-const { asyncRoute } = require('@base-cms/utils');
+const { asyncRoute } = require('@parameter1/base-cms-utils');
 const optInManager = require('@industrial-media/package-marketing-cloud/data-extensions/opt-in-manager');
 const newsletterSignup = require('../templates/newsletter-signup');
 

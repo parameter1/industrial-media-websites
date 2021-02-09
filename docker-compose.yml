@@ -20,7 +20,7 @@ x-env-defaults: &env
   NODE_ENV: development
   # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
   RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY-(unset)}
-  # @todo the sendgrid values should be removed once the @base-cms/mailer service is created.
+  # @todo the sendgrid values should be removed once the @parameter1/base-cms-mailer service is created.
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache

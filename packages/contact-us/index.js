@@ -1,4 +1,4 @@
-const { asyncRoute } = require('@base-cms/utils');
+const { asyncRoute } = require('@parameter1/base-cms-utils');
 const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
 const fetch = require('node-fetch');

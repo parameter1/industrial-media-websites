@@ -1,13 +1,13 @@
 @import "variables";
 @import "mixins";
 
-@import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
+@import "../../node_modules/@parameter1/base-cms-marko-web-theme-default/scss/theme";
 
 $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
-@import "../../node_modules/@base-cms/marko-web-photoswipe/scss/main";
-@import "../../node_modules/@base-cms/marko-web-gam/scss/fixed-ad-bottom";
-@import "../../node_modules/@base-cms/marko-web-social-sharing/scss/buttons";
-@import "../../node_modules/@base-cms/marko-web-reveal-ad/scss/reveal-ad";
+@import "../../node_modules/@parameter1/base-cms-marko-web-photoswipe/scss/main";
+@import "../../node_modules/@parameter1/base-cms-marko-web-gam/scss/fixed-ad-bottom";
+@import "../../node_modules/@parameter1/base-cms-marko-web-social-sharing/scss/buttons";
+@import "../../node_modules/@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
 
 @import "../../node_modules/@industrial-media/package-common/scss/contact-us-form";
 
