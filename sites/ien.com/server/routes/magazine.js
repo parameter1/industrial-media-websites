@@ -1,4 +1,4 @@
-const { withMagazineIssue, withMagazinePublication } = require('@base-cms/marko-web/middleware');
+const { withMagazineIssue, withMagazinePublication } = require('@parameter1/base-cms-marko-web/middleware');
 const publication = require('@industrial-media/package-shared/templates/magazine/publication');
 const publicationFragment = require('@industrial-media/package-shared/graphql/fragments/magazine-publication-page');
 const issue = require('@industrial-media/package-shared/templates/magazine/issue');

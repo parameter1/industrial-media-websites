@@ -1,7 +1,7 @@
 const newrelic = require('newrelic');
-const { startServer } = require('@base-cms/marko-web');
-const { set, get } = require('@base-cms/object-path');
-const cleanResponse = require('@base-cms/marko-core/middleware/clean-marko-response');
+const { startServer } = require('@parameter1/base-cms-marko-web');
+const { set, get } = require('@parameter1/base-cms-object-path');
+const cleanResponse = require('@parameter1/base-cms-marko-core/middleware/clean-marko-response');
 const contactUsHandler = require('@industrial-media/package-contact-us');
 
 const document = require('./components/document');

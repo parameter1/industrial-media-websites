@@ -1,5 +1,5 @@
-const IdentityX = require('@base-cms/marko-web-identity-x');
-const IdentityXConfig = require('@base-cms/marko-web-identity-x/config');
+const IdentityX = require('@parameter1/base-cms-marko-web-identity-x');
+const IdentityXConfig = require('@parameter1/base-cms-marko-web-identity-x/config');
 const authenticate = require('../templates/user/authenticate');
 const login = require('../templates/user/login');
 const logout = require('../templates/user/logout');
