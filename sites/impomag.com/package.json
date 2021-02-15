@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/impomag.com",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/impomag.com",
   "license": "MIT",
@@ -15,12 +15,12 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
+    "@industrial-media/package-shared": "^1.11.0",
     "@parameter1/base-cms-marko-core": "^2.3.3",
     "@parameter1/base-cms-marko-web": "^2.3.3",
     "@parameter1/base-cms-object-path": "^2.3.0",
     "@parameter1/base-cms-utils": "^2.3.0",
     "@parameter1/base-cms-web-cli": "^2.3.3",
-    "@industrial-media/package-shared": "^1.10.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
