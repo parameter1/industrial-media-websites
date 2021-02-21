@@ -4,6 +4,11 @@
     "<query>": {},
     "<page>": {},
     "<adunit>": {},
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
     "@header": "string",
     "@max-pages": "number"
   },
@@ -17,6 +22,11 @@
       "@id": "number",
       "@type": "string",
       "@name": "string"
+    },
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
     },
     "@aliases": "array",
     "@limit": "number",
