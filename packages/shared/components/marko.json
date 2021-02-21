@@ -26,5 +26,16 @@
     "template": "./elements/embed-code.marko",
     "@content": "object",
     "@block-name": "string"
+  },
+  "<shared-native-x-inject>": {
+    "template": "./native-x-inject.marko",
+    "@limit": "number",
+    "@indexes": "array",
+    "@index": "number",
+    "@name": "string",
+    "@section-name": "string",
+    "@aliases": "array",
+    "@nodes": "array",
+    "@config": "object"
   }
 }
