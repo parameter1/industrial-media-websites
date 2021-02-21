@@ -286,6 +286,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
                 >
                   <@content id=id type=type name=content.name />
                   <@section id=section.id name=section.name />
+                  <@native-x indexes=[0] name="default" aliases=aliases />
                 </shared-content-page-load-more-block>
               </div>
               <aside class="col-lg-4 page-rail">
