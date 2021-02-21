@@ -28,6 +28,11 @@
       "<image>": {},
       "<title>": {}
     },
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
     "@nodes": "array",
     "@display-ads": "boolean",
     "@cols": "number",
@@ -39,6 +44,11 @@
   "<shared-content-list-feed-flow>": {
     "template": "./list-feed.marko",
     "<adunit>": {},
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
     "@nodes": "array",
     "@header": "string",
     "@with-header": "boolean",
@@ -48,6 +58,11 @@
     "template": "./card-deck-feed.marko",
     "<card-deck>": {},
     "<adunit>": {},
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
     "@nodes": "array",
     "@header": "string",
     "@with-header": "boolean",
