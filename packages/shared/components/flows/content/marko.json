@@ -7,6 +7,11 @@
       "<attribution>": {},
       "<image>": {}
     },
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
     "@nodes": "array",
     "@inner-justified": "boolean",
     "@flush-x": "boolean",
