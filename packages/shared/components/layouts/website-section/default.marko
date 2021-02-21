@@ -110,6 +110,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                     <@node>
                       <@title modifiers=["small"] />
                     </@node>
+                    <@native-x indexes=[0] name="default" aliases=aliases />
                   </shared-content-list-flow>
 
                   <marko-web-gam-display-ad
@@ -158,6 +159,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                         ...GAM.getAdUnit({ name: "infinite-interstitial", aliases })
                         modifiers=["max-width-300", "margin-auto-x"]
                       />
+                      <@native-x indexes=[0] name="default" aliases=aliases />
                     </shared-latest-content-feed-load-more-block>
                   </div>
 
