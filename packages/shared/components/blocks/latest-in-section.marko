@@ -14,7 +14,11 @@ $ const section = getAsObject(input, "section");
     queryFragment,
   }
 >
-  <shared-content-list-flow nodes=nodes inner-justified=false>
+  <shared-content-list-flow
+    nodes=nodes
+    inner-justified=false
+    native-x=input.nativeX
+  >
     <@header>
       <if(section.name === "Home")>
         Latest

@@ -47,6 +47,11 @@
     "<section>": {
       "@id": "number",
       "@name": "string"
+    },
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
     }
   }
 }
