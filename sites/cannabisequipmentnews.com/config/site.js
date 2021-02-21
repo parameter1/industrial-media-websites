@@ -1,10 +1,12 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
+const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
 
 module.exports = {
   navigation,
   gam,
+  nativeX,
   socialMediaLinks,
   company: 'Lynch Media',
   simpleFavicon: true,
