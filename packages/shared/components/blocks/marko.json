@@ -24,7 +24,12 @@
     "template": "./follow-us.marko"
   },
   "<shared-most-recent-block>": {
-    "template": "./most-recent.marko"
+    "template": "./most-recent.marko",
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    }
   },
   "<shared-magazine-publications-block>": {
     "template": "./magazine-publications.marko",
