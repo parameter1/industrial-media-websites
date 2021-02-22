@@ -1,10 +1,12 @@
 const navigation = require('./navigation');
-const socialMediaLinks = require('./social-links');
 const gam = require('./gam');
+const nativeX = require('./native-x');
+const socialMediaLinks = require('./social-links');
 
 module.exports = {
   navigation,
   gam,
+  nativeX,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
   logos: {

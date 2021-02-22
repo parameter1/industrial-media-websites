@@ -228,6 +228,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
               <shared-latest-in-section-block>
                 <@content id=id />
                 <@section id=section.id name=section.name />
+                <@native-x indexes=[3] name="default" aliases=aliases />
               </shared-latest-in-section-block>
 
               <marko-web-gam-display-ad
@@ -286,6 +287,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
                 >
                   <@content id=id type=type name=content.name />
                   <@section id=section.id name=section.name />
+                  <@native-x indexes=[0] name="default" aliases=aliases />
                 </shared-content-page-load-more-block>
               </div>
               <aside class="col-lg-4 page-rail">
