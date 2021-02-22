@@ -22,6 +22,8 @@ $ const nativeX = getAsObject(input, "nativeX");
           with-section=withSection
           ...input.node
           node=node
+          attrs=getAsObject(node, "attributes.container")
+          link-attrs=getAsObject(node, "attributes.link")
         />
       </@slot>
     </@nodes>
