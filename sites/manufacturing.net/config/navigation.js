@@ -19,6 +19,7 @@ module.exports = {
     items: [
       { href: '/newsletter-signup', label: 'Newsletter Signup' },
       { href: '/videos', label: 'Videos' },
+      { href: '/podcast', label: 'Podcast' },
     ],
   },
   tertiary: {
@@ -55,6 +56,7 @@ module.exports = {
       label: 'Resources',
       items: [
         { href: '/videos', label: 'Videos' },
+        { href: '/podcast', label: 'Podcast' },
       ],
     },
     {

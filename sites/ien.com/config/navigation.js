@@ -21,6 +21,7 @@ module.exports = {
     items: [
       { href: '/newsletter-signup', label: 'Newsletter Signup' },
       { href: '/video', label: 'Video' },
+      { href: '/podcast', label: 'Podcast' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: '/advertise', label: 'Advertise' },
       { href: '/magazine', label: 'Magazine' },
@@ -61,6 +62,7 @@ module.exports = {
       label: 'Resources',
       items: [
         { href: '/video', label: 'Video' },
+        { href: '/podcast', label: 'Podcast' },
         { href: '/software', label: 'Software' },
         { href: '/made-in-america', label: 'Made in America' },
         { href: '/magazine', label: 'Magazine' },
