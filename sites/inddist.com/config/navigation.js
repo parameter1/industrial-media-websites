@@ -34,7 +34,7 @@ module.exports = {
   footer: {
     items: [
       { href: '/page/id-about-us', label: 'About Us' },
-      { href: '/page/id-advertising', label: 'Advertising' },
+      { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: '/page/id-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/id-terms-conditions', label: 'Terms & Conditions' },
@@ -70,7 +70,7 @@ module.exports = {
       items: [
         { href: '/newsletter-signup', label: 'Newsletter Signup' },
         { href: 'https://www.cdsreportnow.com/renew/now?idm', label: 'Subscribe to Magazine', target: '_blank' },
-        { href: '/page/id-advertising', label: 'Advertising' },
+        { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
         { href: '/page/id-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/id-privacy-policy', label: 'Privacy Policy' },

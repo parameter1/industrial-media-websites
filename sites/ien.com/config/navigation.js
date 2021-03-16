@@ -37,7 +37,7 @@ module.exports = {
     items: [
       { href: '/page/about-us', label: 'About Us' },
       { href: '/contact-us', label: 'Contact Us' },
-      { href: '/page/advertise', label: 'Advertise' },
+      { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/terms-conditions', label: 'Terms & Conditions' },
       { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act' },
@@ -74,7 +74,7 @@ module.exports = {
       items: [
         { href: '/newsletter-signup', label: 'Newsletter Signup' },
         { href: 'https://tcc.dragonforms.com/loading.do?omedasite=TCC1_IEnew', label: 'Subscribe to Magazine', target: '_blank' },
-        { href: '/page/advertise', label: 'Advertise' },
+        { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
         { href: '/page/about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/privacy-policy', label: 'Privacy Policy' },

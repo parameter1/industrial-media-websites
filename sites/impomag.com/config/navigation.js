@@ -30,7 +30,7 @@ module.exports = {
     items: [
       { href: '/page/impo-about-us', label: 'About Us' },
       { href: '/contact-us', label: 'Contact Us' },
-      { href: '/page/impo-advertise', label: 'Advertise' },
+      { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
       { href: '/page/impo-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/impo-terms-conditions', label: 'Terms & Conditions' },
       { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
@@ -59,7 +59,7 @@ module.exports = {
       label: 'User Tools',
       items: [
         { href: '/newsletter-signup', label: 'Newsletter Signup' },
-        { href: '/page/impo-advertise', label: 'Advertise' },
+        { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
         { href: '/page/impo-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/impo-privacy-policy', label: 'Privacy Policy' },
