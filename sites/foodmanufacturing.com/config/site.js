@@ -1,3 +1,5 @@
+const { footerLogos } = require('@industrial-media/package-shared/config/footer-logos');
+
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
@@ -22,6 +24,7 @@ module.exports = {
         'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=120 2x',
       ],
     },
+    footerMulti: footerLogos,
   },
   identityX: {
     appId: '5e28a3dd58e67b229e55ae43',
