@@ -1,0 +1,18 @@
+.site-footer {
+  &__container {
+    &--multi {
+      @include make-container();
+      @include media-breakpoint-up(xl, $grid-breakpoints) {
+        max-width: map-get($grid-breakpoints, xl);
+      }
+      padding-bottom: 0;
+      .row {
+        justify-content: center;
+        align-items: center;
+      }
+      .site-footer-logo {
+        margin-bottom: map-get($spacers, 3);
+      }
+    }
+  }
+}
