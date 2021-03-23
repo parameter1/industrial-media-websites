@@ -1,7 +1,5 @@
 $ const { config, site } = out.global;
-
-$ const footerLogos = site.get("logos.footerMulti");
-
+$ const brandLogos = site.getAsArray("logos.footer.brandLogos");
 $ const blockName = input.blockName || "site-footer";
 
 <marko-web-block
@@ -12,10 +10,10 @@ $ const blockName = input.blockName || "site-footer";
   attrs=input.attrs
 >
 
-  <if(footerLogos)>
-    <default-theme-site-footer-container block-name=blockName modifiers=["secondary", "multi"]>
-      <div class="row">
-        <for|logo| of=footerLogos>
+  <if(brandLogos.length)>
+    <default-theme-site-footer-container block-name=blockName modifiers=["secondary"]>
+      <div class="row brand-logos">
+        <for|logo| of=brandLogos>
           <div class="col-3 site-footer-logo">
               <marko-web-img
                 class="img-fluid"

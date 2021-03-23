@@ -1,4 +1,4 @@
-const { footerLogos } = require('@industrial-media/package-shared/config/footer-logos');
+const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
 
 const navigation = require('./navigation');
 const gam = require('./gam');
@@ -19,12 +19,12 @@ module.exports = {
       ],
     },
     footer: {
+      brandLogos,
       src: 'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=60',
       srcset: [
         'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=120 2x',
       ],
     },
-    footerMulti: footerLogos,
   },
   identityX: {
     appId: '5e28a3dd58e67b229e55ae43',

@@ -1,17 +1,20 @@
 .site-footer {
   &__container {
-    &--multi {
-      @include make-container();
-      @include media-breakpoint-up(xl, $grid-breakpoints) {
-        max-width: map-get($grid-breakpoints, xl);
+    &--secondary {
+      .brand-logos {
+        @include make-container();
+        @include media-breakpoint-up(xl, $grid-breakpoints) {
+          max-width: map-get($grid-breakpoints, xl);
+        }
+        padding-bottom: 0;
       }
-      padding-bottom: 0;
       .row {
         justify-content: center;
         align-items: center;
       }
       .site-footer-logo {
         margin-bottom: map-get($spacers, 3);
+        filter: drop-shadow($theme-site-footer-logo-box-shadow);
       }
     }
   }

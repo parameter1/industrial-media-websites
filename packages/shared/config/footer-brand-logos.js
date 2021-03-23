@@ -1,5 +1,5 @@
 module.exports = {
-  footerLogos: [
+  brandLogos: [
     {
       href: 'https://www.designdevelopmenttoday.com',
       alt: 'Visit Design & Development Today',
