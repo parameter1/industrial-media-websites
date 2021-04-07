@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/impomag.com",
-  "version": "1.11.6",
+  "version": "1.11.7",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/impomag.com",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@industrial-media/package-shared": "^1.11.2",
+    "@industrial-media/package-shared": "^1.11.7",
     "@parameter1/base-cms-marko-core": "^2.4.3",
     "@parameter1/base-cms-marko-web": "^2.4.3",
     "@parameter1/base-cms-object-path": "^2.4.2",
