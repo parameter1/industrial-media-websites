@@ -1,3 +1,5 @@
+const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
+
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
@@ -18,6 +20,7 @@ module.exports = {
       ],
     },
     footer: {
+      brandLogos,
       src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60',
       srcset: [
         'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=120 2x',
