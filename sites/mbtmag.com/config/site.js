@@ -1,3 +1,5 @@
+const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
+
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
@@ -17,6 +19,7 @@ module.exports = {
       ],
     },
     footer: {
+      brandLogos,
       src: 'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=60',
       srcset: [
         'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=120 2x',
