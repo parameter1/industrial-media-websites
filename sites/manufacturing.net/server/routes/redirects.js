@@ -1,5 +1,7 @@
 module.exports = (app) => {
-  app.get('/:alias(home/video/21107739/startup-fires-ceo-over-expense-reports)', (req, res) => {
-    res.redirect(301, '/');
+  app.get('/*?/:id(21107739)/*|/:id(21107739)(/|$)', () => {
+    const e = new Error();
+    e.statusCode = 404;
+    throw e;
   });
 };
