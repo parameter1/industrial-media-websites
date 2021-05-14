@@ -3,6 +3,7 @@
 
 User-agent: *
 Disallow: /__
+Disallow: /print/content
 
 Sitemap: https://www.designdevelopmenttoday.com/sitemap.xml
 Sitemap: https://www.designdevelopmenttoday.com/sitemap-google-news.xml
