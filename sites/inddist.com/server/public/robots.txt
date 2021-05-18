@@ -4,6 +4,7 @@
 User-agent: *
 Disallow: /__
 Disallow: /print/content
+Disallow: /*/21427920/
 
 Sitemap: https://www.inddist.com/sitemap.xml
 Sitemap: https://www.inddist.com/sitemap-google-news.xml
