@@ -25,11 +25,37 @@ $ const siteContext = {
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
       <link rel="manifest" href="/site.webmanifest">
     </else>
-    <marko-web-gam-init />
-    <marko-web-gtm-init container-id=site.get("gtm.containerId") />
+
+    <marko-web-deferred-script-loader-init />
+
+    <!-- <refresh-theme-gam-media-fuse id=site.get("mediaFuse.id") /> -->
+    <marko-web-gam-init
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
+
+    <!-- init gtm -->
+    <marko-web-gtm-init
+      container-id=site.get("gtm.containerId")
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
+
     <marko-web-gtm-push data={ site: siteContext } />
-    <marko-web-native-x-init uri=nativeX.getUri() enabled=nativeX.isEnabled() />
+
+    <!-- init native-x -->
+    <marko-web-native-x-init
+      uri=nativeX.getUri()
+      enabled=nativeX.isEnabled()
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
+
     <${input.head} />
+
     <marko-web-gtm-start />
     <marko-web-gam-enable />
     $ const keyValues = {
@@ -53,4 +79,7 @@ $ const siteContext = {
     <${input.belowContainer} />
     <shared-site-footer />
   </@below-container>
+  <@below-wrapper>
+    <marko-web-deferred-script-loader-load />
+  </@below-wrapper>
 </marko-web-document>
