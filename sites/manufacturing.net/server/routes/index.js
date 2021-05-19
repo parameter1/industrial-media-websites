@@ -2,7 +2,6 @@ const redirects = require('./redirects');
 const home = require('./home');
 const content = require('./content');
 const dynamicPages = require('./dynamic-page');
-const publishedContent = require('./published-content');
 const search = require('./search');
 const websiteSections = require('./website-section');
 
@@ -18,9 +17,6 @@ module.exports = (app) => {
 
   // Content Pages
   content(app);
-
-  // Published Content
-  publishedContent(app);
 
   // Search
   search(app);

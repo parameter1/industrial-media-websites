@@ -1,11 +1,17 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
-$ const title = defaultValue(data.title, "Videos");
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = data;
 
-<shared-published-content-page-default-layout title=title description=data.description>
+<shared-published-content-page-default-layout title=name description=data.description>
   <@query
-    name="all-published-content"
+    name="website-scheduled-content"
     params={
+      alias,
       contentTypes: ["Video"],
       limit: 12,
     }
