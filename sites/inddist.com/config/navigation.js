@@ -21,7 +21,7 @@ module.exports = {
   secondary: {
     items: [
       { href: '/newsletter-signup', label: 'Newsletter Signup' },
-      { href: '/videos', label: 'Videos' },
+      { href: '/video', label: 'Video' },
       { href: 'https://www.cdsreportnow.com/renew/now?idm', label: 'Subscribe to Magazine', target: '_blank' },
     ],
   },
