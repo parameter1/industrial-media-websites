@@ -20,7 +20,7 @@ module.exports = {
   secondary: {
     items: [
       { href: '/newsletter-signup', label: 'Newsletter Signup' },
-      { href: '/videos', label: 'Videos' },
+      { href: '/video', label: 'Video' },
     ],
   },
   tertiary: {
