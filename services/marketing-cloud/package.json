@@ -13,7 +13,7 @@
     "@marketing-cloud/rest": "^0.1.0",
     "@marketing-cloud/soap": "^0.1.3",
     "@parameter1/base-cms-env": "^2.0.0",
-    "@parameter1/base-cms-object-path": "^2.4.2",
+    "@parameter1/base-cms-object-path": "^2.5.0",
     "async": "^3.2.0",
     "newrelic": "^6.4.1"
   }
