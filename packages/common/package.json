@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/package-common",
-  "version": "1.11.2",
+  "version": "1.12.0",
   "author": "Jacob Bare <jacob@limit0.io>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/packages/common",
   "license": "MIT",

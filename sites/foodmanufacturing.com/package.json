@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/foodmanufacturing.com",
-  "version": "1.11.12",
+  "version": "1.12.0",
   "author": "Jacob Bare <jacob@limit0.io>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/foodmanufacturing.com",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@industrial-media/package-shared": "^1.11.12",
+    "@industrial-media/package-shared": "^1.12.0",
     "@parameter1/base-cms-marko-core": "^2.12.0",
     "@parameter1/base-cms-marko-web": "^2.20.1",
     "@parameter1/base-cms-object-path": "^2.5.0",
