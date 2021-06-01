@@ -36,6 +36,7 @@ module.exports = {
       { href: '/page/mnet-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/mnet-terms-conditions', label: 'Terms & Conditions' },
       { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
+      { href: '/site-map', label: 'Site Map' },
     ],
   },
   menu: [
@@ -69,6 +70,7 @@ module.exports = {
         { href: '/page/mnet-privacy-policy', label: 'Privacy Policy' },
         { href: '/page/mnet-terms-conditions', label: 'Terms & Conditions' },
         { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
+        { href: '/site-map', label: 'Site Map' },
       ],
     },
   ],
