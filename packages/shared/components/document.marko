@@ -29,6 +29,14 @@ $ const siteContext = {
 
     <marko-web-deferred-script-loader-init />
 
+    <!-- init p1 website events -->
+    <marko-web-p1-events-init
+      on="load"
+      request-frame=true
+      target-tag="body"
+      identity-query-builder=`var id = query.oly_enc_id; if (id) { return 'omeda.${omedaConfig.brandKey}.customer*' + id + '~encoded'; };`;
+    />
+
     <marko-web-gam-init
       on="load"
       request-frame=true
