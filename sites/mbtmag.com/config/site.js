@@ -11,6 +11,11 @@ module.exports = {
   nativeX,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
+  p1events: {
+    tenant: 'indm',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'mbtmag.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=45',

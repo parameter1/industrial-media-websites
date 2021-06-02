@@ -11,6 +11,11 @@ module.exports = {
   nativeX,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
+  p1events: {
+    tenant: 'indm',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'impomag.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.impomag.com/files/base/indm/all/impo_logo.png?h=45',

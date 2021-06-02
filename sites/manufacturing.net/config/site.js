@@ -11,6 +11,11 @@ module.exports = {
   nativeX,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
+  p1events: {
+    tenant: 'indm',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'manufacturing.net' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=45',

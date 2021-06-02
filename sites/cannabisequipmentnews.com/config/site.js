@@ -9,6 +9,11 @@ module.exports = {
   nativeX,
   socialMediaLinks,
   company: 'Lynch Media',
+  p1events: {
+    tenant: 'indm',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'cannabisequipmentnews.com' : '',
+  },
   simpleFavicon: true,
   logos: {
     navbar: {
