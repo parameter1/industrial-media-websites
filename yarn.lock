@@ -2219,6 +2219,22 @@
     graphql-tag "^2.11.0"
     node-fetch "^2.6.1"
 
+"@parameter1/base-cms-marko-web-omeda@^2.22.2":
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-omeda/-/base-cms-marko-web-omeda-2.22.2.tgz#03379580e4db9a2ff19f783533f8d7f25291cabc"
+  integrity sha512-aYwFqk2I4gc4XvcJicc4GEOGAtcLCkgOMWvdYycIwPeWUS7pVga3bCuZtcoyQOlOfv1Td7FXuS4dmeN2Vtcc0Q==
+  dependencies:
+    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.22.2"
+
+"@parameter1/base-cms-marko-web-p1-events@^2.22.2":
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.22.2.tgz#53c8c2ded54d932b7799fe523ddd181778d9e1bb"
+  integrity sha512-MKDZAlxHvLTWs3ntzD073sHkKE1NUClM0ooTEBdLkCnxXbkDwfiRJDls8iWxtK/XZuDoGHqitVDppo0E9F5pig==
+  dependencies:
+    "@parameter1/base-cms-inflector" "^2.0.0"
+    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.22.2"
+    "@parameter1/base-cms-object-path" "^2.22.2"
+
 "@parameter1/base-cms-marko-web-photoswipe@^2.22.2":
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-photoswipe/-/base-cms-marko-web-photoswipe-2.22.2.tgz#c07f0b10f5927896fc11e7d6672849a2db892759"
