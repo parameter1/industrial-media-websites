@@ -26,6 +26,8 @@ x-env-defaults: &env
   YARN_CACHE_FOLDER: /.yarn-cache
   IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://identity-x.parameter1.com/graphql}
   IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
+  OMEDA_APP_ID: ${OMEDA_APP_ID-(unset)}
+  OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
 
 x-env-marketing-cloud-indm: &env-marketing-cloud-indm
   FUEL_API_CLIENT_ID: ${INDM_FUEL_API_CLIENT_ID}
