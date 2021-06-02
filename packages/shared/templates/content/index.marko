@@ -37,6 +37,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
       <marko-web-gam-slots slots=adSlots({ aliases }) />
+      <marko-web-p1-events-track-content node=content />
     </marko-web-resolve-page>
   </@head>
   <@above-container>
