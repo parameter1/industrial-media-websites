@@ -1,4 +1,5 @@
 const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
+const omeda = require('@industrial-media/package-shared/config/incd-omeda');
 
 const navigation = require('./navigation');
 const gam = require('./gam');
@@ -8,6 +9,7 @@ const socialMediaLinks = require('./social-links');
 module.exports = {
   navigation,
   gam,
+  omeda,
   nativeX,
   socialMediaLinks,
   company: 'Industrial Media, LLC',

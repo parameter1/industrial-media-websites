@@ -1,3 +1,5 @@
+const omeda = require('@industrial-media/package-shared/config/lynchm-omeda');
+
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
@@ -6,6 +8,7 @@ const socialMediaLinks = require('./social-links');
 module.exports = {
   navigation,
   gam,
+  omeda,
   nativeX,
   socialMediaLinks,
   company: 'Lynch Media',
