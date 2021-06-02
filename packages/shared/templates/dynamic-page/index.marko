@@ -8,7 +8,10 @@ $ const { id, alias, pageNode } = data;
     </marko-web-gtm-dynamic-page-context>
   </@head>
   <@above-container>
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
+    <marko-web-resolve-page|{ data: page }| node=pageNode>
+      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
+      <marko-web-p1-events-track-content node=page />
+    </marko-web-resolve-page>
   </@above-container>
   <@page>
     <marko-web-resolve-page|{ data: page }| node=pageNode>
