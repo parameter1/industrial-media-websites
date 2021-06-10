@@ -1,4 +1,4 @@
-FROM node:10.15 as build
+FROM node:10.24 as build
 WORKDIR /root
 ENV NODE_ENV production
 ARG SERVICE
@@ -10,7 +10,7 @@ RUN yarn --production --pure-lockfile
 
 WORKDIR /root/services/$SERVICE
 
-FROM node:10.15-alpine
+FROM node:10.24-alpine
 ENV NODE_ENV production
 ARG SERVICE
 COPY --from=build /root /root
