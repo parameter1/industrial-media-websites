@@ -37,6 +37,7 @@ module.exports = {
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/terms-conditions', label: 'Terms & Conditions' },
       { href: '/page/CCPA', label: 'CA Consumer Privacy Act' },
+      { href: '/site-map', label: 'Site Map' },
     ],
   },
   menu: [
