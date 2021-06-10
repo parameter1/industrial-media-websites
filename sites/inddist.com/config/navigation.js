@@ -77,7 +77,6 @@ module.exports = {
         { href: '/page/id-privacy-policy', label: 'Privacy Policy' },
         { href: '/page/id-terms-conditions', label: 'Terms & Conditions' },
         { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
-        { href: '/site-map', label: 'Site Map' },
       ],
     },
   ],

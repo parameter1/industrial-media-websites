@@ -68,7 +68,6 @@ module.exports = {
         { href: '/page/mbt-privacy-policy', label: 'Privacy Policy' },
         { href: '/page/mbt-terms-conditions', label: 'Terms & Conditions' },
         { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
-        { href: '/site-map', label: 'Site Map' },
       ],
     },
   ],
