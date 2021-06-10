@@ -4,6 +4,8 @@
 User-agent: *
 Disallow: /__
 Disallow: /print/content
+Disallow: /*/21485566/
+Disallow: /*/21485567/
 
 Sitemap: https://www.manufacturing.net/sitemap.xml
 Sitemap: https://www.manufacturing.net/sitemap-google-news.xml

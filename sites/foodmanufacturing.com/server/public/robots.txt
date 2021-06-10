@@ -5,6 +5,8 @@ User-agent: *
 Disallow: /__
 Disallow: /print/content
 Disallow: /*/21451897/
+Disallow: /*/21485566/
+Disallow: /*/21485567/
 
 Sitemap: https://www.foodmanufacturing.com/sitemap.xml
 Sitemap: https://www.foodmanufacturing.com/sitemap-google-news.xml
