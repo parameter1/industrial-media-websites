@@ -45,10 +45,10 @@ x-env-tauron: &env-tauron
   SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
 
 x-env-development: &env-development
-  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
-  OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10013}
-  RSS_URI: ${RSS_URI-http://host.docker.internal:10011}
-  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
+  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10102}
+  OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10402}
+  RSS_URI: ${RSS_URI-http://host.docker.internal:10202}
+  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10302}
 
 x-site-command: &site-cmd
   entrypoint: ["node_modules/.bin/basecms-website"]
