@@ -45,6 +45,10 @@ module.exports = (options = {}) => {
       const gamConfig = get(options, 'siteConfig.gam');
       if (gamConfig) set(app.locals, 'GAM', gamConfig);
 
+      // Setup GAM.
+      const omedaConfig = get(options, 'siteConfig.omeda');
+      if (omedaConfig) set(app.locals, 'omedaConfig', omedaConfig);
+
       // Setup NativeX.
       set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));
 
