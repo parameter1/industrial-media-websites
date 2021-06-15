@@ -13,6 +13,7 @@ const components = require('./components');
 const fragments = require('./fragments');
 const userRoutes = require('./routes/user');
 const newsletterRoute = require('./routes/newsletter-signup');
+const leadsMiddleware = require('./middleware/leads');
 
 const routes = siteRoutes => (app) => {
   // Handle contact submissions on /__contact-us
@@ -46,6 +47,9 @@ module.exports = (options = {}) => {
 
       // Setup NativeX.
       set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));
+
+      // Use lead management middleware
+      app.use(leadsMiddleware());
 
       // Use paginated middleware
       app.use(htmlSitemapPagination());
