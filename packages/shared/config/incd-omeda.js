@@ -6,4 +6,7 @@ module.exports = {
   rapidIdentification: {
     productId: 715,
   },
+  olytics: {
+    oid: '885288e230da4bf9ae9626e64e9fbf46',
+  },
 };
