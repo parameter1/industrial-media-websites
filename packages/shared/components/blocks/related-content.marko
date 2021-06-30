@@ -2,7 +2,7 @@ import queryFragment from "../../graphql/fragments/related-content-block";
 
 <marko-web-query|{ nodes }|
   name="related-published-content"
-  params={ contentId: input.contentId, limit: 4, queryFragment }
+  params={ contentId: input.contentId, limit: 4, withSite: false, queryFragment }
 >
   <shared-content-list-flow
     nodes=nodes
