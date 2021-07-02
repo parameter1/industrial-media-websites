@@ -12,7 +12,6 @@ const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
 const userRoutes = require('./routes/user');
-const newsletterRoute = require('./routes/newsletter-signup');
 const leadsMiddleware = require('./middleware/leads');
 
 const routes = siteRoutes => (app) => {
@@ -20,8 +19,6 @@ const routes = siteRoutes => (app) => {
   contactUsHandler(app);
   // Load user routes.
   userRoutes(app);
-  // Load newsletter signup.
-  newsletterRoute(app);
   // HTML Sitemap
   htmlSitemapRoutes(app);
   // Load site routes.
