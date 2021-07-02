@@ -20,7 +20,7 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/newsletter-signup', label: 'Newsletter Signup' },
+      { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=id_signup', label: 'Newsletter Signup', target: '_blank' },
       { href: '/video', label: 'Video' },
       { href: 'https://industrialmedia.dragonforms.com/IDM_new', label: 'Subscribe to Magazine', target: '_blank' },
     ],
@@ -69,7 +69,7 @@ module.exports = {
     {
       label: 'User Tools',
       items: [
-        { href: '/newsletter-signup', label: 'Newsletter Signup' },
+        { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=id_signup', label: 'Newsletter Signup', target: '_blank' },
         { href: 'https://industrialmedia.dragonforms.com/IDM_new', label: 'Subscribe to Magazine', target: '_blank' },
         { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
         { href: '/page/id-about-us', label: 'About Us' },
