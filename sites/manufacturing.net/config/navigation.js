@@ -17,7 +17,7 @@ module.exports = {
   },
   secondary: {
     items: [
-      { href: '/newsletter-signup', label: 'Newsletter Signup' },
+      { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=mnet_signup', label: 'Newsletter Signup', target: '_blank' },
       { href: '/video', label: 'Video' },
       { href: '/podcast', label: 'Podcast' },
     ],
@@ -63,7 +63,7 @@ module.exports = {
     {
       label: 'User Tools',
       items: [
-        { href: '/newsletter-signup', label: 'Newsletter Signup' },
+        { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=mnet_signup', label: 'Newsletter Signup', target: '_blank' },
         { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
         { href: '/page/mnet-about-us', label: 'About Us' },
         { href: '/contact-us', label: 'Contact Us' },
