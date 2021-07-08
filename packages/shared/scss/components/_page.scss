@@ -117,7 +117,7 @@
   &__content-body {
     margin-bottom: $block-spacer;
     ul {
-      padding-left: $grid-gutter-width;
+      list-style-position: unset;
     }
 
     > p:first-child {
