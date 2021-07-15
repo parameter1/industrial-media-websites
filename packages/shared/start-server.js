@@ -1,3 +1,4 @@
+const gql = require('graphql-tag');
 const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
@@ -59,5 +60,23 @@ module.exports = (options = {}) => {
       app.use(cleanResponse());
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
+
+    redirectHandler: async ({ from, params, req }) => {
+      // attempt to match a redirect from _another_ site
+      const { apollo } = req;
+      const query = gql`
+        query WebsiteRedirect($input: WebsiteRedirectQueryInput!) {
+          websiteRedirect(input: $input) {
+            to
+            code
+          }
+        }
+      `;
+      const input = { from, params, siteQueryOperator: 'notEqual' };
+      const { data } = await apollo.query({ query, variables: { input } });
+      const { websiteRedirect } = data;
+      const { to } = websiteRedirect || {};
+      return to ? websiteRedirect : null;
+    },
   });
 };
