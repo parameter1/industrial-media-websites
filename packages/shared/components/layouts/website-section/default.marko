@@ -12,20 +12,18 @@ $ const {
   alias,
   name,
   pageNode,
-  noCrawl
 } = input;
 
 $ const loader = getAsObject(input, "loader");
 
 $ const rightRailHeader = defaultValue(input.rightRailHeader, "Top Headlines");
-$ const withOopAds = defaultValue(input.withOopAds, true) && !noCrawl;
+$ const withOopAds = defaultValue(input.withOopAds, true);
 
-$ const adSlots = isFunction(input.adSlots) && !noCrawl ? input.adSlots : ({ aliases }) => ({
+$ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
   "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
   "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
   "gpt-ad-rail-infinite": GAM.getAdUnit({ name: "infinite-rail", aliases }),
 });
-$ console.log(noCrawl);
 
 $ const promise = websiteSectionContentLoader(apollo, {
   sectionId: id,
@@ -41,24 +39,17 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <${input.head} section-content=sectionContent />
       </if>
       <else>
-        <if(!noCrawl)>
-          <marko-web-gtm-website-section-context|{ context }| alias=alias>
-            <marko-web-gtm-push data=context />
-          </marko-web-gtm-website-section-context>
-          <marko-web-resolve-page|{ data: section }| node=pageNode>
-            $ const aliases = hierarchyAliases(section);
-            <marko-web-gam-slots slots=adSlots({ aliases }) />
-            <marko-web-p1-events-track-website-section node=section />
-          </marko-web-resolve-page>
-          <if(input.inHead)>
-            <${input.inHead} section-content=sectionContent />
-          </if>
-        </if>
-        <else>
-          <marko-web-resolve-page|{ data: section }| node=pageNode>
+        <marko-web-gtm-website-section-context|{ context }| alias=alias>
+          <marko-web-gtm-push data=context />
+        </marko-web-gtm-website-section-context>
+        <marko-web-resolve-page|{ data: section }| node=pageNode>
           $ const aliases = hierarchyAliases(section);
-          </marko-web-resolve-page>
-        </else>
+          <marko-web-gam-slots slots=adSlots({ aliases }) />
+          <marko-web-p1-events-track-website-section node=section />
+        </marko-web-resolve-page>
+        <if(input.inHead)>
+          <${input.inHead} section-content=sectionContent />
+        </if>
       </else>
     </@head>
 
@@ -85,7 +76,6 @@ $ const promise = websiteSectionContentLoader(apollo, {
           $ const aliases = hierarchyAliases(section);
           $ const slots = adSlots({ aliases });
           <marko-web-page-wrapper modifiers=["no-bottom-padding"]>
-          <if(!noCrawl)>
             <@section>
               <div class="row">
                 <div class="col">
@@ -97,7 +87,6 @@ $ const promise = websiteSectionContentLoader(apollo, {
                 </div>
               </div>
             </@section>
-          </if>
 
             <@section>
               <if(alias !== "home")>
@@ -123,13 +112,12 @@ $ const promise = websiteSectionContentLoader(apollo, {
                       <@title modifiers=["small"] />
                     </@node>
                   </shared-content-list-flow>
-                  <if(!noCrawl)>
-                    <marko-web-gam-display-ad
-                      id="gpt-ad-rail1"
-                      slots=slots
-                      modifiers=["max-width-300", "margin-auto-x", "center", "margin-auto-y"]
-                    />
-                  </if>
+
+                  <marko-web-gam-display-ad
+                    id="gpt-ad-rail1"
+                    slots=slots
+                    modifiers=["max-width-300", "margin-auto-x", "center", "margin-auto-y"]
+                  />
                 </div>
               </div>
             </@section>
@@ -178,13 +166,12 @@ $ const promise = websiteSectionContentLoader(apollo, {
                   <aside class="col-lg-4 page-rail">
                     <shared-follow-us-block />
                     <shared-most-recent-block />
-                    <if(!noCrawl)>
-                      <marko-web-gam-display-ad
-                        id="gpt-ad-rail-infinite"
-                        modifiers=["sticky-top", "max-width-300", "margin-auto-x"]
-                        slots=slots
-                      />
-                    </if>
+
+                    <marko-web-gam-display-ad
+                      id="gpt-ad-rail-infinite"
+                      modifiers=["sticky-top", "max-width-300", "margin-auto-x"]
+                      slots=slots
+                    />
                   </aside>
                 </div>
               </@section>
@@ -197,9 +184,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
 
     <@foot>
       <marko-web-resolve-page|{ data: section }| node=pageNode>
-        <if(!noCrawl)>
-          <shared-fixed-ad-bottom aliases=hierarchyAliases(section) />
-        </if>
+        <shared-fixed-ad-bottom aliases=hierarchyAliases(section) />
       </marko-web-resolve-page>
     </@foot>
   </marko-web-website-section-page-layout>
