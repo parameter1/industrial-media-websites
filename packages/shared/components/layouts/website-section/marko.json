@@ -28,6 +28,10 @@
       "type": "object",
       "required": true
     },
+    "@no-crawl": {
+      "type": "boolean",
+      "required": false
+    },
     "@ad-slots": "function",
     "@right-rail-header": "string",
     "@with-oop-ads": "boolean"
