@@ -15,6 +15,11 @@ module.exports = (app) => {
     queryFragment,
   }));
 
+  app.get('/:noCrawl(__):alias(about-us)', withWebsiteSection({
+    template: section,
+    queryFragment,
+  }));
+
   app.get('/:alias([a-z0-9-/]+)', withWebsiteSection({
     template: section,
     queryFragment,
