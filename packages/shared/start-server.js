@@ -13,6 +13,7 @@ const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
 const userRoutes = require('./routes/user');
+const stealthLink = require('./routes/stealth-link');
 const leadsMiddleware = require('./middleware/leads');
 
 const routes = siteRoutes => (app) => {
@@ -22,6 +23,8 @@ const routes = siteRoutes => (app) => {
   userRoutes(app);
   // HTML Sitemap
   htmlSitemapRoutes(app);
+  // Stealh Link
+  stealthLink(app);
   // Load site routes.
   siteRoutes(app);
 };
