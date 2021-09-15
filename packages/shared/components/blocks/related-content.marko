@@ -16,7 +16,7 @@ $ const includeTaxonomyIds = input.taxonomyIds;
 >
   $ const excludeContentIds = nodes.map((node) => node.id)
   $ excludeContentIds.push(input.contentId);
-  <if(nodes.length < 4 && input.taxonomyIds.length)>
+  <if(nodes.length < 4 && includeTaxonomyIds.length)>
     $ allRelatedNodes.push(...nodes)
     <marko-web-query|{ nodes }|
       name="all-published-content"
