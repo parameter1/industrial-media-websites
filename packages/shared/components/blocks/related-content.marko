@@ -1,3 +1,4 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../graphql/fragments/related-content-block";
 
 $ const excludeContentTypes = [
@@ -7,27 +8,29 @@ $ const excludeContentTypes = [
   "TextAd",
 ];
 
-$ const allRelatedNodes = [];
-$ const includeTaxonomyIds = input.taxonomyIds;
+$ const { contentId } = input;
+$ const taxonomyIds = getAsArray(input, "taxonomyIds");
+$ const limit = 4;
 
 <marko-web-query|{ nodes }|
   name="related-published-content"
-  params={ contentId: input.contentId, limit: 4, withSite: false, queryFragment }
+  params={ contentId, limit, withSite: false, queryFragment }
 >
+  $ const allRelatedNodes = [];
   $ const excludeContentIds = nodes.map((node) => node.id)
-  $ excludeContentIds.push(input.contentId);
-  <if(nodes.length < 4 && includeTaxonomyIds.length)>
+  $ excludeContentIds.push(contentId);
+  <if(nodes.length < limit && taxonomyIds.length)>
     $ allRelatedNodes.push(...nodes)
     <marko-web-query|{ nodes }|
       name="all-published-content"
       params={
-        excludeContentTypes,
-        excludeContentIds,
-        includeTaxonomyIds,
-        limit: 4-nodes.length,
-        withSite: false,
-        queryFragment
-      }
+          excludeContentTypes,
+          excludeContentIds,
+          includeTaxonomyIds: taxonomyIds,
+          limit: limit-nodes.length,
+          withSite: false,
+          queryFragment
+        }
       >
       $ allRelatedNodes.push(...nodes)
       <shared-content-list-flow
