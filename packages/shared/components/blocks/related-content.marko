@@ -17,22 +17,22 @@ $ const limit = 4;
   params={ contentId, limit, withSite: false, queryFragment }
 >
   $ const allRelatedNodes = [];
-  $ const excludeContentIds = nodes.map((node) => node.id)
+  $ const excludeContentIds = nodes.map((node) => node.id);
   $ excludeContentIds.push(contentId);
   <if(nodes.length < limit && taxonomyIds.length)>
-    $ allRelatedNodes.push(...nodes)
+    $ allRelatedNodes.push(...nodes);
     <marko-web-query|{ nodes }|
       name="all-published-content"
       params={
           excludeContentTypes,
           excludeContentIds,
           includeTaxonomyIds: taxonomyIds,
-          limit: limit-nodes.length,
+          limit: limit - nodes.length,
           withSite: false,
-          queryFragment
+          queryFragment,
         }
       >
-      $ allRelatedNodes.push(...nodes)
+      $ allRelatedNodes.push(...nodes);
       <shared-content-list-flow
         nodes=allRelatedNodes
         inner-justified=false
