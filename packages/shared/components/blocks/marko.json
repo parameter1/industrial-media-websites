@@ -39,6 +39,11 @@
     "template": "./related-content.marko",
     "@content-id": "number"
   },
+  "<shared-related-content-taxonomy-block>": {
+    "template": "./related-content-taxonomy.marko",
+    "@content-id": "number",
+    "@taxonomy-ids": "array"
+  },
   "<shared-latest-in-section-block>": {
     "template": "./latest-in-section.marko",
     "<content>": {
