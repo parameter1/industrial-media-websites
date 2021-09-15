@@ -8,21 +8,30 @@ $ const excludeContentTypes = [
 ];
 
 $ const allRelatedNodes = [];
+$ const includeTaxonomyIds = input.taxonomyIds;
 
 <marko-web-query|{ nodes }|
   name="related-published-content"
   params={ contentId: input.contentId, limit: 4, withSite: false, queryFragment }
 >
-  $ const relatedContentNodesLength = nodes.length;
-  <if(relatedContentNodesLength < 4 && input.taxonomyIds.length)>
+  $ const excludeContentIds = nodes.map((node) => node.id)
+  $ excludeContentIds.push(input.contentId);
+  <if(nodes.length < 4 && input.taxonomyIds.length)>
     $ allRelatedNodes.push(...nodes)
     <marko-web-query|{ nodes }|
       name="all-published-content"
-      params={ excludeContentTypes,  excludeContentIds: [input.contentId], includeTaxonomyIds: input.taxonomyIds, limit: 4-relatedContentNodesLength , withSite: false, queryFragment }
+      params={
+        excludeContentTypes,
+        excludeContentIds,
+        includeTaxonomyIds,
+        limit: 4-nodes.length,
+        withSite: false,
+        queryFragment
+      }
       >
       $ allRelatedNodes.push(...nodes)
       <shared-content-list-flow
-        nodes= allRelatedNodes
+        nodes=allRelatedNodes
         inner-justified=false
         flush-y=true
         flush-x=false
@@ -37,7 +46,7 @@ $ const allRelatedNodes = [];
   </if>
   <else>
     <shared-content-list-flow
-    nodes= nodes
+    nodes=nodes
     inner-justified=false
     flush-y=true
     flush-x=false
