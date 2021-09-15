@@ -37,7 +37,8 @@
   },
   "<shared-related-content-block>": {
     "template": "./related-content.marko",
-    "@content-id": "number"
+    "@content-id": "number",
+    "@taxonomy-ids": "array"
   },
   "<shared-latest-in-section-block>": {
     "template": "./latest-in-section.marko",
