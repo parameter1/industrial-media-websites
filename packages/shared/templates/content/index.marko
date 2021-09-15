@@ -222,8 +222,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
                 <@content id=id name=content.name teaser=content.teaser url=content.siteContext.canonicalUrl />
               </shared-content-page-comments>
 
-              <shared-related-content-block content-id=id />
-              <shared-related-content-taxonomy-block content-id=id taxonomy-ids=content.taxonomyIds />
+              <shared-related-content-block content-id=id taxonomy-ids=content.taxonomyIds />
 
             </default-theme-page-contents>
             <aside class="col-lg-4 page-rail">
