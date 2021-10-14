@@ -1,5 +1,5 @@
 const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
-const omeda = require('@industrial-media/package-shared/config/incd-omeda');
+const omeda = require('@industrial-media/package-shared/config/imcd-omeda');
 
 const navigation = require('./navigation');
 const gam = require('./gam');
