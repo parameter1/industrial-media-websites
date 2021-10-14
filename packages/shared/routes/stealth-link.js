@@ -1,4 +1,4 @@
-const template = require('../templates/stealth-link.marko');
+const template = require('../templates/stealth-link');
 
 module.exports = (app) => {
   app.get('/__about-us', (_, res) => {
