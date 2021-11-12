@@ -10,8 +10,6 @@ import IdentityX from '@parameter1/base-cms-marko-web-identity-x/browser';
 import P1Events from '@parameter1/base-cms-marko-web-p1-events/browser';
 import OmedaIdentityX from '@parameter1/base-cms-marko-web-omeda-identity-x/browser';
 
-const NewsletterSignup = () => import(/* webpackChunkName: "shared-newsletter-signup" */ './newsletter-signup/index.vue');
-
 const setP1EventsIdentity = ({ p1events, brandKey, encryptedId }) => {
   if (!p1events || !brandKey || !encryptedId) return;
   p1events('setIdentity', `omeda.${brandKey}.customer*${encryptedId}~encrypted`);
@@ -40,6 +38,4 @@ export default (Browser) => {
   IdentityX(Browser);
   OmedaIdentityX(Browser);
   P1Events(Browser);
-
-  Browser.register('SharedNewsletterSignup', NewsletterSignup);
 };
