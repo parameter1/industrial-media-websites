@@ -35,6 +35,7 @@
     "@parameter1/base-cms-utils": "^2.22.2",
     "@parameter1/base-cms-web-cli": "^2.50.0",
     "@parameter1/base-cms-web-common": "^2.46.0",
+    "@parameter1/omeda-graphql-client-express": "^0.7.0",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "dd-trace": "^0.25.1",
