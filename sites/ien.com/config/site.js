@@ -4,6 +4,7 @@ const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
+const identityX = require('./identity-x');
 
 const omedaBrandKey = 'imcd';
 
@@ -11,6 +12,7 @@ module.exports = {
   navigation,
   gam,
   omedaBrandKey,
+  identityX: identityX({ omedaBrandKey }),
   nativeX,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
@@ -33,14 +35,6 @@ module.exports = {
       srcset: [
         'https://img.ien.com/files/base/indm/all/ien_logo.png?h=120 2x',
       ],
-    },
-  },
-  identityX: {
-    appId: '5e28a3dd58e67b229e55ae43',
-    enabled: true,
-    comments: { enabled: true },
-    options: {
-      appContextId: '5e7e5fac88f2fa00cdebab24',
     },
   },
   gtm: {

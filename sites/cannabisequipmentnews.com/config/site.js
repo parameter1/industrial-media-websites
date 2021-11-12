@@ -2,6 +2,7 @@ const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
+const identityX = require('./identity-x');
 
 const omedaBrandKey = 'lynchm';
 
@@ -9,6 +10,7 @@ module.exports = {
   navigation,
   gam,
   omedaBrandKey,
+  identityX: identityX({ omedaBrandKey }),
   nativeX,
   socialMediaLinks,
   company: 'Lynch Media',
@@ -30,14 +32,6 @@ module.exports = {
       srcset: [
         'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=120 2x',
       ],
-    },
-  },
-  identityX: {
-    appId: '5e28a3dd58e67b229e55ae43',
-    enabled: true,
-    comments: { enabled: true },
-    options: {
-      appContextId: '5e8203df75a0950125baf2b5',
     },
   },
   gtm: {

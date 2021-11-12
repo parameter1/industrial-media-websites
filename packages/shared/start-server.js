@@ -12,7 +12,7 @@ const buildNativeXConfig = require('./native-x/build-config');
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
-const userRoutes = require('./routes/user');
+const identityXRoutes = require('./routes/identity-x');
 const stealthLink = require('./routes/stealth-link');
 const leadsMiddleware = require('./middleware/leads');
 const omeda = require('./config/omeda');
@@ -21,7 +21,7 @@ const routes = siteRoutes => (app) => {
   // Handle contact submissions on /__contact-us
   contactUsHandler(app);
   // Load user routes.
-  userRoutes(app);
+  identityXRoutes(app);
   // HTML Sitemap
   htmlSitemapRoutes(app);
   // Stealh Link
@@ -60,6 +60,10 @@ module.exports = (options = {}) => {
 
       // Setup NativeX.
       set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));
+
+      // Setup IdentityX.
+      const identityXConfig = get(options, 'siteConfig.identityX');
+      set(app.locals, 'identityX', identityXConfig);
 
       // Use lead management middleware
       app.use(leadsMiddleware());
