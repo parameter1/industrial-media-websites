@@ -26,18 +26,6 @@ x-env-defaults: &env
   OMEDA_APP_ID: ${OMEDA_APP_ID-(unset)}
   OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
 
-x-env-marketing-cloud-indm: &env-marketing-cloud-indm
-  FUEL_API_CLIENT_ID: ${INDM_FUEL_API_CLIENT_ID}
-  FUEL_API_CLIENT_SECRET: ${INDM_FUEL_API_CLIENT_SECRET}
-  FUEL_API_AUTH_URL: ${INDM_FUEL_API_AUTH_URL}
-  FUEL_API_ACCOUNT_ID: ${INDM_FUEL_API_ACCOUNT_ID}
-
-x-env-marketing-cloud-lynch: &env-marketing-cloud-lynch
-  FUEL_API_CLIENT_ID: ${LYNCH_FUEL_API_CLIENT_ID}
-  FUEL_API_CLIENT_SECRET: ${LYNCH_FUEL_API_CLIENT_SECRET}
-  FUEL_API_AUTH_URL: ${LYNCH_FUEL_API_AUTH_URL}
-  FUEL_API_ACCOUNT_ID: ${LYNCH_FUEL_API_ACCOUNT_ID}
-
 x-env-tauron: &env-tauron
   GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
@@ -72,28 +60,6 @@ services:
     environment:
       <<: *env
 
-  mc-refresh-data-extensions-indm:
-    <<: *node
-    working_dir: /root/services/marketing-cloud
-    entrypoint: ["node", "./data-extensions/refresh.js"]
-    environment:
-      <<: *env-marketing-cloud-indm
-      NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
-      NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
-      NODE_ENV: development
-      YARN_CACHE_FOLDER: /.yarn-cache
-
-  mc-refresh-data-extensions-lynch:
-    <<: *node
-    working_dir: /root/services/marketing-cloud
-    entrypoint: ["node", "./data-extensions/refresh.js"]
-    environment:
-      <<: *env-marketing-cloud-lynch
-      NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
-      NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
-      NODE_ENV: development
-      YARN_CACHE_FOLDER: /.yarn-cache
-
   id:
     <<: *node
     <<: *site-cmd
@@ -101,7 +67,6 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
@@ -118,7 +83,6 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
@@ -135,7 +99,6 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
@@ -152,7 +115,6 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
@@ -169,7 +131,6 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
@@ -186,7 +147,6 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9715
       LIVERELOAD_PORT: 19715
@@ -203,7 +163,6 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud-lynch
       PORT: 80
       EXPOSED_PORT: 9716
       LIVERELOAD_PORT: 19716
@@ -220,7 +179,6 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
-      <<: *env-marketing-cloud-indm
       PORT: 80
       EXPOSED_PORT: 9717
       LIVERELOAD_PORT: 19717
