@@ -5,6 +5,7 @@ const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const contactUsHandler = require('@industrial-media/package-contact-us');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
+const omedaGraphQL = require('@parameter1/omeda-graphql-client-express');
 
 const buildNativeXConfig = require('./native-x/build-config');
 
@@ -50,6 +51,12 @@ module.exports = (options = {}) => {
       const omedaBrandKey = get(options, 'siteConfig.omedaBrandKey');
       const omedaConfig = omeda(omedaBrandKey);
       set(app.locals, 'omedaConfig', omedaConfig);
+      app.use(omedaGraphQL({
+        uri: 'https://graphql.omeda.parameter1.com/',
+        brandKey: omedaConfig.brandKey,
+        appId: omedaConfig.appId,
+        inputId: omedaConfig.inputId,
+      }));
 
       // Setup NativeX.
       set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));
