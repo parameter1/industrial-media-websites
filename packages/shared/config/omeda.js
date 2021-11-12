@@ -1,8 +1,8 @@
 const configs = {
   imcd: {
     brandKey: 'imcd',
-    appId: process.env.OMEDA_APP_ID,
-    inputId: process.env.OMEDA_INPUT_ID,
+    appId: process.env.OMEDA_APP_ID || process.env.OMEDA_IMCD_APP_ID,
+    inputId: process.env.OMEDA_INPUT_ID || process.env.OMEDA_IMCD_INPUT_ID,
     graphqlUri: 'https://graphql.omeda.parameter1.com/',
     rapidIdentification: {
       productId: 715,
@@ -13,8 +13,8 @@ const configs = {
   },
   lynchm: {
     brandKey: 'lynchm',
-    appId: process.env.OMEDA_APP_ID,
-    inputId: process.env.OMEDA_INPUT_ID,
+    appId: process.env.OMEDA_APP_ID || process.env.OMEDA_LYNCHM_APP_ID,
+    inputId: process.env.OMEDA_INPUT_ID || process.env.OMEDA_LYNCHM_APP_ID,
     graphqlUri: 'https://graphql.omeda.parameter1.com/',
     rapidIdentification: {
       productId: 716,
