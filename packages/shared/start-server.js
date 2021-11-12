@@ -6,6 +6,7 @@ const contactUsHandler = require('@industrial-media/package-contact-us');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
 const omedaGraphQL = require('@parameter1/omeda-graphql-client-express');
+const stripOlyticsParam = require('@parameter1/base-cms-marko-web-omeda-identity-x/middleware/strip-olytics-param');
 
 const buildNativeXConfig = require('./native-x/build-config');
 
@@ -64,6 +65,7 @@ module.exports = (options = {}) => {
       // Setup IdentityX.
       const identityXConfig = get(options, 'siteConfig.identityX');
       set(app.locals, 'identityX', identityXConfig);
+      app.use(stripOlyticsParam());
 
       // Use lead management middleware
       app.use(leadsMiddleware());
