@@ -1,9 +1,8 @@
 import { getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
-$ const { req, site } = out.global;
-$ const { identityX } = req;
-$ const isEnabled = Boolean(identityX && site.get('identityX.comments.enabled'));
+$ const { identityX } = out.global;
+$ const isEnabled = identityX.get("comments.enabled", true);
 $ const shouldDisplay = defaultValue(input.shouldDisplay, true);
 
 $ const content = getAsObject(input, "content");
