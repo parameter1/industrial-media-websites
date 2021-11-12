@@ -2,7 +2,6 @@ const gql = require('graphql-tag');
 const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
-const cleanResponse = require('@parameter1/base-cms-marko-core/middleware/clean-marko-response');
 const contactUsHandler = require('@industrial-media/package-contact-us');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
@@ -60,9 +59,6 @@ module.exports = (options = {}) => {
 
       // Use paginated middleware
       app.use(htmlSitemapPagination());
-
-      // Clean all response bodies.
-      app.use(cleanResponse());
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
 
