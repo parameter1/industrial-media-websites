@@ -15,6 +15,7 @@ const fragments = require('./fragments');
 const userRoutes = require('./routes/user');
 const stealthLink = require('./routes/stealth-link');
 const leadsMiddleware = require('./middleware/leads');
+const omeda = require('./config/omeda');
 
 const routes = siteRoutes => (app) => {
   // Handle contact submissions on /__contact-us
@@ -46,9 +47,10 @@ module.exports = (options = {}) => {
       const gamConfig = get(options, 'siteConfig.gam');
       if (gamConfig) set(app.locals, 'GAM', gamConfig);
 
-      // Setup GAM.
-      const omedaConfig = get(options, 'siteConfig.omeda');
-      if (omedaConfig) set(app.locals, 'omedaConfig', omedaConfig);
+      // Use Omeda middleware
+      const omedaBrandKey = get(options, 'siteConfig.omedaBrandKey');
+      const omedaConfig = omeda(omedaBrandKey);
+      set(app.locals, 'omedaConfig', omedaConfig);
 
       // Setup NativeX.
       set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));

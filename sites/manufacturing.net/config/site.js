@@ -1,15 +1,16 @@
 const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
-const omeda = require('@industrial-media/package-shared/config/imcd-omeda');
 
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
 
+const omedaBrandKey = 'imcd';
+
 module.exports = {
   navigation,
   gam,
-  omeda,
+  omedaBrandKey,
   nativeX,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
