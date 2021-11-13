@@ -6,7 +6,6 @@ import RevealAd from '@parameter1/base-cms-marko-web-reveal-ad/browser';
 import SocialSharing from '@parameter1/base-cms-marko-web-social-sharing/browser';
 import PhotoSwipe from '@parameter1/base-cms-marko-web-photoswipe/browser';
 import ContactUs from '@industrial-media/package-contact-us/browser';
-import IdentityX from '@parameter1/base-cms-marko-web-identity-x/browser';
 import P1Events from '@parameter1/base-cms-marko-web-p1-events/browser';
 import OmedaIdentityX from '@parameter1/base-cms-marko-web-omeda-identity-x/browser';
 
@@ -35,7 +34,6 @@ export default (Browser) => {
   SocialSharing(Browser);
   PhotoSwipe(Browser);
   ContactUs(Browser);
-  IdentityX(Browser);
   OmedaIdentityX(Browser);
   P1Events(Browser);
 };

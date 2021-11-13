@@ -5,24 +5,22 @@ const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const contactUsHandler = require('@industrial-media/package-contact-us');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
-const omedaGraphQL = require('@parameter1/omeda-graphql-client-express');
-const stripOlyticsParam = require('@parameter1/base-cms-marko-web-omeda-identity-x/middleware/strip-olytics-param');
+const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 
 const buildNativeXConfig = require('./native-x/build-config');
 
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
-const identityXRoutes = require('./routes/identity-x');
 const stealthLink = require('./routes/stealth-link');
 const leadsMiddleware = require('./middleware/leads');
 const omeda = require('./config/omeda');
+const idxRouteTemplates = require('./templates/user');
+const idxNavItems = require('./config/identity-x-nav');
 
 const routes = siteRoutes => (app) => {
   // Handle contact submissions on /__contact-us
   contactUsHandler(app);
-  // Load user routes.
-  identityXRoutes(app);
   // HTML Sitemap
   htmlSitemapRoutes(app);
   // Stealh Link
@@ -48,24 +46,23 @@ module.exports = (options = {}) => {
       const gamConfig = get(options, 'siteConfig.gam');
       if (gamConfig) set(app.locals, 'GAM', gamConfig);
 
-      // Use Omeda middleware
+      // Setup IdentityX + Omeda
+      const idxConfig = getAsObject(options, 'siteConfig.identityX');
       const omedaBrandKey = get(options, 'siteConfig.omedaBrandKey');
       const omedaConfig = omeda(omedaBrandKey);
       set(app.locals, 'omedaConfig', omedaConfig);
-      app.use(omedaGraphQL({
-        uri: 'https://graphql.omeda.parameter1.com/',
+      omedaIdentityX(app, {
         brandKey: omedaConfig.brandKey,
         appId: omedaConfig.appId,
         inputId: omedaConfig.inputId,
-      }));
+        rapidIdentProductId: get(omedaConfig, 'rapidIdentification.productId'),
+        idxConfig,
+        idxRouteTemplates,
+      });
+      idxNavItems({ site: app.locals.site });
 
       // Setup NativeX.
       set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));
-
-      // Setup IdentityX.
-      const identityXConfig = get(options, 'siteConfig.identityX');
-      set(app.locals, 'identityX', identityXConfig);
-      app.use(stripOlyticsParam());
 
       // Use lead management middleware
       app.use(leadsMiddleware());
