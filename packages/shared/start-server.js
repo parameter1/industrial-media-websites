@@ -42,6 +42,9 @@ module.exports = (options = {}) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
 
+      // Use lead management middleware
+      app.use(leadsMiddleware());
+
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
       if (gamConfig) set(app.locals, 'GAM', gamConfig);
@@ -63,9 +66,6 @@ module.exports = (options = {}) => {
 
       // Setup NativeX.
       set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));
-
-      // Use lead management middleware
-      app.use(leadsMiddleware());
 
       // Use paginated middleware
       app.use(htmlSitemapPagination());
