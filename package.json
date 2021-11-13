@@ -8,7 +8,6 @@
   "root": true,
   "workspaces": [
     "packages/*",
-    "services/*",
     "sites/*"
   ],
   "scripts": {
