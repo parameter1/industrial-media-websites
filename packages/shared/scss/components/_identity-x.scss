@@ -36,36 +36,11 @@
   }
 
   &__login-form {
-    margin-top: -1.75rem;
     margin-bottom: map-get($spacers, block);
   }
 
   &__login-message {
     font-weight: $font-weight-bold;
-  }
-
-  &__close-form-wrapper {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  &__close-form {
-    padding: .25rem;
-    margin-left: auto;
-    font-size: 1.75rem;
-    font-weight: $font-weight-bold;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    background-color: transparent;
-    border: 0;
-    opacity: .5;
-
-    &:hover,
-    &:focus {
-      opacity: .75;
-    }
   }
 
   &__loading,

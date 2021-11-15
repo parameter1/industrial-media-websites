@@ -83,6 +83,7 @@ $ const siteContext = {
     <marko-web-gam-targeting key-values=keyValues />
   </@head>
   <@above-container>
+    <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />
     <marko-web-reveal-ad-listener select-all-targets=true />
     <marko-web-browser-component name="TriggerScreenChangeEvent" />
     <marko-web-gtm-track-bus-event on="screen_change" />
@@ -99,6 +100,5 @@ $ const siteContext = {
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
-    <marko-web-browser-component name="OmedaRapidIdentityX" />
   </@below-wrapper>
 </marko-web-document>

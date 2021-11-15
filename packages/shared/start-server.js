@@ -2,25 +2,25 @@ const gql = require('graphql-tag');
 const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
-const cleanResponse = require('@parameter1/base-cms-marko-core/middleware/clean-marko-response');
 const contactUsHandler = require('@industrial-media/package-contact-us');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
+const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 
 const buildNativeXConfig = require('./native-x/build-config');
 
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
-const userRoutes = require('./routes/user');
 const stealthLink = require('./routes/stealth-link');
 const leadsMiddleware = require('./middleware/leads');
+const omeda = require('./config/omeda');
+const idxRouteTemplates = require('./templates/user');
+const idxNavItems = require('./config/identity-x-nav');
 
 const routes = siteRoutes => (app) => {
   // Handle contact submissions on /__contact-us
   contactUsHandler(app);
-  // Load user routes.
-  userRoutes(app);
   // HTML Sitemap
   htmlSitemapRoutes(app);
   // Stealh Link
@@ -42,25 +42,33 @@ module.exports = (options = {}) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
 
+      // Use lead management middleware
+      app.use(leadsMiddleware());
+
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
       if (gamConfig) set(app.locals, 'GAM', gamConfig);
 
-      // Setup GAM.
-      const omedaConfig = get(options, 'siteConfig.omeda');
-      if (omedaConfig) set(app.locals, 'omedaConfig', omedaConfig);
+      // Setup IdentityX + Omeda
+      const idxConfig = getAsObject(options, 'siteConfig.identityX');
+      const omedaBrandKey = get(options, 'siteConfig.omedaBrandKey');
+      const omedaConfig = omeda(omedaBrandKey);
+      set(app.locals, 'omedaConfig', omedaConfig);
+      omedaIdentityX(app, {
+        brandKey: omedaConfig.brandKey,
+        appId: omedaConfig.appId,
+        inputId: omedaConfig.inputId,
+        rapidIdentProductId: get(omedaConfig, 'rapidIdentification.productId'),
+        idxConfig,
+        idxRouteTemplates,
+      });
+      idxNavItems({ site: app.locals.site });
 
       // Setup NativeX.
       set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));
 
-      // Use lead management middleware
-      app.use(leadsMiddleware());
-
       // Use paginated middleware
       app.use(htmlSitemapPagination());
-
-      // Clean all response bodies.
-      app.use(cleanResponse());
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
 

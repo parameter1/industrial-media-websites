@@ -1,15 +1,18 @@
 const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
-const omeda = require('@industrial-media/package-shared/config/imcd-omeda');
 
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
+const identityX = require('./identity-x');
+
+const omedaBrandKey = 'imcd';
 
 module.exports = {
   navigation,
   gam,
-  omeda,
+  omedaBrandKey,
+  identityX: identityX({ omedaBrandKey }),
   nativeX,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
@@ -32,14 +35,6 @@ module.exports = {
       srcset: [
         'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=120 2x',
       ],
-    },
-  },
-  identityX: {
-    appId: '5e28a3dd58e67b229e55ae43',
-    enabled: true,
-    comments: { enabled: false },
-    options: {
-      appContextId: '5e7e610375a0950125baf2b3',
     },
   },
   gtm: {
