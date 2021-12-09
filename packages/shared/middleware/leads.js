@@ -1,17 +1,19 @@
 const isOmedaId = value => /^[a-z0-9]{15}$/i.test(value);
 const isExactTargetId = value => /^[0-9]+$/.test(value);
 
-const extractOmedaId = (query, name) => {
-  const usr = query[name];
-  if (!usr) return null;
-  return isOmedaId(usr) ? usr : null;
+const extractOmedaId = (query) => {
+  const legacy = query['lt.usr'];
+  if (legacy && isOmedaId(legacy)) return legacy;
+  const usr = query['__lt-usr'];
+  if (usr && isOmedaId(usr)) return usr;
+  return null;
 };
 
-const extractExactTargetId = (query, name) => {
-  const usr = query[name];
-  if (!usr) return null;
-  if (isOmedaId(usr)) return null;
-  return isExactTargetId(usr) ? usr : null;
+const extractExactTargetId = (query) => {
+  const legacy = query['lt.usr'];
+  if (!legacy) return null;
+  if (isOmedaId(legacy)) return null;
+  return isExactTargetId(legacy) ? legacy : null;
 };
 
 const setCookie = (res, name, value) => {
@@ -19,7 +21,6 @@ const setCookie = (res, name, value) => {
 };
 
 module.exports = ({
-  queryParamName = 'lt.usr',
   cookieName = 'leads-idt',
   legacyCookieName = 'et-usr',
 } = {}) => (req, res, next) => {
@@ -28,8 +29,8 @@ module.exports = ({
     id: cookies[cookieName] || null,
     legacyId: cookies[legacyCookieName] || null,
   };
-  const omedaId = extractOmedaId(query, queryParamName);
-  const exactTargetId = extractExactTargetId(query, queryParamName);
+  const omedaId = extractOmedaId(query);
+  const exactTargetId = extractExactTargetId(query);
   if (omedaId) {
     setCookie(res, cookieName, omedaId);
     identity.id = omedaId;
