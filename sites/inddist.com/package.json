@@ -17,10 +17,10 @@
   "dependencies": {
     "@industrial-media/package-shared": "^1.19.2",
     "@parameter1/base-cms-marko-core": "^2.46.0",
-    "@parameter1/base-cms-marko-web": "^2.50.0",
+    "@parameter1/base-cms-marko-web": "^2.62.0",
     "@parameter1/base-cms-object-path": "^2.45.0",
     "@parameter1/base-cms-utils": "^2.22.2",
-    "@parameter1/base-cms-web-cli": "^2.50.0",
+    "@parameter1/base-cms-web-cli": "^2.62.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
