@@ -67,11 +67,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-indm-id.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
       TENANT_KEY: indm_multi
       SITE_ID: 5d76bf9eed61522e008b456b
+    hostname: www-indm-id.dev.parameter1.com
     ports:
       - "9710:80"
       - "19710:19710"
@@ -83,11 +85,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-indm-mnet.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
       TENANT_KEY: indm_multi
       SITE_ID: 5d76bfaf665fc42e008b4569
+    hostname: www-indm-mnet.dev.parameter1.com
     ports:
       - "9711:80"
       - "19711:19711"
@@ -99,11 +103,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-indm-fm.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
       TENANT_KEY: indm_multi
       SITE_ID: 5d76bfdd665fc42e008b456b
+    hostname: www-indm-fm.dev.parameter1.com
     ports:
       - "9712:80"
       - "19712:19712"
@@ -115,11 +121,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-indm-impo.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
       TENANT_KEY: indm_multi
       SITE_ID: 5d76bfe40827e83a008b456f
+    hostname: www-indm-impo.dev.parameter1.com
     ports:
       - "9713:80"
       - "19713:19713"
@@ -131,11 +139,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-indm-mbt.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
       TENANT_KEY: indm_multi
       SITE_ID: 5d76c0287c94042e008b456b
+    hostname: www-indm-mbt.dev.parameter1.com
     ports:
       - "9714:80"
       - "19714:19714"
@@ -147,11 +157,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-indm-ien.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9715
       LIVERELOAD_PORT: 19715
       TENANT_KEY: indm_multi
       SITE_ID: 5669a4f16cdeeaf8598b4579
+    hostname: www-indm-ien.dev.parameter1.com
     ports:
       - "9715:80"
       - "19715:19715"
@@ -163,11 +175,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-indm-cen.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9716
       LIVERELOAD_PORT: 19716
       TENANT_KEY: indm_multi
       SITE_ID: 5bc762d5adff35d154716639
+    hostname: www-indm-cen.dev.parameter1.com
     ports:
       - "9716:80"
       - "19716:19716"
@@ -179,11 +193,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-indm-ddt.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9717
       LIVERELOAD_PORT: 19717
       TENANT_KEY: indm_multi
       SITE_ID: 5af4890775a254af9e0041a7
+    hostname: www-indm-ddt.dev.parameter1.com
     ports:
       - "9717:80"
       - "19717:19717"
