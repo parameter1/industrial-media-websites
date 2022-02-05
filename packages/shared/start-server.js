@@ -6,6 +6,7 @@ const contactUsHandler = require('@industrial-media/package-contact-us');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
+const odentityCustomerUpsert = require('@parameter1/base-cms-marko-web-omeda/odentity/upsert-customer');
 
 const buildNativeXConfig = require('./native-x/build-config');
 
@@ -69,6 +70,12 @@ module.exports = (options = {}) => {
 
       // Use paginated middleware
       app.use(htmlSitemapPagination());
+
+      // Omeda customer upsert
+      app.use(odentityCustomerUpsert({
+        brandKey: omedaConfig.brandKey,
+        onError: newrelic.noticeError.bind(newrelic),
+      }));
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
 
