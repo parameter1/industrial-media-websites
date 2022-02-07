@@ -145,7 +145,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
               </if>
               <default-theme-content-contact-details obj=content />
 
-              $ const requiresRegistration = get(content, "userRegistration.isRequired");
+              $ const requiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
               $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
               <marko-web-identity-x-access|context|
                 enabled=requiresRegistration
