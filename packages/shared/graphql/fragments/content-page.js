@@ -53,7 +53,7 @@ fragment ContentPageFragment on Content {
     surveyId
   }
   userRegistration {
-    isRequired
+    isCurrentlyRequired
     accessLevels
   }
   ... on ContentVideo {
