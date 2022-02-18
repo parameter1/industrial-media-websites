@@ -130,6 +130,9 @@
 
   &__content-embed-code {
     margin-bottom: map-get($spacers, block);
+    & > div.vjs-pip-container {
+      @include theme-embed-responsive-item();
+    }
   }
 }
 
