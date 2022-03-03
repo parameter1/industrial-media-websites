@@ -1,0 +1,20 @@
+import queryFragment from "@industrial-media/package-shared/graphql/fragments/content-latest";
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = data;
+
+<shared-website-section-page-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+  right-rail-header="Popular Video"
+>
+  <@loader>
+    <@standard-params include-content-types=["Video"] />
+  </@loader>
+</shared-website-section-page-default-layout>
