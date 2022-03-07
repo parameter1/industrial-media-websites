@@ -2196,7 +2196,7 @@
     marko "~4.20.0"
     yargs "^14.2.3"
 
-"@parameter1/base-cms-marko-core@^2.75.1":
+"@parameter1/base-cms-marko-core@^2.46.0", "@parameter1/base-cms-marko-core@^2.75.1":
   version "2.75.1"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-core/-/base-cms-marko-core-2.75.1.tgz#ad0406ad89725f605867c94d542252eb1a9ea98f"
   integrity sha512-wqga7oQKyUNIBBHIXXnqtPbGApNfMS8tplP6Szs6PpbvUH/dQyYzM148PZ5ZPNVmSSLGWaUX/Idq0u0tQI1s+A==
@@ -2374,7 +2374,7 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.5"
 
-"@parameter1/base-cms-marko-web@^2.75.1":
+"@parameter1/base-cms-marko-web@^2.73.0", "@parameter1/base-cms-marko-web@^2.75.1":
   version "2.75.1"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-2.75.1.tgz#005cccb4df9239c8beb39ed44cffc39889cb04c1"
   integrity sha512-TAtYkUa6l6/1szg67N8ME4kgay9VB+bgGY/Avx1O9twIeg8Q4NPbuzsagIeJBunRFsYpO96IfwZ0eWEEE6J4Zg==
@@ -2410,7 +2410,7 @@
     vue-server-renderer "^2.6.14"
     whatwg-fetch "^3.6.1"
 
-"@parameter1/base-cms-object-path@^2.75.1":
+"@parameter1/base-cms-object-path@^2.45.0", "@parameter1/base-cms-object-path@^2.75.1":
   version "2.75.1"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-object-path/-/base-cms-object-path-2.75.1.tgz#169c55bc7199954e46ff48e298cf5073468e2ed6"
   integrity sha512-v9+QjzBAjqZMxdjpmZLcKukmokMxJPE1o/AOt12RWaxkvThyiHG/kqctuZjA20Eoi3DGvX5xepl1KrggH5oZiQ==
@@ -2423,12 +2423,12 @@
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-tenant-context/-/base-cms-tenant-context-2.0.0.tgz#46cc2289bafc397ccb917286a8c514672f527970"
   integrity sha512-okQcHAqOwQBes5k6zTMjRD3sqEfe05VoJ3vYV96k6j5tylc1tfom9D134JVftfm6HSlyTRuB/ilpp41VoqjjlA==
 
-"@parameter1/base-cms-utils@^2.75.1":
+"@parameter1/base-cms-utils@^2.22.2", "@parameter1/base-cms-utils@^2.75.1":
   version "2.75.1"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-utils/-/base-cms-utils-2.75.1.tgz#1a630b97cfa8362eb47c99459407e735aac65b71"
   integrity sha512-i2oeoufTx6CRga00pGIwQAI4A8R6VwDLQokv6MasbAEorIKYegbPVaUEPZg8XOBMnEyzKlSJaGfCX58Zt3dNkA==
 
-"@parameter1/base-cms-web-cli@^2.75.1":
+"@parameter1/base-cms-web-cli@^2.73.0", "@parameter1/base-cms-web-cli@^2.75.1":
   version "2.75.1"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.75.1.tgz#f92a3a1433fa7c6a3934c64640b831ad368b0fee"
   integrity sha512-RGZwwc45qLT64IHTbnEuNz/ip+kCjOWhbM8eZvLsoZX9gL+sokLYOknpWE31qLbMoPl4BTHdTJiCeVynWHbHyw==

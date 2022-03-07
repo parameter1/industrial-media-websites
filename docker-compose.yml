@@ -203,3 +203,21 @@ services:
     ports:
       - "9717:80"
       - "19717:19717"
+
+  mdd:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/medicaldesigndevelopment.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-mdd.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9718
+      LIVERELOAD_PORT: 19718
+      TENANT_KEY: indm_multi
+      SITE_ID: 6220f722417c94af0e8b45ca
+    hostname: www-indm-mdd.dev.parameter1.com
+    ports:
+      - "9718:80"
+      - "19719:19718"

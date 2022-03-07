@@ -44,6 +44,7 @@ jobs:
           - inddist.com
           - manufacturing.net
           - mbtmag.com
+          - medicaldesigndevelopment.com
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Kubernetes
