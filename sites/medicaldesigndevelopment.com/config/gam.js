@@ -1,6 +1,6 @@
 const configureGAM = require('@industrial-media/package-shared/config/gam');
 
-const config = configureGAM({ basePath: 'DDT' });
+const config = configureGAM({ basePath: 'mdd' });
 
 config
   .setAliasAdUnits('default', [
