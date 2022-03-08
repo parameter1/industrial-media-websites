@@ -5,15 +5,13 @@ const socialLinks = require('./social-links');
 module.exports = {
   primary: {
     items: sortNavItems([
-      { href: '/', label: '' },
-      { href: '/', label: '' },
-      { href: '/', label: '' },
-      { href: '/', label: '' },
-      { href: '/', label: '' },
-      { href: '/', label: '' },
-      { href: '/', label: '' },
-      { href: '/', label: '' },
-      { href: '/', label: '' },
+      { href: '/cardiovascular', label: 'Cardiovascular' },
+      { href: '/devices', label: 'Devices' },
+      { href: '/imaging', label: 'Imaging' },
+      { href: '/implantables', label: 'Implantables' },
+      { href: '/equipment', label: 'Equipment' },
+      { href: '/orthopedic', label: 'Orthopedic' },
+      { href: '/surgical', label: 'Surgical' },
     ]),
   },
   secondary: {
@@ -44,21 +42,27 @@ module.exports = {
     {
       label: 'Topics',
       items: sortNavItems([
-        { href: '/', label: '' },
-        { href: '/', label: '' },
-        { href: '/', label: '' },
-        { href: '/', label: '' },
-        { href: '/', label: '' },
-        { href: '/', label: '' },
-        { href: '/', label: '' },
-        { href: '/', label: '' },
-        { href: '/', label: '' },
+        { href: '/cardiovascular', label: 'Cardiovascular' },
+        { href: '/devices', label: 'Devices' },
+        { href: '/imaging', label: 'Imaging' },
+        { href: '/implantables', label: 'Implantables' },
+        { href: '/equipment', label: 'Equipment' },
+        { href: '/orthopedic', label: 'Orthopedic' },
+        { href: '/surgical', label: 'Surgical' },
       ]),
     },
     {
       label: 'Resources',
-      items: [
-      ],
+      items: sortNavItems([
+        { href: '/contract-manufacturing', label: 'Contract Manufacturing' },
+        { href: '/electronic-components', label: 'Electronic Components' },
+        { href: '/extrusions', label: 'Extrusions' },
+        { href: '/materials', label: 'Materials' },
+        { href: '/motion-contol', label: 'Motion Control' },
+        { href: '/prototyping', label: 'Prototyping' },
+        { href: '/pumps', label: 'Pumps' },
+        { href: '/tubing', label: 'Tubing' },
+      ]),
     },
     {
       label: 'User Tools',
