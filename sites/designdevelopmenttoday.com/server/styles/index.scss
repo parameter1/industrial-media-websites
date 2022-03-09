@@ -63,3 +63,12 @@ $website-section-colors: ();
     }
   }
 }
+
+.site-footer {
+  &__link {
+    color: rgba(#000, .78);
+  }
+  &__copyright {
+    color: rgba(#000, .78);
+  }
+}
