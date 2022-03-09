@@ -9,8 +9,6 @@ $theme-site-navbar-primary-bg-color: #e6e6e6;
 $theme-site-navbar-secondary-type: light;
 $theme-site-navbar-primary-type: light;
 
-$theme-site-footer-secondary-type: light;
-$theme-site-footer-primary-type: light;
 $theme-site-footer-copyright-color: dark;
 
 $theme-site-navbar-logo-height: 45px;
@@ -65,5 +63,11 @@ $website-section-colors: ();
         background-color: $primary;
       }
     }
+  }
+}
+
+.site-footer {
+  &__link {
+    color: #212529;
   }
 }
