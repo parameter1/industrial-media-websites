@@ -52,7 +52,7 @@ module.exports = {
       ]),
     },
     {
-      label: 'Resources',
+      label: 'Products',
       items: sortNavItems([
         { href: '/contract-manufacturing', label: 'Contract Manufacturing' },
         { href: '/electronic-components', label: 'Electronic Components' },
