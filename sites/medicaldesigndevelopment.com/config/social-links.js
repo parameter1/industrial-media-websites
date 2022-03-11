@@ -1,5 +1,4 @@
 module.exports = [
-  { provider: 'facebook', href: '' },
-  { provider: 'twitter', href: '' },
-  { provider: 'linkedin', href: '' },
+  { provider: 'facebook', href: 'https://www.facebook.com/medicaldesigndevelopment/' },
+  { provider: 'twitter', href: 'https://twitter.com/MedDevelopment' },
 ];

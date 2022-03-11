@@ -19,29 +19,29 @@ module.exports = {
   p1events: {
     tenant: 'indm',
     enabled: true,
-    // cookieDomain: process.env.NODE_ENV === 'production' ? 'designdevelopmenttoday.com' : '',
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'medicaldesigndevelopment.com' : '',
   },
   simpleFavicon: true,
   logos: {
     navbar: {
-      // src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=45',
+      src: 'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=45',
       srcset: [
-        // 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=90 2x',
+        'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=90 2x',
       ],
     },
     footer: {
       brandLogos,
-      // src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60',
+      src: 'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=60',
       srcset: [
-        // 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=120 2x',
+        'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=120 2x',
       ],
     },
   },
   gtm: {
-    // containerId: 'GTM-W633TCR',
+    containerId: 'GTM-WT46JRL',
   },
   gcse: {
-    // id: '003355913687346718228:r1crm7ykq4y',
+    id: 'b8c96c1b86b7fa8d1',
   },
   wufoo: {
     userName: 'ien',
@@ -52,7 +52,7 @@ module.exports = {
   contactUs: {
     to: 'david@ien.com',
     branding: {
-      // logo: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60',
+      logo: 'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=60',
     },
     support: {
       email: 'reply@ien.com',
