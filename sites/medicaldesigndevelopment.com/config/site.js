@@ -15,7 +15,7 @@ module.exports = {
   identityX: identityX({ omedaBrandKey }),
   nativeX,
   socialMediaLinks,
-  company: 'Industrial Media, LLC',
+  company: 'Lynch Media',
   p1events: {
     tenant: 'indm',
     enabled: true,
