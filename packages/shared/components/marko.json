@@ -27,6 +27,9 @@
     "@content": "object",
     "@block-name": "string"
   },
+  "<shared-global-video-player>": {
+    "template": "./elements/video-player.marko"
+  },
   "<shared-native-x-inject>": {
     "template": "./native-x-inject.marko",
     "@limit": "number",

@@ -8,6 +8,7 @@ import PhotoSwipe from '@parameter1/base-cms-marko-web-photoswipe/browser';
 import ContactUs from '@industrial-media/package-contact-us/browser';
 import P1Events from '@parameter1/base-cms-marko-web-p1-events/browser';
 import OmedaIdentityX from '@parameter1/base-cms-marko-web-omeda-identity-x/browser';
+import SharedFloatingVideoPlayer from './floating-video-player.vue';
 
 const setP1EventsIdentity = ({ p1events, brandKey, encryptedId }) => {
   if (!p1events || !brandKey || !encryptedId) return;
@@ -36,4 +37,5 @@ export default (Browser) => {
   ContactUs(Browser);
   OmedaIdentityX(Browser);
   P1Events(Browser);
+  Browser.register('SharedFloatingVideoPlayer', SharedFloatingVideoPlayer);
 };

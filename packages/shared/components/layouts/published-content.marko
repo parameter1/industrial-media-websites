@@ -35,6 +35,7 @@ $ const withOopAds = defaultValue(input.withOopAds, true);
   </@head>
 
   <@above-container>
+    <shared-global-video-player />
     <if(withOopAds)>
       <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
     </if>
