@@ -1,11 +1,11 @@
 <template>
-  <div v-if="active" id="brightcove-floating-player" class="col-lg-4 col-sm-6 p-0">
+  <div v-if="active" id="brightcove-floating-player">
     <button
-      class="btn btn-secondary text-light"
+      class="btn btn-dark text-light p-0"
       type="button"
+      title="Close video player"
       @click="close"
     >
-      Close
       <icon-x :modifiers="iconMods" />
     </button>
     <slot />
@@ -73,7 +73,7 @@ export default {
           refNode: this.$el,
           embedOptions: {
             responsive: {
-              maxWidth: '960px',
+              maxWidth: '467px',
             },
           },
         });
@@ -87,7 +87,6 @@ export default {
             if (!url) return url;
             const addr = new URL(url);
             addr.searchParams.set('cust_params', identityParams);
-            console.log('VIDEOJS: Setting custom params', `${identityParams}`);
             return addr.toString();
           };
         });
@@ -113,14 +112,17 @@ export default {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  width: 50%;
+  min-width: 467px;
   box-shadow: 5px 5px 15px 5px #000000;
 }
 
 #brightcove-floating-player .btn {
   position: absolute;
   right: 0;
-  top: -2.42rem;
+  top: 0;
+  z-index: 3;
+  height: 32px;
+  width: 32px;
 }
 
 @keyframes slide-top {
