@@ -311,5 +311,8 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       <shared-fixed-ad-bottom aliases=hierarchyAliases(section) />
     </marko-web-resolve-page>
+    <if(type !== "video")>
+      <shared-global-video-player />
+    </if>
   </@foot>
 </marko-web-content-page-layout>
