@@ -87,7 +87,6 @@ export default {
             if (!url) return url;
             const addr = new URL(url);
             addr.searchParams.set('cust_params', identityParams);
-            console.log('VIDEOJS: Setting custom params', `${identityParams}`);
             return addr.toString();
           };
         });
