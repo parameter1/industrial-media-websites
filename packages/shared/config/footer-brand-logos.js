@@ -62,9 +62,9 @@ module.exports = {
     {
       href: 'https://www.medicaldesigndevelopment.com',
       alt: 'Visit Medical Design & Development',
-      src: 'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=60',
+      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=120 2x',
+        'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=120 2x',
       ],
     },
   ],

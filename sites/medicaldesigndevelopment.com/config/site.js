@@ -24,16 +24,16 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=45',
+      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=45',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=90 2x',
+        'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=90 2x',
       ],
     },
     footer: {
       brandLogos,
-      src: 'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=60',
+      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=120 2x',
+        'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=120 2x',
       ],
     },
   },
@@ -52,7 +52,7 @@ module.exports = {
   contactUs: {
     to: 'david@ien.com',
     branding: {
-      logo: 'https://p1-cms-assets.imgix.net/files/base/indm/all/Medical_Design_Development_Logo.png?h=60',
+      logo: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60',
     },
     support: {
       email: 'reply@ien.com',
