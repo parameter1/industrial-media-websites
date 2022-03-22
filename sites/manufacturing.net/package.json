@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/manufacturing.net",
-  "version": "1.23.0",
+  "version": "1.23.1",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/website-industrial-media/tree/master/sites/manufacturing.net",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@industrial-media/package-shared": "^1.23.0",
+    "@industrial-media/package-shared": "^1.23.1",
     "@parameter1/base-cms-marko-core": "^2.75.1",
     "@parameter1/base-cms-marko-web": "^2.75.1",
     "@parameter1/base-cms-object-path": "^2.75.1",
