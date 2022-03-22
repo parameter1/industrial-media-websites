@@ -5,7 +5,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import websiteSectionContentLoader from "../../../loaders/website-section-content";
 import queryFragment from "../../../graphql/fragments/content-list";
 
-$ const { GAM, apollo } = out.global;
+$ const { GAM, apollo, site } = out.global;
 
 $ const {
   id,
@@ -18,6 +18,7 @@ $ const loader = getAsObject(input, "loader");
 
 $ const rightRailHeader = defaultValue(input.rightRailHeader, "Top Headlines");
 $ const withOopAds = defaultValue(input.withOopAds, true);
+$ const brightCovePlayerEnabled = defaultValue(site.get('brightCovePlayerEnabled'), true)
 
 $ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
   "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
@@ -186,7 +187,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
       <marko-web-resolve-page|{ data: section }| node=pageNode>
         <shared-fixed-ad-bottom aliases=hierarchyAliases(section) />
       </marko-web-resolve-page>
-      <if(alias !== 'home')>
+      <if(alias !== 'home' && brightCovePlayerEnabled)>
         <shared-global-video-player />
       </if>
     </@foot>
