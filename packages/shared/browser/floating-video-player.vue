@@ -73,7 +73,7 @@ export default {
           refNode: this.$el,
           embedOptions: {
             responsive: {
-              maxWidth: '467px',
+              maxWidth: '340px',
             },
           },
         });
@@ -112,8 +112,9 @@ export default {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  min-width: 467px;
+  min-width: 340px;
   box-shadow: 5px 5px 15px 5px #000000;
+  z-index: 1;
 }
 
 #brightcove-floating-player .btn {

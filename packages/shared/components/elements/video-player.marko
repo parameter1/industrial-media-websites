@@ -1,19 +1,24 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
 $ const { identity } = out.global.leads;
-$ const { req } = out.global;
+$ const { req, site } = out.global;
+$ const brightCovePlayerEnabled = defaultValue(site.get("brightCovePlayerEnabled"), true);
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
   const v = identity[key];
   if (!v) return arr;
-  const k = key === 'id' ? 'leads_idt' : 'et_usr';
+  const k = key === "id" ? "leads_idt" : "et_usr";
   arr.push(`${k}=${v}`);
   return arr;
-}, []).join('&'));
+}, []).join("&"));
 
-<marko-web-browser-component name="SharedFloatingVideoPlayer" props={
-  enabled: true,
-  identityParams: identityParams,
-  accountId: "4684385816001",
-  playerId: "kxlefI771",
-  playerEmbed: "default",
-  playlistId: "1705459835690965200"
-} />
+<if(brightCovePlayerEnabled)>
+  <marko-web-browser-component name="SharedFloatingVideoPlayer" props={
+    enabled: true,
+    identityParams: identityParams,
+    accountId: "4684385816001",
+    playerId: "kxlefI771",
+    playerEmbed: "default",
+    playlistId: "1727929430007827336"
+  } />
+</if>

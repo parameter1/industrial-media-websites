@@ -55,4 +55,5 @@ module.exports = {
       email: 'reply@cannabisequipmentnews.com',
     },
   },
+  brightCovePlayerEnabled: false,
 };
