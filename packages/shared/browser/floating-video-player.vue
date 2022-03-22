@@ -1,5 +1,5 @@
 <template>
-  <div v-if="active" id="brightcove-floating-player" class="col-lg-2 col-sm-6 p-0">
+  <div v-if="active" id="brightcove-floating-player">
     <button
       class="btn btn-secondary text-light"
       type="button"
