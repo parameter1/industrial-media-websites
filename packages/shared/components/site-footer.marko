@@ -1,5 +1,6 @@
 $ const { config, site } = out.global;
 $ const brandLogos = site.getAsArray("logos.footer.brandLogos");
+$ const lynchBrandLogos = site.getAsArray("logos.footer.lynchBrandLogos");
 $ const blockName = input.blockName || "site-footer";
 
 <marko-web-block
@@ -31,6 +32,27 @@ $ const blockName = input.blockName || "site-footer";
       </div>
     </default-theme-site-footer-container>
   </if>
+  <else-if(lynchBrandLogos.length)>
+    <default-theme-site-footer-container block-name=blockName modifiers=["secondary"]>
+      <div class="row brand-logos">
+        <for|logo| of=lynchBrandLogos>
+          <div class="col-3 col-sm site-footer-logo">
+              <marko-web-img
+                class="img-fluid"
+                alt=logo.alt
+                src=logo.src
+                srcset=logo.srcset
+                link= {
+                  href: logo.href,
+                  title: logo.alt,
+                  target: "_blank",
+                }
+              />
+          </div>
+        </for>
+      </div>
+    </default-theme-site-footer-container>
+  </else-if>
   <else>
     <default-theme-site-footer-container block-name=blockName modifiers=["secondary"]>
       <default-theme-site-navbar-brand block-name=blockName title=`${config.website("name")} Homepage`>
