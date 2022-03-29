@@ -1,4 +1,4 @@
-const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
+const { lynchBrandLogos } = require('@industrial-media/package-shared/config/lynch-footer-brand-logos');
 
 const navigation = require('./navigation');
 const gam = require('./gam');
@@ -30,7 +30,7 @@ module.exports = {
       ],
     },
     footer: {
-      brandLogos,
+      lynchBrandLogos,
       src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60',
       srcset: [
         'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=120 2x',
