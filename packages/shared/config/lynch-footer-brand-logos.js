@@ -1,5 +1,5 @@
 module.exports = {
-  lynchBrandLogos: [
+  brandLogos: [
     {
       src: 'https://img.medicaldesigndevelopment.com/files/base/indm/all/logoLM-(1)213.png?h=150',
       srcset: [
