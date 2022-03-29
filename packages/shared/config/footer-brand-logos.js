@@ -56,16 +56,5 @@ module.exports = {
         'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=120 2x',
       ],
     },
-
-
-    // THIS SRC PATH WILL NEED TO BE CHANGED
-    {
-      href: 'https://www.medicaldesigndevelopment.com',
-      alt: 'Visit Medical Design & Development',
-      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60',
-      srcset: [
-        'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=120 2x',
-      ],
-    },
   ],
 };

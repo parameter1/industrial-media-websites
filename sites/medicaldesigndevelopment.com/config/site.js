@@ -1,4 +1,4 @@
-const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
+const { brandLogos } = require('@industrial-media/package-shared/config/lynch-footer-brand-logos');
 
 const navigation = require('./navigation');
 const gam = require('./gam');

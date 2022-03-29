@@ -1,3 +1,5 @@
+const { brandLogos } = require('@industrial-media/package-shared/config/lynch-footer-brand-logos');
+
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
@@ -28,6 +30,7 @@ module.exports = {
       ],
     },
     footer: {
+      brandLogos,
       src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=60',
       srcset: [
         'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=120 2x',
