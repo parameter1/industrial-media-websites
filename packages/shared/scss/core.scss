@@ -71,3 +71,7 @@ body {
 .gsc-adBlock {
   display: none !important;
 }
+
+#brightcove-floating-player div div[class="vjs-overlay vjs-overlay-bottom vjs-overlay-background"] {
+  background-color: transparent;
+}
