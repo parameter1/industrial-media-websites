@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/package-shared",
-  "version": "1.23.2",
+  "version": "1.23.3",
   "author": "Jacob Bare <jacob@limit0.io>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/packages/shared",
   "license": "MIT",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@brightcove/player-loader": "^1.8.0",
-    "@industrial-media/package-contact-us": "^1.22.2",
+    "@industrial-media/package-contact-us": "^1.23.3",
     "@parameter1/base-cms-env": "^2.45.0",
     "@parameter1/base-cms-image": "^2.45.0",
     "@parameter1/base-cms-marko-core": "^2.80.0",
