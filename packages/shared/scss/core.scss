@@ -7,7 +7,7 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
 @import "../../node_modules/@parameter1/base-cms-marko-web-photoswipe/scss/main";
 @import "../../node_modules/@parameter1/base-cms-marko-web-gam/scss/fixed-ad-bottom";
 @import "../../node_modules/@parameter1/base-cms-marko-web-social-sharing/scss/buttons";
-// @import "../../node_modules/@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
+@import "../../node_modules/@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
 @import "../../node_modules/@parameter1/base-cms-marko-web-html-sitemap/scss/index";
 
 @import "../../node_modules/@industrial-media/package-contact-us/scss/index";
@@ -15,7 +15,6 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
 $theme-related-content-bg-color: #f8f9fa;
 $theme-related-content-border-color: #dee2e6;
 
-@import "./components/reveal-ad";
 @import "./components/ad-container";
 @import "./components/content-page";
 @import "./components/flows";
