@@ -39,7 +39,6 @@ $ const siteContext = {
     />
 
     <marko-web-gam-init
-      on="load"
       request-frame=true
       target-tag="body"
     />
@@ -83,7 +82,6 @@ $ const siteContext = {
   </@head>
   <@above-container>
     <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />
-    <marko-web-reveal-ad-listener select-all-targets=true />
     <marko-web-browser-component name="TriggerScreenChangeEvent" />
     <marko-web-gtm-track-bus-event on="screen_change" />
     <marko-web-gtm-track-load-more />

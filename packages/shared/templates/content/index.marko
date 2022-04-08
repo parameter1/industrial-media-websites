@@ -43,7 +43,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
   <@above-container>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
-      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin", aliases }) />
+      <shared-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
     </marko-web-resolve-page>
   </@above-container>
   <@page>

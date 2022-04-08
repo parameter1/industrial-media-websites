@@ -20,7 +20,7 @@ $ const description = site.get("magazines.description");
     </marko-web-gtm-default-context>
   </@head>
   <@above-container>
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
+    <shared-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin" }).path id="reveal-ad" />
   </@above-container>
   <@page>
     <marko-web-page-wrapper>

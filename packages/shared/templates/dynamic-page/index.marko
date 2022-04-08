@@ -9,7 +9,7 @@ $ const { id, alias, pageNode } = data;
   </@head>
   <@above-container>
     <marko-web-resolve-page|{ data: page }| node=pageNode>
-      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
+      <shared-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin" }).path id="reveal-ad" />
       <marko-web-p1-events-track-content node=page />
     </marko-web-resolve-page>
   </@above-container>
