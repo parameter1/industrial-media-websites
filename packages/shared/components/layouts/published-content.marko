@@ -37,7 +37,7 @@ $ const withOopAds = defaultValue(input.withOopAds, true);
   <@above-container>
     <shared-global-video-player />
     <if(withOopAds)>
-      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
+      <shared-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin" }).path id="reveal-ad" />
     </if>
   </@above-container>
 
