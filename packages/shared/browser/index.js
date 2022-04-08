@@ -10,6 +10,9 @@ import P1Events from '@parameter1/base-cms-marko-web-p1-events/browser';
 import OmedaIdentityX from '@parameter1/base-cms-marko-web-omeda-identity-x/browser';
 import SharedFloatingVideoPlayer from './floating-video-player.vue';
 
+const RevealAdHandler = () => import(/* webpackChunkName: "reveal-ad-handler" */ './reveal-ad-handler.vue');
+
+
 const setP1EventsIdentity = ({ p1events, brandKey, encryptedId }) => {
   if (!p1events || !brandKey || !encryptedId) return;
   p1events('setIdentity', `omeda.${brandKey}.customer*${encryptedId}~encrypted`);
@@ -38,4 +41,5 @@ export default (Browser) => {
   OmedaIdentityX(Browser);
   P1Events(Browser);
   Browser.register('SharedFloatingVideoPlayer', SharedFloatingVideoPlayer);
+  Browser.register('RevealAdHandler', RevealAdHandler);
 };
