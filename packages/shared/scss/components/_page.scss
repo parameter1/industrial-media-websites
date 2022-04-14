@@ -61,6 +61,11 @@
       content: "By";
     }
   }
+  &__content-name {
+    @include media-breakpoint-down(md) {
+      margin-right: 0.2rem;
+    }
+  }
   a {
     color: $primary;
   }
