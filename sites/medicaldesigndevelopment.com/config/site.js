@@ -58,4 +58,5 @@ module.exports = {
       email: 'reply@ien.com',
     },
   },
+  brightCovePlayerEnabled: false,
 };
