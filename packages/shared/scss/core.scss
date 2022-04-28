@@ -72,6 +72,6 @@ body {
   display: none !important;
 }
 
-#brightcove-floating-player div div[class="vjs-overlay vjs-overlay-bottom vjs-overlay-background"] {
+#brightcove-floating-player div.vjs-control-bar div[class*="vjs-overlay-background"] {
   background-color: transparent;
 }
