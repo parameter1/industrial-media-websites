@@ -58,5 +58,8 @@ module.exports = {
       email: 'reply@ien.com',
     },
   },
-  brightCovePlayerEnabled: false,
+  brightCovePlayerData: {
+    playerId: 'gaFdsLkrH',
+    playListId: '1731910707194039847',
+  },
 };
