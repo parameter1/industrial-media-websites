@@ -34,7 +34,6 @@ $ const adName = "load-more";
       </theme-content-node>
     </@slot>
     <if(adIndices !== null)>
-      $ console.log('adIndices: ', adIndices);
       <for|adIndex| of=adIndices>
         <@slot position=adPosition index=adIndex>
           <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: adName, size: [300, 250], aliases }) modifiers=["in-card"] />
