@@ -21,6 +21,35 @@ $ const alias = get(input, "primarySection.alias");
       <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
     </marko-web-resolve-page>
   </@above-container>
+  <@below-page>
+    <marko-web-page-container for="content" tag="div" id=id type=type modifiers=["below"]>
+      <!-- Refresh sticky, right-rail infinite scroll ad -->
+      <marko-web-gam-refresh-ad on="load-more-in-view" slot-id="gpt-ad-rail-infinite" />
+
+      <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+        $ const section = resolved.getAsObject("primarySection");
+        $ const aliases = hierarchyAliases(section);
+        <marko-web-page-wrapper>
+
+          <@section>
+            <div class="row">
+              <div class="col-lg-12 infinite-scroll-target">
+                <global-content-page-load-more-block
+                  aliases=aliases
+                  limit=12
+                  skip=(["company", "contact"].includes(type) ? 0 : 4)
+                >
+                  <@content id=id type=type name=content.name />
+                  <@section id=section.id name=section.name />
+                  <@native-x indexes=[0] name="default" aliases=aliases />
+                </global-content-page-load-more-block>
+              </div>
+            </div>
+          </@section>
+        </marko-web-page-wrapper>
+      </marko-web-resolve-page>
+    </marko-web-page-container>
+  </@below-page>
   <@page>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);

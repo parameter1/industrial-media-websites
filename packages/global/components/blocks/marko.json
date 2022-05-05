@@ -1,5 +1,6 @@
 {
   "taglib-imports": [
+    "./load-more/marko.json",
     "./promos/marko.json"
   ],
   "<global-esurveypro-block>": {

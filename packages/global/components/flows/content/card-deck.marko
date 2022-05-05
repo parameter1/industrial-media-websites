@@ -1,0 +1,45 @@
+<!-- @TODO: figure out how to handle aliases passing for ad targeting, ad indexs -->
+import { getAsObject } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const { nativeX: nxConfig, GAM } = out.global;
+$ const nativeX = getAsObject(input, "nativeX");
+$ const image = getAsObject(input, "node.image");
+$ const adPosition = input.adPosition || "after";
+$ const adIndices = input.adIndexs || [2, 5, 8];
+$ const aliases = input.aliases || [];
+$ const adName = "load-more";
+
+<global-native-x-inject|{ nodes: injected }| nodes=input.nodes ...nativeX config=nxConfig>
+  <default-theme-card-deck-flow
+    tag=input.tag
+    class=input.class
+    modifiers=input.modifiers
+    attrs=input.attrs
+    cols=defaultValue(input.cols, 3)
+    nodes=injected
+  >
+    <@slot|{ node, index }|>
+      <theme-content-node
+        ...input.node
+        node=node
+        image-position="top"
+        with-teaser=false
+        card=true
+        flush=true
+        attrs=getAsObject(node, "attributes.container")
+        link-attrs=getAsObject(node, "attributes.link")
+      >
+        <@image fluid=true width=330 ar="3:2" />
+      </theme-content-node>
+    </@slot>
+    <if(adIndices !== null)>
+      $ console.log('adIndices: ', adIndices);
+      <for|adIndex| of=adIndices>
+        <@slot position=adPosition index=adIndex>
+          <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: adName, size: [300, 250], aliases }) modifiers=["in-card"] />
+        </@slot>
+      </for>
+    </if>
+  </default-theme-card-deck-flow>
+</global-native-x-inject>
