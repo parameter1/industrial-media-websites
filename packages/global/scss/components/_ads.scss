@@ -1,4 +1,6 @@
-.ad-container--inter-block {
+.ad-container--inter-block,
+.ad-container--inline,
+.ad-container--inline-content {
   @media (min-width: $marko-web-document-container-max-width) {
     margin-right: -#{$marko-web-page-wrapper-padding};
     margin-left: -#{$marko-web-page-wrapper-padding};
