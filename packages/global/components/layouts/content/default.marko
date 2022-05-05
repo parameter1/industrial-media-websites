@@ -35,203 +35,205 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
 
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
     $ const { primarySection } = content;
-    <div class="content-page-header">
-      <theme-content-page-breadcrumbs section=primarySection />
-      <marko-web-content-name tag="h1" block-name=blockName obj=content />
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="content-page-header">
+          <theme-content-page-breadcrumbs section=primarySection />
+          <marko-web-content-name tag="h1" block-name=blockName obj=content />
 
-      $ const contentContactLength = ["authors", "contributors", "photographers"].reduce((num, field) => {
-        const contacts = getAsArray(content, `${field}.edges`);
-        return num + contacts.length;
-      }, 0);
+          $ const contentContactLength = ["authors", "contributors", "photographers"].reduce((num, field) => {
+            const contacts = getAsArray(content, `${field}.edges`);
+            return num + contacts.length;
+          }, 0);
 
-      $ const authors = getAsArray(content, "authors.edges");
+          $ const authors = getAsArray(content, "authors.edges");
 
-      <if(type !== "contact")>
-        <if(authors.length === 1 && contentContactLength < 2)>
-          <theme-author-published-node author=authors[0].node content=content display-updated-date=false />
-        </if>
-        <else>
-          <default-theme-content-attribution obj=content elements=["authors"] />
-        </else>
-      </if>
-
-      <if(authors.length !== 1 || contentContactLength > 1)>
-        <default-theme-page-dates|{ blockName }|>
-          <if(type === "event")>
-            <marko-web-content-starts block-name=blockName obj=content />
-            <marko-web-content-ends block-name=blockName obj=content />
+          <if(type !== "contact")>
+            <if(authors.length === 1 && contentContactLength < 2)>
+              <theme-author-published-node author=authors[0].node content=content display-updated-date=false />
+            </if>
+            <else>
+              <default-theme-content-attribution obj=content elements=["authors"] />
+            </else>
           </if>
-          <else-if(type === "webinar")>
-            <marko-web-content-starts block-name=blockName obj=content />
-          </else-if>
-          <else-if(displayPublishedDate)>
-            <theme-content-published-node block-name=blockName obj=content display-updated-date=false />
-          </else-if>
-        </default-theme-page-dates>
-      </if>
-      <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
-    </div>
-  </@section>
 
-  <@section|{ aliases, content }|>
-    $ const { primarySection } = content;
-    <div class="content-page-body">
-      <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-        <if(displaySocialShare)>
-          <marko-web-social-sharing
-            path=content.siteContext.path
-            providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
-            print-path=`/print/content/${content.id}`
-          />
-        </if>
-        <if(content.embedCode)>
-          <marko-web-content-embed-code block-name=blockName obj=content />
-        </if>
-        <else-if(type === "media-gallery")>
-          <!-- <marko-web-image-slider images=images /> -->
-        </else-if>
-        <else-if(type === "document")>
-          <theme-primary-image-block
-            obj=content.primaryImage
-            force-display="right"
-          />
-        </else-if>
-        <else-if(displayPrimaryImage)>
-          $ let forceDisplay;
-          $ if (type === "contact") forceDisplay = "left";
-          $ if (type === "video") forceDisplay = "none";
-          <theme-primary-image-block
-            obj=content.primaryImage
-            force-display=forceDisplay
-          />
-        </else-if>
-
-        $ const requiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
-        $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
-
-        <marko-web-identity-x-access|context|
-          enabled=requiresRegistration
-          required-access-level-ids=accessLevels
-        >
-          <if(!context.canAccess || context.requiresUserInput)>
-            $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
-            <marko-web-content-body block-name=blockName obj={ body } />
-
-            <div class="content-page-preview-overlay" />
-            <theme-content-page-gate
-              can-access=context.canAccess
-              is-logged-in=context.isLoggedIn
-              has-required-access-level=context.hasRequiredAccessLevel
-              requires-access-level=context.requiresAccessLevel
-              requires-user-input=context.requiresUserInput
-              messages=context.messages
-            />
+          <if(authors.length !== 1 || contentContactLength > 1)>
+            <default-theme-page-dates|{ blockName }|>
+              <if(type === "event")>
+                <marko-web-content-starts block-name=blockName obj=content />
+                <marko-web-content-ends block-name=blockName obj=content />
+              </if>
+              <else-if(type === "webinar")>
+                <marko-web-content-starts block-name=blockName obj=content />
+              </else-if>
+              <else-if(displayPublishedDate)>
+                <theme-content-published-node block-name=blockName obj=content display-updated-date=false />
+              </else-if>
+            </default-theme-page-dates>
           </if>
-          <else>
+          <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
+        </div>
+        <div class="content-page-body">
+          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+            <if(displaySocialShare)>
+              <marko-web-social-sharing
+                path=content.siteContext.path
+                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                print-path=`/print/content/${content.id}`
+              />
+            </if>
+            <if(content.embedCode)>
+              <marko-web-content-embed-code block-name=blockName obj=content />
+            </if>
+            <else-if(type === "media-gallery")>
+              <!-- <marko-web-image-slider images=images /> -->
+            </else-if>
+            <else-if(type === "document")>
+              <theme-primary-image-block
+                obj=content.primaryImage
+                force-display="right"
+              />
+            </else-if>
+            <else-if(displayPrimaryImage)>
+              $ let forceDisplay;
+              $ if (type === "contact") forceDisplay = "left";
+              $ if (type === "video") forceDisplay = "none";
+              <theme-primary-image-block
+                obj=content.primaryImage
+                force-display=forceDisplay
+              />
+            </else-if>
 
-            $ const bodyId = `content-body-${content.id}`;
+            $ const requiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
+            $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
 
-            <if(shouldInjectAds)>
+            <marko-web-identity-x-access|context|
+              enabled=requiresRegistration
+              required-access-level-ids=accessLevels
+            >
+              <if(!context.canAccess || context.requiresUserInput)>
+                $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
+                <marko-web-content-body block-name=blockName obj={ body } />
 
-              $ const desktopCounts = [1000, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
-              $ const mobileCounts = [350, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
-              <theme-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
-                <for|char| of=desktopCounts>
-                  <!-- desktop/tablet only -->
-                  <@inject
-                    at=char
-                    name="inline-content-desktop"
-                    aliases=aliases
-                    modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-                  />
+                <div class="content-page-preview-overlay" />
+                <theme-content-page-gate
+                  can-access=context.canAccess
+                  is-logged-in=context.isLoggedIn
+                  has-required-access-level=context.hasRequiredAccessLevel
+                  requires-access-level=context.requiresAccessLevel
+                  requires-user-input=context.requiresUserInput
+                  messages=context.messages
+                />
+              </if>
+              <else>
+
+                $ const bodyId = `content-body-${content.id}`;
+
+                <if(shouldInjectAds)>
+
+                  $ const desktopCounts = [1000, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
+                  $ const mobileCounts = [350, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
+                  <theme-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
+                    <for|char| of=desktopCounts>
+                      <!-- desktop/tablet only -->
+                      <@inject
+                        at=char
+                        name="inline-content-desktop"
+                        aliases=aliases
+                        modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                      />
+                    </for>
+
+                    <for|char| of=mobileCounts>
+                      <!-- mobile only -->
+                      <@inject
+                        at=char
+                        name="inline-content-mobile"
+                        aliases=aliases
+                        modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                      />
+                    </for>
+                  </theme-gam-inject-ads>
+                </if>
+
+                $ const profiles = getAsArray(content, 'profiles');
+                <for|profile| of=profiles>
+                  <marko-web-block class="page-contents__content-profile" tag=null>
+                    $!{profile.body}
+                  </marko-web-block>
                 </for>
 
-                <for|char| of=mobileCounts>
-                  <!-- mobile only -->
-                  <@inject
-                    at=char
-                    name="inline-content-mobile"
+                $ const bodyModifiers = isOnTheMoveSection ? ['on-the-move'] : []
+                <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } modifiers=bodyModifiers />
+                <if(isOnTheMoveSection)>
+                  <marko-web-block>
+                    <div class="social-sharing" align="center">
+                      <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
+                        Submit Your Professional Appointment
+                      </a>
+                    </div>
+                  </marko-web-block>
+                </if>
+
+                <!-- needs input -->
+                <if(input.afterBody)>
+                  <${input.afterBody}
                     aliases=aliases
-                    modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                    block-name=blockName
+                    content=content
                   />
-                </for>
-              </theme-gam-inject-ads>
+                </if>
+
+                $ const sidebars = getAsArray(content, "sidebars").filter((sidebar) => !excludeFromSidebarsLabel.includes(sidebar.label)).map((sidebar) => sidebar.body);
+                <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
+              </else>
+            </marko-web-identity-x-access>
+
+            <if(type === "document" || type === "whitepaper")>
+              <default-theme-content-download obj=content>
+                <@wufoo user-name=site.get("wufoo.userName") />
+                <@link class="btn btn-primary" />
+              </default-theme-content-download>
             </if>
 
-            $ const profiles = getAsArray(content, 'profiles');
-            <for|profile| of=profiles>
-              <marko-web-block class="page-contents__content-profile" tag=null>
-                $!{profile.body}
-              </marko-web-block>
-            </for>
-
-            $ const bodyModifiers = isOnTheMoveSection ? ['on-the-move'] : []
-            <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } modifiers=bodyModifiers />
-            <if(isOnTheMoveSection)>
-              <marko-web-block>
-                <div class="social-sharing" align="center">
-                  <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
-                    Submit Your Professional Appointment
-                  </a>
-                </div>
-              </marko-web-block>
+            <if(type === "webinar")>
+              <div class="mb-block" >
+                $ const isUpcoming = content.startDate > Date.now();
+                <default-theme-content-link-url
+                  obj=content
+                  label=(isUpcoming ? "Register for Webinar" : "View Webinar")
+                  target="_blank"
+                />
+              </div>
             </if>
+            <!-- <if(displayNewsletterSignup)>
+              <global-newsletter-signup-banner-block />
+            </if> -->
 
-            <!-- needs input -->
-            <if(input.afterBody)>
-              <${input.afterBody}
-                aliases=aliases
-                block-name=blockName
-                content=content
+            <if(displaySocialShare)>
+              <marko-web-social-sharing
+                path=content.siteContext.path
+                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                print-path=`/print/content/${content.id}`
               />
             </if>
 
-            $ const sidebars = getAsArray(content, "sidebars").filter((sidebar) => !excludeFromSidebarsLabel.includes(sidebar.label)).map((sidebar) => sidebar.body);
-            <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
-          </else>
-        </marko-web-identity-x-access>
+            <!-- <if(displayComments)>
+              <theme-identity-x-comment-stream content=content />
+            </if> -->
 
-        <if(type === "document" || type === "whitepaper")>
-          <default-theme-content-download obj=content>
-            <@wufoo user-name=site.get("wufoo.userName") />
-            <@link class="btn btn-primary" />
-          </default-theme-content-download>
-        </if>
-
-        <if(type === "webinar")>
-          <div class="mb-block" >
-            $ const isUpcoming = content.startDate > Date.now();
-            <default-theme-content-link-url
-              obj=content
-              label=(isUpcoming ? "Register for Webinar" : "View Webinar")
-              target="_blank"
-            />
-          </div>
-        </if>
-        <!-- <if(displayNewsletterSignup)>
-          <global-newsletter-signup-banner-block />
-        </if> -->
-
-        <if(displaySocialShare)>
-          <marko-web-social-sharing
-            path=content.siteContext.path
-            providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
-            print-path=`/print/content/${content.id}`
-          />
-        </if>
-
-        <!-- <if(displayComments)>
-          <theme-identity-x-comment-stream content=content />
-        </if> -->
-
-        <if(displayReadNext)>
-          <theme-read-next-block
-            content-id=id
-            section-id=primarySection.id
-            published=content.published
-          />
-        </if>
-      </default-theme-page-contents>
+            <if(displayReadNext)>
+              <theme-read-next-block
+                content-id=id
+                section-id=primarySection.id
+                published=content.published
+              />
+            </if>
+          </default-theme-page-contents>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 pt-block">
     </div>
   </@section>
 
