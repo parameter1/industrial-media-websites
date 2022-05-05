@@ -1,10 +1,9 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
-import { getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const { identity } = out.global.leads;
 $ const { req, site } = out.global;
 $ const brightCovePlayerEnabled = defaultValue(site.get("brightCovePlayerEnabled"), true);
-$ const brightCovePlayerData = getAsObject(site, "brightCovePlayerData");
+$ const brightCovePlayerData = defaultValue(site.get("brightCovePlayerData"), {});
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
   const v = identity[key];
