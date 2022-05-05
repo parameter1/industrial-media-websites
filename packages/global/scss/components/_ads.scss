@@ -1,0 +1,11 @@
+.ad-container--inter-block {
+  @media (min-width: $marko-web-document-container-max-width) {
+    margin-right: -#{$marko-web-page-wrapper-padding};
+    margin-left: -#{$marko-web-page-wrapper-padding};
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,12 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const withSection = defaultValue(input.withSection, false);
+$ const withViewMore = defaultValue(input.withViewMore, false);
+
+<!-- Simple pass-thru to set different default values -->
+<theme-section-list-block
+  alias=input.alias
+  query-params=input.queryParams
+  with-section=withSection
+  withViewMore=withViewMore
+/>

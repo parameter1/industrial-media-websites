@@ -1,0 +1,17 @@
+{
+  "<global-diverse-education-promo-block>": {
+    "template": "./diverse-education.marko"
+  },
+  "<global-diverse-jobs-promo-block>": {
+    "template": "./diverse-jobs.marko"
+  },
+  "<global-diverse-health-promo-block>": {
+    "template": "./diverse-health.marko"
+  },
+  "<global-diverse-military-promo-block>": {
+    "template": "./diverse-military.marko"
+  },
+  "<global-ccnews-now-promo-block>": {
+    "template": "./ccnews-now.marko"
+  }
+}

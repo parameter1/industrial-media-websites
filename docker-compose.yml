@@ -16,6 +16,7 @@ x-env-defaults: &env
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   NODE_ENV: development
   # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
+  RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY-(unset)}
   RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY-(unset)}
   # @todo the sendgrid values should be removed once the @parameter1/base-cms-mailer service is created.
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
@@ -25,6 +26,9 @@ x-env-defaults: &env
   IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
   OMEDA_APP_ID: ${OMEDA_APP_ID-(unset)}
   OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
+
+  RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-(unset)}
+  RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-(unset)}
 
 x-env-tauron: &env-tauron
   GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
@@ -167,6 +171,24 @@ services:
     ports:
       - "9715:80"
       - "19715:19715"
+
+  ien-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.ien.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-ien-global.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9015
+      LIVERELOAD_PORT: 19015
+      TENANT_KEY: indm_multi
+      SITE_ID: 5669a4f16cdeeaf8598b4579
+    hostname: www-indm-ien-global.dev.parameter1.com
+    ports:
+      - "9015:80"
+      - "19015:19015"
 
   cen:
     <<: *node

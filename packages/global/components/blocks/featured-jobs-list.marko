@@ -1,0 +1,48 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/featured-job-list";
+import shuffle from "../../utils/shuffle-array";
+
+$ const sectionAlias = defaultValue(input.alias, "featured-jobs");
+$ const findJobLink = defaultValue(input.findJobLink, "https://diversejobs.net/");
+$ const postJobLink = defaultValue(input.postJobLink, "https://494.careersite.com/employer/emplogin.html");
+$ const displayLimit = 5;
+
+<marko-web-query|{ nodes: allNodes }|
+  name="website-scheduled-content"
+  params={
+    sectionAlias,
+    limit: 25,
+    sectionBubbling: false,
+    queryFragment,
+  }
+  collapsible=false
+>
+  $ const nodes = shuffle(allNodes).slice(0, displayLimit);
+  <theme-content-list-flow
+    nodes=nodes
+    inner-justified=true
+    flush-x=true
+    flush-y=true
+    modifiers=["section-list", "featured-jobs"]
+    collapsible=false
+  >
+    <@header>Featured Jobs</@header>
+    <@node displayImage=false withSection=false withDates=false>
+      <@title modifiers=["small"] />
+    </@node>
+    <if(findJobLink || postJobLink)>
+      <@footer>
+        <if(findJobLink)>
+          <marko-web-link class="btn btn-primary" href=findJobLink target="_blank" title=`Find A job on ${findJobLink}`>
+            Find A Job
+          </marko-web-link>
+        </if>
+        <if(postJobLink)>
+          <marko-web-link class="btn btn-primary" href=postJobLink target="_blank" title=`Post a job on ${postJobLink}`>
+            Post A Job
+          </marko-web-link>
+        </if>
+    </@footer>
+    </if>
+  </theme-content-list-flow>
+</marko-web-query>
