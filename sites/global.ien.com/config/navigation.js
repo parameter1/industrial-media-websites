@@ -54,7 +54,9 @@ const mobileMenu = {
 };
 
 const desktopMenu = {
-  about: [...utilities],
+  about: [
+    // ...utilities
+  ],
   sections: [
     ...topics,
   ],
@@ -87,8 +89,8 @@ module.exports = {
   },
   toggleMenu: {
     about: {
-      label: 'About',
-      items: utilities,
+      // label: 'About',
+      // items: utilities,
     },
     leftColumn: {
       label: 'Topics',
@@ -102,10 +104,8 @@ module.exports = {
       ],
     },
     rightColumn: {
-      label: 'Additional Resources',
-      items: [
-        ...secondary,
-      ],
+      label: 'User Tools',
+      items: utilities,
     },
   },
   footer: {
