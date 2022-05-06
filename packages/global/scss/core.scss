@@ -31,7 +31,9 @@
     }
   }
 }
-
+.page--below .page-wrapper {
+  margin-bottom: 60px;
+}
 // site-footer
 .site-footer {
   &__brand {
@@ -200,11 +202,23 @@ label {
     }
   }
 }
-
+.page--load-more .node-list,
+.top-storeis,
 .section-cards {
   &__header {
     @include skin-typography($style: "header-2");
     margin-bottom: 16px;
+    padding-top: 24px;
+    padding-left: 0;
+    &:before {
+      background: #333;
+      content: "";
+      height: 4px;
+      left: 0;
+      position: absolute;
+      top: 12px;
+      width: 40px;
+    }
   }
 }
 
@@ -221,4 +235,18 @@ label {
       }
     }
   }
+}
+
+.top-story {
+  $self: &;
+  &__col--hero {
+    ~ #{ $self } {
+      &__col--list {
+        margin-top: -13px;
+      }
+    }
+  }
+}
+.top-storeis__header {
+  position: relative;
 }

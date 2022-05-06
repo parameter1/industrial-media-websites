@@ -1,6 +1,8 @@
 .node {
   $self: &;
-  &--section-tag {
+  &--section-tag,
+  &--top-story-hero,
+  &--top-stories {
     #{ $self } {
       &__image-wrapper + #{ $self }__body {
         z-index: 1;
@@ -10,7 +12,6 @@
       &__header + #{ $self }__contents {
         margin-top: 8px;
       }
-
       &__header {
         width: 70%;
         padding-top: 2px;
