@@ -10,7 +10,6 @@ config
     // { name: 'rail1', templateName: 'RAIL1', path: 'default_rail1' },
     // { name: 'rail2', templateName: 'RAIL2', path: 'default_rail1' },
     // { name: 'infinite-rail', templateName: 'INFINITE-RAIL', path: 'default_rail1' },
-    // { name: 'infinite-interstitial', templateName: 'INFINITE-INTERSTITIAL', path: 'default_rail1' },
     // { name: 'in-content', templateName: 'IN-CONTENT', path: 'default_rail1' },
     // { name: 'reskin', path: 'default_reskin' },
     // { name: 'wa', path: 'default_wa' },
