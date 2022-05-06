@@ -16,6 +16,7 @@ config
     // { name: 'wa', path: 'default_wa' },
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'default_lb1' },
     { name: 'rotation', templateName: 'ROTATION', path: 'default_lb1' },
+    { name: 'top-stories', templateName: 'RAIL', path: 'default_rail1' },
     { name: 'load-more', templateName: 'RAIL', path: 'default_rail1' },
     { name: 'inline-content-mobile', templateName: 'RAIL', path: 'default_rail1' },
     { name: 'inline-content-desktop', templateName: 'RAIL', path: 'default_rail1' },
