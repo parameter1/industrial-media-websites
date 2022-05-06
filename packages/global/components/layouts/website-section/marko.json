@@ -6,7 +6,13 @@
     "@id": "number",
     "@alias": "string",
     "@name": "string",
-    "@page-node": "object"
+    "@page-node": "object",
+    "<loader>": {
+      "<featured-params>": {},
+      "<standard-params>": {},
+      "@with-standard-query": "boolean"
+    },
+    "@right-rail-header": "string"
   },
   "<global-website-section-cards-layout>": {
     "template": "./cards.marko",

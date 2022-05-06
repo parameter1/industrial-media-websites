@@ -6,7 +6,7 @@ $ const listNodes = nodes.slice(1);
 
 
 <if(heroNode)>
-  <theme-content-card-node
+  <theme-content-node
     with-dates=false
     ...input.card
     node=heroNode
@@ -16,7 +16,7 @@ $ const listNodes = nodes.slice(1);
     <@image width=630 />
     <@title modifiers=["large"] />
     <@teaser modifiers=["large"] />
-  </theme-content-card-node>
+  </theme-content-node>
 </if>
 
 <if(listNodes.length)>
