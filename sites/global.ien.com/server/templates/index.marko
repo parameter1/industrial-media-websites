@@ -4,51 +4,14 @@ $ const { id, alias, name, pageNode } = input;
 
 $ const { site } = out.global;
 
-<global-website-section-home-layout
+<global-website-section-default-layout
   id=id
   alias=alias
   name=name
   page-node=pageNode
+  right-rail-header="Videos"
 >
-  <!-- <@head>
-    <meta name="google-site-verification" content="NOT_SET" />
-  </@head> -->
-
-  <!-- <@section|{ aliases }| modifiers=["break-container"]>
-    <theme-opinion-block alias="news" />
-  </@section> -->
-
-  <!-- <@section>
-    <theme-section-list-deck-block aliases=["retail", "service", "builder"] />
-  </@section> -->
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <!-- <@section>
-    <theme-section-card-list-block alias="homeowners-diy" />
-  </@section> -->
-
-  <!-- <@section>
-    <theme-products-block alias="products" />
-  </@section> -->
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <theme-client-side-most-popular-block />
-  </@section>
-</global-website-section-home-layout>
+  <@loader>
+    <@standard-params include-content-types=["Video"] />
+  </@loader>
+</global-website-section-default-layout>
