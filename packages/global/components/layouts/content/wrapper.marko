@@ -36,7 +36,7 @@ $ const alias = get(input, "primarySection.alias");
               <div class="col-lg-12 infinite-scroll-target">
                 <global-content-page-load-more-block
                   aliases=aliases
-                  limit=12
+                  limit=10
                   skip=(["company", "contact"].includes(type) ? 0 : 4)
                 >
                   <@content id=id type=type name=content.name />

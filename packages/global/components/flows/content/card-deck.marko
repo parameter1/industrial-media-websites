@@ -6,7 +6,7 @@ $ const { nativeX: nxConfig, GAM } = out.global;
 $ const nativeX = getAsObject(input, "nativeX");
 $ const image = getAsObject(input, "node.image");
 $ const adPosition = input.adPosition || "after";
-$ const adIndices = input.adIndexs || [2, 5, 8];
+$ const adIndices = input.adIndexs || [1, 5];
 $ const aliases = input.aliases || [];
 $ const adName = "load-more";
 
@@ -24,7 +24,6 @@ $ const adName = "load-more";
         ...input.node
         node=node
         image-position="top"
-        with-teaser=false
         card=true
         flush=true
         attrs=getAsObject(node, "attributes.container")
