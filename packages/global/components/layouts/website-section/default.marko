@@ -78,7 +78,6 @@ $ const promise = websiteSectionContentLoader(apollo, {
                         flush=true
                         with-dates=false
                         modifiers=[`top-story-hero`]
-                        with-primary-section-modifier=["seciton-tag"]
                         node=heroNode
                       />
                     </marko-web-element>
@@ -108,7 +107,6 @@ $ const promise = websiteSectionContentLoader(apollo, {
                             image-position="top"
                             card=true
                             flush=true
-                            with-primary-section-modifier=["seciton-tag"]
                             attrs=getAsObject(node, "attributes.container")
                             link-attrs=getAsObject(node, "attributes.link")
                           >
