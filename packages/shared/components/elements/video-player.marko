@@ -3,6 +3,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 $ const { identity } = out.global.leads;
 $ const { req, site } = out.global;
 $ const brightCovePlayerEnabled = defaultValue(site.get("brightCovePlayerEnabled"), true);
+$ const brightCovePlayerData = defaultValue(site.get("brightCovePlayerData"), {});
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
   const v = identity[key];
@@ -17,8 +18,8 @@ $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, k
     enabled: true,
     identityParams: identityParams,
     accountId: "4684385816001",
-    playerId: "kxlefI771",
+    playerId: brightCovePlayerData.playerId ? brightCovePlayerData.playerId : "kxlefI771",
     playerEmbed: "default",
-    playlistId: "1727929430007827336"
+    playlistId: brightCovePlayerData.playlistId ? brightCovePlayerData.playlistId : "1727929430007827336"
   } />
 </if>
