@@ -54,8 +54,9 @@ $ const promise = websiteSectionContentLoader(apollo, {
                   };
                   $ const featuredCardNodes = featured.nodes.slice(1);
                   $ const cardNodes = featured.nodes.slice(1);
+                  $ const topStoriesTitle = section.name !== "Home" ? section.name : "Top Story";
                   <marko-web-element tag="h1" block-name="top-storeis" name="header">
-                    ${i18n("Top Story")}
+                    ${i18n(topStoriesTitle)}
                   </marko-web-element>
                   <marko-web-element block-name="top-story" name="row">
                     <marko-web-element block-name="top-story" name="col" modifiers=["hero"]>
@@ -154,6 +155,12 @@ $ const promise = websiteSectionContentLoader(apollo, {
             <marko-web-resolve-page|{ data: section, resolved }| node=pageNode>
               $ const aliases = hierarchyAliases(section);
               <!-- $ const slots = adSlots({ aliases }); -->
+              <theme-gam-define-display-ad
+                name="leaderboard"
+                position="section_page"
+                aliases=aliases
+                modifiers=["inter-block"]
+              />
               <marko-web-page-wrapper>
                 <@section>
                   <div class="row">
