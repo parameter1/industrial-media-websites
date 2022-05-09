@@ -24,15 +24,6 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
   page-node=pageNode
   ...rest
 >
-  <@section|{ aliases }| modifiers=["first-sm"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
     $ const { primarySection } = content;
     <div class="row">
@@ -83,7 +74,7 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
               />
             </if>
             <if(content.embedCode)>
-              <marko-web-content-embed-code block-name=blockName obj=content />
+              <global-content-embed-code block-name=blockName content=content />
             </if>
             <else-if(type === "media-gallery")>
               <!-- <marko-web-image-slider images=images /> -->
@@ -218,9 +209,9 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
               />
             </if>
 
-            <!-- <if(displayComments)>
+            <if(displayComments)>
               <theme-identity-x-comment-stream content=content />
-            </if> -->
+            </if>
 
             <if(displayReadNext)>
               <theme-read-next-block

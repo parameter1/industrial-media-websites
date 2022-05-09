@@ -27,17 +27,22 @@ $ const alias = get(input, "primarySection.alias");
       <marko-web-gam-refresh-ad on="load-more-in-view" slot-id="gpt-ad-rail-infinite" />
 
       <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
-        $ const section = resolved.getAsObject("primarySection");
-        $ const aliases = hierarchyAliases(section);
+        $ const section = content.primarySection;
         <marko-web-page-wrapper>
-
-          <@section>
+          <@section|{ aliases }| modifiers=["first-sm"]>
+            <theme-gam-define-display-ad
+              name="leaderboard"
+              position="content_page"
+              aliases=aliases
+              modifiers=["inter-block"]
+            />
+          </@section>
+          <@section|{ aliases }|>
             <div class="row">
               <div class="col-lg-12 infinite-scroll-target">
                 <global-content-page-load-more-block
                   aliases=aliases
                   limit=10
-                  skip=(["company", "contact"].includes(type) ? 0 : 4)
                 >
                   <@content id=id type=type name=content.name />
                   <@section id=section.id name=section.name />
@@ -63,15 +68,6 @@ $ const alias = get(input, "primarySection.alias");
             />
           </@section>
         </for>
-
-        <!-- <@section>
-          <theme-gam-define-display-ad
-            name="rotation"
-            position="content_page"
-            aliases=aliases
-            modifiers=["inter-block"]
-          />
-        </@section> -->
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
