@@ -22,6 +22,21 @@ module.exports = ({
         { viewport: [300, 0], size: [[300, 250], [428, 241], [265, 149]] },
       ],
     })
+    .setTemplate('LB-STICKY-BOTTOM', {
+      size: [
+        [970, 90],
+        [970, 66],
+        [728, 90],
+        [320, 50],
+        [300, 50],
+        [300, 100],
+      ],
+      sizeMapping: [
+        { viewport: [980, 0], size: [[970, 90], [970, 66], [728, 90]] },
+        { viewport: [750, 0], size: [728, 90] },
+        { viewport: [320, 0], size: [[300, 50], [320, 50], [300, 100]] },
+      ],
+    })
     .setTemplate('RAIL', {
       size: [300, 250],
     })

@@ -2,19 +2,18 @@ const configureGAM = require('@industrial-media/package-global/config/gam');
 
 const config = configureGAM({ basePath: 'IEN' });
 
+config.lazyLoad = {
+  enabled: true, // set to true to enable lazy loading
+  fetchMarginPercent: 100, // fetch ad when one viewport away
+  renderMarginPercent: 50, // render ad when half viewport away
+  mobileScaling: 2, // double these on mobile
+};
+
 config
   .setAliasAdUnits('default', [
-    // { name: 'lb1', templateName: 'LB', path: 'default_lb1' },
-    // { name: 'lb-sticky-bottom', templateName: 'LB-STICKY-BOTTOM', path: 'default_lb1' },
-    // { name: 'billboard1', templateName: 'BILLBOARD', path: 'default_billboard' },
-    // { name: 'rail1', templateName: 'RAIL1', path: 'default_rail1' },
-    // { name: 'rail2', templateName: 'RAIL2', path: 'default_rail1' },
-    // { name: 'infinite-rail', templateName: 'INFINITE-RAIL', path: 'default_rail1' },
-    // { name: 'in-content', templateName: 'IN-CONTENT', path: 'default_rail1' },
-    // { name: 'reskin', path: 'default_reskin' },
-    // { name: 'wa', path: 'default_wa' },
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'default_lb1' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'default_lb1' },
+    { name: 'lb-sticky-bottom', templateName: 'LB-STICKY-BOTTOM', path: 'default_lb1' },
+    // 300x250 that loads in the tops stories block on section & homepages
     { name: 'top-stories', templateName: 'RAIL', path: 'default_rail1' },
     { name: 'load-more', templateName: 'RAIL', path: 'default_rail1' },
     { name: 'inline-content-mobile', templateName: 'RAIL', path: 'default_rail1' },

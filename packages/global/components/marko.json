@@ -15,6 +15,10 @@
   "<global-sponsored-section-name-logo>": {
     "template": "./sponsored-section-name-logo.marko"
   },
+  "<global-fixed-ad-bottom>": {
+    "template": "./fixed-ad-bottom.marko",
+    "@aliases": "array"
+  },
   "<global-document>": {
     "template": "./document.marko",
     "<head>": {},
