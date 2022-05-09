@@ -5,13 +5,5 @@ $ const { id, type, pageNode, ...rest } = input;
   type=type
   page-node=pageNode
   ...rest
->
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-</global-content-default-layout>
+  show-bottom-ad-block=false
+/>
