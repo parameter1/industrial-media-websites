@@ -1,11 +1,11 @@
 import { getAsObject } from "@parameter1/base-cms-object-path";
-import omedaConfig from "../config/omeda";
 
 $ const {
   site,
   req,
   nativeX,
   GAM,
+  omedaConfig,
 } = out.global;
 
 <marko-web-document ...input>
@@ -51,7 +51,7 @@ $ const {
 
     <!-- init omeda olytics -->
     <marko-web-omeda-olytics-init
-      oid="451c8dee24b0423e97655ab139d3df03"
+      oid=omedaConfig.olytics.oid
       on="load"
       request-frame=true
       target-tag="body"
@@ -69,14 +69,26 @@ $ const {
     <marko-web-gam-targeting key-values={ uri: req.path } />
   </@head>
   <@above-container>
-    <if("navbar2" === site.get("navigation.type"))>
-      <global-site-header-2 has-user=false reg-enabled=false />
-    </if>
-    <else>
-      <global-site-header has-user=false reg-enabled=false />
-    </else>
-    <global-site-menu has-user=false reg-enabled=false />
-    <!-- <global-site-newsletter-menu /> -->
+    <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />
+
+    <marko-web-gtm-track-bus-event
+      on="newsletter-form-action"
+      clear-data=true
+    />
+    <marko-web-gtm-track-bus-event
+      on="newsletter-form-subscription"
+      clear-data=true
+    />
+    <marko-web-identity-x-context|{ hasUser, isEnabled }|>
+      <if("navbar2" === site.get("navigation.type"))>
+        <global-site-header-2 has-user=false reg-enabled=false />
+      </if>
+      <else>
+        <global-site-header has-user=false reg-enabled=false />
+      </else>
+      <global-site-menu has-user=false reg-enabled=false />
+    </marko-web-identity-x-context>
+    <theme-site-newsletter-menu />
     <${input.aboveContainer} />
   </@above-container>
   <@below-container>
@@ -85,6 +97,5 @@ $ const {
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
-    <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />
   </@below-wrapper>
 </marko-web-document>

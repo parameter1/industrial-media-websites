@@ -3,7 +3,6 @@ const IdentityX = require('@parameter1/base-cms-marko-web-identity-x');
 const { getAsObject, get } = require('@parameter1/base-cms-object-path');
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const rapidIdentify = require('@parameter1/base-cms-marko-web-omeda-identity-x/routes/rapid-identify');
-const omedaConfig = require('../config/omeda');
 const authenticate = require('../templates/user/authenticate');
 const login = require('../templates/user/login');
 const logout = require('../templates/user/logout');
@@ -20,6 +19,7 @@ const countQuery = gql`
 
 module.exports = (app) => {
   const config = getAsObject(app, 'locals.identityX');
+  const omedaConfig = getAsObject(app, 'locals.omedaConfig');
   IdentityX(app, config);
 
   app.get(config.getEndpointFor('authenticate'), (_, res) => {
