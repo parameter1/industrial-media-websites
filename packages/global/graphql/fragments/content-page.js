@@ -5,10 +5,9 @@ fragment ContentPageFragment on Content {
   id
   name
   teaser(input: { useFallback: false, maxLength: null })
-  labels
   body
   published
-  updated
+  taxonomyIds
   siteContext {
     path
     canonicalUrl
@@ -16,8 +15,18 @@ fragment ContentPageFragment on Content {
   company {
     id
     name
-    canonicalPath
+    siteContext {
+      path
+    }
     enableRmi
+    primaryImage {
+      id
+      src
+      alt
+      caption
+      credit
+      isLogo
+    }
   }
   primarySection {
     id
@@ -33,15 +42,11 @@ fragment ContentPageFragment on Content {
   }
   primaryImage {
     id
-    src(input: { useCropRectangle: true, options: { auto: "format,compress" } })
+    src
     alt
     caption
     credit
     isLogo
-    cropDimensions {
-      aspectRatio
-    }
-    primaryImageDisplay
   }
   gating {
     surveyType
@@ -58,28 +63,28 @@ fragment ContentPageFragment on Content {
     source
     byline
   }
-  ... on ContentEvent {
-    ends
-    starts
+  ... on ContentBlog {
+    byline: customAttribute(input: { path: "byline" })
   }
-  ...on SidebarEnabledInterface {
-    profiles: sidebarStubs(input:{labels: ["Scholar Profile"]}) {
-      body
-    }
-    sidebars: sidebarStubs {
-      label
-      body
-    }
+  ... on ContentEvent {
+    endDate
+    startDate
+  }
+  ... on ContentArticle {
+    byline: customAttribute(input: { path: "byline" })
+    sidebars
   }
   ... on ContentWebinar {
     linkUrl
-    starts
+    startDate
     sponsors {
       edges {
         node {
           id
           name
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
@@ -109,16 +114,6 @@ fragment ContentPageFragment on Content {
       label
     }
   }
-  ... on ContentTop100 {
-    rank
-    phone
-    website
-    previousRank
-    founded
-    revenueCurrent
-    companyExecutives
-    marketsServing
-  }
   ... on Media {
     fileSrc
   }
@@ -135,11 +130,6 @@ fragment ContentPageFragment on Content {
           siteContext {
             path
           }
-          primaryImage {
-            id
-            src(input: { options: { auto: "format,compress", q: 70 } })
-            alt
-          }
         }
       }
     }
@@ -149,7 +139,9 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
@@ -159,24 +151,23 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
   }
-  images(input:{ pagination: { limit: 0 }, sort: { order: values } }) {
+  images(input: { pagination: { limit: 100 }, sort: { order: values } }) {
     edges {
       node {
         id
-        src(input: { options: { auto: "format,compress", q: 70 } })
+        src
         alt
         displayName
         caption
         credit
-        source {
-          width
-          height
-        }
+        isLogo
       }
     }
   }

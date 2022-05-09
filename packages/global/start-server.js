@@ -13,6 +13,7 @@ const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
 const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
+const leadsMiddleware = require('./middleware/leads');
 const idxRouteTemplates = require('./templates/user');
 const oembedHandler = require('./oembed-handler');
 const omeda = require('./config/omeda');
@@ -37,6 +38,9 @@ module.exports = (options = {}) => {
     onStart: async (app) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
+
+      // Use lead management middleware
+      app.use(leadsMiddleware());
 
       // Use paginated middleware
       app.use(paginated());
