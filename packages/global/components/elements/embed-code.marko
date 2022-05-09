@@ -1,0 +1,38 @@
+import cheerio from "cheerio";
+
+$ const { identity } = out.global.leads;
+$ const { content, blockName } = input;
+
+$ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
+  const v = identity[key];
+  if (!v) return arr;
+  const k = key === 'id' ? 'leads_idt' : 'et_usr';
+  arr.push(`${k}=${v}`);
+  return arr;
+}, []).join('&'));
+
+$ const $ = cheerio.load(content.embedCode);
+$ const scripts = $('script[src*="players.brightcove.net"]');
+
+<if(content.embedCode)>
+  <marko-web-content-embed-code block-name=blockName obj=content />
+  <if(scripts.length && identityParams)>
+    <script>
+      var players = videojs.getAllPlayers();
+      for (var i = 0; i < players.length; i += 1) {
+       players[i].ready(function() {
+         var player = this;
+         if (!player.ima3) return;
+         player.ima3.adMacroReplacement = function(url) {
+           if (!url) return url;
+           var el = document.createElement('a');
+           el.href = url;
+           el.search = el.search ? el.search + '&' + 'cust_params=${identityParams}'
+             : '?' + 'cust_params=${identityParams}';
+           return el.href;
+          };
+        });
+      }
+    </script>
+  </if>
+</if>

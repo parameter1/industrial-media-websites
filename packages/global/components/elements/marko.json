@@ -1,0 +1,10 @@
+{
+  "<global-content-embed-code>": {
+    "template": "./embed-code.marko",
+    "@content": "object",
+    "@block-name": "string"
+  },
+  "<global-global-video-player>": {
+    "template": "./video-player.marko"
+  }
+}
