@@ -260,3 +260,17 @@ label {
     }
   }
 }
+
+// Set nav colors based on site css config
+.site-navbar {
+  $self: &;
+  &--primary {
+    @each $section, $color in $website-section-colors {
+      #{ $self } {
+        &__link--active[href*="#{$section}"] {
+          color: $color;
+        }
+      }
+    }
+  }
+}
