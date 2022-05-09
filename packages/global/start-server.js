@@ -1,6 +1,7 @@
 const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
+const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
@@ -11,6 +12,7 @@ const components = require('./components');
 const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
+const stealthLink = require('./routes/stealth-link');
 const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
 const leadsMiddleware = require('./middleware/leads');
@@ -19,12 +21,17 @@ const oembedHandler = require('./oembed-handler');
 const omeda = require('./config/omeda');
 
 const routes = siteRoutes => (app, siteConfig) => {
+  // load contact us route
+  contactUsHandler(app);
   // Shared/global routes (all sites)
   sharedRoutes(app, siteConfig);
   // Load site routes
   siteRoutes(app);
-  // load contact us route
-  contactUsHandler(app);
+  // HTML Sitemap
+  htmlSitemapRoutes(app);
+  // Stealh Link
+  // @TODO: verify that this is still needed
+  stealthLink(app);
 };
 
 module.exports = (options = {}) => {
