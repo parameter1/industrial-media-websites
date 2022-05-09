@@ -4,7 +4,7 @@
     "@content": "object",
     "@block-name": "string"
   },
-  "<global-global-video-player>": {
+  "<global-video-player>": {
     "template": "./video-player.marko"
   }
 }
