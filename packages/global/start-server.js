@@ -19,6 +19,7 @@ const leadsMiddleware = require('./middleware/leads');
 const idxRouteTemplates = require('./templates/user');
 const oembedHandler = require('./oembed-handler');
 const omeda = require('./config/omeda');
+const recaptcha = require('./config/recaptcha');
 
 const routes = siteRoutes => (app, siteConfig) => {
   // load contact us route
@@ -61,6 +62,9 @@ module.exports = (options = {}) => {
 
       // Use newsletterState middleware
       app.use(newsletterState());
+
+      // Recaptcha
+      set(app.locals, 'recaptcha', recaptcha);
 
       // Use Omeda middleware
       const omedaBrandKey = get(options, 'siteConfig.omedaBrandKey');
