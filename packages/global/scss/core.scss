@@ -9,6 +9,9 @@
 
 // page wrapper
 .page-wrapper {
+  // $marko-web-document-container-gutter: 20px; couldn't get to work
+  padding: 20px;
+
   .breadcrumbs {
     &--website-section {
       @include skin-typography($style: "slug-medium", $link-style: "primary");
