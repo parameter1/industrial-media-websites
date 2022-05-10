@@ -48,6 +48,10 @@
     height: 45px;
   }
 
+  .brand-logos {
+    margin-bottom: 30px;
+  }
+
   .social-follow {
     $self: &;
     &--site-footer {
@@ -275,6 +279,19 @@ label {
           color: $color;
         }
       }
+    }
+  }
+  &__newsletter-toggler {
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0 0 0 12px;
+    font-size: 1rem;
+    background-color: $gray-100;
+    border-radius: 4px;
+    &:focus {
+      outline: none;
     }
   }
 }

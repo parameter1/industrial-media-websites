@@ -69,6 +69,16 @@ $ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-
           <marko-web-icon name="search" modifiers=["dark"] />
         </button>
       </marko-web-link>
+      <if(site.getAsObject("newsletter.pushdown"))>
+        <theme-menu-toggle-button
+          class="site-navbar__newsletter-toggler"
+          targets=[".site-newsletter-menu"]
+          toggle-class="site-newsletter-menu--open"
+          icon-modifiers=["lg"]
+          icon-name="mail"
+          expanded-icon-name="mail"
+        />
+      </if>
       <theme-menu-toggle-button
         class="site-navbar__toggler"
         targets=[".site-menu", "body"]

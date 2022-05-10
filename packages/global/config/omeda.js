@@ -1,6 +1,7 @@
 const configs = {
   imcd: {
     brandKey: 'imcd',
+    clientKey: 'client_imd',
     appId: process.env.OMEDA_APP_ID,
     inputId: process.env.OMEDA_INPUT_ID,
     graphqlUri: 'https://graphql.omeda.parameter1.com/',
@@ -13,6 +14,7 @@ const configs = {
   },
   lynchm: {
     brandKey: 'lynchm',
+    clientKey: 'client_lynch',
     appId: process.env.OMEDA_APP_ID,
     inputId: process.env.OMEDA_INPUT_ID,
     graphqlUri: 'https://graphql.omeda.parameter1.com/',
