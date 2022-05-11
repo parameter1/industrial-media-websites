@@ -13,10 +13,8 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ien_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: '/video', label: 'Video' },
   { href: '/podcast', label: 'Podcast' },
-  { href: '/contact-us', label: 'Contact Us' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
   { href: '/magazine', label: 'Magazine' },
 ];
@@ -63,7 +61,7 @@ const desktopMenu = {
 };
 
 module.exports = {
-  type: 'navbar2',
+  type: 'navbar-custom',
   promos: [
     {
       title: subscribe.label,

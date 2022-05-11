@@ -80,9 +80,12 @@ $ const {
       clear-data=true
     />
     <marko-web-identity-x-context|{ hasUser, isEnabled }|>
-      <if("navbar2" === site.get("navigation.type"))>
-        <global-site-header-2 has-user=false reg-enabled=false />
+      <if("navbar-custom" === site.get("navigation.type"))>
+        <global-site-header-custom has-user=false reg-enabled=false />
       </if>
+      <else-if("navbar2" === site.get("navigation.type"))>
+        <global-site-header-2 has-user=false reg-enabled=false />
+      </else-if>
       <else>
         <global-site-header has-user=false reg-enabled=false />
       </else>
