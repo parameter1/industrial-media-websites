@@ -9,4 +9,8 @@
       }
     }
   }
+  @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
