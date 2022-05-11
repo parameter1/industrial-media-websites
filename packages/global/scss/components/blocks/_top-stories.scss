@@ -1,0 +1,13 @@
+.top-story {
+  $self: &;
+  &__col--hero {
+    ~ #{ $self } {
+      &__col--list {
+        margin-top: -13px;
+      }
+    }
+  }
+}
+.top-storeis__header {
+  position: relative;
+}

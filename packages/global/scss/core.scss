@@ -78,10 +78,16 @@
 
 // skin components
 @import "./components/blocks/magazine-issues";
+@import "./components/blocks/top-stories";
 @import "../components/magazine/scss/index";
 @import "./components/ads";
 @import "./components/node";
 @import "./components/site-navbar-custom";
+@import "./components/site-navbar";
+@import "./components/site-newsletter-menu";
+@import "./components/brightcove-player";
+
+
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -122,45 +128,6 @@ label {
 
 .document-container {
   padding-top: 0;
-}
-
-.node {
-  $self: &;
-  $image-border: 1px solid rgba(239, 239, 239, .9);
-
-  &__header {
-    margin-bottom: 6px;
-  }
-
-  &__content-published {
-    @include skin-typography($style: "date");
-  }
-
-  &__image {
-    border: $image-border;
-  }
-
-  &__image-inner-wrapper--fluid-3by2 {
-    #{ $self } {
-      &__image {
-        border: $image-border;
-        object-fit: cover;
-      }
-    }
-  }
-
-  &--video-content-type {
-    #{ $self } {
-      &__image-inner-wrapper {
-        &::after {
-          $size: 70px;
-          width: 70px;
-          height: 70px;
-          opacity: 1;
-        }
-      }
-    }
-  }
 }
 
 .node-list {
@@ -211,6 +178,8 @@ label {
     }
   }
 }
+
+// page & block title targeting Loadmore & Top Stories & Section Card
 .page--load-more .node-list,
 .top-storeis,
 .section-cards {
@@ -242,57 +211,6 @@ label {
       &__header {
         line-height: 1.5;
       }
-    }
-  }
-}
-
-.top-story {
-  $self: &;
-  &__col--hero {
-    ~ #{ $self } {
-      &__col--list {
-        margin-top: -13px;
-      }
-    }
-  }
-}
-.top-storeis__header {
-  position: relative;
-}
-
-// brightcove video player css to make embed responsive
-.page-contents {
-  &__content-embed-code {
-    margin-bottom: map-get($spacers, block);
-    & > div.vjs-pip-container {
-      @include theme-embed-responsive-item();
-    }
-  }
-}
-
-// Set nav colors based on site css config
-.site-navbar {
-  $self: &;
-  &--primary {
-    @each $section, $color in $website-section-colors {
-      #{ $self } {
-        &__link--active[href*="#{$section}"] {
-          color: $color;
-        }
-      }
-    }
-  }
-  &__newsletter-toggler {
-    border: none;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    margin: 0 0 0 12px;
-    font-size: 1rem;
-    background-color: $gray-100;
-    border-radius: 4px;
-    &:focus {
-      outline: none;
     }
   }
 }

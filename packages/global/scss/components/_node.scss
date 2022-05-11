@@ -1,5 +1,41 @@
 .node {
   $self: &;
+  $image-border: 1px solid rgba(239, 239, 239, .9);
+
+  &__header {
+    margin-bottom: 6px;
+  }
+
+  &__content-published {
+    @include skin-typography($style: "date");
+  }
+
+  &__image {
+    border: $image-border;
+  }
+
+  &__image-inner-wrapper--fluid-3by2 {
+    #{ $self } {
+      &__image {
+        border: $image-border;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &--video-content-type {
+    #{ $self } {
+      &__image-inner-wrapper {
+        &::after {
+          $size: 70px;
+          width: 70px;
+          height: 70px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   &__website-section-name {
     margin-bottom: 0;
     line-height: 1.5;
