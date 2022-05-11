@@ -6,15 +6,6 @@
     "./layouts/marko.json",
     "./magazine/marko.json"
   ],
-  "<global-sponsored-label-logo>": {
-    "template": "./sponsored-label-logo.marko"
-  },
-  "<global-sponsored-section-logo>": {
-    "template": "./sponsored-section-logo.marko"
-  },
-  "<global-sponsored-section-name-logo>": {
-    "template": "./sponsored-section-name-logo.marko"
-  },
   "<global-fixed-ad-bottom>": {
     "template": "./fixed-ad-bottom.marko",
     "@aliases": "array"

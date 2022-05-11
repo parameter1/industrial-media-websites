@@ -1,27 +1,7 @@
 {
   "taglib-imports": [
-    "./load-more/marko.json",
-    "./promos/marko.json"
+    "./load-more/marko.json"
   ],
-  "<global-esurveypro-block>": {
-    "template": "./esurveypro.marko"
-  },
-  "<global-featured-jobs-block>": {
-    "template": "./featured-jobs.marko"
-  },
-  "<global-featured-jobs-list-block>": {
-    "template": "./featured-jobs-list.marko",
-    "@alias": "string",
-    "@findJobLink": "string",
-    "@postJobLink": "string"
-  },
-  "<global-premium-employers-block>": {
-    "template": "./premium-employers.marko",
-    "<query-params>": {},
-    "<node>": {},
-    "@title": "string",
-    "@alias": "string"
-  },
   "<global-section-cards-block>": {
     "template": "./section-cards.marko",
     "<query-params>": {},
