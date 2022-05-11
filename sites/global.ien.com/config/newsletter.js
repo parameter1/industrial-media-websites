@@ -20,25 +20,25 @@ const defaults = {
     {
       deploymentTypeId: 42,
       name: 'IEN Update Newsletter',
-      description: 'IEN Today (morning edition) and IEN Update (afternoon edition) provide unique content that help answer the challenges industrial engineers face every day. With a combination of news, articles, blogs, videos, technical content, and new product information, each newsletter is focused on the most recent developments impacting the time, cost, market conditions, and regulatory battles industrial engineers constantly face.',
+      description: 'IEN Today (morning edition) and IEN Update (afternoon edition) provide unique content that help answer the challenges industrial...',
       eventCategory: 'IEN Update Subscription',
     },
     {
       deploymentTypeId: 45,
       name: 'Industrial Technology Today Newsletter',
-      description: 'The industrial marketplace continues to embrace IoT and data-driven technology targeting rapid production times, exacting quality controls, and greater overall enterprise efficiency that saves time and money. This daily newsletter delivers the latest news, products, and commentary influencing the ever-evolving role of automation, controls engineering, software and systems integration, connectivity, and machine building.',
+      description: 'The industrial marketplace continues to embrace IoT and data-driven technology targeting rapid production times, exacting quality...',
       eventCategory: 'Industrial Technology Today Subscription',
     },
     {
       deploymentTypeId: 40,
       name: 'Engineering News Today Newsletter',
-      description: 'Engineers solve problems by either fixing what is broken, designing a better approach, or improving systems currently in place. This daily newsletter provides the resources, news, and product information that assists designers, industrial engineers, machine builders, and system integrators in finding and implementing the best solutions available.',
+      description: 'Engineers solve problems by either fixing what is broken, designing a better approach, or improving systems currently in place.',
       eventCategory: 'Engineering News Today Subscription',
     },
     {
       deploymentTypeId: 44,
       name: 'Industrial Management Today Newsletter',
-      description: 'Efficiency can be measured in a number of ways in the industrial sector. This daily newsletter provides facility operations, maintenance, and reliability managers with the information they need to make informed process, product, and purchasing decisions that will help ensure higher end-product quality and facility profitability.',
+      description: 'Efficiency can be measured in a number of ways in the industrial sector. This daily newsletter provides facility operations...',
       eventCategory: 'Industrial Management Today Subscription',
     },
     {
@@ -50,7 +50,7 @@ const defaults = {
     {
       deploymentTypeId: 45,
       name: 'Industrial Software & Technology Newsletter',
-      description: 'As the application and analysis of data from various internal and external sources plays an increasingly prominent role in the industrial marketplace, the selection, implementation and application of software and supporting technologies has never been more important. This newsletter delivers the latest news, products, and blogs focused on how ERP, CMMS, PLM, e-Commerce, CAM, CAD and other software platforms and related technologies can ensure competitiveness in the age of Big Data and the IIoT.',
+      description: 'As the application and analysis of data from various internal and external sources plays an increasingly prominent role in the industrial...',
       eventCategory: 'Industrial Software & Technology Subscription',
     },
     {
@@ -62,13 +62,13 @@ const defaults = {
     {
       deploymentTypeId: 46,
       name: 'Video Showcase Newsletter',
-      description: 'Enjoy technology demos from leading manufacturers in the industrial market. This monthly showcase features the newest product videos featured on the IEN website.',
+      description: 'Enjoy technology demos from leading manufacturers in the industrial market. This monthly showcase features the newest product videos.',
       eventCategory: 'Video Showcase Subscription',
     },
     {
       deploymentTypeId: 43,
       name: 'IEN Weekly Newsletter',
-      description: 'IEN Weekly provides a recap of the week\'s top manufacturing headlines. It includes unique content that helps answer the challenges industrial professionals face every day.',
+      description: 'IEN Weekly provides a recap of the week\'s top manufacturing headlines.',
       eventCategory: 'IEN Weekly Subscription',
     },
   ],
