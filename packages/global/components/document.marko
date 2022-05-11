@@ -75,7 +75,9 @@ $ const {
   </@head>
   <@above-container>
     <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />
-
+    <marko-web-browser-component name="TriggerScreenChangeEvent" />
+    <marko-web-gtm-track-bus-event on="screen_change" />
+    <marko-web-gtm-track-load-more />
     <marko-web-gtm-track-bus-event
       on="newsletter-form-action"
       clear-data=true
