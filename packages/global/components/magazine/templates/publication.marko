@@ -1,8 +1,7 @@
 import issueFragment from "../graphql/fragments/magazine-issue-archive";
 
-$ const { pagination: p, req, GAM } = out.global;
+$ const { req, GAM } = out.global;
 $ const { id, pageNode } = data;
-$ const perPage = 16;
 
 <marko-web-magazine-publication-page-layout id=id>
   <@head>
@@ -15,15 +14,6 @@ $ const perPage = 16;
   </@above-container>
   <@page>
     <marko-web-page-wrapper>
-      <@section|{ aliases }|>
-        <theme-gam-define-display-ad
-          name="rotation"
-          position="magazine_page"
-          aliases=aliases
-          modifiers=["inter-block"]
-        />
-      </@section>
-
       <@section>
         <div class="row">
           <div class="col">
@@ -33,7 +23,6 @@ $ const perPage = 16;
             <marko-web-resolve-page|{ data: publication }| node=pageNode>
               <h1 class="page-wrapper__title">
                 ${publication.name} Issue Archive
-                <if(p.page > 1)>: Page ${p.page}</if>
               </h1>
               <if(publication.description)>
                 <p class="page-wrapper__deck">${publication.description}</p>
@@ -50,7 +39,7 @@ $ const perPage = 16;
               component-name="global-magazine-issue-archive-flow"
               fragment-name="global-magazine-issue-archive"
               query-name="magazine-active-issues"
-              query-params={ publicationId: id, requiresImage: true, limit: 16 }
+              query-params={ publicationId: id, requiresImage: true, limit: 16, requiresCoverImage: true }
               page-input={ for: "magazine-publication", id }
             />
           </div>
