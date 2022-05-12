@@ -79,6 +79,22 @@ $ const siteContext = {
       ...(leads.identity.legacyId && { et_usr: leads.identity.legacyId }),
     };
     <marko-web-gam-targeting key-values=keyValues />
+
+    <!-- Notix push notification -->
+    <if(!get(req, 'cookies.oly_enc_id'))>
+      <script id="script">
+        var s = document.createElement("script")
+          s.src = "https://notix.io/ent/current/enot.min.js"
+          s.onload = function (sdk) {
+            sdk.startInstall({
+              appId: "1004c90b9625597d3f00615ee4ebe9a",
+              loadSettings: true
+            })
+          }
+        document.head.append(s)
+      </script>
+    </if>
+
   </@head>
   <@above-container>
     <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />
