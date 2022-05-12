@@ -1,7 +1,7 @@
 import { getAsObject } from "@parameter1/base-cms-object-path";
 import issueFragment from "../graphql/fragments/magazine-issue-archive";
 
-$ const { site } = out.global;
+$ const { site, GAM } = out.global;
 $ const { id, pageNode } = data;
 
 <marko-web-magazine-issue-page-layout id=id>
@@ -10,6 +10,9 @@ $ const { id, pageNode } = data;
       <marko-web-gtm-push data=context />
     </marko-web-gtm-magazine-issue-context>
   </@head>
+  <@above-container>
+    <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases: ["magazine"] }).path id="reveal-ad" />
+  </@above-container>
   <@page>
     <marko-web-page-wrapper class="mb-block">
       <@section|{ aliases }|>

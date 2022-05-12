@@ -1,6 +1,6 @@
 import issueFragment from "../graphql/fragments/magazine-issue-archive";
 
-$ const { pagination: p, req } = out.global;
+$ const { pagination: p, req, GAM } = out.global;
 $ const { id, pageNode } = data;
 $ const perPage = 16;
 
@@ -10,6 +10,9 @@ $ const perPage = 16;
       <marko-web-gtm-push data=context />
     </marko-web-gtm-magazine-publication-context>
   </@head>
+  <@above-container>
+    <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases: ["magazine"] }).path id="reveal-ad" />
+  </@above-container>
   <@page>
     <marko-web-page-wrapper>
       <@section|{ aliases }|>
@@ -40,29 +43,18 @@ $ const perPage = 16;
         </div>
       </@section>
       <@section>
-        <marko-web-resolve-page|{ data: publication }| node=pageNode>
-          $ const params = {
-            publicationId: id,
-            limit: perPage,
-            skip:p.skip({ perPage }),
-            queryFragment: issueFragment,
-          };
-          <marko-web-query|{ nodes }|
-            name="magazine-active-issues"
-            params=params
-          >
-            <global-magazine-issue-archive-flow nodes=nodes flush=true />
-          </marko-web-query>
-          <div class="mb-block">
-            <theme-query-total-count|{ totalCount }| name="magazine-active-issues" params={publicationId: id}>
-              <theme-pagination-controls
-                per-page=perPage
-                total-count=totalCount
-                path=req.path
-              />
-            </theme-query-total-count>
+        <div class="row">
+          <div class="col-lg-12 infinite-scroll-target">
+            <marko-web-load-more
+              append-to=".infinite-scroll-target"
+              component-name="global-magazine-issue-archive-flow"
+              fragment-name="global-magazine-issue-archive"
+              query-name="magazine-active-issues"
+              query-params={ publicationId: id, requiresImage: true, limit: 16 }
+              page-input={ for: "magazine-publication", id }
+            />
           </div>
-        </marko-web-resolve-page>
+        </div>
       </@section>
     </marko-web-page-wrapper>
   </@page>
