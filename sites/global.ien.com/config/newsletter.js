@@ -8,35 +8,35 @@ const baseConfig = {
 };
 
 const defaults = {
-  name: '@TODO: Newsletter.js Default Config',
-  description: '@TODO: Newsletter.js Default Config Description',
+  name: 'Stay Connected!',
+  description: 'Join 2,500,000+ industry profesionals who get helpful insights and important news delivered straight to their inbox with the <strong>IEN</strong> newsletter.',
   defaultNewsletter: {
-    deploymentTypeId: 41,
+    deploymentTypeId: 34,
     name: 'IEN Today Newsletter',
     eventCategory: 'IEN Today Subscription',
   },
   privacyPolicy,
   newsletters: [
     {
-      deploymentTypeId: 42,
+      deploymentTypeId: 35,
       name: 'IEN Update Newsletter',
       description: 'IEN Today (morning edition) and IEN Update (afternoon edition) provide unique content that help answer the challenges industrial...',
       eventCategory: 'IEN Update Subscription',
     },
     {
-      deploymentTypeId: 45,
+      deploymentTypeId: 38,
       name: 'Industrial Technology Today Newsletter',
       description: 'The industrial marketplace continues to embrace IoT and data-driven technology targeting rapid production times, exacting quality...',
       eventCategory: 'Industrial Technology Today Subscription',
     },
     {
-      deploymentTypeId: 40,
+      deploymentTypeId: 33,
       name: 'Engineering News Today Newsletter',
       description: 'Engineers solve problems by either fixing what is broken, designing a better approach, or improving systems currently in place.',
       eventCategory: 'Engineering News Today Subscription',
     },
     {
-      deploymentTypeId: 44,
+      deploymentTypeId: 37,
       name: 'Industrial Management Today Newsletter',
       description: 'Efficiency can be measured in a number of ways in the industrial sector. This daily newsletter provides facility operations...',
       eventCategory: 'Industrial Management Today Subscription',
@@ -60,13 +60,13 @@ const defaults = {
       eventCategory: 'Digital Edition Subscription',
     },
     {
-      deploymentTypeId: 46,
+      deploymentTypeId: 39,
       name: 'Video Showcase Newsletter',
       description: 'Enjoy technology demos from leading manufacturers in the industrial market. This monthly showcase features the newest product videos.',
       eventCategory: 'Video Showcase Subscription',
     },
     {
-      deploymentTypeId: 43,
+      deploymentTypeId: 36,
       name: 'IEN Weekly Newsletter',
       description: 'IEN Weekly provides a recap of the week\'s top manufacturing headlines.',
       eventCategory: 'IEN Weekly Subscription',
