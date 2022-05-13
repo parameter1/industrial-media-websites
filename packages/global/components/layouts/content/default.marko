@@ -8,7 +8,7 @@ $ const { id, type, primarySection, pageNode, showReadNextBlock, showBottomAdBlo
 $ const sections = getAsArray(input, "sections");
 $ const belowContentSections = getAsArray(input, "belowContentSections");
 
-$ const displayPrimaryImage = defaultValue(input.displayPrimaryImage, false);
+$ const displayPrimaryImage = defaultValue(input.displayPrimaryImage, true);
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
 $ const displayReadNext = showReadNextBlock && ["article"].includes(type);
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
