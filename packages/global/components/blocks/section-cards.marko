@@ -1,0 +1,52 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
+
+$ const { GAM } = out.global;
+$ const queryParams = {
+  ...input.queryParams,
+  sectionAlias: input.alias,
+  queryFragment,
+};
+
+$ const { title, adIndex, adName, aliases } = input;
+$ const blockName = "section-cards";
+$ const countOnly = defaultValue(input.countOnly, false);
+$ const adPosition = input.adPosition || "after";
+
+<if(countOnly)>
+  <theme-query-total-count|data| name="website-scheduled-content" params=queryParams>
+    <${input.renderBody} ...data />
+  </theme-query-total-count>
+</if>
+<else>
+  <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+    <if(title)>
+      <marko-web-element block-name=blockName name="header">
+        ${title}
+      </marko-web-element>
+    </if>
+    <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=[blockName]>
+      <@slot|{ node }|>
+        <theme-content-node
+          image-position="top"
+          card=true
+          flush=true
+          full-height=true
+          with-teaser=false
+          with-dates=false
+          modifiers=[blockName]
+          node=node
+        >
+          <@image ar="3:2" fluid=true />
+        </theme-content-node>
+      </@slot>
+      <if(adIndex !== null)>
+        <for|show| of=adIndex>
+          <@slot position=adPosition index=show>
+            <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: adName, size: [300, 250], aliases }) modifiers=["in-card"] />
+          </@slot>
+        </for>
+      </if>
+    </default-theme-card-deck-flow>
+  </marko-web-query>
+</else>

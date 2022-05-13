@@ -1,0 +1,16 @@
+.site-navbar {
+  $self: &;
+  &--primary {
+    @each $section, $color in $website-section-colors {
+      #{ $self } {
+        &__link--active[href*="#{$section}"] {
+          color: $color;
+        }
+      }
+    }
+  }
+  @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,92 @@
+.node {
+  $self: &;
+  $image-border: 1px solid rgba(239, 239, 239, .9);
+
+  &__header {
+    margin-bottom: 6px;
+  }
+
+  &__content-published {
+    @include skin-typography($style: "date");
+  }
+
+  &__image {
+    border: $image-border;
+  }
+
+  &__image-inner-wrapper--fluid-3by2 {
+    #{ $self } {
+      &__image {
+        border: $image-border;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &--video-content-type {
+    #{ $self } {
+      &__image-inner-wrapper {
+        &::after {
+          $size: 70px;
+          width: 70px;
+          height: 70px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__website-section-name {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  &--related-stories,
+  &--section-tag,
+  &--top-story-hero,
+  &--top-stories {
+    #{ $self } {
+      &__image-wrapper + #{ $self }__body {
+        z-index: 0;
+        margin-top: -13px;
+      }
+
+      &__header + #{ $self }__contents {
+        margin-top: 8px;
+      }
+      &__header {
+        width: 70%;
+        padding-top: 2px;
+        padding-right: .75rem;
+        padding-bottom: 2px;
+        padding-left: .75rem;
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 14px;
+        font-weight: $font-weight-bold;
+        line-height: 1.5;
+        color: #dfded4;
+        text-transform: uppercase;
+        letter-spacing: .2px;
+        background-color: #333;
+
+        // stylelint-disable selector-max-compound-selectors
+        a {
+          color: #fff;
+          &:hover {
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  @each $section, $color in $website-section-colors {
+    &--section-#{$section} {
+      #{ $self } {
+        &__header {
+          background-color: $color;
+        }
+      }
+    }
+  }
+}

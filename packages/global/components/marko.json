@@ -1,0 +1,65 @@
+{
+  "taglib-imports": [
+    "./blocks/marko.json",
+    "./elements/marko.json",
+    "./flows/marko.json",
+    "./layouts/marko.json",
+    "./magazine/marko.json"
+  ],
+  "<global-fixed-ad-bottom>": {
+    "template": "./fixed-ad-bottom.marko",
+    "@aliases": "array"
+  },
+  "<global-document>": {
+    "template": "./document.marko",
+    "<head>": {},
+    "<above-container>": {},
+    "<container>": {
+      "<above-page>": {},
+      "<page>": {},
+      "<below-page>": {}
+    },
+    "<below-container>": {},
+    "<foot>": {}
+  },
+  "<global-site-menu>": {
+    "template": "./site-menu/index.marko"
+  },
+  "<global-site-header>": {
+    "template": "./site-header.marko"
+  },
+  "<global-site-header-2>": {
+    "template": "./site-header-2.marko"
+  },
+  "<global-site-header-custom>": {
+    "template": "./site-header-custom.marko"
+  },
+  "<global-site-footer>": {
+    "template": "./site-footer.marko"
+  },
+  "<global-reveal-ad-handler>": {
+    "template": "./reveal-ad-handler.marko",
+    "@target": "string",
+    "@defaults": "object",
+    "@select-all-targets": "boolean",
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@path": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "<global-native-x-inject>": {
+    "template": "./native-x-inject.marko",
+    "@limit": "number",
+    "@indexes": "array",
+    "@index": "number",
+    "@name": "string",
+    "@section-name": "string",
+    "@aliases": "array",
+    "@nodes": "array",
+    "@config": "object"
+  }
+}

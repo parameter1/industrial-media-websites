@@ -1,0 +1,11 @@
+.site-newsletter-menu  {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background: $gray-100;
+  z-index: 0;
+  &__container {
+    overflow: hidden;
+  }
+}

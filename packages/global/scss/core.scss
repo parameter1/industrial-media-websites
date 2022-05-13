@@ -1,0 +1,216 @@
+// import local variables
+@import "variables";
+
+// import theme css
+@import "../../node_modules/@parameter1/base-cms-marko-web-theme-monorail/scss/core";
+@import "../../node_modules/@parameter1/base-cms-marko-web-contact-us/scss/index";
+@import "../../node_modules/@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
+@import "../../node_modules/@parameter1/base-cms-marko-web-gam/scss/fixed-ad-bottom";
+
+// page wrapper
+.page-wrapper {
+  // $marko-web-document-container-gutter: 20px; couldn't get to work
+  padding: 20px;
+
+  .breadcrumbs {
+    &--website-section {
+      @include skin-typography($style: "slug-medium", $link-style: "primary");
+      .breadcrumb {
+        padding-bottom: 8px;
+      }
+    }
+  }
+  &__website-section-description {
+    font-size: 18px;
+  }
+  &__section {
+    .breadcrumbs {
+      margin-bottom: .5rem;
+    }
+    &--break-container {
+      @include media-breakpoint-down(md) {
+        margin-right: -16px;
+        margin-left: -16px;
+      }
+    }
+  }
+}
+.page--below .page-wrapper {
+  margin-bottom: 60px;
+}
+// site-footer
+.site-footer {
+  &__brand {
+    margin-bottom: 18px;
+  }
+
+  &__logo {
+    height: 45px;
+  }
+
+  .brand-logos {
+    margin-bottom: 30px;
+  }
+
+  .social-follow {
+    $self: &;
+    &--site-footer {
+      margin-bottom: 16px;
+      text-align: center;
+      #{ $self } {
+        &__header {
+          display: none;
+        }
+        &__section {
+          // stylelint-disable-next-line
+          > .social-icon-link {
+            // stylelint-disable-next-line
+            &:last-of-type {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// skin components
+@import "./components/blocks/magazine-issues";
+@import "./components/blocks/top-stories";
+@import "../components/magazine/scss/index";
+@import "./components/ads";
+@import "./components/node";
+@import "./components/site-navbar-custom";
+@import "./components/site-navbar";
+@import "./components/site-newsletter-menu";
+@import "./components/brightcove-player";
+
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  // set a default letter spacing of .25px, since most fonts have some form of spacing
+  letter-spacing: .25px;
+}
+
+label {
+  @include skin-typography($style: "input-label");
+}
+
+.col-spacer {
+  margin-bottom: 30px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}
+
+.form-control {
+  letter-spacing: $skin-input-letter-spacing;
+  border-radius: $input-border-radius; // must force this value since radius is disabled
+  &:hover:not(:focus) {
+    border-color: $skin-input-hover-border-color;
+  }
+}
+
+.btn-primary {
+  @include skin-button($style: "primary");
+}
+
+.btn-secondary {
+  @include skin-button($style: "secondary");
+}
+
+.btn-light {
+  @include skin-button($style: "light");
+}
+
+.document-container {
+  padding-top: 0;
+}
+
+.node-list {
+  &__header {
+    padding-bottom: 0;
+  }
+}
+
+.card-deck-flow {
+  $self: &;
+
+  &--3-cols {
+    #{ $self } {
+      &__node {
+        @include media-breakpoint-up(md) {
+          @include make-col(4);
+        }
+        @include media-breakpoint-up(lg) {
+          @include make-col(4);
+        }
+      }
+    }
+  }
+
+  &--4-cols {
+    #{ $self } {
+      &__node {
+        // account for smaller container max-width and break earlier than normal
+        @include media-breakpoint-up(sm) {
+          @include make-col(12);
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(6);
+        }
+        @include media-breakpoint-up(lg) {
+          @include make-col(3);
+        }
+
+        // @include media-breakpoint-down(sm) {
+        //   margin-bottom: 16px;
+        // }
+        // &:last-child {
+        //   @include media-breakpoint-down(sm) {
+        //     margin-bottom: 0;
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+// page & block title targeting Loadmore & Top Stories & Section Card
+.page--load-more .node-list,
+.top-storeis,
+.section-cards {
+  &__header {
+    @include skin-typography($style: "header-2");
+    margin-bottom: 16px;
+    padding-top: 24px;
+    padding-left: 0;
+    &:before {
+      background: #333;
+      content: "";
+      height: 4px;
+      left: 0;
+      position: absolute;
+      top: 12px;
+      width: 40px;
+    }
+  }
+}
+
+// ensure all anvato embeds are treated like videos
+[data-oembed-provider="Anvato"] {
+  @extend .embed-responsive;
+  @extend .embed-responsive-16by9;
+}
+.social-follow {
+  &--site-menu {
+    .social-follow {
+      &__header {
+        line-height: 1.5;
+      }
+    }
+  }
+}

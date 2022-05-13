@@ -1,0 +1,17 @@
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { id, alias, name, pageNode } = input;
+
+$ const { site } = out.global;
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+  right-rail-header="Videos"
+>
+  <@loader>
+    <@standard-params include-content-types=["Video"] />
+  </@loader>
+</global-website-section-default-layout>

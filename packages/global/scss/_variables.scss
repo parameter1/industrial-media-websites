@@ -1,0 +1,27 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@700&display=swap");
+$skin-font-family-primary: "Roboto", sans-serif !default;
+$skin-font-family-secondary: "Roboto", sans-serif !default;
+
+$body-bg: #f0f1f2;
+
+$theme-page-bg-color: white;
+
+$skin-ad-bg-color: white;
+
+// Navbar
+$navbarStyle: "navbar2" !default;
+$theme-site-navbar-logo-height: 60px !default;
+$theme-site-navbar-secondary-font-size: 16px !default;
+
+// Ads
+$leaderboard-min-height-mobile: 100px !default;
+$leaderboard-min-height-desktop: 250px !default;
+$rail-ad-bg-color: white !default;
+
+$theme-site-footer-secondary-bg-color: #68686c;
+
+$theme-site-navbar-primary-link-color: #fff !default;
+$theme-site-navbar-primary-link-active-color: #fff !default;
+$theme-site-navbar-primary-link-hover-color: #fff !default;
+$theme-site-navbar-primary-bg-color: #000 !default;

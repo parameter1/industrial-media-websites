@@ -1,0 +1,78 @@
+{
+  "<global-content-list-flow>": {
+    "template": "./list.marko",
+    "<header>": {},
+    "<body>": {},
+    "<node>": {
+      "<attribution>": {},
+      "<image>": {}
+    },
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@nodes": "array",
+    "@inner-justified": "boolean",
+    "@flush-x": "boolean",
+    "@flush-y": "boolean",
+    "@class": "string",
+    "@modifiers": "array"
+  },
+  "<global-content-featured-flow>": {
+    "template": "./featured.marko",
+    "<card>": {},
+    "<card-deck>": {
+      "<node>": {}
+    },
+    "@nodes": "array"
+  },
+  "<global-content-card-deck-flow>": {
+    "template": "./card-deck.marko",
+    "<node>": {
+      "<image>": {},
+      "<title>": {}
+    },
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@adIndices": "array",
+    "@aliases": "array",
+    "@nodes": "array",
+    "@display-ads": "boolean",
+    "@cols": "number",
+    "@tag": "string",
+    "@class": "string",
+    "@modifiers": "array",
+    "@attrs": "object"
+  },
+  "<global-content-list-feed-flow>": {
+    "template": "./list-feed.marko",
+    "<adunit>": {},
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@nodes": "array",
+    "@header": "string",
+    "@with-header": "boolean",
+    "@modifiers": "array"
+  },
+  "<global-content-card-deck-feed-flow>": {
+    "template": "./card-deck-feed.marko",
+    "<card-deck>": {},
+    "<adunit>": {},
+    "<native-x>": {
+      "@indexes": "array",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@nodes": "array",
+    "@header": "string",
+    "@with-header": "boolean",
+    "@page-number": "number"
+  }
+}

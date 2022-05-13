@@ -1,0 +1,17 @@
+{
+  "taglib-imports": [
+    "./load-more/marko.json"
+  ],
+  "<global-section-cards-block>": {
+    "template": "./section-cards.marko",
+    "<query-params>": {},
+    "<node>": {},
+    "@title": "string",
+    "@alias": "string",
+    "@aliases": "array",
+    "@ad-index": "array",
+    "@ad-name": "string",
+    "@ad-position": "string",
+    "@count-only": "boolean"
+  }
+}

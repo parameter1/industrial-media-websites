@@ -1,0 +1,25 @@
+import { getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const nodes = getAsArray(input, "nodes");
+$ const header = defaultValue(input.header, "Latest");
+$ const withHeader = defaultValue(input.withHeader, false);
+$ const adunit = getAsObject(input, "adunit");
+
+<if(adunit.path)>
+  <marko-web-gam-define-display-ad ...adunit class="mb-block" />
+</if>
+
+<global-content-list-flow
+  nodes=nodes
+  inner-justified=false
+  modifiers=["padding-large", ...getAsArray(input, "modifiers")]
+  native-x=input.nativeX
+>
+  <if(withHeader)>
+    <@header>${header}</@header>
+  </if>
+  <@node image-position="left" with-attribution=true with-teaser=true>
+    <@image ar="16:9" width=260 />
+  </@node>
+</global-content-list-flow>

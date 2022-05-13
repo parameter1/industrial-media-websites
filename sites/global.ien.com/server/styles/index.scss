@@ -1,0 +1,32 @@
+$primary: #eb1a2d !default;
+$secondary: #495057; // equivalent to default gray-700
+$light: #e9ecef !default; // equivalent to default gray-200
+$dark: #212529 !default; // equivalent to default gray-900
+$info: #6c757d !default; // equivalent to default gray-600
+
+$theme-site-header-breakpoints: (
+  hide-primary: 1100px, // effectively always hide the primary nav
+  hide-secondary: 700px,
+  small-logo: 775px,
+  small-text-primary: 0,
+  small-text-secondary: 830px
+);
+
+$navbarStyle: "navbar-custom";
+$theme-site-navbar-primary-type: "dark";
+
+// Site Section Colors
+$website-section-colors: (
+  advanced-manufacturing: #a75deb,
+  automation: #77d2d5,
+  finishing-world: lighten(#3e569f, 5%),
+  operations: #0da8db,
+  product-development: lighten(#bc0070, 2%),
+  new-products: #4fba73,
+  safety: #e77765,
+  supply-chain: #c9e765,
+  food-beverage: lighten(#008a51, 5%),
+);
+
+
+@import "../../node_modules/@industrial-media/package-global/scss/core";
