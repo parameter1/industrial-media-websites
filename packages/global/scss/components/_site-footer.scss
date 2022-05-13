@@ -1,0 +1,11 @@
+.site-footer {
+  &__container {
+    &--brand-logos {
+      background-color: $white;
+      padding-bottom: 0;
+    }
+    &--secondary {
+      background-color: $gray-800;
+    }
+  }
+}
