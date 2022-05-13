@@ -6,3 +6,7 @@
     }
   }
 }
+
+#brightcove-floating-player div.vjs-control-bar div[class*="vjs-overlay-background"] {
+  background-color: transparent;
+}
