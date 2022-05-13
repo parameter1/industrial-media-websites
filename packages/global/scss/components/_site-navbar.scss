@@ -14,3 +14,17 @@
     padding-right: 20px;
   }
 }
+
+.site-header {
+  position: fixed;
+}
+.document-container,
+.site-newsletter-menu__container {
+  margin-top: calculate-navbar-height-for(default);
+
+  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+    @media (max-width: $width) {
+      margin-top: calculate-navbar-height-for($breakpoint);
+    }
+  }
+}

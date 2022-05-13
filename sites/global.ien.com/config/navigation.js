@@ -3,13 +3,13 @@ const subscribe = require('./subscribe');
 const topics = [
   { href: '/automation', label: 'Automation' },
   { href: '/finishing-world', label: 'Finishing World' },
+  { href: '/made-in-america', label: 'Made in America' },
+  { href: '/new-products', label: 'New Products' },
   { href: '/operations', label: 'Operations' },
   { href: '/product-development', label: 'Product Development' },
-  { href: '/new-products', label: 'New Products' },
+  { href: '/software', label: 'Software' },
   { href: '/safety', label: 'Safety' },
   { href: '/supply-chain', label: 'Supply Chain' },
-  { href: '/software', label: 'Software' },
-  { href: '/made-in-america', label: 'Made in America' },
 ];
 
 const secondary = [

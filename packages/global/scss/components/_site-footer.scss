@@ -1,0 +1,14 @@
+.site-footer {
+  &__container {
+    &--brand-logos {
+      background-color: $white;
+      padding-bottom: 0;
+      .site-footer-logo {
+        align-self: center;
+      }
+    }
+    &--secondary {
+      background-color: $gray-800;
+    }
+  }
+}
