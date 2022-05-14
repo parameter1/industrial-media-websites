@@ -181,7 +181,7 @@ label {
 
 // page & block title targeting Loadmore & Top Stories & Section Card
 .page--load-more .node-list,
-.top-storeis,
+.top-stories,
 .section-cards {
   &__header {
     @include skin-typography($style: "header-2");
