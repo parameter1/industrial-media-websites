@@ -65,13 +65,6 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
         </div>
         <div class="content-page-body">
           <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-            <if(displaySocialShare)>
-              <marko-web-social-sharing
-                path=content.siteContext.path
-                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
-                print-path=`/print/content/${content.id}`
-              />
-            </if>
             <if(content.embedCode)>
               <global-content-embed-code block-name=blockName content=content />
             </if>
