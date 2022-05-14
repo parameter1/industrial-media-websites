@@ -25,7 +25,6 @@ const resources = [
   { href: '/software', label: 'Software' },
   { href: '/made-in-america', label: 'Made in America' },
   { href: '/magazine', label: 'Magazine' },
-  { href: '/contact-us', label: 'Contact Us' },
 ];
 
 const utilities = [
