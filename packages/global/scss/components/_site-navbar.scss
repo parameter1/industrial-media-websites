@@ -11,13 +11,15 @@
   }
   &--secondary {
     padding: 0 2rem;
+    .site-navbar {
+      &__items {
+        font-size: 13px;
+      }
+    }
   }
   &__items {
     &--primary {
       font-size: 15px;
-    }
-    &--secondary {
-      font-size: 13px;
     }
   }
   @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
