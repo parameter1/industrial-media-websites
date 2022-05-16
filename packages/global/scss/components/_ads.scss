@@ -22,6 +22,10 @@
 }
 body .document-container > .page:first-of-type {
   margin-top: 298px;
+  // excluded the following page types as they dont use reskin ads
+  &.page--search {
+    margin-top: 60px;
+  }
 }
 body .document-container > .reveal-ad + .page {
   margin-top: 0;
