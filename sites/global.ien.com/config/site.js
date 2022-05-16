@@ -14,6 +14,9 @@ module.exports = {
   gam,
   omedaBrandKey,
   identityX: identityX({ omedaBrandKey }),
+  idxNavItems: {
+    enable: true,
+  },
   nativeX,
   newsletter,
   socialMediaLinks,
