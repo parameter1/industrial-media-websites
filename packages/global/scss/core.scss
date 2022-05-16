@@ -1,6 +1,15 @@
 // import local variables
 @import "variables";
 
+$typography: (
+  "article-text": (
+    "letter-spacing": 0px,
+  ),
+  "date-content-page": (
+    "font-size": 15px,
+  ),
+);
+
 // import theme css
 @import "../../node_modules/@parameter1/base-cms-marko-web-theme-monorail/scss/core";
 @import "../../node_modules/@parameter1/base-cms-marko-web-contact-us/scss/index";
