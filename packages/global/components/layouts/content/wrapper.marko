@@ -77,9 +77,6 @@ $ const alias = get(input, "primarySection.alias");
   <@foot>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       <global-fixed-ad-bottom aliases=hierarchyAliases(content.primarySection) />
-      <if(type !== 'video')>
-        <global-video-player />
-      </if>
     </marko-web-resolve-page>
 
   </@foot>
