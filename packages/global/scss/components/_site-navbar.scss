@@ -42,3 +42,34 @@
     }
   }
 }
+
+.site-menu {
+  $self: &;
+  &__section {
+    &--user {
+      #{ $self }__link {
+        font-weight: $font-weight-bold;
+      }
+    }
+    &--user-login {
+      color: $primary;
+    }
+  }
+}
+
+// Handle layout of social icons. Most likely will move to site css
+.social-follow__section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: map-get($spacers, 2);
+  row-gap: 1rem;
+}
+.social-follow--site-menu {
+  padding-bottom: map-get($spacers, block);
+  border-bottom: solid 1px $gray-200;
+}
+.social-follow__section > .social-icon-link {
+  display: inline-block;
+  margin-right: initial;
+  text-align: center;
+}
