@@ -68,6 +68,9 @@ module.exports = {
       link: subscribe.href,
     },
   ],
+  user: {
+    items: [],
+  },
   desktopMenu,
   mobileMenu,
   topics,
