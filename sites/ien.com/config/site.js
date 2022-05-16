@@ -58,4 +58,7 @@ module.exports = {
       email: 'reply@ien.com',
     },
   },
+  notix: {
+    appId: '1004c90b9625597d3f00615ee4ebe9a',
+  },
 };
