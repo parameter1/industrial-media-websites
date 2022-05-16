@@ -81,7 +81,7 @@ $ const siteContext = {
     <marko-web-gam-targeting key-values=keyValues />
 
     <!-- Notix push notification -->
-    <if(site.notix && !get(req, ‘cookies.oly_enc_id’))>
+    <if(site.notix && !get(req, 'cookies.oly_enc_id'))>
       <script id="script">
         var s = document.createElement("script")
           s.src = "https://notix.io/ent/current/enot.min.js"
