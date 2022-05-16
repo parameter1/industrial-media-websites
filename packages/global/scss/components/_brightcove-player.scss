@@ -3,6 +3,9 @@
     margin-bottom: map-get($spacers, block);
     & > div.vjs-pip-container {
       @include theme-embed-responsive-item();
+      & > .video-js.vjs-pip-y-bottom {
+        bottom: 120px;
+      }
     }
   }
 }
