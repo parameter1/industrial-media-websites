@@ -81,13 +81,12 @@ $ const siteContext = {
     <marko-web-gam-targeting key-values=keyValues />
 
     <!-- Notix push notification -->
-    <if(!get(req, 'cookies.oly_enc_id'))>
+    <if(!site.notix)>
       <script id="script">
         var s = document.createElement("script")
           s.src = "https://notix.io/ent/current/enot.min.js"
           s.onload = function (sdk) {
             sdk.startInstall({
-              appId: "1004c90b9625597d3f00615ee4ebe9a",
               loadSettings: true
             })
           }
