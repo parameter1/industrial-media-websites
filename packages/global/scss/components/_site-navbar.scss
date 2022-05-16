@@ -51,8 +51,12 @@
         font-weight: $font-weight-bold;
       }
     }
+  }
+  &__item {
     &--user-login {
-      color: $primary;
+      #{ $self }__link {
+        color: $primary;
+      }
     }
   }
 }
