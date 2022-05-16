@@ -55,7 +55,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                   $ const featuredCardNodes = featured.nodes.slice(1);
                   $ const cardNodes = featured.nodes.slice(1);
                   $ const topStoriesTitle = section.name !== "Home" ? section.name : "Top Story";
-                  <marko-web-element tag="h1" block-name="top-storeis" name="header">
+                  <marko-web-element tag="h1" block-name="top-stories" name="header">
                     ${i18n(topStoriesTitle)}
                   </marko-web-element>
                   <marko-web-element block-name="top-story" name="row">
@@ -84,7 +84,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                     </marko-web-element>
                   </marko-web-element>
                   <if(cardNodes.length)>
-                    <marko-web-element block-name="top-storeis" name="header">
+                    <marko-web-element block-name="top-stories" name="header">
                       ${i18n("Featured")}
                     </marko-web-element>
                     <!-- <theme-content-card-deck-col-flow
@@ -119,7 +119,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                   </if>
                 </div>
                 <div class="col-lg-4">
-                  <marko-web-element block-name="top-storeis" name="header">
+                  <marko-web-element block-name="top-stories" name="header">
                     ${i18n(rightRailHeader)}
                   </marko-web-element>
                   <theme-content-list-flow
