@@ -1,6 +1,15 @@
 // import local variables
 @import "variables";
 
+$typography: (
+  "article-text": (
+    "letter-spacing": 0px,
+  ),
+  "date-content-page": (
+    "font-size": 15px,
+  ),
+);
+
 // import theme css
 @import "../../node_modules/@parameter1/base-cms-marko-web-theme-monorail/scss/core";
 @import "../../node_modules/@parameter1/base-cms-marko-web-contact-us/scss/index";
@@ -35,6 +44,7 @@
     }
   }
 }
+.page--search .page-wrapper,
 .page--below .page-wrapper {
   margin-bottom: 60px;
 }
@@ -181,7 +191,7 @@ label {
 
 // page & block title targeting Loadmore & Top Stories & Section Card
 .page--load-more .node-list,
-.top-storeis,
+.top-stories,
 .section-cards {
   &__header {
     @include skin-typography($style: "header-2");
@@ -214,3 +224,11 @@ label {
     }
   }
 }
+
+// Begin right rail content layout CSS
+.content-page-header {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 800px;
+}
+// End right rail content layout CSS

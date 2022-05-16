@@ -9,6 +9,19 @@
       }
     }
   }
+  &--secondary {
+    padding: 0 2rem;
+    .site-navbar {
+      &__items {
+        font-size: 13px;
+      }
+    }
+  }
+  &__items {
+    &--primary {
+      font-size: 15px;
+    }
+  }
   @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
     padding-left: 20px;
     padding-right: 20px;
@@ -17,6 +30,7 @@
 
 .site-header {
   position: fixed;
+  border-bottom: none;
 }
 .document-container,
 .site-newsletter-menu__container {

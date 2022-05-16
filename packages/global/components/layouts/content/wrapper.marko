@@ -19,9 +19,6 @@ $ const alias = get(input, "primarySection.alias");
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
       <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
-      <if(content.type !== "video")>
-        <global-video-player />
-      </if>
     </marko-web-resolve-page>
   </@above-container>
   <@below-page>
@@ -76,11 +73,7 @@ $ const alias = get(input, "primarySection.alias");
   </@page>
   <@foot>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
-      $ const aliases = hierarchyAliases(content.primarySection);
-      <if(type !== 'video')>
-        <global-video-player />
-      </if>
+      <global-fixed-ad-bottom aliases=hierarchyAliases(content.primarySection) />
     </marko-web-resolve-page>
-
   </@foot>
 </theme-content-page>

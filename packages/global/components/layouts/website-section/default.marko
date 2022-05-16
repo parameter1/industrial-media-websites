@@ -41,7 +41,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <marko-web-resolve-page|{ data: section }| node=pageNode>
           $ const aliases = hierarchyAliases(section);
           <marko-web-page-wrapper>
-            <@section|{ alias }| >
+            <@section>
               <!-- @TODO: figure out how to move this marko-web-resolver wrapper & this to component -->
               <div class="row">
                 <div class="col-lg-8">
@@ -55,7 +55,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                   $ const featuredCardNodes = featured.nodes.slice(1);
                   $ const cardNodes = featured.nodes.slice(1);
                   $ const topStoriesTitle = section.name !== "Home" ? section.name : "Top Story";
-                  <marko-web-element tag="h1" block-name="top-storeis" name="header">
+                  <marko-web-element tag="h1" block-name="top-stories" name="header">
                     ${i18n(topStoriesTitle)}
                   </marko-web-element>
                   <marko-web-element block-name="top-story" name="row">
@@ -84,18 +84,9 @@ $ const promise = websiteSectionContentLoader(apollo, {
                     </marko-web-element>
                   </marko-web-element>
                   <if(cardNodes.length)>
-                    <marko-web-element block-name="top-storeis" name="header">
+                    <marko-web-element block-name="top-stories" name="header">
                       ${i18n("Featured")}
                     </marko-web-element>
-                    <!-- <theme-content-card-deck-col-flow
-                      nodes=cardNodes
-                      cols=2
-                      modifiers=["top-story"]
-                    >
-                      <@node modifiers=[`top-story-card`] with-teaser=true >
-                        <@image lazyload=true />
-                      </@node>
-                    </theme-content-card-deck-col-flow> -->
                     <default-theme-card-deck-flow
                         modifiers=["top-story"]
                         cols=2
@@ -115,11 +106,19 @@ $ const promise = websiteSectionContentLoader(apollo, {
                             <@image fluid=true width=330 ar="3:2" />
                           </theme-content-node>
                         </@slot>
+                        <@slot position="after" index=1>
+                          <theme-gam-define-display-ad
+                            name="top-stories"
+                            position="section_page"
+                            aliases=aliases
+                            modifiers=["top-stories", "in-card"]
+                          />
+                        </@slot>
                       </default-theme-card-deck-flow>
                   </if>
                 </div>
-                <div class="col-lg-4">
-                  <marko-web-element block-name="top-storeis" name="header">
+                <div class="col-lg-4 page-rail">
+                  <marko-web-element block-name="top-stories" name="header">
                     ${i18n(rightRailHeader)}
                   </marko-web-element>
                   <theme-content-list-flow
@@ -131,12 +130,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                         <@image lazyload=true width=100 height=100 />
                       </@node>
                     </theme-content-list-flow>
-                    <theme-gam-define-display-ad
-                      name="top-stories"
-                      position="section_page"
-                      aliases=aliases
-                      modifiers=["top-stories"]
-                    />
+                    <global-video-player />
                 </div>
               </div>
             </@section>
@@ -198,9 +192,6 @@ $ const promise = websiteSectionContentLoader(apollo, {
       <@foot>
         <marko-web-resolve-page|{ data: section }| node=pageNode>
           <global-fixed-ad-bottom aliases=hierarchyAliases(section) />
-          <if(alias !== 'home')>
-            <global-video-player />
-          </if>
         </marko-web-resolve-page>
       </@foot>
     </theme-website-section-page>
