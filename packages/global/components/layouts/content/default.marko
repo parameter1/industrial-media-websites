@@ -149,18 +149,6 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
                   </marko-web-block>
                 </for>
 
-                $ const bodyModifiers = isOnTheMoveSection ? ['on-the-move'] : []
-                <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } modifiers=bodyModifiers />
-                <if(isOnTheMoveSection)>
-                  <marko-web-block>
-                    <div class="social-sharing" align="center">
-                      <a class="btn btn-primary" target="_blank" href="https://responses.diverseeducation.com/OnTheMove2021">
-                        Submit Your Professional Appointment
-                      </a>
-                    </div>
-                  </marko-web-block>
-                </if>
-
                 <!-- needs input -->
                 <if(input.afterBody)>
                   <${input.afterBody}
@@ -219,7 +207,10 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
         </div>
       </div>
       <div class="col-lg-4 page-rail">
-        <div class="ad-container ad-container--sticky-top ad-container--margin-auto-x" style="height: 250px; background-color:#efefef; padding: 1rem;">Video Player</div>
+        <!-- Only Fire when brightcove player is not included via content.embedCode -->
+        <if(!content.embedCode)>
+          <global-video-player />
+        </if>
       </div>
     </div>
   </@section>
