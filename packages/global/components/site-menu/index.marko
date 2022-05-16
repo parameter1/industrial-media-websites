@@ -18,21 +18,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
   <!-- desktop -->
   <marko-web-element block-name=blockName name="contents-desktop">
     <div class="row">
-      <div class="col-6 col-md-4 col-lg-3">
-        <!-- social -->
-        <social-icons block-name=blockName title="Follow Us" />
-        <!-- about section -->
-        <default-theme-site-menu-section
-          tag="nav"
-          block-name=blockName
-          label="About"
-          items=site.getAsArray("navigation.desktopMenu.about")
-          modifiers=["secondary"]
-          reg-enabled=regEnabled
-          has-user=hasUser
-        />
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4">
         <!-- sections -->
         <default-theme-site-menu-section
           tag="nav"
@@ -44,7 +30,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
           has-user=hasUser
         />
       </div>
-      <div class="d-none d-md-flex col-md-4 col-lg-3">
+      <div class="d-none d-md-flex col-md-4">
         <!-- sections -->
         <default-theme-site-menu-section
           tag="nav"
@@ -56,24 +42,52 @@ $ const hasUser = defaultValue(input.hasUser, false);
           has-user=hasUser
         />
       </div>
-      <div class="d-none d-md-flex col-lg-3">
-        <!-- sections -->
-        <default-theme-site-menu-section
-          tag="nav"
+      <div class="d-none d-md-flex col-md-4">
+        <marko-web-element
           block-name=blockName
-          label=(site.get("navigation.toggleMenu.rightColumn.label") || "More")
-          items=site.getAsArray("navigation.toggleMenu.rightColumn.items")
+          name="section"
+          tag="nav"
           modifiers=["primary"]
-          reg-enabled=regEnabled
-          has-user=hasUser
-        />
+        >
+          <!-- Right Column Header -->
+          <default-theme-site-menu-header block-name=blockName>
+            ${ site.get("navigation.toggleMenu.rightColumn.label") || "User Tools" }
+          </default-theme-site-menu-header>
+          <!-- Identity X navigation Items -->
+          <!-- Identity X navigation Items -->
+          <default-theme-site-menu-section
+            tag="nav"
+            block-name=blockName
+            items=site.getAsArray("navigation.user.items")
+            modifiers=["user"]
+            reg-enabled=regEnabled
+            has-user=hasUser
+          />
+          <!-- Social Follow Label & items -->
+          <social-icons block-name=blockName title="Follow Us" />
+          <!-- Toggle Menu Right Column Items -->
+          <default-theme-site-navbar-items
+            block-name=blockName
+            items=site.getAsArray("navigation.toggleMenu.rightColumn.items")
+            reg-enabled=regEnabled
+            has-user=hasUser
+          />
+        </marko-web-element>
       </div>
     </div>
   </marko-web-element>
   <!-- mobile -->
   <marko-web-element block-name=blockName name="contents-mobile">
-    <!-- search box -->
-    <search block-name=blockName />
+    <!-- primary section -->
+    <!-- Identity X navigation Items -->
+    <default-theme-site-menu-section
+      tag="nav"
+      block-name=blockName
+      items=site.getAsArray("navigation.user.items")
+      modifiers=["user"]
+      reg-enabled=regEnabled
+      has-user=hasUser
+    />
     <!-- social -->
     <social-icons block-name=blockName />
     <!-- primary section -->
