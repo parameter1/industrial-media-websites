@@ -117,7 +117,7 @@ export default {
   z-index: 1;
 }
 
-#brightcove-floating-player .btn {
+#brightcove-floating-player >>> .btn {
   position: absolute;
   right: 0;
   top: 0;
@@ -126,7 +126,7 @@ export default {
   width: 32px;
 }
 
-#brightcove-floating-player .vjs-control-bar div[class*="vjs-overlay-background"] {
+#brightcove-floating-player >>> .video-js .vjs-overlay {
   background-color: transparent;
 }
 

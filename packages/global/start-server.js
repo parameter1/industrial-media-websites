@@ -20,6 +20,7 @@ const idxRouteTemplates = require('./templates/user');
 const oembedHandler = require('./oembed-handler');
 const omeda = require('./config/omeda');
 const recaptcha = require('./config/recaptcha');
+const idxNavItems = require('./config/identity-x-nav');
 
 const routes = siteRoutes => (app, siteConfig) => {
   // load contact us route
@@ -80,6 +81,7 @@ module.exports = (options = {}) => {
         idxConfig,
         idxRouteTemplates,
       });
+      idxNavItems({ site: app.locals.site });
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
