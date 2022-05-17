@@ -9,32 +9,3 @@
     }
   }
 }
-
-#brightcove-floating-player div.vjs-control-bar div[class*="vjs-overlay-background"] {
-  background-color: transparent;
-}
-
-// @TODO: Move to Brightcove code that is being included instead of overriding here
-.page-rail #brightcove-floating-player,
-.page-rail #brightcove-floating-player[data-v-71c5ea8b] {
-  position: sticky;
-
-  top: 150px;
-  right: initial;
-  bottom: initial;
-
-  min-width: initial;
-  max-width: 340px;
-
-  margin-right: auto;
-  margin-left: auto;
-
-  @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
-    top: 120px;
-  }
-
-  @include media-breakpoint-down(md) {
-    position: relative;
-    top: initial;
-  }
-}

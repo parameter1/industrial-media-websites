@@ -126,6 +126,37 @@ export default {
   width: 32px;
 }
 
+#brightcove-floating-player .vjs-control-bar div[class*="vjs-overlay-background"] {
+  background-color: transparent;
+}
+
+.page-rail #brightcove-floating-player {
+  position: sticky;
+
+  top: 150px;
+  right: initial;
+  bottom: initial;
+
+  min-width: initial;
+  max-width: 340px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 1100px) {
+  .page-rail #brightcove-floating-player {
+    top: 120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .page-rail #brightcove-floating-player {
+    position: relative;
+    top: initial;
+  }
+}
+
 @keyframes slide-top {
   0% {
     transform: translateY(0);
