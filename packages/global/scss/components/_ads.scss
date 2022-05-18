@@ -36,3 +36,46 @@ body .document-container > .page:first-of-type {
 body .document-container > .reveal-ad + .page {
   margin-top: 0;
 }
+
+
+.ad-container {
+  &--inline-content#{&}--template-inline-content-desktop,
+  &--inline-content#{&}--template-inline-content-mobile {
+    min-height: 0;
+    margin-bottom: 0;
+    > *:first-child {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  &--inline-content#{&}--template-inline-content-desktop {
+    display: none;
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    > *:first-child {
+      border-top: 3px solid #f0f1f2;
+      border-bottom: 3px solid #f0f1f2;
+    }
+    @media (min-width: 780px) {
+      display: block;
+    }
+  }
+  &--with-label {
+    > *:first-child {
+      &::before {
+        padding-bottom: 1rem;
+        font-size: 12px;
+        color: $gray-500;
+        text-transform: none;
+        content: "Advertisement";
+      }
+    }
+  }
+  &--in-card {
+    background-color: #f0f1f2;
+    >div {
+      margin-top: 1rem;
+    }
+  }
+}
