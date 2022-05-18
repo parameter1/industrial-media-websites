@@ -16,8 +16,8 @@ config
     // 300x250 that loads in the tops stories block on section & homepages
     { name: 'top-stories', templateName: 'RAIL', path: 'default_rail1' },
     { name: 'load-more', templateName: 'RAIL', path: 'default_rail1' },
-    { name: 'inline-content-mobile', templateName: 'RAIL', path: 'default_rail1' },
-    { name: 'inline-content-desktop', templateName: 'RAIL', path: 'default_rail1' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'default_rail1' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'default_rail1' },
     { name: 'reskin', path: 'default_reskin' },
   ]);
 
