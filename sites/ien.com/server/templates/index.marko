@@ -1,4 +1,7 @@
+import { get } from "@parameter1/base-cms-object-path";
 import queryFragment from "@industrial-media/package-shared/graphql/fragments/content-latest";
+
+$ const { req } = out.global;
 
 $ const {
   id,
@@ -14,6 +17,21 @@ $ const {
   page-node=pageNode
   right-rail-header="Popular Video"
 >
+  <@head>
+    <if(!get(req, "cookies.oly_enc_id"))>
+      <script id="script">
+        var s = document.createElement("script")
+          s.src = "https://notix.io/ent/current/enot.min.js"
+          s.onload = function (sdk) {
+            sdk.startInstall({
+              appId: "1004c90b9625597d3f00615ee4ebe9a"
+              loadSettings: true
+            })
+          }
+        document.head.append(s)
+      </script>
+    </if>
+  </@head>
   <@loader>
     <@standard-params include-content-types=["Video"] />
   </@loader>
