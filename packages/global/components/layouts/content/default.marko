@@ -26,7 +26,7 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
 >
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
     $ const { primarySection } = content;
-    <div class="content-page-header">
+    <div class="content-page-header" role="region" aria-label="Content Information">
       <theme-content-page-breadcrumbs section=primarySection />
       <marko-web-content-name tag="h1" block-name=blockName obj=content />
 
@@ -66,7 +66,7 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
   <@section|{ aliases, content, authors }| modifiers=["content-body"]>
     <div class="row">
       <div class="col-lg-8">
-        <div class="content-page-body">
+        <div class="content-page-body" role="region" aria-label="Content Body">
           <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
               <global-content-embed-code block-name=blockName content=content />
