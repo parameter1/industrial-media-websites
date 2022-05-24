@@ -18,6 +18,7 @@ module.exports = {
   secondary: {
     items: [
       { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cen_signup', label: 'Newsletter Signup', target: '_blank' },
+      { href: '/podcast', label: 'Podcast' },
       { href: '/video', label: 'Video' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
@@ -56,6 +57,7 @@ module.exports = {
     {
       label: 'Resources',
       items: [
+        { href: '/podcast', label: 'Podcast' },
         { href: '/video', label: 'Video' },
         { href: '/contact-us', label: 'Contact Us' },
       ],
