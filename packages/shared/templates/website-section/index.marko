@@ -5,9 +5,12 @@ $ const {
   pageNode,
 } = data;
 
+$ const rightRailHeader = ["podcast"].includes(alias) ? "Recent Episodes" : "Top Headlines";
+
 <shared-website-section-page-default-layout
   id=id
   alias=alias
   name=name
   page-node=pageNode
+  right-rail-header=rightRailHeader
 />
