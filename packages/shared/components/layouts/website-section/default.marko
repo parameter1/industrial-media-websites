@@ -95,7 +95,12 @@ $ const promise = websiteSectionContentLoader(apollo, {
                     nodes=standard.nodes
                     inner-justified=false
                   >
-                    <@header>${rightRailHeader}</@header>
+                    <if(alias === "podcast")>
+                      <@header>Recent Episodes</@header>
+                    </if>
+                    <else>
+                      <@header>${rightRailHeader}</@header>
+                    </else>
                     <@node>
                       <@title modifiers=["small"] />
                     </@node>
