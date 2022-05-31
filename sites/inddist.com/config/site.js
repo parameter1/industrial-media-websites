@@ -49,6 +49,15 @@ module.exports = {
     description: '',
   },
   contactUs: {
+    notificationDefaults: {
+      to: 'david@ien.com',
+      branding: {
+        logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60',
+      },
+      support: {
+        email: 'reply@ien.com',
+      },
+    },
     to: 'david@ien.com',
     branding: {
       logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60',

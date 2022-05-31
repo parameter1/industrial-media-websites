@@ -50,6 +50,15 @@ module.exports = {
     description: '',
   },
   contactUs: {
+    notificationDefaults: {
+      to: 'david@ien.com',
+      branding: {
+        logo: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60',
+      },
+      support: {
+        email: 'reply@ien.com',
+      },
+    },
     to: 'david@ien.com',
     branding: {
       logo: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60',

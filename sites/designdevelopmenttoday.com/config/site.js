@@ -50,6 +50,15 @@ module.exports = {
     description: '',
   },
   contactUs: {
+    notificationDefaults: {
+      to: 'david@ien.com',
+      branding: {
+        logo: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60',
+      },
+      support: {
+        email: 'reply@ien.com',
+      },
+    },
     to: 'david@ien.com',
     branding: {
       logo: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60',
