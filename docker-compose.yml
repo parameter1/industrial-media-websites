@@ -15,9 +15,6 @@ x-env-defaults: &env
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   NODE_ENV: development
-  # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
-  RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY-(unset)}
-  RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY-(unset)}
   # @todo the sendgrid values should be removed once the @parameter1/base-cms-mailer service is created.
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: developer@endeavorb2b.com
@@ -26,7 +23,6 @@ x-env-defaults: &env
   IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
   OMEDA_APP_ID: ${OMEDA_APP_ID-(unset)}
   OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
-
   RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-(unset)}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-(unset)}
 

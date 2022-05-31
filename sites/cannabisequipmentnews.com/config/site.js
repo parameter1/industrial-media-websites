@@ -50,6 +50,15 @@ module.exports = {
     description: '',
   },
   contactUs: {
+    notificationDefaults: {
+      to: 'david@cannabisequipmentnews.com',
+      branding: {
+        logo: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=60',
+      },
+      support: {
+        email: 'reply@cannabisequipmentnews.com',
+      },
+    },
     to: 'david@cannabisequipmentnews.com',
     branding: {
       logo: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=60',

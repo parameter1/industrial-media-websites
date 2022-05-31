@@ -49,6 +49,15 @@ module.exports = {
     description: '',
   },
   contactUs: {
+    notificationDefaults: {
+      to: 'david@ien.com',
+      branding: {
+        logo: 'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=60',
+      },
+      support: {
+        email: 'reply@ien.com',
+      },
+    },
     to: 'david@ien.com',
     branding: {
       logo: 'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=60',
