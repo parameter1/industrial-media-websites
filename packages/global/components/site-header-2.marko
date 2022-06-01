@@ -21,7 +21,7 @@ $ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-
 >
   <${input.aboveNav} />
 
-  <default-theme-site-navbar modifiers=["top"]>
+  <default-theme-site-navbar modifiers=["top"] attrs={ "aria-label": "Top Navigation" }>
     <if(promos.length)>
       <div class=`${headerColClass} site-navbar__left`>
         <div class="row">
@@ -89,7 +89,7 @@ $ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-
     </div>
   </default-theme-site-navbar>
 
-  <default-theme-site-navbar modifiers=["primary"]>
+  <default-theme-site-navbar modifiers=["primary"] attrs={ "aria-label": "Primary Navigation" }>
     <default-theme-site-navbar-items
       items=navigation.primary
       modifiers=["primary"]
