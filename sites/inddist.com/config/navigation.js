@@ -5,7 +5,7 @@ const socialLinks = require('./social-links');
 module.exports = {
   primary: {
     items: sortNavItems([
-      { href: '/associations', label: 'Associations' },
+      { href: '/new-products', label: 'New Products' },
       { href: '/big-50', label: 'Big 50' },
       { href: '/business-technology', label: 'Business Technology' },
       { href: '/earnings', label: 'Earnings' },
