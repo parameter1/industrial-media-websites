@@ -217,13 +217,13 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         </div>
       </div>
       <div class="col-lg-4 page-rail">
-        <global-top-stories-block
+        <global-latest-in-list-block
           title=`Top Stories in ${primarySection.name}`
           alias=primarySection.alias
           with-section=true
         >
         <@native-x indexes=[3] name="default" aliases=aliases />
-        </global-top-stories-block>
+        </global-latest-in-list-block>
         <!-- Only Fire when brightcove player is not included via content.embedCode -->
         <if(!content.embedCode)>
           <global-video-player />

@@ -1,8 +1,8 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/content-latest";
 
-$ const modifiers = ["top-stories"];
-$ const title = defaultValue(input.title, 'Top Stories');
+$ const modifiers = ["latest-in"];
+$ const title = defaultValue(input.title, 'Latest in');
 $ const withSection = defaultValue(input.withSection, false);
 
 <if(input.nodes && input.nodes.length)>

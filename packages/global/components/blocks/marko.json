@@ -2,8 +2,8 @@
   "taglib-imports": [
     "./load-more/marko.json"
   ],
-  "<global-top-stories-block>": {
-    "template": "./top-stories.marko",
+  "<global-latest-in-list-block>": {
+    "template": "./latest-in-list.marko",
     "@query-name": "string",
     "<query-params>": {},
     "<native-x>": {
