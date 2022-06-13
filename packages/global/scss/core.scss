@@ -209,6 +209,38 @@ label {
   }
 }
 
+.node-list {
+  $self: &;
+  &--top-stories {
+    #{ $self }__header {
+      @include skin-typography($style: "header-2");
+      margin-bottom: 16px;
+      padding-top: 24px;
+      padding-left: 0;
+      &:before {
+        background: #333;
+        content: "";
+        height: 4px;
+        left: 0;
+        position: absolute;
+        top: 12px;
+        width: 40px;
+      }
+    }
+  }
+}
+
+.page--content {
+  .node-list--top-stories {
+    .node-list__header {
+      padding-top: map-get($spacers, 2);
+      &:before {
+        top: 0;
+      }
+    }
+  }
+}
+
 // ensure all anvato embeds are treated like videos
 [data-oembed-provider="Anvato"] {
   @extend .embed-responsive;

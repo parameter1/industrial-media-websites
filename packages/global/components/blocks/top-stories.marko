@@ -1,0 +1,55 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/content-latest";
+
+$ const modifiers = ["top-stories"];
+$ const title = defaultValue(input.title, 'Top Stories');
+$ const withSection = defaultValue(input.withSection, false);
+
+<if(input.nodes && input.nodes.length)>
+  <theme-content-list-flow
+    nodes=input.nodes
+    inner-justified=false
+    native-x=input.nativeX
+    modifiers=modifiers
+  >
+    <@header>${title}</@header>
+    <@node with-teaser=false image-position="right" with-section=withSection >
+      <@image lazyload=true width=100 height=100 />
+    </@node>
+  </theme-content-list-flow>
+</if>
+<else>
+  $ const excludeContentTypes = [
+    "Contact",
+    "Company",
+    "Document",
+    "TextAd",
+  ];
+
+  $ const queryName = defaultValue(input.queryName, "website-scheduled-content");
+  $ const queryParams = defaultValue(
+    input.queryParams,
+    {
+      sectionAlias: input.alias,
+      queryFragment,
+      excludeContentTypes,
+      limit: 4
+    }
+  );
+  <marko-web-query|{ nodes }|
+    name=queryName
+    params=queryParams
+  >
+    <theme-content-list-flow
+    nodes=nodes
+    inner-justified=false
+    native-x=input.nativeX
+    modifiers=modifiers
+  >
+    <@header>${title}</@header>
+    <@node with-teaser=false image-position="right" with-section=withSection >
+      <@image lazyload=true width=100 height=100 />
+    </@node>
+  </theme-content-list-flow>
+  </marko-web-query>
+</else>
