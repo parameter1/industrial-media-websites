@@ -4,7 +4,15 @@ import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/uti
 
 
 $ const { site } = out.global;
-$ const { id, type, primarySection, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
+$ const {
+  id,
+  type,
+  pageNode,
+  showReadNextBlock,
+  showBottomAdBlock,
+  showTopStoryBlock,
+  ...rest
+} = input;
 $ const sections = getAsArray(input, "sections");
 $ const belowContentSections = getAsArray(input, "belowContentSections");
 
@@ -15,8 +23,6 @@ $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 $ const displayComments = ["contact"].includes(type) ? false : true;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
-$ const excludeFromSidebarsLabel = ["Scholar Profile"];
-$ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
 
 <global-content-wrapper-layout
   id=id
@@ -64,6 +70,7 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
   </@section>
 
   <@section|{ aliases, content, authors }| modifiers=["content-body"]>
+    $ const { primarySection } = content;
     <div class="row">
       <div class="col-lg-8">
         <div class="content-page-body" role="region" aria-label="Content Body">
@@ -87,6 +94,7 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
               <theme-primary-image-block
                 obj=content.primaryImage
                 force-display=forceDisplay
+                fluid-width=700
               />
             </else-if>
 
@@ -160,7 +168,7 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
                   />
                 </if>
 
-                $ const sidebars = getAsArray(content, "sidebars").filter((sidebar) => !excludeFromSidebarsLabel.includes(sidebar.label)).map((sidebar) => sidebar.body);
+                $ const sidebars = getAsArray(content, "sidebars");
                 <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
               </else>
             </marko-web-identity-x-access>
@@ -209,6 +217,15 @@ $ const isOnTheMoveSection = new Set([83113]).has(primarySection.id);
         </div>
       </div>
       <div class="col-lg-4 page-rail">
+        $ const excludeContentTypes = ["Contact", "Company", "Document", "TextAd", "Promotion"];
+        <theme-latest-content-list-block
+          title=`Latest in ${primarySection.name}`
+          alias=primarySection.alias
+          query-params={ excludeContentTypes }
+          with-section=true
+        >
+        <@native-x indexes=[3] name="default" aliases=aliases />
+        </theme-latest-content-list-block>
         <!-- Only Fire when brightcove player is not included via content.embedCode -->
         <if(!content.embedCode)>
           <global-video-player />

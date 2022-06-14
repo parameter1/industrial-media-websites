@@ -118,19 +118,8 @@ $ const promise = websiteSectionContentLoader(apollo, {
                   </if>
                 </div>
                 <div class="col-lg-4 page-rail">
-                  <marko-web-element block-name="top-stories" name="header">
-                    ${i18n(rightRailHeader)}
-                  </marko-web-element>
-                  <theme-content-list-flow
-                      nodes=standard.nodes
-                      inner-justified=false
-                      modifiers=["top-story"]
-                    >
-                      <@node modifiers=["top-story-list"] with-teaser=false image-position="right" with-section=false >
-                        <@image lazyload=true width=100 height=100 />
-                      </@node>
-                    </theme-content-list-flow>
-                    <global-video-player />
+                  <theme-latest-content-list-block nodes=standard.nodes title=rightRailHeader />
+                  <global-video-player />
                 </div>
               </div>
             </@section>
