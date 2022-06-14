@@ -2,8 +2,8 @@
   "taglib-imports": [
     "./load-more/marko.json"
   ],
-  "<global-latest-in-list-block>": {
-    "template": "./latest-in-list.marko",
+  "<theme-latest-content-list-block>": {
+    "template": "./latest-content-list.marko",
     "@query-name": "string",
     "<query-params>": {},
     "<native-x>": {

@@ -15,6 +15,8 @@ $typography: (
 @import "../../node_modules/@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
 @import "../../node_modules/@parameter1/base-cms-marko-web-gam/scss/fixed-ad-bottom";
 
+@import "./components/blocks/latest-content-list";
+
 // page wrapper
 .page-wrapper {
   // $marko-web-document-container-gutter: 20px; couldn't get to work
@@ -190,7 +192,9 @@ label {
 
 // page & block title targeting Loadmore & Top Stories & Section Card
 .page--load-more .node-list,
+.latest-content-list,
 .top-stories,
+.realted-stories,
 .section-cards {
   &__header {
     @include skin-typography($style: "header-2");
@@ -209,29 +213,8 @@ label {
   }
 }
 
-.node-list {
-  $self: &;
-  &--top-stories {
-    #{ $self }__header {
-      @include skin-typography($style: "header-2");
-      margin-bottom: 16px;
-      padding-top: 24px;
-      padding-left: 0;
-      &:before {
-        background: #333;
-        content: "";
-        height: 4px;
-        left: 0;
-        position: absolute;
-        top: 12px;
-        width: 40px;
-      }
-    }
-  }
-}
-
 .page--content {
-  .node-list--top-stories {
+  .node-list--latest-content-list {
     .node-list__header {
       padding-top: map-get($spacers, 2);
       &:before {
