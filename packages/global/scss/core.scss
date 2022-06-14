@@ -16,8 +16,6 @@ $typography: (
 @import "../../node_modules/@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
 @import "../../node_modules/@parameter1/base-cms-marko-web-gam/scss/fixed-ad-bottom";
 
-@import "./components/blocks/latest-content-list";
-
 // page wrapper
 .page-wrapper {
   // $marko-web-document-container-gutter: 20px; couldn't get to work
