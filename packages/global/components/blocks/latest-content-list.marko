@@ -19,23 +19,13 @@ $ const withSection = defaultValue(input.withSection, false);
   </theme-content-list-flow>
 </if>
 <else>
-  $ const excludeContentTypes = [
-    "Contact",
-    "Company",
-    "Document",
-    "TextAd",
-  ];
-
   $ const queryName = defaultValue(input.queryName, "website-scheduled-content");
-  $ const queryParams = defaultValue(
-    input.queryParams,
-    {
-      sectionAlias: input.alias,
-      queryFragment,
-      excludeContentTypes,
-      limit: 4
-    }
-  );
+  $ const queryParams = {
+    sectionAlias: input.alias,
+    limit: 4,
+    queryFragment,
+    ...input.queryParams,
+  };
   <marko-web-query|{ nodes }|
     name=queryName
     params=queryParams
