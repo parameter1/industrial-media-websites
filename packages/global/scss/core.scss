@@ -196,6 +196,7 @@ label {
 .related-stories,
 .section-cards {
   &__header {
+    position: relative;
     @include skin-typography($style: "header-2");
     margin-bottom: 16px;
     padding-top: 24px;
