@@ -7,6 +7,7 @@
     "@query-name": "string",
     "<query-params>": {},
     "<native-x>": {
+      "@index": "number",
       "@indexes": "array",
       "@name": "string",
       "@aliases": "array"
