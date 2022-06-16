@@ -240,6 +240,24 @@ services:
       - "9717:80"
       - "19717:19717"
 
+  ddt-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.designdevelopmenttoday.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-ddt-global.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9017
+      LIVERELOAD_PORT: 19017
+      TENANT_KEY: indm_multi
+      SITE_ID: 5af4890775a254af9e0041a7
+    hostname: www-indm-ddt-global.dev.parameter1.com
+    ports:
+      - "9017:80"
+      - "19017:19017"
+
   mdd:
     <<: *node
     <<: *site-cmd
