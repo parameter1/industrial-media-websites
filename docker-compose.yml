@@ -114,6 +114,24 @@ services:
       - "9712:80"
       - "19712:19712"
 
+  fm-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.foodmanufacturing.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-fm-global.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9012
+      LIVERELOAD_PORT: 19012
+      TENANT_KEY: indm_multi
+      SITE_ID: 5d76bfdd665fc42e008b456b
+    hostname: www-indm-fm-global.dev.parameter1.com
+    ports:
+      - "9012:80"
+      - "19012:19012"
+
   impo:
     <<: *node
     <<: *site-cmd
