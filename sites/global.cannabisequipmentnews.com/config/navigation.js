@@ -5,10 +5,10 @@ const topics = [
   { href: '/distribution', label: 'Distribution' },
   { href: '/extraction', label: 'Extraction' },
   { href: '/manufacturing', label: 'Manufacturing' },
-  { href: '/packaging', label: 'Packaging' },
   { href: '/news', label: 'News' },
-  { href: '/processing', label: 'Processing' },
   { href: '/new-products', label: 'New Products' },
+  { href: '/packaging', label: 'Packaging' },
+  { href: '/processing', label: 'Processing' },
 ];
 
 const secondary = [

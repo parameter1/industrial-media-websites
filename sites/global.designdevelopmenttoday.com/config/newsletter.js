@@ -1,3 +1,5 @@
+const privacyPolicy = require('./privacy-policy');
+
 const baseConfig = {
   action: 'https://athleticbusiness.dragonforms.com/loading.do',
   hiddenInputs: [
@@ -8,10 +10,7 @@ const baseConfig = {
 const defaults = {
   name: 'NOT_SET',
   description: 'NOT_SET',
-  privacyPolicy: {
-    href: '/termsandprivacy',
-    label: 'Terms of Use and Privacy Policy',
-  },
+  privacyPolicy,
   defaultNewsletter: {
     deploymentTypeId: 0,
     name: 'NOT_SET',

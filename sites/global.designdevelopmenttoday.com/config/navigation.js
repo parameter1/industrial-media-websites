@@ -1,13 +1,13 @@
 const topics = [
   { href: '/industries/aerospace', label: 'Aerospace' },
   { href: '/industries/automotive', label: 'Automotive' },
+  { href: '/exclusives', label: 'Exclusives' },
   { href: '/industries/manufacturing', label: 'Manufacturing' },
   { href: '/industries/medical', label: 'Medical' },
   { href: '/industries/military', label: 'Military' },
   { href: '/news', label: 'News' },
-  { href: '/exclusives', label: 'Exclusives' },
-  { href: '/video', label: 'Video' },
   { href: '/new-products', label: 'New Products' },
+  { href: '/video', label: 'Video' },
 ];
 
 const secondary = [
