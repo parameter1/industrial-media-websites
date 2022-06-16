@@ -204,6 +204,24 @@ services:
       - "9716:80"
       - "19716:19716"
 
+  cen-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.cannabisequipmentnews.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-cen-global.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9016
+      LIVERELOAD_PORT: 19016
+      TENANT_KEY: indm_multi
+      SITE_ID: 5bc762d5adff35d154716639
+    hostname: www-indm-cen-global.dev.parameter1.com
+    ports:
+      - "9016:80"
+      - "19016:19016"
+
   ddt:
     <<: *node
     <<: *site-cmd

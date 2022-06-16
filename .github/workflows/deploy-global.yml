@@ -36,6 +36,7 @@ jobs:
         namespace:
           - staging-websites-tauron
         site:
+          - global.cannabisequipmentnews.com
           - global.ien.com
     steps:
       - uses: actions/checkout@v2
