@@ -150,6 +150,24 @@ services:
       - "9713:80"
       - "19713:19713"
 
+  impo-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.impomag.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-impo-global.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9013
+      LIVERELOAD_PORT: 19013
+      TENANT_KEY: indm_multi
+      SITE_ID: 5d76bfe40827e83a008b456f
+    hostname: www-indm-impo-global.dev.parameter1.com
+    ports:
+      - "9013:80"
+      - "19013:19013"
+
   mbt:
     <<: *node
     <<: *site-cmd
