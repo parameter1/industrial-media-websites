@@ -1,9 +1,9 @@
 const privacyPolicy = require('./privacy-policy');
 
 const baseConfig = {
-  action: 'https://athleticbusiness.dragonforms.com/loading.do',
+  action: 'https://industrialmedia.dragonforms.com/loading.do',
   hiddenInputs: [
-    { name: 'omedasite', value: 'wfb_pref' },
+    { name: 'omedasite', value: 'fm_signup' },
   ],
 };
 
@@ -37,23 +37,23 @@ module.exports = {
   // uses inline omeda form
   signupBanner: {
     ...defaults,
-    imagePath: 'static/newsletter-pushdown/wfb-full.png',
+    imagePath: 'files/base/p1/sandbox/image/static/newsletter-phone-full.png',
   },
   pushdown: {
     ...defaults,
-    imagePath: 'static/newsletter-pushdown/wfb-half.png',
+    imagePath: 'files/base/p1/sandbox/image/static/newsletter-phone-half.png',
     description: 'NOT_SET',
   },
 
   // links off to seperate omeda dragonform
   signupBannerLarge: {
     ...baseConfig,
-    name: 'Newsletter for Wood Floor Professionals',
-    description: 'Get industry news, insights, and new product information delivered straight to your inbox.',
+    name: '{NOT_SET}',
+    description: '{NOT_SET}',
   },
   signupFooter: {
     ...baseConfig,
-    name: 'Newsletter for Wood Floor Professionals',
-    description: 'Get industry news, insights, and new product information delivered straight to your inbox.',
+    name: '{NOT_SET}',
+    description: '{NOT_SET}',
   },
 };

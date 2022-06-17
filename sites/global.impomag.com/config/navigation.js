@@ -9,7 +9,6 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=impo_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: '/video', label: 'Video' },
 ];
 
@@ -20,7 +19,9 @@ const resources = [
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
 ];
 
-const utilities = [];
+const utilities = [
+  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=impo_signup', label: 'Newsletter Signup', target: '_blank' },
+];
 
 const mobileMenu = {
   primary: [

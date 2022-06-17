@@ -9,7 +9,6 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cenmeddesdev_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: '/contact-us', label: 'Contact Us' },
   { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
 ];
@@ -20,7 +19,9 @@ const resources = [
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
 ];
 
-const utilities = [];
+const utilities = [
+  { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cenmeddesdev_signup', label: 'Newsletter Signup', target: '_blank' },
+];
 
 const mobileMenu = {
   primary: [

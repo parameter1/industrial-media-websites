@@ -18,7 +18,6 @@ const secondary = [
 ];
 
 const resources = [
-  { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cen_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: '/podcast', label: 'Podcast' },
   { href: '/video', label: 'Video' },
   { href: '/contact-us', label: 'Contact Us' },
@@ -26,6 +25,7 @@ const resources = [
 ];
 
 const utilities = [
+  { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cen_signup', label: 'Newsletter Signup', target: '_blank' },
   // { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ien_signup', label: 'Newsletter Signup', target: '_blank' },
   // { href: 'https://tcc.dragonforms.com/loading.do?omedasite=TCC1_IEnew', label: 'Subscribe to Magazine', target: '_blank' },
 ];
