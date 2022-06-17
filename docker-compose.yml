@@ -364,4 +364,22 @@ services:
     hostname: www-indm-mdd.dev.parameter1.com
     ports:
       - "9718:80"
-      - "19719:19718"
+      - "19718:19718"
+
+  mdd-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.medicaldesigndevelopment.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-mdd-global.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9018
+      LIVERELOAD_PORT: 19018
+      TENANT_KEY: indm_multi
+      SITE_ID: 6220f722417c94af0e8b45ca
+    hostname: www-indm-mdd-global.dev.parameter1.com
+    ports:
+      - "9018:80"
+      - "19018:19018"
