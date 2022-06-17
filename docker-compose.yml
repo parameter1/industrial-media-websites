@@ -222,6 +222,24 @@ services:
       - "9714:80"
       - "19714:19714"
 
+  mbt-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.mbtmag.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-mbt-global.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9014
+      LIVERELOAD_PORT: 19014
+      TENANT_KEY: indm_multi
+      SITE_ID: 5d76c0287c94042e008b456b
+    hostname: www-indm-mbt-global.dev.parameter1.com
+    ports:
+      - "9014:80"
+      - "19014:19014"
+
   ien:
     <<: *node
     <<: *site-cmd
