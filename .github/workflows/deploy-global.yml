@@ -37,7 +37,14 @@ jobs:
           - staging-websites-tauron
         site:
           - global.cannabisequipmentnews.com
+          - global.designdevelopmenttoday.com
+          - global.foodmanufacturing.com
           - global.ien.com
+          - global.impomag.com
+          - global.inddist.com
+          - global.manufacturing.net
+          - global.mbtmag.com
+          - global.medicaldesigndevelopment.com
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Kubernetes
