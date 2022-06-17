@@ -78,6 +78,24 @@ services:
       - "9710:80"
       - "19710:19710"
 
+  id-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.inddist.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      HOST: www-indm-id-global.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9010
+      LIVERELOAD_PORT: 19010
+      TENANT_KEY: indm_multi
+      SITE_ID: 5d76bf9eed61522e008b456b
+    hostname: www-indm-id-global.dev.parameter1.com
+    ports:
+      - "9010:80"
+      - "19010:19010"
+
   mnet:
     <<: *node
     <<: *site-cmd
