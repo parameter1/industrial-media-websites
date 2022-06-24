@@ -13,6 +13,7 @@ config
   .setAliasAdUnits('default', [
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'default_lb1' },
     { name: 'lb-sticky-bottom', templateName: 'LB-STICKY-BOTTOM', path: 'default_lb1' },
+    { name: 'rotation', templateName: 'LEADERBOARD', path: 'default_lb1' },
     // 300x250 that loads in the tops stories block on section & homepages
     { name: 'top-stories', templateName: 'RAIL', path: 'default_rail1' },
     { name: 'load-more', templateName: 'RAIL', path: 'default_rail1' },
