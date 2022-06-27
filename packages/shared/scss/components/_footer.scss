@@ -16,5 +16,12 @@
         margin-bottom: map-get($spacers, 3);
       }
     }
+    &--primary {
+      .site-footer__items {
+        @include media-breakpoint-down(md) {
+          flex-wrap: wrap;
+        }
+      }
+    }
   }
 }
