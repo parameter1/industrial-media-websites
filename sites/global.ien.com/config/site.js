@@ -5,6 +5,7 @@ const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
 const identityX = require('./identity-x');
+const magazine = require('./magazine');
 const newsletter = require('./newsletter');
 
 const omedaBrandKey = 'imcd';
@@ -17,6 +18,7 @@ module.exports = {
   idxNavItems: {
     enable: true,
   },
+  magazine,
   nativeX,
   newsletter,
   socialMediaLinks,
