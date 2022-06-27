@@ -1,5 +1,6 @@
 const { brandLogos } = require('@industrial-media/package-global/config/footer-brand-logos');
 
+const magazine = require('./magazine');
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
@@ -10,6 +11,7 @@ const newsletter = require('./newsletter');
 const omedaBrandKey = 'imcd';
 
 module.exports = {
+  magazine,
   navigation,
   gam,
   omedaBrandKey,
