@@ -1,12 +1,13 @@
 const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
+const magazine = require('@parameter1/package-theme-monorail-magazine/routes');
+const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
 const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
-const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
+
 
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
 // const identityX = require('./identity-x');
-const magazine = require('../components/magazine/routes');
 const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
