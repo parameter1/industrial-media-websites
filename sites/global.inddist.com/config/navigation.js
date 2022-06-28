@@ -1,15 +1,22 @@
-const topics = [
-  { href: '/inventory-management', label: 'Inventory Management' },
-  { href: '/maintenance', label: 'Maintenance' },
-  { href: '/material-handling', label: 'Material Handling' },
+const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
+
+const topics = sortNavItems([
+  { href: '/new-products', label: 'New Products' },
+  { href: '/business-technology', label: 'Business Technology' },
+  { href: '/earnings', label: 'Earnings' },
+  { href: '/economy', label: 'Economy' },
+  { href: '/mergers-acquisitions', label: 'Mergers & Acquisitions' },
   { href: '/operations', label: 'Operations' },
-  { href: '/products', label: 'Products' },
-  { href: '/safety', label: 'Safety' },
-  { href: '/training-development', label: 'Training & Development' },
-];
+  { href: '/sales', label: 'Sales' },
+  { href: '/staffing-changes', label: 'Staffing Changes' },
+  { href: '/supply-chain', label: 'Supply Chain' },
+  { href: '/workforce-development', label: 'Workforce' },
+]);
 
 const secondary = [
   { href: '/video', label: 'Video' },
+  { href: '/magazine', label: 'Magazine' },
+  { href: '/big-50', label: 'Big 50' },
 ];
 
 const resources = [
