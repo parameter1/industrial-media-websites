@@ -3,8 +3,7 @@
     "./blocks/marko.json",
     "./elements/marko.json",
     "./flows/marko.json",
-    "./layouts/marko.json",
-    "./magazine/marko.json"
+    "./layouts/marko.json"
   ],
   "<global-fixed-ad-bottom>": {
     "template": "./fixed-ad-bottom.marko",
