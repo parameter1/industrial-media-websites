@@ -1,6 +1,8 @@
+const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
+
 const subscribe = require('./subscribe');
 
-const topics = [
+const topics = sortNavItems([
   { href: '/cultivation', label: 'Cultivation' },
   { href: '/distribution', label: 'Distribution' },
   { href: '/extraction', label: 'Extraction' },
@@ -9,7 +11,7 @@ const topics = [
   { href: '/new-products', label: 'New Products' },
   { href: '/packaging', label: 'Packaging' },
   { href: '/processing', label: 'Processing' },
-];
+]);
 
 const secondary = [
   { href: '/video', label: 'Video' },
