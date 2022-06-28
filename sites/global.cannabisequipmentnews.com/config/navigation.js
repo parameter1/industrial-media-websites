@@ -3,34 +3,33 @@ const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-it
 const subscribe = require('./subscribe');
 
 const topics = sortNavItems([
-  { href: '/automation', label: 'Automation' },
-  { href: '/finishing-world', label: 'Finishing World' },
-  { href: '/made-in-america', label: 'Made in America' },
+  { href: '/cultivation', label: 'Cultivation' },
+  { href: '/distribution', label: 'Distribution' },
+  { href: '/extraction', label: 'Extraction' },
+  { href: '/manufacturing', label: 'Manufacturing' },
+  { href: '/news', label: 'News' },
   { href: '/new-products', label: 'New Products' },
-  { href: '/operations', label: 'Operations' },
-  { href: '/product-development', label: 'Product Development' },
-  { href: '/software', label: 'Software' },
-  { href: '/safety', label: 'Safety' },
-  { href: '/supply-chain', label: 'Supply Chain' },
+  { href: '/packaging', label: 'Packaging' },
+  { href: '/processing', label: 'Processing' },
 ]);
 
 const secondary = [
   { href: '/video', label: 'Video' },
   { href: '/podcast', label: 'Podcast' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
-  { href: '/magazine', label: 'Magazine' },
 ];
 
 const resources = [
-  { href: '/video', label: 'Video' },
   { href: '/podcast', label: 'Podcast' },
-  { href: '/magazine', label: 'Magazine' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: '/video', label: 'Video' },
+  { href: '/contact-us', label: 'Contact Us' },
+  { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
 ];
 
 const utilities = [
-  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ien_signup', label: 'Newsletter Signup', target: '_blank' },
-  { href: 'https://tcc.dragonforms.com/loading.do?omedasite=TCC1_IEnew', label: 'Subscribe to Magazine', target: '_blank' },
+  { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cen_signup', label: 'Newsletter Signup', target: '_blank' },
+  // { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ien_signup', label: 'Newsletter Signup', target: '_blank' },
+  // { href: 'https://tcc.dragonforms.com/loading.do?omedasite=TCC1_IEnew', label: 'Subscribe to Magazine', target: '_blank' },
 ];
 
 const mobileMenu = {

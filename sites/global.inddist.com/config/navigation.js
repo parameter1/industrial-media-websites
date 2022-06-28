@@ -1,36 +1,33 @@
 const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
 
-const subscribe = require('./subscribe');
-
 const topics = sortNavItems([
-  { href: '/automation', label: 'Automation' },
-  { href: '/finishing-world', label: 'Finishing World' },
-  { href: '/made-in-america', label: 'Made in America' },
   { href: '/new-products', label: 'New Products' },
+  { href: '/business-technology', label: 'Business Technology' },
+  { href: '/earnings', label: 'Earnings' },
+  { href: '/economy', label: 'Economy' },
+  { href: '/mergers-acquisitions', label: 'Mergers & Acquisitions' },
   { href: '/operations', label: 'Operations' },
-  { href: '/product-development', label: 'Product Development' },
-  { href: '/software', label: 'Software' },
-  { href: '/safety', label: 'Safety' },
+  { href: '/sales', label: 'Sales' },
+  { href: '/staffing-changes', label: 'Staffing Changes' },
   { href: '/supply-chain', label: 'Supply Chain' },
+  { href: '/workforce-development', label: 'Workforce' },
 ]);
 
 const secondary = [
   { href: '/video', label: 'Video' },
-  { href: '/podcast', label: 'Podcast' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
   { href: '/magazine', label: 'Magazine' },
+  { href: '/big-50', label: 'Big 50' },
 ];
 
 const resources = [
   { href: '/video', label: 'Video' },
-  { href: '/podcast', label: 'Podcast' },
-  { href: '/magazine', label: 'Magazine' },
+  { href: '/page/impo-about-us', label: 'About Us' },
+  { href: '/contact-us', label: 'Contact Us' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
 ];
 
 const utilities = [
-  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ien_signup', label: 'Newsletter Signup', target: '_blank' },
-  { href: 'https://tcc.dragonforms.com/loading.do?omedasite=TCC1_IEnew', label: 'Subscribe to Magazine', target: '_blank' },
+  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=id_signup', label: 'Newsletter Signup', target: '_blank' },
 ];
 
 const mobileMenu = {
@@ -40,7 +37,6 @@ const mobileMenu = {
   ],
   secondary: [
     ...resources,
-    subscribe,
   ],
 };
 
@@ -48,13 +44,6 @@ const desktopMenu = {};
 
 module.exports = {
   type: 'navbar-custom',
-  promos: [
-    {
-      title: subscribe.label,
-      callToAction: subscribe.label,
-      link: subscribe.href,
-    },
-  ],
   user: {
     items: [],
   },
@@ -97,11 +86,12 @@ module.exports = {
   },
   footer: {
     items: [
+      { href: '/page/impo-about-us', label: 'About Us' },
       { href: '/contact-us', label: 'Contact Us' },
-      { href: '/page/about-us', label: 'About Us' },
-      { href: '/page/privacy-policy', label: 'Privacy Policy' },
-      { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act' },
+      { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+      { href: '/page/impo-privacy-policy', label: 'Privacy Policy' },
+      { href: '/page/impo-terms-conditions', label: 'Terms & Conditions' },
+      { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
       { href: '/site-map', label: 'Site Map' },
     ],
   },
