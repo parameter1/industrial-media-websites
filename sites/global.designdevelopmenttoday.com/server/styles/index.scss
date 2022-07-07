@@ -35,21 +35,3 @@ $navbarStyle: "navbar-custom";
 $website-section-colors: ();
 
 @import "../../node_modules/@industrial-media/package-global/scss/core";
-
-
-.site-navbar {
-  $self: &;
-  &__items {
-    &--primary {
-      font-family: "Roboto Slab", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-    }
-
-    &--secondary {
-      font-family: "Roboto Slab", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: .4px;
-    }
-  }
-}
