@@ -26,14 +26,14 @@ module.exports = {
     navbar: {
       src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=65',
       srcset: [
-        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=130 2x',
+        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=130&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
       src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60',
       srcset: [
-        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=120 2x',
+        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },

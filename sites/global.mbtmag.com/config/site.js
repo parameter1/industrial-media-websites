@@ -27,14 +27,14 @@ module.exports = {
     navbar: {
       src: 'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=45',
       srcset: [
-        'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=90 2x',
+        'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=90&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
       src: 'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=60',
       srcset: [
-        'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=120 2x',
+        'https://img.mbtmag.com/files/base/indm/all/mbt_logo.png?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },

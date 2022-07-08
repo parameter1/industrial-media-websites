@@ -26,14 +26,14 @@ module.exports = {
     navbar: {
       src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=70',
       srcset: [
-        'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=140 2x',
+        'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=140&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
       src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=60',
       srcset: [
-        'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=120 2x',
+        'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },

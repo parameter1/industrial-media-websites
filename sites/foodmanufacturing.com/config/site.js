@@ -25,14 +25,14 @@ module.exports = {
     navbar: {
       src: 'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=45',
       srcset: [
-        'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=90 2x',
+        'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=90&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
       src: 'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=60',
       srcset: [
-        'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=120 2x',
+        'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },

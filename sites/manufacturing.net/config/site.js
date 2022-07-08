@@ -25,14 +25,14 @@ module.exports = {
     navbar: {
       src: 'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=45',
       srcset: [
-        'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=90 2x',
+        'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=90&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
       src: 'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=60',
       srcset: [
-        'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=120 2x',
+        'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },
