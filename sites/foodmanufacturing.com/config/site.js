@@ -23,7 +23,7 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=45',
+      src: 'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=45&auto=format,compress',
       srcset: [
         'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=90&auto=format,compress&dpr=2 2x',
       ],

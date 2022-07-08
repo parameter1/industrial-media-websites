@@ -31,7 +31,7 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=65',
+      src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=65&auto=format,compress',
       srcset: [
         'https://img.ien.com/files/base/indm/all/ien_logo.png?h=130&auto=format,compress&dpr=2 2x',
       ],

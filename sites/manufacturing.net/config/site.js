@@ -23,7 +23,7 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=45',
+      src: 'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=45&auto=format,compress',
       srcset: [
         'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=90&auto=format,compress&dpr=2 2x',
       ],

@@ -27,7 +27,7 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=45',
+      src: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=45&auto=format,compress',
       srcset: [
         'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=90&auto=format,compress&dpr=2 2x',
       ],

@@ -26,7 +26,7 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=45',
+      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=45&auto=format,compress',
       srcset: [
         'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=90&auto=format,compress&dpr=2 2x',
       ],

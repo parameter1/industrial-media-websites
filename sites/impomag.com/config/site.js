@@ -23,7 +23,7 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.impomag.com/files/base/indm/all/impo_logo.png?h=45',
+      src: 'https://img.impomag.com/files/base/indm/all/impo_logo.png?h=45&auto=format,compress',
       srcset: [
         'https://img.impomag.com/files/base/indm/all/impo_logo.png?h=90&auto=format,compress&dpr=2 2x',
       ],

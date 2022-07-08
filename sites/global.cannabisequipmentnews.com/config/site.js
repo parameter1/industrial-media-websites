@@ -26,7 +26,7 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=70',
+      src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=70&auto=format,compress',
       srcset: [
         'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=140&auto=format,compress&dpr=2 2x',
       ],

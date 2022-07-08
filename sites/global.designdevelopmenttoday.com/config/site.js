@@ -26,7 +26,7 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=45',
+      src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=45&auto=format,compress',
       srcset: [
         'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=90&auto=format,compress&dpr=2 2x',
       ],
