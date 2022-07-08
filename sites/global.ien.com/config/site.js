@@ -31,16 +31,16 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=65',
+      src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=65&auto=format,compress',
       srcset: [
-        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=130 2x',
+        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=130&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
-      src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60',
+      src: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60&auto=format,compress',
       srcset: [
-        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=120 2x',
+        'https://img.ien.com/files/base/indm/all/ien_logo.png?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },
@@ -60,7 +60,7 @@ module.exports = {
     notificationDeafults: {
       to: 'david@ien.com',
       branding: {
-        logo: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60',
+        logo: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60&auto=format,compress',
       },
       support: {
         email: 'reply@ien.com',
@@ -68,7 +68,7 @@ module.exports = {
     },
     to: 'david@ien.com',
     branding: {
-      logo: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60',
+      logo: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60&auto=format,compress',
     },
     support: {
       email: 'reply@ien.com',
