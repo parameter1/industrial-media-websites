@@ -30,7 +30,7 @@ module.exports = {
     },
     footer: {
       brandLogos,
-      src: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60',
+      src: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60&auto=format,compress',
       srcset: [
         'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=120&auto=format,compress&dpr=2 2x',
       ],
@@ -52,7 +52,7 @@ module.exports = {
     notificationDefaults: {
       to: 'david@ien.com',
       branding: {
-        logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60',
+        logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60&auto=format,compress',
       },
       support: {
         email: 'reply@ien.com',
@@ -60,7 +60,7 @@ module.exports = {
     },
     to: 'david@ien.com',
     branding: {
-      logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60',
+      logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60&auto=format,compress',
     },
     support: {
       email: 'reply@ien.com',

@@ -31,7 +31,7 @@ module.exports = {
     },
     footer: {
       brandLogos,
-      src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60',
+      src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60&auto=format,compress',
       srcset: [
         'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=120&auto=format,compress&dpr=2 2x',
       ],
@@ -53,7 +53,7 @@ module.exports = {
     notificationDefaults: {
       to: 'david@ien.com',
       branding: {
-        logo: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60',
+        logo: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60&auto=format,compress',
       },
       support: {
         email: 'reply@ien.com',
@@ -61,7 +61,7 @@ module.exports = {
     },
     to: 'david@ien.com',
     branding: {
-      logo: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60',
+      logo: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60&auto=format,compress',
     },
     support: {
       email: 'reply@ien.com',
