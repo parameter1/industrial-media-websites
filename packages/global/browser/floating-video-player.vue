@@ -116,7 +116,6 @@ export default {
   methods: {
     setAutoPlayObserver() {
       if (this.autoPlayObserver) this.autoPlayObserver.disconnect();
-      console.log(this.autoPlayObserver);
       const header = document.getElementsByClassName('site-header')[0];
       const rootMargin = `-${header.offsetTop + header.offsetHeight}px 0px 0px 0px`;
       const options = {
@@ -125,7 +124,6 @@ export default {
       };
       this.autoPlayObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          console.log(entry.intersectionRatio);
           if (!entry.intersectionRatio || entry.intersectionRatio <= 0.75) {
             this.player.pause();
           } else {
