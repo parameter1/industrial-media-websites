@@ -49,8 +49,16 @@ export default {
       type: String,
       default: 'default',
     },
+    mqProps: {
+      type: Object,
+      default: () => ({
+        rootMargins: '0px',
+        threshold: [0, 0.5],
+      }),
+    },
   },
   data: () => ({
+    autoPlayObserver: null,
     player: null,
     open: true,
     error: null,
@@ -90,14 +98,46 @@ export default {
             return addr.toString();
           };
         });
+        this.player.pause();
         this.open = true;
+        this.setAutoPlayObserver();
       } catch (e) {
         const { error } = console;
         error(e);
       }
     }
   },
+  created() {
+    window.addEventListener('resize', this.handleScreenResize);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleScreenResize);
+  },
   methods: {
+    setAutoPlayObserver() {
+      if (this.autoPlayObserver) this.autoPlayObserver.disconnect();
+      console.log(this.autoPlayObserver);
+      const header = document.getElementsByClassName('site-header')[0];
+      const rootMargin = `-${header.offsetTop + header.offsetHeight}px 0px 0px 0px`;
+      const options = {
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin,
+      };
+      this.autoPlayObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry.intersectionRatio);
+          if (!entry.intersectionRatio || entry.intersectionRatio <= 0.75) {
+            this.player.pause();
+          } else {
+            this.player.play();
+          }
+        });
+      }, options);
+      this.autoPlayObserver.observe(this.$el);
+    },
+    handleScreenResize() {
+      this.setAutoPlayObserver();
+    },
     close() {
       this.player.pause();
       this.player.reset();
