@@ -13,7 +13,7 @@ $ const adSlots = ({ aliases }) => ({
   "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
   "gpt-ad-rail-infinite": GAM.getAdUnit({ name: "infinite-rail", aliases }),
 });
-$ const displayPrimaryImage = ["whitepaper", "media-gallery", "video"].includes(type) ? false : true;
+$ const displayPrimaryImage = ["media-gallery", "video"].includes(type) ? false : true;
 $ const displayPublishedDate = ["event", "webinar", "company", "contact"].includes(type) ? false : true;
 $ const displayFeatured = ["company", "product", "contact"].includes(type) ? false : true;
 $ const displayInquiry = (content) => {
@@ -106,7 +106,7 @@ $ const injectAds = ["article", "news", "press-release", "blog"].includes(type) 
               <if(content.embedCode)>
                 <shared-content-embed-code block-name=blockName content=content />
               </if>
-              <else-if(content.type === "whitepaper" || content.type === "document" || type === "company")>
+              <else-if(content.type === "document" || type === "company")>
                 <marko-web-page-image
                   obj=content.primaryImage
                   modifiers=["primary-image-inline"]
