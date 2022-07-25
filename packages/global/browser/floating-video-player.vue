@@ -79,6 +79,9 @@ export default {
           videoId: this.videoId,
           playlistId: this.playlistId,
           refNode: this.$el,
+          options: {
+            autoplay: false,
+          },
           embedOptions: {
             responsive: {
               maxWidth: '340px',
