@@ -3,12 +3,16 @@
 $skin-font-family-primary: "Roboto", sans-serif !default;
 $skin-font-family-secondary: "Roboto Slab", sans-serif !default;
 $theme-item-description-font-family: $skin-font-family-primary !default;
+$theme-item-description-font-size: 16px !default;
+$theme-item-description-line-height: 1.4;
+$theme-item-title-font-size: 18px !default;
+$theme-item-title-line-height: 1.4;
 
-$body-bg: #f0f1f2;
+$body-bg: #f0f1f2 !default;
 
-$theme-page-bg-color: white;
+$theme-page-bg-color: white !default;
 
-$skin-ad-bg-color: white;
+$skin-ad-bg-color: white !default;
 
 // Navbar
 $navbarStyle: "navbar2" !default;
@@ -20,7 +24,7 @@ $leaderboard-min-height-mobile: 100px !default;
 $leaderboard-min-height-desktop: 250px !default;
 $rail-ad-bg-color: white !default;
 
-$theme-site-footer-secondary-bg-color: #68686c;
+$theme-site-footer-secondary-bg-color: #68686c !default;
 
 $theme-site-navbar-primary-link-color: #fff !default;
 $theme-site-navbar-primary-link-active-color: #fff !default;
