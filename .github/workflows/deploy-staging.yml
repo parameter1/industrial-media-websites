@@ -36,15 +36,15 @@ jobs:
         namespace:
           - staging-websites-tauron
         site:
-          - cannabisequipmentnews.com
-          - designdevelopmenttoday.com
-          - foodmanufacturing.com
-          - ien.com
-          - impomag.com
-          - inddist.com
-          - manufacturing.net
-          - mbtmag.com
-          - medicaldesigndevelopment.com
+          - staging.cannabisequipmentnews.com
+          - staging.designdevelopmenttoday.com
+          - staging.foodmanufacturing.com
+          - staging.ien.com
+          - staging.impomag.com
+          - staging.inddist.com
+          - staging.manufacturing.net
+          - staging.mbtmag.com
+          - staging.medicaldesigndevelopment.com
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Kubernetes
