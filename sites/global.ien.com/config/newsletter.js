@@ -96,22 +96,25 @@ module.exports = {
   signupBanner: {
     ...defaults,
     imagePath: 'files/base/indm/all/image/static/indm-half.png',
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
   },
   pushdown: {
     ...defaults,
-    description: '@TODO: get Description',
     imagePath: 'files/base/indm/all/image/static/indm-half.png',
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
   },
 
   // links off to seperate omeda dragonform
   signupBannerLarge: {
     ...baseConfig,
-    name: '@TODO: Configure(signupBannerLarge) title in newsletter.js',
-    description: '@TODO: Configure(signupBannerLarge) description in newsletter.js.',
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
   },
   signupFooter: {
     ...baseConfig,
-    name: '@TODO: Configure(signupFooter) title in newsletter.js',
-    description: '@TODO: Configure(signupFooter) description in newsletter.js.',
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
   },
 };

@@ -39,22 +39,25 @@ module.exports = {
   signupBanner: {
     ...defaults,
     imagePath: 'files/base/p1/sandbox/image/static/newsletter-phone-full.png',
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
   },
   pushdown: {
     ...defaults,
     imagePath: 'files/base/p1/sandbox/image/static/newsletter-phone-half.png',
-    description: 'NOT_SET',
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
   },
 
   // links off to seperate omeda dragonform
   signupBannerLarge: {
     ...baseConfig,
-    name: '{NOT_SET}',
-    description: '{NOT_SET}',
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
   },
   signupFooter: {
     ...baseConfig,
-    name: '{NOT_SET}',
-    description: '{NOT_SET}',
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
   },
 };
