@@ -1,8 +1,8 @@
 {
-  "name": "@industrial-media/cannabisequipmentnews.com",
+  "name": "@industrial-media/staging.impomag.com",
   "version": "1.27.4",
   "author": "Josh Worden <josh@limit0.io>",
-  "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/cannabisequipmentnews.com",
+  "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/staging.impomag.com",
   "license": "MIT",
   "private": true,
   "scripts": {

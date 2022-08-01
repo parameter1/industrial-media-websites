@@ -1,8 +1,8 @@
 {
-  "name": "@industrial-media/designdevelopmenttoday.com",
+  "name": "@industrial-media/staging.foodmanufacturing.com",
   "version": "1.27.4",
-  "author": "Josh Worden <josh@limit0.io>",
-  "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/designdevelopmenttoday.com",
+  "author": "Jacob Bare <jacob@limit0.io>",
+  "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/staging.foodmanufacturing.com",
   "license": "MIT",
   "private": true,
   "scripts": {
