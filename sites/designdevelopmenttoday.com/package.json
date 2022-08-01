@@ -1,8 +1,8 @@
 {
-  "name": "@industrial-media/global.cannabisequipmentnews.com",
+  "name": "@industrial-media/designdevelopmenttoday.com",
   "version": "1.27.7",
   "author": "Brian Miller <brian@parameter1.com>",
-  "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/global.cannabisequipmentnews.com",
+  "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/designdevelopmenttoday.com",
   "license": "MIT",
   "private": true,
   "scripts": {
