@@ -62,7 +62,11 @@ module.exports = (options = {}) => {
       app.use(htmlSitemapPagination());
 
       // Use newsletterState middleware
-      app.use(newsletterState());
+      const pushdown = get(options, 'siteConfig.newsletter.pushdown');
+      console.log(pushdown);
+      if (pushdown && !pushdown.disabled) {
+        app.use(newsletterState());
+      }
 
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);

@@ -8,6 +8,7 @@ const baseConfig = {
 };
 
 const defaults = {
+  disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
   name: 'Stay Connected!',
   description: 'Join 2,500,000+ industry profesionals who get helpful insights and important news delivered straight to their inbox with the <strong>IEN</strong> newsletter.',
   defaultNewsletter: {

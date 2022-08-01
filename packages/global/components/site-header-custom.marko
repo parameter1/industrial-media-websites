@@ -40,7 +40,7 @@ $ const navigation = {
       </default-theme-site-navbar>
     </div>
     <div class='site-navbar__right'>
-      <if(site.getAsObject("newsletter.pushdown"))>
+      <if(site.getAsObject("newsletter.pushdown") && !site.getAsObject("newsletter.pushdown.disabled"))>
         <theme-menu-toggle-button
           class="site-navbar__newsletter-toggler btn btn-primary btn-subscribe"
           targets=[".site-newsletter-menu"]

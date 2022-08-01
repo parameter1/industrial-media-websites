@@ -8,6 +8,7 @@ const baseConfig = {
 };
 
 const defaults = {
+  disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
   name: 'NOT_SET',
   description: 'NOT_SET',
   privacyPolicy,
