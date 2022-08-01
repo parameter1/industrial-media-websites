@@ -1,11 +1,9 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
-const queryFragment = require('@industrial-media/package-shared/graphql/fragments/website-section-page');
-
-const home = require('../templates/index');
+const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
+const home = require('@industrial-media/package-global/templates/home');
 
 module.exports = (app) => {
   app.get('/', withWebsiteSection({
-    // Replace with ID resolver or website domain something
     aliasResolver: () => 'home',
     template: home,
     queryFragment,

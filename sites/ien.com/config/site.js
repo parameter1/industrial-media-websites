@@ -1,10 +1,12 @@
-const { brandLogos } = require('@industrial-media/package-shared/config/footer-brand-logos');
+const { brandLogos } = require('@industrial-media/package-global/config/footer-brand-logos');
 
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
 const identityX = require('./identity-x');
+const magazine = require('./magazine');
+const newsletter = require('./newsletter');
 
 const omedaBrandKey = 'imcd';
 
@@ -13,7 +15,12 @@ module.exports = {
   gam,
   omedaBrandKey,
   identityX: identityX({ omedaBrandKey }),
+  idxNavItems: {
+    enable: true,
+  },
+  magazine,
   nativeX,
+  newsletter,
   socialMediaLinks,
   company: 'Industrial Media, LLC',
   p1events: {
@@ -50,7 +57,7 @@ module.exports = {
     description: '',
   },
   contactUs: {
-    notificationDefaults: {
+    notificationDeafults: {
       to: 'david@ien.com',
       branding: {
         logo: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60&auto=format,compress',
@@ -66,8 +73,5 @@ module.exports = {
     support: {
       email: 'reply@ien.com',
     },
-  },
-  notix: {
-    appId: '1004c90b9625597d3f00615ee4ebe9a',
   },
 };

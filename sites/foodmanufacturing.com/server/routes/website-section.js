@@ -1,20 +1,8 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
-const section = require('@industrial-media/package-shared/templates/website-section');
-const video = require('@industrial-media/package-shared/templates/website-section/video');
-const contactUs = require('@industrial-media/package-shared/templates/website-section/contact-us');
-const queryFragment = require('@industrial-media/package-shared/graphql/fragments/website-section-page');
+const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
+const section = require('@industrial-media/package-global/templates/website-section');
 
 module.exports = (app) => {
-  app.get('/:alias(contact-us)', withWebsiteSection({
-    template: contactUs,
-    queryFragment,
-  }));
-
-  app.get('/:alias(video)', withWebsiteSection({
-    template: video,
-    queryFragment,
-  }));
-
   app.get('/:alias([a-z0-9-/]+)', withWebsiteSection({
     template: section,
     queryFragment,

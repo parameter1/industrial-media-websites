@@ -1,25 +1,19 @@
-$primary: #eb1b2d !default;
+$primary: #eb1a2d !default;
 $secondary: #495057; // equivalent to default gray-700
 $light: #e9ecef !default; // equivalent to default gray-200
 $dark: #212529 !default; // equivalent to default gray-900
 $info: #6c757d !default; // equivalent to default gray-600
 
-$theme-site-navbar-secondary-bg-color: #fff;
-$theme-site-navbar-primary-bg-color: #000;
-$theme-site-navbar-secondary-type: light;
-
-$theme-site-navbar-logo-height: 65px;
-$theme-site-navbar-logo-height-sm: 45px;
-
 $theme-site-header-breakpoints: (
-  hide-primary: 1005px,
-  hide-secondary: 965px,
-  small-logo: 1005px,
+  hide-primary: 1100px, // effectively always hide the primary nav
+  hide-secondary: 700px,
+  small-logo: 775px,
   small-text-primary: 0,
-  small-text-secondary: 0,
-  hide-social-icons: 560px,
-  hide-user-links: 414px,
+  small-text-secondary: 830px
 );
+
+$navbarStyle: "navbar-custom";
+$theme-site-navbar-primary-type: "dark";
 
 // Site Section Colors
 $website-section-colors: (
@@ -34,4 +28,5 @@ $website-section-colors: (
   food-beverage: lighten(#008a51, 5%),
 );
 
-@import "../../node_modules/@industrial-media/package-shared/scss/core";
+
+@import "../../node_modules/@industrial-media/package-global/scss/core";

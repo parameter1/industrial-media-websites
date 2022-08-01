@@ -28,18 +28,21 @@ x-env-defaults: &env
   DISABLE_IDX_NEWSLETTER_SIGNUP: ${DISABLE_IDX_NEWSLETTER_SIGNUP-true}
 
 x-env-tauron: &env-tauron
+  <<: *env
   GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
   RSS_URI: ${RSS_URI-https://tauron.rss.base.parameter1.com}
   SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
 
 x-env-development: &env-development
+  <<: *env
   GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10102}
   OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10402}
   RSS_URI: ${RSS_URI-http://host.docker.internal:10202}
   SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10302}
 
 x-site-command: &site-cmd
+  <<: *node
   entrypoint: ["node_modules/.bin/basecms-website"]
   command: ["dev", "index.js"]
 
@@ -62,11 +65,9 @@ services:
       <<: *env
 
   id:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/inddist.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-id.dev.parameter1.com
       PORT: 80
@@ -79,30 +80,26 @@ services:
       - "9710:80"
       - "19710:19710"
 
-  id-global:
-    <<: *node
+  id-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.inddist.com
+    working_dir: /root/sites/staging.inddist.com
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-id-global.dev.parameter1.com
+      HOST: www-indm-id-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9010
       LIVERELOAD_PORT: 19010
       TENANT_KEY: indm_multi
       SITE_ID: 5d76bf9eed61522e008b456b
-    hostname: www-indm-id-global.dev.parameter1.com
+    hostname: www-indm-id-staging.dev.parameter1.com
     ports:
       - "9010:80"
       - "19010:19010"
 
   mnet:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/manufacturing.net
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-mnet.dev.parameter1.com
       PORT: 80
@@ -115,30 +112,26 @@ services:
       - "9711:80"
       - "19711:19711"
 
-  mnet-global:
-    <<: *node
+  mnet-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.manufacturing.net
+    working_dir: /root/sites/staging.manufacturing.net
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-mnet-global.dev.parameter1.com
+      HOST: www-indm-mnet-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9011
       LIVERELOAD_PORT: 19011
       TENANT_KEY: indm_multi
       SITE_ID: 5d76bfaf665fc42e008b4569
-    hostname: www-indm-mnet-global.dev.parameter1.com
+    hostname: www-indm-mnet-staging.dev.parameter1.com
     ports:
       - "9011:80"
       - "19011:19011"
 
   fm:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/foodmanufacturing.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-fm.dev.parameter1.com
       PORT: 80
@@ -151,30 +144,26 @@ services:
       - "9712:80"
       - "19712:19712"
 
-  fm-global:
-    <<: *node
+  fm-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.foodmanufacturing.com
+    working_dir: /root/sites/staging.foodmanufacturing.com
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-fm-global.dev.parameter1.com
+      HOST: www-indm-fm-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9012
       LIVERELOAD_PORT: 19012
       TENANT_KEY: indm_multi
       SITE_ID: 5d76bfdd665fc42e008b456b
-    hostname: www-indm-fm-global.dev.parameter1.com
+    hostname: www-indm-fm-staging.dev.parameter1.com
     ports:
       - "9012:80"
       - "19012:19012"
 
   impo:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/impomag.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-impo.dev.parameter1.com
       PORT: 80
@@ -187,30 +176,26 @@ services:
       - "9713:80"
       - "19713:19713"
 
-  impo-global:
-    <<: *node
+  impo-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.impomag.com
+    working_dir: /root/sites/staging.impomag.com
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-impo-global.dev.parameter1.com
+      HOST: www-indm-impo-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9013
       LIVERELOAD_PORT: 19013
       TENANT_KEY: indm_multi
       SITE_ID: 5d76bfe40827e83a008b456f
-    hostname: www-indm-impo-global.dev.parameter1.com
+    hostname: www-indm-impo-staging.dev.parameter1.com
     ports:
       - "9013:80"
       - "19013:19013"
 
   mbt:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/mbtmag.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-mbt.dev.parameter1.com
       PORT: 80
@@ -223,30 +208,26 @@ services:
       - "9714:80"
       - "19714:19714"
 
-  mbt-global:
-    <<: *node
+  mbt-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.mbtmag.com
+    working_dir: /root/sites/staging.mbtmag.com
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-mbt-global.dev.parameter1.com
+      HOST: www-indm-mbt-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9014
       LIVERELOAD_PORT: 19014
       TENANT_KEY: indm_multi
       SITE_ID: 5d76c0287c94042e008b456b
-    hostname: www-indm-mbt-global.dev.parameter1.com
+    hostname: www-indm-mbt-staging.dev.parameter1.com
     ports:
       - "9014:80"
       - "19014:19014"
 
   ien:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/ien.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-ien.dev.parameter1.com
       PORT: 80
@@ -259,30 +240,26 @@ services:
       - "9715:80"
       - "19715:19715"
 
-  ien-global:
-    <<: *node
+  ien-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.ien.com
+    working_dir: /root/sites/staging.ien.com
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-ien-global.dev.parameter1.com
+      HOST: www-indm-ien-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9015
       LIVERELOAD_PORT: 19015
       TENANT_KEY: indm_multi
       SITE_ID: 5669a4f16cdeeaf8598b4579
-    hostname: www-indm-ien-global.dev.parameter1.com
+    hostname: www-indm-ien-staging.dev.parameter1.com
     ports:
       - "9015:80"
       - "19015:19015"
 
   cen:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/cannabisequipmentnews.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-cen.dev.parameter1.com
       PORT: 80
@@ -295,30 +272,26 @@ services:
       - "9716:80"
       - "19716:19716"
 
-  cen-global:
-    <<: *node
+  cen-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.cannabisequipmentnews.com
+    working_dir: /root/sites/staging.cannabisequipmentnews.com
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-cen-global.dev.parameter1.com
+      HOST: www-indm-cen-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9016
       LIVERELOAD_PORT: 19016
       TENANT_KEY: indm_multi
       SITE_ID: 5bc762d5adff35d154716639
-    hostname: www-indm-cen-global.dev.parameter1.com
+    hostname: www-indm-cen-staging.dev.parameter1.com
     ports:
       - "9016:80"
       - "19016:19016"
 
   ddt:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/designdevelopmenttoday.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-ddt.dev.parameter1.com
       PORT: 80
@@ -331,30 +304,26 @@ services:
       - "9717:80"
       - "19717:19717"
 
-  ddt-global:
-    <<: *node
+  ddt-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.designdevelopmenttoday.com
+    working_dir: /root/sites/staging.designdevelopmenttoday.com
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-ddt-global.dev.parameter1.com
+      HOST: www-indm-ddt-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9017
       LIVERELOAD_PORT: 19017
       TENANT_KEY: indm_multi
       SITE_ID: 5af4890775a254af9e0041a7
-    hostname: www-indm-ddt-global.dev.parameter1.com
+    hostname: www-indm-ddt-staging.dev.parameter1.com
     ports:
       - "9017:80"
       - "19017:19017"
 
   mdd:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/medicaldesigndevelopment.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-indm-mdd.dev.parameter1.com
       PORT: 80
@@ -367,20 +336,18 @@ services:
       - "9718:80"
       - "19718:19718"
 
-  mdd-global:
-    <<: *node
+  mdd-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.medicaldesigndevelopment.com
+    working_dir: /root/sites/staging.medicaldesigndevelopment.com
     environment:
-      <<: *env
       <<: *env-tauron
-      HOST: www-indm-mdd-global.dev.parameter1.com
+      HOST: www-indm-mdd-staging.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9018
       LIVERELOAD_PORT: 19018
       TENANT_KEY: indm_multi
       SITE_ID: 6220f722417c94af0e8b45ca
-    hostname: www-indm-mdd-global.dev.parameter1.com
+    hostname: www-indm-mdd-staging.dev.parameter1.com
     ports:
       - "9018:80"
       - "19018:19018"

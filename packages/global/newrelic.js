@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['parameter1/cox-matthews-associates-websites'],
+  app_name: ['parameter1/industrial-media-websites'],
   /**
    * Your New Relic license key.
    */

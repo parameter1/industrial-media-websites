@@ -4,24 +4,22 @@ $light: #e9ecef !default; // equivalent to default gray-200
 $dark: #212529 !default; // equivalent to default gray-900
 $info: #6c757d !default; // equivalent to default gray-600
 
-$theme-site-navbar-secondary-bg-color: #fff;
-$theme-site-navbar-primary-bg-color: #ef6422;
-$theme-site-navbar-secondary-type: light;
-
-$theme-site-navbar-logo-height: 45px;
-$theme-site-navbar-logo-height-sm: 30px;
+$theme-site-navbar-primary-bg-color: $primary;
+$theme-site-navbar-primary-link-color: #fff;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 1215px,
-  hide-secondary: 922px,
-  small-logo: 1070px,
+  hide-primary: 1100px, // effectively always hide the primary nav
+  hide-secondary: 700px,
+  small-logo: 775px,
   small-text-primary: 0,
-  small-text-secondary: 0,
-  hide-social-icons: 590px,
-  hide-user-links: 414px,
+  small-text-secondary: 830px
 );
+
+$navbarStyle: "navbar-custom";
+$theme-site-navbar-primary-type: "dark";
 
 // Site Section Colors
 $website-section-colors: ();
 
-@import "../../node_modules/@industrial-media/package-shared/scss/core";
+
+@import "../../node_modules/@industrial-media/package-global/scss/core";

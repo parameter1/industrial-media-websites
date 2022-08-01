@@ -4,13 +4,10 @@ $light: #e9ecef !default; // equivalent to default gray-200
 $dark: #212529 !default; // equivalent to default gray-900
 $info: #6c757d !default; // equivalent to default gray-600
 
-$theme-site-navbar-secondary-bg-color: #fff;
 $theme-site-navbar-primary-bg-color: #e6e6e6;
-$theme-site-navbar-secondary-type: light;
-$theme-site-navbar-primary-type: light;
-
-$theme-site-navbar-logo-height: 45px;
-$theme-site-navbar-logo-height-sm: 30px;
+$theme-site-navbar-primary-link-color: $dark;
+$theme-site-navbar-primary-link-active-color: $dark;
+$theme-site-navbar-primary-link-hover-color: $dark;
 
 $theme-site-header-breakpoints: (
   hide-primary: 1120px,
@@ -22,53 +19,10 @@ $theme-site-header-breakpoints: (
   hide-user-links: 414px,
 );
 
+$navbarStyle: "navbar-custom";
+
 // Site Section Colors
 $website-section-colors: ();
 
-@import "../../node_modules/@industrial-media/package-shared/scss/core";
 
-.site-navbar {
-  $self: &;
-  &__items {
-    &--primary {
-      font-family: "Roboto Slab", sans-serif;
-      font-size: 17px;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-
-      #{ $self } {
-        &__link {
-          &--active {
-            color: $primary;
-          }
-        }
-      }
-    }
-
-    &--secondary {
-      font-family: "Roboto Slab", sans-serif;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .4px;
-    }
-  }
-}
-
-.node {
-  &--section-tag {
-    .node {
-      &__header {
-        background-color: $primary;
-      }
-    }
-  }
-}
-
-.site-footer {
-  &__link {
-    color: rgba(#000, .78);
-  }
-  &__copyright {
-    color: rgba(#000, .78);
-  }
-}
+@import "../../node_modules/@industrial-media/package-global/scss/core";

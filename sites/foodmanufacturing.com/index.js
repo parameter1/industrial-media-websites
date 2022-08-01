@@ -1,4 +1,4 @@
-const startServer = require('@industrial-media/package-shared/start-server');
+const startServer = require('@industrial-media/package-global/start-server');
 
 const routes = require('./server/routes');
 const siteConfig = require('./config/site');

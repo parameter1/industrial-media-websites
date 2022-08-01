@@ -1,0 +1,36 @@
+$primary: #237658 !default;
+$secondary: #495057; // equivalent to default gray-700
+$light: #e9ecef !default; // equivalent to default gray-200
+$dark: #212529 !default; // equivalent to default gray-900
+$info: #6c757d !default; // equivalent to default gray-600
+
+$theme-site-navbar-secondary-bg-color: #fff;
+$theme-site-navbar-primary-bg-color: #000;
+$theme-site-navbar-secondary-type: light;
+
+$theme-site-navbar-logo-height: 70px;
+$theme-site-navbar-logo-height-sm: 45px;
+
+$theme-site-header-breakpoints: (
+  hide-primary: 770px,
+  hide-secondary: 830px,
+  small-logo: 860px,
+  small-text-primary: 0,
+  small-text-secondary: 0,
+  hide-social-icons: 500px,
+  hide-user-links: 414px,
+);
+
+// Site Section Colors
+$website-section-colors: (
+  cultivation: lighten(#154735, 12%),
+  distribution: #00af40,
+  extraction: #3baf29,
+  manufacturing: #c3d600,
+  packaging: #3f5364,
+  news: #748693,
+  processing: #a3bcc4,
+  new-products: #a3bcc4
+);
+
+@import "../../node_modules/@industrial-media/package-shared/scss/core";

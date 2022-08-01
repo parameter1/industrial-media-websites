@@ -4,71 +4,34 @@ $light: #e9ecef !default; // equivalent to default gray-200
 $dark: #212529 !default; // equivalent to default gray-900
 $info: #6c757d !default; // equivalent to default gray-600
 
-$theme-site-navbar-secondary-bg-color: #fff;
 $theme-site-navbar-primary-bg-color: #e6e6e6;
-$theme-site-navbar-secondary-type: light;
-$theme-site-navbar-primary-type: light;
-
-$theme-site-navbar-logo-height: 45px;
-$theme-site-navbar-logo-height-sm: 30px;
+$theme-site-navbar-primary-link-color: $dark;
+$theme-site-navbar-primary-link-active-color: $primary;
+$theme-site-navbar-primary-link-hover-color: $primary;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 1120px,
-  hide-secondary: 788px,
-  small-logo: 842px,
+  hide-primary: 1100px, // effectively always hide the primary nav
+  hide-secondary: 700px,
+  small-logo: 775px,
   small-text-primary: 0,
-  small-text-secondary: 0,
-  hide-social-icons: 500px,
-  hide-user-links: 414px,
+  small-text-secondary: 830px
 );
+
+$navbarStyle: "navbar-custom";
+
+// // Site Section Colors
+// $website-section-colors: (
+//   cultivation: lighten(#154735, 12%),
+//   distribution: #00af40,
+//   extraction: #3baf29,
+//   manufacturing: #c3d600,
+//   packaging: #3f5364,
+//   news: #748693,
+//   processing: #a3bcc4,
+//   new-products: #a3bcc4
+// );
 
 // Site Section Colors
 $website-section-colors: ();
 
-@import "../../node_modules/@industrial-media/package-shared/scss/core";
-
-.site-navbar {
-  $self: &;
-  &__items {
-    &--primary {
-      font-family: "Roboto Slab", sans-serif;
-      font-size: 17px;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-
-      #{ $self } {
-        &__link {
-          &--active {
-            color: $primary;
-          }
-        }
-      }
-    }
-
-    &--secondary {
-      font-family: "Roboto Slab", sans-serif;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .4px;
-    }
-  }
-}
-
-.node {
-  &--section-tag {
-    .node {
-      &__header {
-        background-color: $primary;
-      }
-    }
-  }
-}
-
-.site-footer {
-  &__link {
-    color: rgba(#000, .78);
-  }
-  &__copyright {
-    color: rgba(#000, .78);
-  }
-}
+@import "../../node_modules/@industrial-media/package-global/scss/core";
