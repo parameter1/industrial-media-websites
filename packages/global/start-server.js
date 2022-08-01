@@ -63,7 +63,6 @@ module.exports = (options = {}) => {
 
       // Use newsletterState middleware
       const pushdown = get(options, 'siteConfig.newsletter.pushdown');
-      console.log(pushdown);
       if (pushdown && !pushdown.disabled) {
         app.use(newsletterState());
       }
