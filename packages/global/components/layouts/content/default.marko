@@ -47,7 +47,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         <theme-content-attribution obj=content />
       </if>
 
-      <if(authors.length !== 1 || contentContactLength > 1)>
+      <if(type === "events" || type === "webinars" || displayPublishedDate)>
         <default-theme-page-dates|{ blockName }|>
           <if(type === "event")>
             <marko-web-content-starts block-name=blockName obj=content />
