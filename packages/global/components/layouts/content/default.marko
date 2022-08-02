@@ -47,19 +47,20 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         <theme-content-attribution obj=content />
       </if>
 
-      <default-theme-page-dates|{ blockName }|>
-        <if(type === "event")>
-          <marko-web-content-starts block-name=blockName obj=content />
-          <marko-web-content-ends block-name=blockName obj=content />
-        </if>
-        <else-if(type === "webinar")>
-          <marko-web-content-starts block-name=blockName obj=content />
-        </else-if>
-        <else-if(displayPublishedDate)>
-          <theme-content-published-node block-name=blockName obj=content display-updated-date=false />
-        </else-if>
-      </default-theme-page-dates>
-
+      <if(type === "events" || type === "webinars" || displayPublishedDate)>
+        <default-theme-page-dates|{ blockName }|>
+          <if(type === "event")>
+            <marko-web-content-starts block-name=blockName obj=content />
+            <marko-web-content-ends block-name=blockName obj=content />
+          </if>
+          <else-if(type === "webinar")>
+            <marko-web-content-starts block-name=blockName obj=content />
+          </else-if>
+          <else-if(displayPublishedDate)>
+            <theme-content-published-node block-name=blockName obj=content display-updated-date=false />
+          </else-if>
+        </default-theme-page-dates>
+      </if>
     </div>
   </@section>
 
