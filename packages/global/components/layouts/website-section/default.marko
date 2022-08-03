@@ -32,8 +32,8 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <${input.head} />
       </@head>
       <@above-container>
-        <marko-web-resolve-page|{ data: content }| node=pageNode>
-          $ const aliases = hierarchyAliases(content.primarySection);
+        <marko-web-resolve-page|{ data: section }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
           <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
         </marko-web-resolve-page>
       </@above-container>

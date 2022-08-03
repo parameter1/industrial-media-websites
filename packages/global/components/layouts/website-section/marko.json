@@ -1,4 +1,19 @@
 {
+  "<global-website-section-contact-us-layout>": {
+    "template": "./contact-us.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object",
+    "<loader>": {
+      "<featured-params>": {},
+      "<standard-params>": {},
+      "@with-standard-query": "boolean"
+    },
+    "@right-rail-header": "string"
+  },
   "<global-website-section-default-layout>": {
     "template": "./default.marko",
     "<head>": {},
