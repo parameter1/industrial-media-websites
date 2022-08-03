@@ -11,8 +11,8 @@ const feed = require('./feed');
 const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
-const redirects = require('./redirects');
 const search = require('./search');
+const contactUs = require('./contact-us');
 
 module.exports = (app, siteConfig) => {
   // HTML Sitemap
@@ -39,9 +39,6 @@ module.exports = (app, siteConfig) => {
   // Shared Public Files (e.g. ads.txt)
   publicFiles(app);
 
-  // Redirects
-  redirects(app);
-
   // Remote component/block loader
   renderBlock(app);
 
@@ -53,4 +50,6 @@ module.exports = (app, siteConfig) => {
 
   // Dynamic Pages
   dynamicPage(app);
+
+  contactUs(app);
 };
