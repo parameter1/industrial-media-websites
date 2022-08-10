@@ -57,7 +57,7 @@ module.exports = {
     description: '',
   },
   contactUs: {
-    notificationDeafults: {
+    notificationDefaults: {
       to: 'david@ien.com',
       branding: {
         logo: 'https://img.ien.com/files/base/indm/all/ien_logo.png?h=60&auto=format,compress',
