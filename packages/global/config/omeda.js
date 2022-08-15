@@ -38,7 +38,6 @@ const configs = (brandKey) => {
  */
 module.exports = (brandKey) => {
   const config = configs(brandKey);
-  console.log('config: ', config);
   if (!config) throw new Error(`Unable to load an Omeda config for brand ${brandKey}`);
   return config;
 };
