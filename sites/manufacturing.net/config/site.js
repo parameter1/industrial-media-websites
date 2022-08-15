@@ -5,15 +5,16 @@ const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
 const identityX = require('./identity-x');
+const omeda = require('./omeda');
+const omedaIdentityX = require('./omeda-identity-x');
 const newsletter = require('./newsletter');
-
-const omedaBrandKey = 'imcd';
 
 module.exports = {
   navigation,
   gam,
-  omedaBrandKey,
-  identityX: identityX({ omedaBrandKey }),
+  omeda,
+  omedaIdentityX,
+  identityX,
   nativeX,
   newsletter,
   socialMediaLinks,
