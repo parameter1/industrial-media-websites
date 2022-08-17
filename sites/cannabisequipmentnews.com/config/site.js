@@ -69,5 +69,9 @@ module.exports = {
       email: 'reply@cannabisequipmentnews.com',
     },
   },
-  brightCovePlayerEnabled: false,
+  brightCovePlayerEnabled: true,
+  brightCovePlayerData: {
+    playerId: 'kln2UOlrO',
+    playlistId: '1739634672452634754',
+  },
 };
