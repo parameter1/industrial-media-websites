@@ -18,9 +18,6 @@ module.exports = {
   idxNavItems: {
     enable: true,
   },
-  commenting: {
-    enable: true,
-  },
   magazine,
   nativeX,
   newsletter,

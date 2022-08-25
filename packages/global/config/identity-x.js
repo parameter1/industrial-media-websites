@@ -5,6 +5,7 @@ module.exports = ({
   appId,
   hiddenFields = [],
   defaultCountryCode,
+  comments = { enabled: false },
   requiredServerFields = [],
   requiredClientFields = [],
   ...rest
@@ -19,5 +20,6 @@ module.exports = ({
     onHookError: newrelic.noticeError.bind(newrelic),
     ...rest,
   });
+  config.comments = comments;
   return config;
 };
