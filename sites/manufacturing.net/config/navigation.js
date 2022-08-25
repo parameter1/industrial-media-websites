@@ -13,10 +13,13 @@ const topics = sortNavItems([
 
 const secondary = [
   { href: '/video', label: 'Video' },
+  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=mnet_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: '/podcast', label: 'Podcast' },
 ];
 
 const resources = [
+  { href: '/video', label: 'Video' },
   { href: '/page/mnet-about-us', label: 'About Us' },
   { href: '/contact-us', label: 'Contact Us' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },

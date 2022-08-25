@@ -9,15 +9,16 @@ const topics = sortNavItems([
   { href: '/industries/military', label: 'Military' },
   { href: '/news', label: 'News' },
   { href: '/new-products', label: 'New Products' },
-  { href: '/video', label: 'Video' },
 ]);
 
 const secondary = [
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/video', label: 'Video' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ddt_signup', label: 'Newsletter Signup', target: '_blank' },
 ];
 
 const resources = [
+  { href: '/video', label: 'Video' },
   { href: '/contact-us', label: 'Contact Us' },
   { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
 ];

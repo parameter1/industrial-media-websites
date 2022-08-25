@@ -16,8 +16,9 @@ const topics = sortNavItems([
 
 const secondary = [
   { href: '/video', label: 'Video' },
-  { href: '/podcast', label: 'Podcast' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ien_signup', label: 'Newsletter Signup', target: '_blank' },
+  { href: '/podcast', label: 'Podcast' },
   { href: '/magazine', label: 'Magazine' },
 ];
 
