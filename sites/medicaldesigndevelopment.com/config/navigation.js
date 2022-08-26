@@ -11,11 +11,13 @@ const topics = sortNavItems([
 ]);
 
 const secondary = [
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/video', label: 'Video' },
   { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cenmeddesdev_signup', label: 'Newsletter Signup', target: '_blank' },
 ];
 
 const resources = [
+  { href: '/video', label: 'Video' },
   { href: '/page/about-us', label: 'About Us' },
   { href: '/contact-us', label: 'Contact Us' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
