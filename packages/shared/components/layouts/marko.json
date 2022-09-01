@@ -1,9 +1,0 @@
-{
-  "taglib-imports": [
-    "./magazine/marko.json",
-    "./website-section/marko.json"
-  ],
-  "<shared-published-content-page-default-layout>": {
-    "template": "./published-content.marko"
-  }
-}
