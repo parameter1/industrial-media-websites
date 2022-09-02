@@ -5,7 +5,6 @@ const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/r
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
-const odentityCustomerUpsert = require('@parameter1/base-cms-marko-web-omeda/odentity/upsert-customer');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -18,7 +17,6 @@ const redirectHandler = require('./redirect-handler');
 const leadsMiddleware = require('./middleware/leads');
 const idxRouteTemplates = require('./templates/user');
 const oembedHandler = require('./oembed-handler');
-const omeda = require('./config/omeda');
 const recaptcha = require('./config/recaptcha');
 const idxNavItems = require('./config/identity-x-nav');
 
@@ -71,19 +69,10 @@ module.exports = (options = {}) => {
       set(app.locals, 'recaptcha', recaptcha);
 
       // Use Omeda middleware
-      const omedaBrandKey = get(options, 'siteConfig.omedaBrandKey');
-      const omedaConfig = omeda(omedaBrandKey);
-      set(app.locals, 'omedaConfig', omedaConfig);
-      const idxConfig = getAsObject(options, 'siteConfig.identityX');
-      omedaIdentityX(app, {
-        brandKey: omedaConfig.brandKey,
-        clientKey: omedaConfig.clientKey,
-        appId: omedaConfig.appId,
-        inputId: omedaConfig.inputId,
-        rapidIdentProductId: get(omedaConfig, 'rapidIdentification.productId'),
-        idxConfig,
-        idxRouteTemplates,
-      });
+      const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
+      // set globally to use with omeda olytics calls in document.marko
+      set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
+      omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
       idxNavItems({ site: app.locals.site });
 
       // Setup GAM.
@@ -97,12 +86,6 @@ module.exports = (options = {}) => {
       // Setup IdentityX.
       const identityXConfig = get(options, 'siteConfig.identityX');
       set(app.locals, 'identityX', identityXConfig);
-
-      // Omeda customer upsert
-      app.use(odentityCustomerUpsert({
-        brandKey: omedaConfig.brandKey,
-        onError: newrelic.noticeError.bind(newrelic),
-      }));
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
 
