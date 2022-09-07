@@ -8,6 +8,10 @@ module.exports = {
         id
         name
       }
+      primarySection {
+        id
+        alias
+      }
     }
   `,
   formatResponse: ({ res, content: node }) => {
