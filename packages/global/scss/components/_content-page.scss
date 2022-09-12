@@ -11,6 +11,8 @@
     &__image-caption,
     &__image-credit {
       display: block;
+      padding: 0;
+      font-size: 12px;
       line-height: inherit;
     }
     &__image-credit::before {
