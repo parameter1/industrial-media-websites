@@ -6,3 +6,55 @@
     }
   }
 }
+.content-page-body {
+  .primary-image {
+    &__image-caption,
+    &__image-credit {
+      display: block;
+      padding: 0;
+      font-size: 12px;
+      line-height: inherit;
+    }
+    &__image-credit::before {
+      font-weight: $font-weight-bold;
+    }
+    div:nth-child(2):not(.primary-image__wrapper) {
+      padding-top: map-get($spacers, 2);
+    }
+    div:last-child:not(.primary-image__wrapper) {
+      width: 100%;
+      border-bottom: solid 1px $gray-200;
+      padding-bottom: map-get($spacers, 2);
+    }
+  }
+
+  p > [data-embed-type=image] {
+    picture {
+      display: flex;
+      flex-direction: column;
+      img {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+
+    .caption,
+    .credit {
+      padding: 0;
+      display: block;
+      font-size: 12px;
+    }
+    .credit:before {
+      font-weight: $font-weight-bold;
+    }
+    span:first-of-type {
+      padding-top: map-get($spacers, 2);
+    }
+    span:last-child {
+      width: 100%;
+      border-bottom: solid 1px $gray-200;
+      padding-bottom: map-get($spacers, 2);
+    }
+  }
+}
