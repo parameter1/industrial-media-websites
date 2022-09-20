@@ -88,11 +88,11 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/impo-about-us', label: 'About Us' },
+      { href: '/page/id-about-us', label: 'About Us' },
       { href: '/contact-us', label: 'Contact Us' },
       { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
-      { href: '/page/impo-privacy-policy', label: 'Privacy Policy' },
-      { href: '/page/impo-terms-conditions', label: 'Terms & Conditions' },
+      { href: '/page/id-privacy-policy', label: 'Privacy Policy' },
+      { href: '/page/id-terms-conditions', label: 'Terms & Conditions' },
       { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
       { href: '/site-map', label: 'Site Map' },
     ],
