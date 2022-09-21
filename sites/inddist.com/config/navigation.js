@@ -10,7 +10,7 @@ const topics = sortNavItems([
   { href: '/sales', label: 'Sales' },
   { href: '/staffing-changes', label: 'Staffing Changes' },
   { href: '/supply-chain', label: 'Supply Chain' },
-  { href: '/workforce-development', label: 'Workforce' },
+  { href: '/big-50', label: 'Big 50' },
 ]);
 
 const secondary = [
@@ -72,8 +72,8 @@ module.exports = {
     leftColumn: {
       label: 'Topics',
       items: [
-        { href: '/big-50', label: 'Big 50' },
         ...topics,
+        { href: '/workforce-development', label: 'Workforce' },
       ],
     },
     midColumn: {
