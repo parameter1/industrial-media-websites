@@ -96,4 +96,16 @@
       }
     }
   }
+
+  &--top-stories {
+    &.node--video-content-type {
+      #{ $self } {
+        &__image-inner-wrapper {
+          &::after {
+            opacity: .6;
+          }
+        }
+      }
+    }
+  }
 }

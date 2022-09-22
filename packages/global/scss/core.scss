@@ -151,6 +151,17 @@ label {
   &__header {
     padding-bottom: 0;
   }
+  &__node {
+    .node--video-content-type {
+      .node {
+        &__image-inner-wrapper {
+          &::after {
+            opacity: .6;
+          }
+        }
+      }
+    }
+  }
 }
 
 .card-deck-flow {
