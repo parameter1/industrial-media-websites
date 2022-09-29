@@ -12,7 +12,6 @@ const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const search = require('./search');
-const contactUs = require('./contact-us');
 
 module.exports = (app, siteConfig) => {
   // HTML Sitemap
@@ -50,6 +49,4 @@ module.exports = (app, siteConfig) => {
 
   // Dynamic Pages
   dynamicPage(app);
-
-  contactUs(app);
 };
