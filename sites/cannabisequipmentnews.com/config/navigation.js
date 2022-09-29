@@ -24,7 +24,8 @@ const resources = [
   { href: '/podcast', label: 'Podcast' },
   { href: '/video', label: 'Video' },
   { href: '/page/about-us', label: 'About Us' },
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/page/contact-us', label: 'Contact Us' },
+
   { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
 ];
 
@@ -98,7 +99,7 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/contact-us', label: 'Contact Us' },
+      { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/page/about-us', label: 'About Us' },
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/terms-conditions', label: 'Terms & Conditions' },

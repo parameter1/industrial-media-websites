@@ -27,7 +27,17 @@ const getFileRedirect = ({ from, app }) => {
   return { to };
 };
 
-module.exports = ({ from, app }) => {
+const getSiteRedirect = ({ from }) => {
+  if (from === '/contact-us') {
+    return { to: '/page/contact-us' };
+  }
+
+  return null;
+};
+
+module.exports = ({ from, app, req }) => {
+  const siteRedirect = getSiteRedirect({ from, req });
+  if (siteRedirect) return siteRedirect;
   const sizedImageRedirect = getSizedImageRedirect({ from });
   if (sizedImageRedirect) return sizedImageRedirect;
   return getFileRedirect({ from, app });

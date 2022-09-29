@@ -21,7 +21,7 @@ const secondary = [
 
 const resources = [
   { href: '/video', label: 'Video' },
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/page/contact-us', label: 'Contact Us' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
 ];
 
@@ -29,7 +29,7 @@ const utilities = [
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=fm_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
   { href: '/page/fm-about-us', label: 'About Us' },
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/page/contact-us', label: 'Contact Us' },
   { href: '/page/fm-privacy-policy', label: 'Privacy Policy' },
   { href: '/page/fm-terms-conditions', label: 'Terms & Conditions' },
   { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
@@ -94,7 +94,7 @@ module.exports = {
       { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=fm_signup', label: 'Newsletter Signup', target: '_blank' },
       { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
       { href: '/page/fm-about-us', label: 'About Us' },
-      { href: '/contact-us', label: 'Contact Us' },
+      { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/page/fm-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/fm-terms-conditions', label: 'Terms & Conditions' },
       { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },

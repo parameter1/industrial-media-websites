@@ -15,13 +15,20 @@ $ const { id, type, pageNode } = input;
 
   <@section|{ blockName, content }|>
     $ const { primarySection } = content;
-    <div class="content-page-body">
-      <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="content-page-body">
+          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
 
-        $ const bodyId = `content-body-${content.id}`;
-        <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+            $ const bodyId = `content-body-${content.id}`;
+            <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
-      </default-theme-page-contents>
+          </default-theme-page-contents>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <contact-us-form config-name="notificationDefaults"/>
+      </div>
     </div>
   </@section>
 
