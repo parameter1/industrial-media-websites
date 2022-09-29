@@ -19,7 +19,7 @@ const secondary = [
 const resources = [
   { href: '/video', label: 'Video' },
   { href: '/page/impo-about-us', label: 'About Us' },
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/page/contact-us', label: 'Contact Us' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
 ];
 
@@ -84,7 +84,7 @@ module.exports = {
   footer: {
     items: [
       { href: '/page/impo-about-us', label: 'About Us' },
-      { href: '/contact-us', label: 'Contact Us' },
+      { href: '/page/contact-us', label: 'Contact Us' },
       { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
       { href: '/page/impo-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/impo-terms-conditions', label: 'Terms & Conditions' },

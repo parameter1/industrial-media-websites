@@ -27,7 +27,7 @@ const resources = [
   { href: '/podcast', label: 'Podcast' },
   { href: '/magazine', label: 'Magazine' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
-  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/page/contact-us', label: 'Contact Us' },
 ];
 
 const utilities = [
@@ -99,7 +99,7 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/contact-us', label: 'Contact Us' },
+      { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/page/about-us', label: 'About Us' },
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/terms-conditions', label: 'Terms & Conditions' },
