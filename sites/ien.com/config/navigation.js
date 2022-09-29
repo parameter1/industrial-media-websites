@@ -28,6 +28,7 @@ const resources = [
   { href: '/magazine', label: 'Magazine' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
   { href: '/contact-us', label: 'Contact Us' },
+  { href: '/page/about-us', label: 'About Us' },
 ];
 
 const utilities = [
