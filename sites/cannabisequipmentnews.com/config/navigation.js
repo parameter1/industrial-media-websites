@@ -23,7 +23,9 @@ const secondary = [
 const resources = [
   { href: '/podcast', label: 'Podcast' },
   { href: '/video', label: 'Video' },
+  { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
+
   { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
 ];
 
