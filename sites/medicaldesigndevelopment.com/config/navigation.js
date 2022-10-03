@@ -8,15 +8,18 @@ const topics = sortNavItems([
   { href: '/topics/implantables', label: 'Implantables' },
   { href: '/products/new-products', label: 'New Products' },
   { href: '/topics/surgical', label: 'Surgical' },
+  { href: '/topics/oncology', label: 'Oncology' },
 ]);
 
 const secondary = [
+  { href: '/news', label: 'News' },
   { href: '/video', label: 'Video' },
   { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
   { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cenmeddesdev_signup', label: 'Newsletter Signup', target: '_blank' },
 ];
 
 const resources = [
+  { href: '/news', label: 'News' },
   { href: '/video', label: 'Video' },
   { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
