@@ -12,7 +12,6 @@ const topics = sortNavItems([
 ]);
 
 const secondary = [
-  { href: '/news', label: 'News' },
   { href: '/video', label: 'Video' },
   { href: 'https://ien.formstack.com/forms/advertise_with_lynch_media', label: 'Advertise', target: '_blank' },
   { href: 'https://lynchmedia.dragonforms.com/loading.do?omedasite=cenmeddesdev_signup', label: 'Newsletter Signup', target: '_blank' },
