@@ -8,6 +8,7 @@ const topics = sortNavItems([
   { href: '/topics/implantables', label: 'Implantables' },
   { href: '/products/new-products', label: 'New Products' },
   { href: '/topics/surgical', label: 'Surgical' },
+  { href: '/topics/oncology', label: 'Oncology' },
 ]);
 
 const secondary = [
@@ -17,6 +18,7 @@ const secondary = [
 ];
 
 const resources = [
+  { href: '/news', label: 'News' },
   { href: '/video', label: 'Video' },
   { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
