@@ -42,11 +42,19 @@ fragment ContentPageFragment on Content {
   }
   primaryImage {
     id
-    src
+    src(input: { useCropRectangle: true, options: { auto: "format,compress" } })
+    cropRectangle {
+      width
+      height
+    }
     alt
     caption
     credit
     isLogo
+    cropDimensions {
+      aspectRatio
+    }
+    primaryImageDisplay
   }
   gating {
     surveyType
