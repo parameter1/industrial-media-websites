@@ -1,58 +1,9 @@
-import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
-import { getAsArray, get } from "@parameter1/base-cms-object-path";
+$ const { id, alias, name, pageNode } = input;
 
-$ const { id, type, pageNode } = input;
-$ const { GAM } = out.global;
-<theme-content-page id=id type=type >
-  <@head>
-    <marko-web-gtm-content-context|{ context }| id=id>
-      <marko-web-gtm-push data=context />
-    </marko-web-gtm-content-context>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      <marko-web-p1-events-track-content node=content />
-    </marko-web-resolve-page>
-  </@head>
-  <@above-container>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      $ const aliases = hierarchyAliases(content.primarySection);
-      <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
-    </marko-web-resolve-page>
-  </@above-container>
-  <@page>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      $ const aliases = hierarchyAliases(content.primarySection);
-      <marko-web-page-wrapper>
-        <@section|{ blockName }|>
-          $ const { primarySection } = content;
-          <div class="content-page-header">
-            <theme-content-page-breadcrumbs section=primarySection />
-            <marko-web-content-name tag="h1" block-name=blockName obj=content />
-          </div>
-        </@section>
-
-        <@section|{ blockName }|>
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="content-page-body">
-                <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-
-                  $ const bodyId = `content-body-${content.id}`;
-                  <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
-
-                </default-theme-page-contents>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <contact-us-form config-name="notificationDefaults"/>
-            </div>
-          </div>
-        </@section>
-      </marko-web-page-wrapper>
-    </marko-web-resolve-page>
-  </@page>
-  <@foot>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      <global-fixed-ad-bottom aliases=hierarchyAliases(content.primarySection) />
-    </marko-web-resolve-page>
-  </@foot>
-</theme-content-page>
+<global-dynamic-page-index-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+</global-dynamic-page-index-layout>
