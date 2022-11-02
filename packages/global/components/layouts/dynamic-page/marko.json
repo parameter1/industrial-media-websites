@@ -1,0 +1,18 @@
+{
+  "<global-dynamic-page-index-layout>": {
+    "template": "./index.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object",
+    "<loader>": {
+      "<featured-params>": {},
+      "<standard-params>": {},
+      "@with-standard-query": "boolean"
+    },
+    "@right-rail-header": "string",
+    "@rails <rail>[]": {}
+  }
+}

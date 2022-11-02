@@ -1,0 +1,18 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { id, alias, name, pageNode } = input;
+$ const { site } = out.global;
+$ const contactUs = site.get('contactUs');
+$ const title = get(contactUs, 'title');
+
+<global-dynamic-page-index-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@rail>
+    <contact-us-form config-name="notificationDefaults" title=title />
+  </@rail>
+</global-dynamic-page-index-layout>

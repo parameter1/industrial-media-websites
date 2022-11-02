@@ -58,6 +58,7 @@ module.exports = {
     description: '',
   },
   contactUs: {
+    title: 'Submit a comment.',
     notificationDefaults: {
       to: 'david@ien.com',
       branding: {
