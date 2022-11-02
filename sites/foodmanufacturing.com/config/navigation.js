@@ -27,6 +27,8 @@ const resources = [
 
 const utilities = [
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=fm_signup', label: 'Newsletter Signup', target: '_blank' },
+  { href: 'https://ien.formstack.com/forms/today_in_manufacturing_podcast', label: 'Subscribe - Today in Manufacturing Podcast', target: '_blank' },
+  { href: 'https://ien.formstack.com/forms/industrial_media_security_breach_podcast', label: 'Subscribe - Security Breach Podcast', target: '_blank' },
   { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
   { href: '/page/fm-about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
