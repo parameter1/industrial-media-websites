@@ -48,7 +48,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
       </if>
 
       <if(type === "events" || type === "webinars" || displayPublishedDate)>
-        <default-theme-page-dates|{ blockName }|>
+        <theme-page-dates|{ blockName }|>
           <if(type === "event")>
             <marko-web-content-starts block-name=blockName obj=content />
             <marko-web-content-ends block-name=blockName obj=content />
@@ -59,7 +59,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
           <else-if(displayPublishedDate)>
             <theme-content-published-node block-name=blockName obj=content display-updated-date=false />
           </else-if>
-        </default-theme-page-dates>
+        </theme-page-dates>
       </if>
     </div>
   </@section>
@@ -69,7 +69,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     <div class="row">
       <div class="col-lg-8">
         <div class="content-page-body" role="region" aria-label="Content Body">
-          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+          <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
               <global-content-embed-code block-name=blockName content=content />
             </if>
@@ -169,16 +169,16 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
             </marko-web-identity-x-access>
 
             <if(type === "document" || type === "whitepaper")>
-              <default-theme-content-download obj=content>
+              <theme-content-download obj=content>
                 <@wufoo user-name=site.get("wufoo.userName") />
                 <@link class="btn btn-primary" />
-              </default-theme-content-download>
+              </theme-content-download>
             </if>
 
             <if(type === "webinar")>
               <div class="mb-block" >
                 $ const isUpcoming = content.startDate > Date.now();
-                <default-theme-content-link-url
+                <theme-content-link-url
                   obj=content
                   label=(isUpcoming ? "Register for Webinar" : "View Webinar")
                   target="_blank"
@@ -208,7 +208,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 published=content.published
               />
             </if>
-          </default-theme-page-contents>
+          </theme-page-contents>
         </div>
       </div>
       <div class="col-lg-4 page-rail">

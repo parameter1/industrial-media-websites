@@ -19,25 +19,25 @@ $ const navigation = {
 >
   <${input.aboveNav} />
 
-  <default-theme-site-navbar modifiers=["top"] attrs={ "aria-label": "Top Navigation" }>
+  <theme-site-navbar modifiers=["top"] attrs={ "aria-label": "Top Navigation" }>
     <div class='site-navbar__left'>
-      <default-theme-site-navbar-brand title=`${config.website("name")} Homepage`>
-        <default-theme-site-navbar-logo
+      <theme-site-navbar-brand title=`${config.website("name")} Homepage`>
+        <theme-site-navbar-logo
           alt=config.website("name")
           src=site.get("logos.navbar.src")
           srcset=site.getAsArray("logos.navbar.srcset").join(",")
         />
-      </default-theme-site-navbar-brand>
+      </theme-site-navbar-brand>
     </div>
     <div class='site-navbar__center'>
-      <default-theme-site-navbar modifiers=["secondary"]>
-        <default-theme-site-navbar-items
+      <theme-site-navbar modifiers=["secondary"]>
+        <theme-site-navbar-items
           items=navigation.secondary
           modifiers=["secondary"]
           reg-enabled=input.regEnabled
           has-user=input.hasUser
         />
-      </default-theme-site-navbar>
+      </theme-site-navbar>
     </div>
     <div class='site-navbar__right'>
       <if(site.getAsObject("newsletter.pushdown") && !site.getAsObject("newsletter.pushdown.disabled"))>
@@ -64,15 +64,15 @@ $ const navigation = {
         icon-name="three-bars"
       />
     </div>
-  </default-theme-site-navbar>
+  </theme-site-navbar>
 
-  <default-theme-site-navbar modifiers=["primary"] attrs={ "aria-label": "Primary Navigation" }>
-    <default-theme-site-navbar-items
+  <theme-site-navbar modifiers=["primary"] attrs={ "aria-label": "Primary Navigation" }>
+    <theme-site-navbar-items
       items=navigation.primary
       modifiers=["primary"]
       reg-enabled=input.regEnabled
       has-user=input.hasUser
     />
-  </default-theme-site-navbar>
+  </theme-site-navbar>
   <${input.belowNav} />
 </marko-web-block>

@@ -25,7 +25,7 @@ $ const adPosition = input.adPosition || "after";
         ${title}
       </marko-web-element>
     </if>
-    <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=[blockName]>
+    <theme-card-deck-flow cols=3 nodes=nodes modifiers=[blockName]>
       <@slot|{ node }|>
         <theme-content-node
           image-position="top"
@@ -47,6 +47,6 @@ $ const adPosition = input.adPosition || "after";
           </@slot>
         </for>
       </if>
-    </default-theme-card-deck-flow>
+    </theme-card-deck-flow>
   </marko-web-query>
 </else>

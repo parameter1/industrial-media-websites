@@ -87,7 +87,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                       <marko-web-element block-name="top-stories" name="header">
                         ${i18n("Featured")}
                       </marko-web-element>
-                      <default-theme-card-deck-flow
+                      <theme-card-deck-flow
                         modifiers=["top-story"]
                         cols=2
                         nodes=cardNodes
@@ -114,7 +114,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                             modifiers=["top-stories", "in-card"]
                           />
                         </@slot>
-                      </default-theme-card-deck-flow>
+                      </theme-card-deck-flow>
                     </if>
                   </if>
                 </div>
