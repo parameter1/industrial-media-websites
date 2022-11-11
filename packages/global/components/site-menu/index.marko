@@ -20,7 +20,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
     <div class="row">
       <div class="col-6 col-md-3">
         <!-- sections -->
-        <default-theme-site-menu-section
+        <theme-site-menu-section
           tag="nav"
           block-name=blockName
           label=(site.get("navigation.toggleMenu.leftColumn.label") || "Topics")
@@ -32,7 +32,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
       </div>
       <div class="d-none d-md-flex col-md-3">
         <!-- sections -->
-        <default-theme-site-menu-section
+        <theme-site-menu-section
           tag="nav"
           block-name=blockName
           label=(site.get("navigation.toggleMenu.midColumn.label") || "Resources")
@@ -50,12 +50,12 @@ $ const hasUser = defaultValue(input.hasUser, false);
           modifiers=["primary"]
         >
           <!-- Right Column Header -->
-          <default-theme-site-menu-header block-name=blockName>
+          <theme-site-menu-header block-name=blockName>
             ${ site.get("navigation.toggleMenu.rightColumn.label") || "User Tools" }
-          </default-theme-site-menu-header>
+          </theme-site-menu-header>
           <!-- Identity X navigation Items -->
           <!-- Identity X navigation Items -->
-          <default-theme-site-menu-section
+          <theme-site-menu-section
             tag="nav"
             block-name=blockName
             items=site.getAsArray("navigation.user.items")
@@ -66,7 +66,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
           <!-- Social Follow Label & items -->
           <social-icons block-name=blockName title="Follow Us" />
           <!-- Toggle Menu Right Column Items -->
-          <default-theme-site-navbar-items
+          <theme-site-navbar-items
             block-name=blockName
             items=site.getAsArray("navigation.toggleMenu.rightColumn.items")
             reg-enabled=regEnabled
@@ -80,7 +80,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
   <marko-web-element block-name=blockName name="contents-mobile">
     <!-- primary section -->
     <!-- Identity X navigation Items -->
-    <default-theme-site-menu-section
+    <theme-site-menu-section
       tag="nav"
       block-name=blockName
       items=site.getAsArray("navigation.user.items")
@@ -91,7 +91,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
     <!-- social -->
     <social-icons block-name=blockName />
     <!-- primary section -->
-    <default-theme-site-menu-section
+    <theme-site-menu-section
       tag="nav"
       block-name=blockName
       items=site.getAsArray("navigation.mobileMenu.primary")
@@ -100,7 +100,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
       has-user=hasUser
     />
     <!-- secondary section -->
-    <default-theme-site-menu-section
+    <theme-site-menu-section
       tag="nav"
       block-name=blockName
       items=site.getAsArray("navigation.mobileMenu.secondary")

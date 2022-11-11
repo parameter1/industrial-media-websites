@@ -21,7 +21,7 @@ $ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-
 >
   <${input.aboveNav} />
 
-  <default-theme-site-navbar modifiers=["top"] attrs={ "aria-label": "Top Navigation" }>
+  <theme-site-navbar modifiers=["top"] attrs={ "aria-label": "Top Navigation" }>
     <if(promos.length)>
       <div class=`${headerColClass} site-navbar__left`>
         <div class="row">
@@ -55,13 +55,13 @@ $ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-
       </div>
     </if>
     <div class=`${headerColClass} site-navbar__center`>
-      <default-theme-site-navbar-brand title=`${config.website("name")} Homepage`>
-        <default-theme-site-navbar-logo
+      <theme-site-navbar-brand title=`${config.website("name")} Homepage`>
+        <theme-site-navbar-logo
           alt=config.website("name")
           src=site.get("logos.navbar.src")
           srcset=site.getAsArray("logos.navbar.srcset").join(",")
         />
-      </default-theme-site-navbar-brand>
+      </theme-site-navbar-brand>
     </div>
     <div class=`${headerColClass} site-navbar__right`>
       <marko-web-link href="/search">
@@ -87,15 +87,15 @@ $ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-
         icon-name="three-bars"
       />
     </div>
-  </default-theme-site-navbar>
+  </theme-site-navbar>
 
-  <default-theme-site-navbar modifiers=["primary"] attrs={ "aria-label": "Primary Navigation" }>
-    <default-theme-site-navbar-items
+  <theme-site-navbar modifiers=["primary"] attrs={ "aria-label": "Primary Navigation" }>
+    <theme-site-navbar-items
       items=navigation.primary
       modifiers=["primary"]
       reg-enabled=input.regEnabled
       has-user=input.hasUser
     />
-  </default-theme-site-navbar>
+  </theme-site-navbar>
   <${input.belowNav} />
 </marko-web-block>

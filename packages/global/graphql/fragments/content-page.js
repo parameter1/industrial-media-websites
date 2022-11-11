@@ -66,6 +66,7 @@ fragment ContentPageFragment on Content {
   }
   ... on ContentVideo {
     embedCode
+    transcript
   }
   ... on ContentNews {
     source
@@ -82,9 +83,13 @@ fragment ContentPageFragment on Content {
     byline: customAttribute(input: { path: "byline" })
     sidebars
   }
+  ... on ContentPodcast {
+    transcript
+  }
   ... on ContentWebinar {
     linkUrl
     startDate
+    transcript
     sponsors {
       edges {
         node {

@@ -11,7 +11,7 @@ $ const aliases = input.aliases || [];
 $ const adName = "load-more";
 
 <global-native-x-inject|{ nodes: injected }| nodes=input.nodes ...nativeX config=nxConfig>
-  <default-theme-card-deck-flow
+  <theme-card-deck-flow
     tag=input.tag
     class=input.class
     modifiers=input.modifiers
@@ -44,5 +44,5 @@ $ const adName = "load-more";
         </@slot>
       </for>
     </if>
-  </default-theme-card-deck-flow>
+  </theme-card-deck-flow>
 </global-native-x-inject>

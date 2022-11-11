@@ -48,7 +48,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
       </if>
 
       <if(type === "events" || type === "webinars" || displayPublishedDate)>
-        <default-theme-page-dates|{ blockName }|>
+        <theme-page-dates|{ blockName }|>
           <if(type === "event")>
             <marko-web-content-starts block-name=blockName obj=content />
             <marko-web-content-ends block-name=blockName obj=content />
@@ -59,7 +59,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
           <else-if(displayPublishedDate)>
             <theme-content-published-node block-name=blockName obj=content display-updated-date=false />
           </else-if>
-        </default-theme-page-dates>
+        </theme-page-dates>
       </if>
     </div>
   </@section>
@@ -69,9 +69,14 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     <div class="row">
       <div class="col-lg-8">
         <div class="content-page-body" role="region" aria-label="Content Body">
-          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+          <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
               <global-content-embed-code block-name=blockName content=content />
+              <if(content.transcript)>
+                <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
+                  <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                </marko-web-link>
+              </if>
             </if>
             <else-if(type === "media-gallery")>
               <!-- <marko-web-image-slider images=images /> -->
@@ -115,13 +120,10 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 />
               </if>
               <else>
-
                 $ const bodyId = `content-body-${content.id}`;
-
+                $ const desktopCounts = [350, 1500, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
+                $ const mobileCounts = [250, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
                 <if(shouldInjectAds)>
-
-                  $ const desktopCounts = [350, 1500, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
-                  $ const mobileCounts = [250, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
                   <theme-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
                     <for|char| of=desktopCounts>
                       <!-- desktop/tablet only -->
@@ -154,6 +156,40 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
                 <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
+                <if(content.transcript)>
+                  $ const transcriptId = `content-transcript-${content.id}`;
+                  <if(shouldInjectAds)>
+                    <theme-gam-inject-ads selector=`#${transcriptId}` detect-embeds=true>
+                      <for|char| of=desktopCounts>
+                        <!-- desktop/tablet only -->
+                        <@inject
+                          at=char
+                          name="inline-content-desktop"
+                          aliases=aliases
+                          modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                        />
+                      </for>
+
+                      <for|char| of=mobileCounts>
+                        <!-- mobile only -->
+                        <@inject
+                          at=char
+                          name="inline-content-mobile"
+                          aliases=aliases
+                          modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                        />
+                      </for>
+                    </theme-gam-inject-ads>
+                  </if>
+
+                  <div id=`transcript-${id}` class="page-contents__content-transcript">
+                    <marko-web-element block-name="page-contents" name="content-transcript-title">
+                      <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                    </marko-web-element>
+                    <marko-web-content-transcript obj=content block-name=blockName attrs={ id: transcriptId }  />
+                  </div>
+                </if>
+
                 <!-- needs input -->
                 <if(input.afterBody)>
                   <${input.afterBody}
@@ -169,16 +205,16 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
             </marko-web-identity-x-access>
 
             <if(type === "document" || type === "whitepaper")>
-              <default-theme-content-download obj=content>
+              <theme-content-download obj=content>
                 <@wufoo user-name=site.get("wufoo.userName") />
                 <@link class="btn btn-primary" />
-              </default-theme-content-download>
+              </theme-content-download>
             </if>
 
             <if(type === "webinar")>
               <div class="mb-block" >
                 $ const isUpcoming = content.startDate > Date.now();
-                <default-theme-content-link-url
+                <theme-content-link-url
                   obj=content
                   label=(isUpcoming ? "Register for Webinar" : "View Webinar")
                   target="_blank"
@@ -208,7 +244,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 published=content.published
               />
             </if>
-          </default-theme-page-contents>
+          </theme-page-contents>
         </div>
       </div>
       <div class="col-lg-4 page-rail">
