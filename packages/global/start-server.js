@@ -1,10 +1,13 @@
 const newrelic = require('newrelic');
+const { asyncRoute } = require('@parameter1/base-cms-utils');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
+const omedaCookie = require('@parameter1/base-cms-marko-web-omeda/olytics/customer-cookie');
+const fetch = require('node-fetch');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -19,6 +22,8 @@ const idxRouteTemplates = require('./templates/user');
 const oembedHandler = require('./oembed-handler');
 const recaptcha = require('./config/recaptcha');
 const idxNavItems = require('./config/identity-x-nav');
+
+const { error } = console;
 
 const routes = siteRoutes => (app, siteConfig) => {
   // load contact us route
@@ -86,6 +91,44 @@ module.exports = (options = {}) => {
       // Setup IdentityX.
       const identityXConfig = get(options, 'siteConfig.identityX');
       set(app.locals, 'identityX', identityXConfig);
+
+      app.use(asyncRoute(async (req, res, next) => {
+        try {
+          const { GAM_TRACK_API_KEY } = process.env;
+          if (!GAM_TRACK_API_KEY) return next();
+          const cookieId = omedaCookie.parseFrom(req);
+          const incomingId = omedaCookie.clean(req.query.oly_enc_id);
+          const encryptedId = incomingId || cookieId;
+          if (!encryptedId) return next();
+          const { brandKey } = getAsObject(options, 'siteConfig.omeda');
+          if (!brandKey) return next();
+
+          const r = await fetch('https://api.gt.parameter1.dev', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json', 'x-api-key': GAM_TRACK_API_KEY },
+            body: JSON.stringify({
+              action: 'encrypt',
+              params: {
+                identities: [{
+                  provider: 'omeda',
+                  tenant: brandKey,
+                  entityType: 'customer',
+                  id: encryptedId,
+                  idType: 'encrypted',
+                }],
+              },
+            }),
+          });
+          if (!r.ok) throw new Error('Bad fetch response');
+          const { data } = await r.json();
+          set(res.locals, 'gamTrackTargeting', data);
+          return next();
+        } catch (e) {
+          // @todo log this, don't break the request.
+          error('GAM TRACKER ERROR!', e);
+          return next();
+        }
+      }));
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
 
