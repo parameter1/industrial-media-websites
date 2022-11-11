@@ -72,6 +72,11 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
               <global-content-embed-code block-name=blockName content=content />
+              <if(content.transcript)>
+                <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block" title="Transcript">
+                  <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                </marko-web-link>
+              </if>
             </if>
             <else-if(type === "media-gallery")>
               <!-- <marko-web-image-slider images=images /> -->
@@ -153,6 +158,40 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 </for>
 
                 <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+
+                <if(content.transcript)>
+                  $ const transcriptId = `content-transcript-${content.id}`;
+                  <if(shouldInjectAds)>
+                    <theme-gam-inject-ads selector=`#${transcriptId}` detect-embeds=true>
+                      <for|char| of=desktopCounts>
+                        <!-- desktop/tablet only -->
+                        <@inject
+                          at=char
+                          name="inline-content-desktop"
+                          aliases=aliases
+                          modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                        />
+                      </for>
+
+                      <for|char| of=mobileCounts>
+                        <!-- mobile only -->
+                        <@inject
+                          at=char
+                          name="inline-content-mobile"
+                          aliases=aliases
+                          modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                        />
+                      </for>
+                    </theme-gam-inject-ads>
+                  </if>
+
+                  <div id=`transcript-${id}` class="page-contents__content-transcript">
+                    <marko-web-element block-name="page-contents" name="content-transcript-title">
+                      <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                    </marko-web-element>
+                    <marko-web-content-transcript obj=content block-name=blockName attrs={ id: transcriptId }  />
+                  </div>
+                </if>
 
                 <!-- needs input -->
                 <if(input.afterBody)>
