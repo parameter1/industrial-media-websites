@@ -73,7 +73,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
             <if(content.embedCode)>
               <global-content-embed-code block-name=blockName content=content />
               <if(content.transcript)>
-                <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block" title="Transcript">
+                <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
                   <marko-web-icon name="file" modifiers=["lg"] /> Transcript
                 </marko-web-link>
               </if>
