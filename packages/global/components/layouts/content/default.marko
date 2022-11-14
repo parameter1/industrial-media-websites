@@ -1,6 +1,7 @@
 import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
+import verifyNonEmptyHTML from '../../../utils/verify-non-empty-html';
 
 
 $ const { site } = out.global;
@@ -23,6 +24,7 @@ $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 $ const displayComments = (site.get('identityX.comments.enabled') && !["contact"].includes(type)) ? true : false;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
+$ const displayTranscript = content.transcript && verifyNonEmptyHTML(content.transcript);
 
 <global-content-wrapper-layout
   id=id
@@ -72,7 +74,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
               <global-content-embed-code block-name=blockName content=content />
-              <if(content.transcript)>
+              <if(displayTranscript)>
                 <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
                   <marko-web-icon name="file" modifiers=["lg"] /> Transcript
                 </marko-web-link>
@@ -156,7 +158,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
                 <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
-                <if(content.transcript)>
+                <if(displayTranscript)>
                   $ const transcriptId = `content-transcript-${content.id}`;
                   <if(shouldInjectAds)>
                     <theme-gam-inject-ads selector=`#${transcriptId}` detect-embeds=true>
