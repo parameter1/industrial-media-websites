@@ -5,7 +5,7 @@ const topics = sortNavItems([
   { href: '/automotive', label: 'Automotive' },
   { href: '/energy', label: 'Energy' },
   { href: '/industry40', label: 'Industry 4.0' },
-  { href: '/labor', label: 'Labor' },
+  { href: '/cybersecurity', label: 'Cybersecurity' },
   { href: '/operations', label: 'Operations' },
   { href: '/software', label: 'Software' },
   { href: '/supply-chain', label: 'Supply Chain' },
