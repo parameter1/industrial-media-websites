@@ -8,7 +8,7 @@ const topics = sortNavItems([
   { href: '/erp', label: 'ERP' },
   { href: '/global', label: 'Global' },
   { href: '/quality-control', label: 'Quality Control' },
-  { href: '/security', label: 'Security' },
+  { href: '/cybersecurity', label: 'Cybersecurity' },
 ]);
 
 const secondary = [
