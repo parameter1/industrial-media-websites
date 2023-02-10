@@ -1,17 +1,15 @@
-const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
-
-const topics = sortNavItems([
-  { href: '/new-products', label: 'New Products' },
+const topics = [
+  { href: '/big-50', label: 'Big 50' },
   { href: '/business-technology', label: 'Business Technology' },
-  { href: '/earnings', label: 'Earnings' },
   { href: '/economy', label: 'Economy' },
   { href: '/mergers-acquisitions', label: 'Mergers & Acquisitions' },
+  { href: '/new-products', label: 'New Products' },
   { href: '/operations', label: 'Operations' },
   { href: '/sales', label: 'Sales' },
   { href: '/staffing-changes', label: 'Staffing Changes' },
   { href: '/supply-chain', label: 'Supply Chain' },
-  { href: '/big-50', label: 'Big 50' },
-]);
+  { href: '/5-minutes-with-id', label: '5 Minutes with ID' },
+];
 
 const secondary = [
   { href: '/video', label: 'Video' },
