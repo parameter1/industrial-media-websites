@@ -11,6 +11,7 @@ const feed = require('./feed');
 const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
+const redirects = require('./redirects');
 const search = require('./search');
 
 module.exports = (app, siteConfig) => {
@@ -37,6 +38,9 @@ module.exports = (app, siteConfig) => {
 
   // Shared Public Files (e.g. ads.txt)
   publicFiles(app);
+
+  // Redirects
+  redirects(app);
 
   // Remote component/block loader
   renderBlock(app);
