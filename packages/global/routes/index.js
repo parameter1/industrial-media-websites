@@ -13,6 +13,7 @@ const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
 const search = require('./search');
+const formstack = require('../templates/formstack');
 
 module.exports = (app, siteConfig) => {
   // HTML Sitemap
@@ -23,6 +24,12 @@ module.exports = (app, siteConfig) => {
 
   // Feed
   feed(app);
+
+  app.get('/formstack/:formId([a-z0-9-/_]+)', (req, res) => {
+    const { formId } = req.params;
+    // @todo: Look into API to get title & description to send to template as well
+    return res.marko(formstack, { formId });
+  });
 
   // magazine
   magazine(app);
