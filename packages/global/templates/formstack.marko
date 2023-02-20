@@ -12,11 +12,10 @@ $ const { formId } = input;
 $ const scriptUrl = `https://IEN.formstack.com/forms/js.php/${formId}?${searchParams}`;
 $ const noscriptUrl = `https://IEN.formstack.com/forms/${formId}?${searchParams}`;
 
-$ const type = "page";
-$ const title = `${formId}` ;
-$ const description = "";
+$ const type = "survey";
+$ const title = `Customer Survey - ${formId}` ;
 
-<marko-web-default-page-layout type=type title=title description=description>
+<marko-web-default-page-layout type=type title=title >
   <@head>
     <marko-web-gtm-default-context|{ context }| type=type>
       <marko-web-gtm-push data=context />
