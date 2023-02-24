@@ -1,0 +1,36 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  build-and-test-image:
+    uses: parameter1/actions/.github/workflows/website-build-push-test.yml@main
+    strategy:
+      matrix:
+        ###############################################
+        #v# Make sure this matches the site matrix! #v#
+        ###############################################
+        site:
+          - { id: 5bc762d5adff35d154716639, dir: cannabisequipmentnews.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-cannabisequipmentnews.com }
+          - { id: 5af4890775a254af9e0041a7, dir: designdevelopmenttoday.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-designdevelopmenttoday.com }
+          - { id: 5d76bfdd665fc42e008b456b, dir: foodmanufacturing.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-foodmanufacturing.com }
+          - { id: 5669a4f16cdeeaf8598b4579, dir: ien.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-ien.com }
+          - { id: 5d76bfe40827e83a008b456f, dir: impomag.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-impomag.com }
+          - { id: 5d76bf9eed61522e008b456b, dir: inddist.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-inddist.com }
+          - { id: 5d76bfaf665fc42e008b4569, dir: manufacturing.net, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-manufacturing.net }
+          - { id: 5d76c0287c94042e008b456b, dir: mbtmag.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-mbtmag.com }
+          - { id: 6220f722417c94af0e8b45ca, dir: medicaldesigndevelopment.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-medicaldesigndevelopment.com }
+        ###############################################
+        #^# Make sure this matches the site matrix! #^#
+        ###############################################
+    with:
+      docker_image: website-${{ matrix.site.dir }}
+      site_id: ${{ matrix.site.id }}
+      site_host: ${{ matrix.site.dir }}
+      infra_stack: ${{ matrix.site.stack }}
+      tenant_key: ${{ matrix.site.tenant }}
+      ecr_registry: ${{ vars.AWS_ECR_REGISTRY }}
