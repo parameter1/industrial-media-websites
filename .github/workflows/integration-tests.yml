@@ -15,15 +15,15 @@ jobs:
         #v# Make sure this matches the site matrix! #v#
         ###############################################
         site:
-          - { id: 5bc762d5adff35d154716639, dir: cannabisequipmentnews.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-cannabisequipmentnews.com }
-          - { id: 5af4890775a254af9e0041a7, dir: designdevelopmenttoday.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-designdevelopmenttoday.com }
-          - { id: 5d76bfdd665fc42e008b456b, dir: foodmanufacturing.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-foodmanufacturing.com }
-          - { id: 5669a4f16cdeeaf8598b4579, dir: ien.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-ien.com }
-          - { id: 5d76bfe40827e83a008b456f, dir: impomag.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-impomag.com }
-          - { id: 5d76bf9eed61522e008b456b, dir: inddist.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-inddist.com }
-          - { id: 5d76bfaf665fc42e008b4569, dir: manufacturing.net, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-manufacturing.net }
-          - { id: 5d76c0287c94042e008b456b, dir: mbtmag.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-mbtmag.com }
-          - { id: 6220f722417c94af0e8b45ca, dir: medicaldesigndevelopment.com, stack: tauron, account: indm, tenant: indm_multi, rancher_label: industrial-media-medicaldesigndevelopment.com }
+          - { dir: cannabisequipmentnews.com, stack: tauron, id: 5bc762d5adff35d154716639, account: indm, tenant: indm_multi, rancher_label: industrial-media-cannabisequipmentnews.com }
+          - { dir: designdevelopmenttoday.com, stack: tauron, id: 5af4890775a254af9e0041a7, account: indm, tenant: indm_multi, rancher_label: industrial-media-designdevelopmenttoday.com }
+          - { dir: foodmanufacturing.com, stack: tauron, id: 5d76bfdd665fc42e008b456b, account: indm, tenant: indm_multi, rancher_label: industrial-media-foodmanufacturing.com }
+          - { dir: ien.com, stack: tauron, id: 5669a4f16cdeeaf8598b4579, account: indm, tenant: indm_multi, rancher_label: industrial-media-ien.com }
+          - { dir: impomag.com, stack: tauron, id: 5d76bfe40827e83a008b456f, account: indm, tenant: indm_multi, rancher_label: industrial-media-impomag.com }
+          - { dir: inddist.com, stack: tauron, id: 5d76bf9eed61522e008b456b, account: indm, tenant: indm_multi, rancher_label: industrial-media-inddist.com }
+          - { dir: manufacturing.net, stack: tauron, id: 5d76bfaf665fc42e008b4569, account: indm, tenant: indm_multi, rancher_label: industrial-media-manufacturing.net }
+          - { dir: mbtmag.com, stack: tauron, id: 5d76c0287c94042e008b456b, account: indm, tenant: indm_multi, rancher_label: industrial-media-mbtmag.com }
+          - { dir: medicaldesigndevelopment.com, stack: tauron, id: 6220f722417c94af0e8b45ca, account: indm, tenant: indm_multi, rancher_label: industrial-media-medicaldesigndevelopment.com }
         ###############################################
         #^# Make sure this matches the site matrix! #^#
         ###############################################
