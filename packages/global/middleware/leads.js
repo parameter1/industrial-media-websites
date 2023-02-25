@@ -1,5 +1,5 @@
-const isOmedaId = value => /^[a-z0-9]{15}$/i.test(value);
-const isExactTargetId = value => /^[0-9]+$/.test(value);
+const isOmedaId = (value) => /^[a-z0-9]{15}$/i.test(value);
+const isExactTargetId = (value) => /^[0-9]+$/.test(value);
 
 const extractOmedaId = (query) => {
   const legacy = query['lt.usr'];

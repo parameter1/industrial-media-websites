@@ -30,7 +30,6 @@ const configs = (brandKey) => {
   return config[brandKey];
 };
 
-
 /**
  *
  * @param {string} brandKey The Omeda brand key to load config for.

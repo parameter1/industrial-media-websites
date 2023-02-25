@@ -4,7 +4,6 @@ const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/om
 const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
 
-
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
 // const identityX = require('./identity-x');
