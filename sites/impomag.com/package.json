@@ -5,6 +5,14 @@
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/impomag.com",
   "license": "MIT",
   "private": true,
+  "website": {
+    "id": "5d76bfe40827e83a008b456f",
+    "tenant": "indm_multi",
+    "account": "indm",
+    "stack": "tauron",
+    "key": "impo",
+    "deploy": true
+  },
   "scripts": {
     "dev": "basecms-website dev --compile-dir ../../packages --watch-dir ../../packages",
     "build": "basecms-website build",
@@ -13,6 +21,14 @@
     "lint:fix": "yarn lint --fix",
     "test": "yarn lint && yarn compile --no-clean"
   },
+  "engines": {
+    "node": ">=14.15"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
   "dependencies": {
     "@industrial-media/package-global": "^2.6.6",
     "@parameter1/base-cms-marko-core": "^4.2.0",
@@ -24,13 +40,5 @@
     "@parameter1/base-cms-web-cli": "^4.1.1",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
-  },
-  "engines": {
-    "node": ">=14.15"
-  },
-  "os": [
-    "darwin",
-    "linux",
-    "win32"
-  ]
+  }
 }
