@@ -25,7 +25,7 @@ const idxNavItems = require('./config/identity-x-nav');
 
 const { error } = console;
 
-const routes = siteRoutes => (app, siteConfig) => {
+const routes = (siteRoutes) => (app, siteConfig) => {
   // load contact us route
   contactUsHandler(app);
   // Shared/global routes (all sites)
@@ -58,7 +58,7 @@ module.exports = (options = {}) => {
       app.use(paginated());
 
       // i18n
-      const i18n = v => v;
+      const i18n = (v) => v;
       set(app.locals, 'i18n', options.i18n || i18n);
 
       // Use paginated middleware
@@ -130,7 +130,7 @@ module.exports = (options = {}) => {
         }
       }));
     },
-    onAsyncBlockError: e => newrelic.noticeError(e),
+    onAsyncBlockError: (e) => newrelic.noticeError(e),
 
     redirectHandler,
 

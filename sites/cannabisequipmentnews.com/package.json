@@ -5,24 +5,39 @@
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/cannabisequipmentnews.com",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "dev": "basecms-website dev index.js",
-    "build": "basecms-website build",
-    "compile": "basecms-marko-compile compile --dir ./ --silent true",
-    "lint": "yarn lint:js && yarn lint:css",
-    "lint:js": "eslint --ext .js --ext .vue --max-warnings 5 --ignore-path ../../.eslintignore ./",
-    "lint:css": "stylelint ./**/*.scss --max-warnings 5",
-    "test": "yarn lint && yarn compile && yarn build"
+  "website": {
+    "id": "5bc762d5adff35d154716639",
+    "tenant": "indm_multi",
+    "account": "indm",
+    "stack": "tauron",
+    "key": "cen",
+    "deploy": true
   },
+  "scripts": {
+    "dev": "basecms-website dev --compile-dir ../../packages --watch-dir ../../packages",
+    "build": "basecms-website build",
+    "compile": "basecms-marko-compile compile",
+    "lint": "eslint --ext .js --ext .vue --max-warnings 5 --config ../../.eslintrc.js --ignore-path ../../.eslintignore ./",
+    "lint:fix": "yarn lint --fix",
+    "test": "yarn lint && yarn compile --no-clean"
+  },
+  "engines": {
+    "node": ">=14.15"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
   "dependencies": {
     "@industrial-media/package-global": "^2.6.6",
-    "@parameter1/base-cms-marko-core": "^3.17.0",
-    "@parameter1/base-cms-marko-web": "^3.17.1",
-    "@parameter1/base-cms-marko-web-native-x": "^3.17.0",
-    "@parameter1/base-cms-marko-web-theme-monorail": "^3.17.2",
-    "@parameter1/base-cms-object-path": "^3.0.0",
-    "@parameter1/base-cms-utils": "^3.0.0",
-    "@parameter1/base-cms-web-cli": "^3.17.1",
+    "@parameter1/base-cms-marko-core": "^4.2.0",
+    "@parameter1/base-cms-marko-web": "^4.5.2",
+    "@parameter1/base-cms-marko-web-native-x": "^4.1.0",
+    "@parameter1/base-cms-marko-web-theme-monorail": "^4.3.3",
+    "@parameter1/base-cms-object-path": "^4.0.2",
+    "@parameter1/base-cms-utils": "^4.0.2",
+    "@parameter1/base-cms-web-cli": "^4.3.4",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
