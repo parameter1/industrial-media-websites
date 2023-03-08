@@ -1,6 +1,4 @@
-import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
-
-$ const { config, site, req } = out.global;
+$ const { req, GAM } = out.global;
 $ const searchParams = new URLSearchParams({
   ...req.query,
   nomodernizr: 1,
@@ -21,6 +19,10 @@ $ const title = `Customer Survey - ${formId}` ;
       <marko-web-gtm-push data=context />
     </marko-web-gtm-default-context>
   </@head>
+  <@above-container>
+    $ const aliases = [`formstack/${formId}`];
+    <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
+  </@above-container>
   <@page>
     <marko-web-page-wrapper>
       <@section>
