@@ -27,16 +27,16 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=45&auto=format,compress',
+      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/all/site-logos/mdd.svg?h=45&auto=format,compress',
       srcset: [
-        'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=90&auto=format,compress&dpr=2 2x',
+        'https://img.medicaldesigndevelopment.com/files/base/indm/all/site-logos/mdd.svg?h=90&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
-      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60&auto=format,compress',
+      src: 'https://img.medicaldesigndevelopment.com/files/base/indm/all/site-logos/mdd.svg?h=60&auto=format,compress',
       srcset: [
-        'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=120&auto=format,compress&dpr=2 2x',
+        'https://img.medicaldesigndevelopment.com/files/base/indm/all/site-logos/mdd.svg?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },
@@ -57,7 +57,7 @@ module.exports = {
     notificationDefaults: {
       to: 'david@ien.com',
       branding: {
-        logo: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60&auto=format,compress',
+        logo: 'https://img.medicaldesigndevelopment.com/files/base/indm/all/site-logos/mdd.svg?h=60&auto=format,compress',
       },
       support: {
         email: 'reply@ien.com',
@@ -65,7 +65,7 @@ module.exports = {
     },
     to: 'david@ien.com',
     branding: {
-      logo: 'https://img.medicaldesigndevelopment.com/files/base/indm/mdd/image/static/Medical_Design_Development_Logo.png?h=60&auto=format,compress',
+      logo: 'https://img.medicaldesigndevelopment.com/files/base/indm/all/site-logos/mdd.svg?h=60&auto=format,compress',
     },
     support: {
       email: 'reply@ien.com',
