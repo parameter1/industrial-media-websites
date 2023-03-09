@@ -27,16 +27,16 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=70&auto=format,compress',
+      src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/site-logos/cen.svg?h=70&auto=format,compress',
       srcset: [
-        'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=140&auto=format,compress&dpr=2 2x',
+        'https://img.cannabisequipmentnews.com/files/base/indm/all/site-logos/cen.svg?h=140&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
-      src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=60&auto=format,compress',
+      src: 'https://img.cannabisequipmentnews.com/files/base/indm/all/site-logos/cen.svg?h=60&auto=format,compress',
       srcset: [
-        'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=120&auto=format,compress&dpr=2 2x',
+        'https://img.cannabisequipmentnews.com/files/base/indm/all/site-logos/cen.svg?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },

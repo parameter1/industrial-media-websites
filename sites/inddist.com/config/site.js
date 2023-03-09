@@ -28,16 +28,16 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=45&auto=format,compress',
+      src: 'https://img.inddist.com/files/base/indm/all/site-logos/id-sm.svg?h=45&auto=format,compress',
       srcset: [
-        'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=90&auto=format,compress&dpr=2 2x',
+        'https://img.inddist.com/files/base/indm/all/site-logos/id-sm.svg?h=90&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
-      src: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60&auto=format,compress',
+      src: 'https://img.inddist.com/files/base/indm/all/site-logos/id-sm.svg?h=60&auto=format,compress',
       srcset: [
-        'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=120&auto=format,compress&dpr=2 2x',
+        'https://img.inddist.com/files/base/indm/all/site-logos/id-sm.svg?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },
@@ -58,7 +58,7 @@ module.exports = {
     notificationDefaults: {
       to: 'david@ien.com',
       branding: {
-        logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60&auto=format,compress',
+        logo: 'https://img.inddist.com/files/base/indm/all/site-logos/id-sm.svg?h=60&auto=format,compress',
       },
       support: {
         email: 'reply@ien.com',
@@ -66,7 +66,7 @@ module.exports = {
     },
     to: 'david@ien.com',
     branding: {
-      logo: 'https://img.inddist.com/files/base/indm/id/static/id_logo.png?h=60&auto=format,compress',
+      logo: 'https://img.inddist.com/files/base/indm/all/site-logos/id-sm.svg?h=60&auto=format,compress',
     },
     support: {
       email: 'reply@ien.com',
