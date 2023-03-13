@@ -27,16 +27,16 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=45&auto=format,compress',
+      src: 'https://img.ien.com/files/base/indm/all/site-logos/ddt.svg?h=45&auto=format,compress',
       srcset: [
-        'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=90&auto=format,compress&dpr=2 2x',
+        'https://img.ien.com/files/base/indm/all/site-logos/ddt.svg?h=90&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
-      src: 'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=60&auto=format,compress',
+      src: 'https://img.ien.com/files/base/indm/all/site-logos/ddt.svg?h=60&auto=format,compress',
       srcset: [
-        'https://img.designdevelopmenttoday.com/files/base/indm/all/ddt_logo.png?h=120&auto=format,compress&dpr=2 2x',
+        'https://img.ien.com/files/base/indm/all/site-logos/ddt.svg?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },
