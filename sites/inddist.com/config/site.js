@@ -74,5 +74,6 @@ module.exports = {
   },
   brightCovePlayerData: {
     playerId: 'h9sJwPtoD',
+    playlistId: '1760277013816281219',
   },
 };
