@@ -26,16 +26,16 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=45&auto=format,compress',
+      src: 'https://img.ien.com/files/base/indm/all/site-logos/mnet.svg?h=45&auto=format,compress',
       srcset: [
-        'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=90&auto=format,compress&dpr=2 2x',
+        'https://img.ien.com/files/base/indm/all/site-logos/mnet.svg??h=90&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
-      src: 'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=60&auto=format,compress',
+      src: 'https://img.ien.com/files/base/indm/all/site-logos/mnet.svg??h=60&auto=format,compress',
       srcset: [
-        'https://img.manufacturing.net/files/base/indm/all/mnet_logo.svg?h=120&auto=format,compress&dpr=2 2x',
+        'https://img.ien.com/files/base/indm/all/site-logos/mnet.svg??h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },
