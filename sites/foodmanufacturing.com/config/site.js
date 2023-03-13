@@ -26,16 +26,16 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=45&auto=format,compress',
+      src: 'https://img.ien.com/files/base/indm/all/site-logos/foodm.svg?h=45&auto=format,compress',
       srcset: [
-        'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=90&auto=format,compress&dpr=2 2x',
+        'https://img.ien.com/files/base/indm/all/site-logos/foodm.svg?h=90&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
       brandLogos,
-      src: 'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=60&auto=format,compress',
+      src: 'https://img.ien.com/files/base/indm/all/site-logos/foodm.svg?h=60&auto=format,compress',
       srcset: [
-        'https://img.foodmanufacturing.com/files/base/indm/all/fm_logo.png?h=120&auto=format,compress&dpr=2 2x',
+        'https://img.ien.com/files/base/indm/all/site-logos/foodm.svg?h=120&auto=format,compress&dpr=2 2x',
       ],
     },
   },
