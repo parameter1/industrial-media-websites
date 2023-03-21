@@ -2,14 +2,12 @@ $ const { req, GAM } = out.global;
 $ const searchParams = new URLSearchParams({
   ...req.query,
   nomodernizr: 1,
-  no_style_strict: 1,
 }).toString();
 
 $ const { formId } = input;
 
 $ const scriptUrl = `https://IEN.formstack.com/forms/js.php/${formId}?${searchParams}`;
 $ const noscriptUrl = `https://IEN.formstack.com/forms/${formId}?${searchParams}`;
-
 $ const type = "survey";
 $ const title = `Customer Survey - ${formId}` ;
 
