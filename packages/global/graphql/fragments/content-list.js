@@ -33,7 +33,7 @@ fragment GlobalContentListFragment on Content {
     isLogo
   }
   ... on Authorable {
-    authors {
+    authors(input: {sort: { order: values }}) {
       edges {
         node {
           id
