@@ -134,7 +134,7 @@ fragment ContentPageFragment on Content {
     enableRmi
   }
   ... on Authorable {
-    authors {
+    authors(input: {sort: { order: values }}) {
       edges {
         node {
           id
