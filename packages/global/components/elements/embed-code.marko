@@ -28,7 +28,7 @@ $ const scripts = $('script[src*="players.brightcove.net"]');
         var player = this;
         if ('${olyEncId}'.length) player.bcAnalytics.client.setUser('${olyEncId}');
         if (!player.ima3) return;
-        if ('${identityParams}.length') {
+        if ('${identityParams}'.length) {
             player.ima3.adMacroReplacement = function(url) {
               if (!url) return url;
               var el = document.createElement('a');
