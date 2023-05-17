@@ -28,14 +28,16 @@ $ const scripts = $('script[src*="players.brightcove.net"]');
         var player = this;
         if ('${olyEncId}'.length) player.bcAnalytics.client.setUser('${olyEncId}');
         if (!player.ima3) return;
-        player.ima3.adMacroReplacement = function(url) {
-          if (!url) return url;
-          var el = document.createElement('a');
-          el.href = url;
-          el.search = el.search ? el.search + '&' + 'cust_params=${identityParams}'
-            : '?' + 'cust_params=${identityParams}';
-          return el.href;
-          };
+        if ('${identityParams}.length') {
+            player.ima3.adMacroReplacement = function(url) {
+              if (!url) return url;
+              var el = document.createElement('a');
+              el.href = url;
+              el.search = el.search ? el.search + '&' + 'cust_params=${identityParams}'
+                : '?' + 'cust_params=${identityParams}';
+              return el.href;
+            };
+          }
         });
       }
     </script>
