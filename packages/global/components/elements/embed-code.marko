@@ -24,11 +24,11 @@ $ const scripts = $('script[src*="players.brightcove.net"]');
     <script>
       var players = videojs.getAllPlayers();
       for (var i = 0; i < players.length; i += 1) {
-      players[i].ready(function() {
-        var player = this;
-        if ('${olyEncId}'.length) player.bcAnalytics.client.setUser('${olyEncId}');
-        if (!player.ima3) return;
-        if ('${identityParams}'.length) {
+        players[i].ready(function() {
+          var player = this;
+          if ('${olyEncId}'.length) player.bcAnalytics.client.setUser('${olyEncId}');
+          if (!player.ima3) return;
+          if ('${identityParams}'.length) {
             player.ima3.adMacroReplacement = function(url) {
               if (!url) return url;
               var el = document.createElement('a');
