@@ -1,10 +1,11 @@
 import cheerio from "cheerio";
-import { get } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import getEncryptedId from "@parameter1/base-cms-marko-web-omeda/olytics/get-omeda-encrypted-id";
 
 $ const { req } = out.global;
 $ const { identity } = out.global.leads;
 $ const { content, blockName } = input;
-$ const olyEncId = get(req, 'query.oly_enc_id') || get(req, 'cookies.oly_enc_id') || '';
+$ const olyEncId = defaultValue(getEncryptedId(req), '');
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
   const v = identity[key];
