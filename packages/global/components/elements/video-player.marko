@@ -5,7 +5,7 @@ $ const { identity } = out.global.leads;
 $ const { req, site } = out.global;
 $ const brightCovePlayerEnabled = defaultValue(site.get("brightCovePlayerEnabled"), true);
 $ const brightCovePlayerData = defaultValue(site.get("brightCovePlayerData"), {});
-$ const olyEncId = get(req, 'cookies.oly_enc_id');
+$ const olyEncId = get(req, 'query.oly_enc_id') || get(req, 'cookies.oly_enc_id') || '';
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
   const v = identity[key];

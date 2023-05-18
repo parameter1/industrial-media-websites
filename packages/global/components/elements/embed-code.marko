@@ -5,7 +5,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 $ const { req } = out.global;
 $ const { identity } = out.global.leads;
 $ const { content, blockName } = input;
-$ const olyEncId = defaultValue(get(req, 'cookies.oly_enc_id'), '');
+$ const olyEncId = get(req, 'query.oly_enc_id') || get(req, 'cookies.oly_enc_id') || '';
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
   const v = identity[key];
