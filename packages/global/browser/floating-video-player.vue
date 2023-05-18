@@ -25,6 +25,10 @@ export default {
       type: String,
       default: '',
     },
+    olyEncId: {
+      type: String,
+      default: '',
+    },
     enabled: {
       type: Boolean,
       default: false,
@@ -90,9 +94,10 @@ export default {
         });
         this.player = ref;
 
-        const { identityParams } = this;
+        const { identityParams, olyEncId } = this;
         this.player.ready(function setIdentityParams() {
           const player = this;
+          if (olyEncId) player.bcAnalytics.client.setUser(olyEncId);
           if (!player.ima3) return;
           player.ima3.adMacroReplacement = function leadManagementReplacer(url) {
             if (!url) return url;
