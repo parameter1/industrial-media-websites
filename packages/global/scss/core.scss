@@ -32,6 +32,7 @@
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/input-group";
 @import "bootstrap/scss/tables";
+/*! critical:end */
 /*! critical:start|user */
 /*! critical:start|error */
 /*! critical:start|website-section.directory */
@@ -166,12 +167,13 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/newsletter-signup-banner";
 /*! critical:start|home */
 /*! critical:start|website-section */
+/*! critical:start|content */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/newsletter-signup-banner-large";
 /*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/newsletter-signup-site-footer";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/node-author";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/opinion";
-/*! critical:start|content.whitepaper */
+/*! critical:start|content */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/primary-image";
 /*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/products";
@@ -307,6 +309,7 @@
 @import "./components/content-page";
 /*! critical:end */
 /*! critical:start */
+/*! critical:start|content */
 @import "./components/node";
 /*! critical:end */
 @import "./components/site-footer";
@@ -314,7 +317,11 @@
 @import "./components/site-navbar-custom";
 @import "./components/site-navbar";
 @import "./components/site-newsletter-menu";
+/*! critical:end */
+/*! critical:start|content.video */
+/*! purgecss start ignore */
 @import "./components/brightcove-player";
+/*! purgecss end ignore */
 /*! critical:end */
 
 /*! critical:start */
