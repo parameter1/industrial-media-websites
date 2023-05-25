@@ -180,7 +180,9 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/promo-card";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/read-next";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/related-native-x-stories";
+/*! critical:start|content */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/related-stories";
+/*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/section-card-deck-featured";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/section-card-list";
 /*! critical:start|website-section */
@@ -193,6 +195,7 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/social-follow";
 /*! critical:end */
 /*! critical:start|home */
+/*! critical:start|website-section */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/top-stories";
 /*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/top-stories-menu";
