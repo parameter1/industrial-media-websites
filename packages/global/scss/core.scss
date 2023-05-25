@@ -109,7 +109,9 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/page-attribution";
 /*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/page-contact-details";
+/*! critical:start|content */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/page-dates";
+/*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/page-image";
 /*! critical:start|content */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/page-rail";
