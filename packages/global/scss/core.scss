@@ -38,6 +38,8 @@
 /*! critical:start|website-section.directory */
 /*! critical:start|subscribe */
 /*! critical:start|content */
+/*! critical:start|magazine-issue */
+/*! critical:start|magazine-publication */
 @import "bootstrap/scss/breadcrumb";
 /*! critical:end */
 @import "bootstrap/scss/alert";
@@ -84,6 +86,8 @@
 /*! critical:start|website-section.directory */
 /*! critical:start|subscribe */
 /*! critical:start|content */
+/*! critical:start|magazine-issue */
+/*! critical:start|magazine-publication */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/breadcrumbs";
 /*! critical:end */
 
@@ -190,6 +194,7 @@
 /*! critical:start|website-section */
 /*! critical:start|search */
 /*! critical:start|content.contact */
+/*! critical:start|magazine-issue */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/section-feed";
 /*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/section-list";
