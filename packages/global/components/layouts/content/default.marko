@@ -46,6 +46,16 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         <theme-content-attribution obj=content />
       </if>
 
+      <if(type === "contact")>
+        <marko-web-block name="details">
+          <div class="page-contact-details__field">
+            <span class="page-contact-details__label">Title:</span>
+            <marko-web-content-title obj=content />
+          </div>
+          <global-content-company-details obj=content show-email=true />
+        </marko-web-block>
+      </if>
+
       <if(type === "events" || type === "webinars" || displayPublishedDate)>
         <theme-page-dates|{ blockName }|>
           <if(type === "event")>
