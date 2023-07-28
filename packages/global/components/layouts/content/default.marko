@@ -46,13 +46,24 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         <theme-content-attribution obj=content />
       </if>
 
-      <if(type === "contact")>
+      $ const contactFields = new Set([
+        "address1",
+        "address2",
+        "cityStateZip",
+        "country",
+        "phone",
+        "fax",
+        "mobile",
+        "tollfree",
+        "publicEmail"
+      ]);
+      $ const contactFieldsObj = {};
+      $ Object.keys(content).filter((key) => contactFields.has(key) && content[key]).forEach((key) => (contactFieldsObj[key] = content[key]));
+      $ const socialLinks = getAsArray(content, "socialLinks");
+      $ if (socialLinks.length) contactFields.socialLinks = socialLinks;
+      <if(type === "contact" && Object.keys(contactFieldsObj).length)>
         <marko-web-block name="details">
-          <div class="page-contact-details__field">
-            <span class="page-contact-details__label">Title:</span>
-            <marko-web-content-title obj=content />
-          </div>
-          <global-content-company-details obj=content show-email=true />
+          <global-content-company-details obj=contactFieldsObj show-email=true />
         </marko-web-block>
       </if>
 
