@@ -35,6 +35,10 @@
       "type": "boolean",
       "default-value": true
     },
+    "@show-labels": {
+      "type": "boolean",
+      "default-value": true
+    },
     "@tag": {
       "type": "string",
       "default-value": "div"
