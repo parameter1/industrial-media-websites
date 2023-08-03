@@ -31,23 +31,37 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section|{ blockName }|>
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="content-page-body">
-                <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+          <if(input.rails)>
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="content-page-body">
+                  <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
 
-                  $ const bodyId = `content-body-${content.id}`;
-                  <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+                    $ const bodyId = `content-body-${content.id}`;
+                    <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
-                </theme-page-contents>
+                  </theme-page-contents>
+                </div>
               </div>
-            </div>
-            <if(input.rails)>
               <div class="col-lg-4">
                 <${input.rails[0].renderBody} />
               </div>
-            </if>
-          </div>
+            </div>
+          </if>
+          <else>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="content-page-body">
+                  <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+
+                    $ const bodyId = `content-body-${content.id}`;
+                    <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+
+                  </theme-page-contents>
+                </div>
+              </div>
+            </div>
+          </else>
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
