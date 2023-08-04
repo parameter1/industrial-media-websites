@@ -523,7 +523,7 @@ label {
 
 .page-contents {
   &__content-body {
-    ul {
+    li, ul {
       list-style-position: initial;
     }
   }
