@@ -3,7 +3,6 @@
 
 User-agent: *
 Disallow: /__
-Disallow: /print/content
 
 Sitemap: https://www.mbtmag.com/sitemap.xml
 Sitemap: https://www.mbtmag.com/sitemap-google-news.xml

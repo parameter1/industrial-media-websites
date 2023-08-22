@@ -3,7 +3,6 @@
 
 User-agent: *
 Disallow: /__
-Disallow: /print/content
 
 Sitemap: https://www.manufacturing.net/sitemap.xml
 Sitemap: https://www.manufacturing.net/sitemap-google-news.xml
