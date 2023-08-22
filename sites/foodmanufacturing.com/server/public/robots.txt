@@ -3,7 +3,6 @@
 
 User-agent: *
 Disallow: /__
-Disallow: /print/content
 Disallow: /*/21451897/
 
 Sitemap: https://www.foodmanufacturing.com/sitemap.xml
