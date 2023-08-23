@@ -1,5 +1,6 @@
 const slug = require('slug');
 const contactRedirects = require('./contact-redirects');
+const companyRedirects = require('./company-redirects');
 
 const getSizedImageRedirect = ({ from }) => {
   const matches = /^\/wp-content\/uploads\/.+(-([0-9]+)x([0-9]+))\.[a-z]+$/i.exec(from);
@@ -42,11 +43,18 @@ const getContactRedirect = ({ from }) => {
   return null;
 };
 
+const getCompanyRedirect = ({ from }) => {
+  const found = companyRedirects.find((pair) => (new RegExp(`${pair.from}`)).test(from));
+  if (found) return found;
+  return null;
+};
+
 module.exports = ({ from, app, req }) => {
   const siteRedirect = getSiteRedirect({ from, req });
   if (siteRedirect) return siteRedirect;
   const sizedImageRedirect = getSizedImageRedirect({ from });
   if (sizedImageRedirect) return sizedImageRedirect;
   if (getContactRedirect({ from })) return getContactRedirect({ from });
+  if (getCompanyRedirect({ from })) return getCompanyRedirect({ from });
   return getFileRedirect({ from, app });
 };
