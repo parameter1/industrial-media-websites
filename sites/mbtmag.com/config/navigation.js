@@ -1,6 +1,7 @@
 const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
 
 const topics = sortNavItems([
+  { href: '/artificial-intelligence', label: 'Artificial Intelligence' },
   { href: '/best-practices', label: 'Best Practices' },
   { href: '/business-intelligence', label: 'Business Intelligence' },
   { href: '/cloud-computing', label: 'Cloud Computing' },
