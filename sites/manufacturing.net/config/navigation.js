@@ -2,6 +2,7 @@ const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-it
 
 const topics = sortNavItems([
   { href: '/aerospace', label: 'Aerospace' },
+  { href: '/artificial-intelligence', label: 'Artificial Intelligence' },
   { href: '/automotive', label: 'Automotive' },
   { href: '/energy', label: 'Energy' },
   { href: '/industry40', label: 'Industry 4.0' },

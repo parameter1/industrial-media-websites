@@ -3,6 +3,7 @@ const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-it
 const subscribe = require('./subscribe');
 
 const topics = sortNavItems([
+  { href: '/artificial-intelligence', label: 'AI' },
   { href: '/automation', label: 'Automation' },
   { href: '/finishing-world', label: 'Finishing World' },
   { href: '/made-in-america', label: 'Made in America' },

@@ -3,7 +3,6 @@
 
 User-agent: *
 Disallow: /__
-Disallow: /print/content
 Disallow: /*/21427920/
 
 Sitemap: https://www.inddist.com/sitemap.xml
