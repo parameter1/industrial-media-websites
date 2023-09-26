@@ -171,6 +171,8 @@ module.exports = (app) => {
                   node {
                     id
                     src(input: { options: { auto: "format,compress", q: 70 } })
+                    caption
+                    credit
                   }
                 }
               }
@@ -252,9 +254,9 @@ module.exports = (app) => {
         item.push(`<category domain="${siteUrl}">${xml.encode(get(node, 'primarySection.fullName').replace('>', '/'))}</category>`);
       }
       const imageMediaTags = getAsArray(node, 'images.edges').reduce((arr, { node: imageNode }) => {
-        const { src } = imageNode;
+        const { src, caption, credit } = imageNode;
         if (src) {
-          arr.push(`<media:content url="${src.replace(/&([a-z0-9-_]+=)/gi, '&amp;$1')}" medium="image" />`);
+          arr.push(`<media:content url="${src.replace(/&([a-z0-9-_]+=)/gi, '&amp;$1')}" type="image/png">\n<media:description>${caption}</media:description>\n<media:credit>${credit}</media:credit>\n</media:content>`);
         }
         return arr;
       }, []);
