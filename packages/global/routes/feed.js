@@ -183,7 +183,6 @@ module.exports = (app) => {
                       id
                       firstName
                       lastName
-                      publicEmail
                     }
                   }
                 }
@@ -222,17 +221,14 @@ module.exports = (app) => {
       const itemName = encode(node.seoTitle, encodeOptions);
       const itemUrl = get(node, 'siteContext.url');
       const authorStrings = getAsArray(node, 'authors.edges').reduce((arr, { node: authorNode }) => {
-        const { publicEmail, firstName, lastName } = authorNode;
-
-        if (!publicEmail) return arr;
+        const { firstName, lastName } = authorNode;
 
         const nameParts = [];
         if (firstName) nameParts.push(firstName);
         if (lastName) nameParts.push(lastName);
 
         const authorParts = [];
-        if (publicEmail) authorParts.push(publicEmail);
-        if (nameParts.length) authorParts.push(`(${nameParts.join(' ')})`);
+        if (nameParts.length) authorParts.push(`${nameParts.join(' ')}`);
 
         if (authorParts.length) arr.push(authorParts.join(' '));
 
