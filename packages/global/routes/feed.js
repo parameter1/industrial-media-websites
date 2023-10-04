@@ -227,10 +227,7 @@ module.exports = (app) => {
         if (firstName) nameParts.push(firstName);
         if (lastName) nameParts.push(lastName);
 
-        const authorParts = [];
-        if (nameParts.length) authorParts.push(`${nameParts.join(' ')}`);
-
-        if (authorParts.length) arr.push(authorParts.join(' '));
+        if (nameParts.length) arr.push(`${nameParts.join(' ')}`);
 
         return arr;
       }, []);
