@@ -6,7 +6,7 @@ const topics = sortNavItems([
   { href: '/cybersecurity', label: 'Cybersecurity' },
   { href: '/global', label: 'Global' },
   { href: '/industry-4-0', label: 'Industry 4.0' },
-  // { href: '/operations', label: 'Operations' },
+  { href: '/operations', label: 'Operations' },
   { href: '/quality-control', label: 'Quality Control' },
   { href: '/software', label: 'Software' },
 ]);
