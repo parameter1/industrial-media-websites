@@ -2,14 +2,13 @@ const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-it
 
 const topics = sortNavItems([
   { href: '/artificial-intelligence', label: 'Artificial Intelligence' },
-  { href: '/best-practices', label: 'Best Practices' },
-  { href: '/business-intelligence', label: 'Business Intelligence' },
   { href: '/cloud-computing', label: 'Cloud Computing' },
-  { href: '/crm', label: 'CRM' },
-  { href: '/erp', label: 'ERP' },
-  { href: '/global', label: 'Global' },
-  { href: '/quality-control', label: 'Quality Control' },
   { href: '/cybersecurity', label: 'Cybersecurity' },
+  { href: '/global', label: 'Global' },
+  { href: '/industry-4-0', label: 'Industry 4.0' },
+  { href: '/operations', label: 'Operations' },
+  { href: '/quality-control', label: 'Quality Control' },
+  { href: '/software', label: 'Software' },
 ]);
 
 const secondary = [
