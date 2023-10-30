@@ -13,21 +13,21 @@ const topics = sortNavItems([
 
 const secondary = [
   { href: '/video', label: 'Video' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.designdevelopmenttoday.com/formstack/advertise_with_im_ddt', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ddt_signup', label: 'Newsletter Signup', target: '_blank' },
 ];
 
 const resources = [
   { href: '/video', label: 'Video' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.designdevelopmenttoday.com/formstack/advertise_with_im_ddt', label: 'Advertise', target: '_blank' },
 ];
 
 const utilities = [
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ddt_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: 'https://ien.formstack.com/forms/today_in_manufacturing_podcast', label: 'Subscribe - Today in Manufacturing Podcast', target: '_blank' },
   { href: 'https://ien.formstack.com/forms/industrial_media_security_breach_podcast', label: 'Subscribe - Security Breach Podcast', target: '_blank' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.designdevelopmenttoday.com/formstack/advertise_with_im_ddt', label: 'Advertise', target: '_blank' },
   { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
   { href: '/page/privacy-policy', label: 'Privacy Policy' },
@@ -93,7 +93,7 @@ module.exports = {
     items: [
       { href: '/page/about-us', label: 'About Us' },
       { href: '/page/contact-us', label: 'Contact Us' },
-      { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+      { href: 'https://www.designdevelopmenttoday.com/formstack/advertise_with_im_ddt', label: 'Advertise', target: '_blank' },
       { href: '/page/privacy-policy', label: 'Privacy Policy' },
       { href: '/page/terms-conditions', label: 'Terms & Conditions' },
       { href: '/page/CCPA', label: 'CA Consumer Privacy Act' },

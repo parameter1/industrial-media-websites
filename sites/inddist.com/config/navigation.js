@@ -13,7 +13,7 @@ const topics = [
 
 const secondary = [
   { href: '/video', label: 'Video' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.inddist.com/formstack/advertise_with_im_id', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=id_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: '/magazine', label: 'Magazine' },
 ];
@@ -22,7 +22,7 @@ const resources = [
   { href: '/video', label: 'Video' },
   { href: '/page/id-about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.inddist.com/formstack/advertise_with_im_id', label: 'Advertise', target: '_blank' },
 ];
 
 const utilities = [
@@ -90,7 +90,7 @@ module.exports = {
     items: [
       { href: '/page/id-about-us', label: 'About Us' },
       { href: '/page/contact-us', label: 'Contact Us' },
-      { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+      { href: 'https://www.inddist.com/formstack/advertise_with_im_id', label: 'Advertise', target: '_blank' },
       { href: '/page/id-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/id-terms-conditions', label: 'Terms & Conditions' },
       { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },

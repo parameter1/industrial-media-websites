@@ -14,7 +14,7 @@ const topics = sortNavItems([
 
 const secondary = [
   { href: '/video', label: 'Video' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.manufacturing.net/formstack/advertise_with_im_mnet', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=mnet_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: '/podcast', label: 'Podcast' },
 ];
@@ -23,7 +23,7 @@ const resources = [
   { href: '/video', label: 'Video' },
   { href: '/page/mnet-about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.manufacturing.net/formstack/advertise_with_im_mnet', label: 'Advertise', target: '_blank' },
 ];
 
 const utilities = [
@@ -90,7 +90,7 @@ module.exports = {
     items: [
       { href: '/page/mnet-about-us', label: 'About Us' },
       { href: '/page/contact-us', label: 'Contact Us' },
-      { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+      { href: 'https://www.manufacturing.net/formstack/advertise_with_im_mnet', label: 'Advertise', target: '_blank' },
       { href: '/page/mnet-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/mnet-terms-conditions', label: 'Terms & Conditions' },
       { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },

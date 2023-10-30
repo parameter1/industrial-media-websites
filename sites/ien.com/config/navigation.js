@@ -17,7 +17,7 @@ const topics = sortNavItems([
 
 const secondary = [
   { href: '/video', label: 'Video' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.ien.com/formstack/advertise_with_im_ien', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ien_signup', label: 'Newsletter Signup', target: '_blank' },
   { href: '/podcast', label: 'Podcast' },
   { href: '/magazine', label: 'Magazine' },
@@ -27,7 +27,7 @@ const resources = [
   { href: '/video', label: 'Video' },
   { href: '/podcast', label: 'Podcast' },
   { href: '/magazine', label: 'Magazine' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.ien.com/formstack/advertise_with_im_ien', label: 'Advertise', target: '_blank' },
   { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
 ];
