@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/cannabisequipmentnews.com",
-  "version": "2.11.1",
+  "version": "2.12.0",
   "author": "Brian Miller <brian@parameter1.com>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/cannabisequipmentnews.com",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "win32"
   ],
   "dependencies": {
-    "@industrial-media/package-global": "^2.11.1",
+    "@industrial-media/package-global": "^2.12.0",
     "@parameter1/base-cms-marko-core": "^4.40.3",
     "@parameter1/base-cms-marko-web": "^4.40.3",
     "@parameter1/base-cms-marko-web-native-x": "^4.40.3",
