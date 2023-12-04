@@ -36,7 +36,7 @@
     "@parameter1/base-cms-marko-web-reveal-ad": "^4.40.3",
     "@parameter1/base-cms-marko-web-search": "^4.40.3",
     "@parameter1/base-cms-marko-web-social-sharing": "^4.40.3",
-    "@parameter1/base-cms-marko-web-theme-monorail": "^4.40.7",
+    "@parameter1/base-cms-marko-web-theme-monorail": "^4.40.9",
     "@parameter1/base-cms-marko-web-theme-monorail-magazine": "^4.40.3",
     "@parameter1/base-cms-object-path": "^4.40.3",
     "@parameter1/base-cms-utils": "^4.40.3",
@@ -55,6 +55,7 @@
     "node-fetch": "^2.6.1",
     "object-path": "^0.11.5",
     "slug": "^4.0.2",
+    "ua-parser-js": "^1.0.33",
     "vue-slick-carousel": "^1.0.6"
   },
   "engines": {
