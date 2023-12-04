@@ -3,6 +3,7 @@ const { brandLogos } = require('@industrial-media/package-global/config/footer-b
 const magazine = require('./magazine');
 const navigation = require('./navigation');
 const gam = require('./gam');
+const contentMeter = require('./content-meter');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
 const identityX = require('./identity-x');
@@ -13,6 +14,7 @@ const newsletter = require('./newsletter');
 module.exports = {
   magazine,
   navigation,
+  contentMeter,
   gam,
   omeda,
   omedaIdentityX,

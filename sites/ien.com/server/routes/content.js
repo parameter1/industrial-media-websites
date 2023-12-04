@@ -23,7 +23,6 @@ module.exports = (app) => {
   const { site } = app.locals;
   const cmConfig = site.getAsObject('contentMeter');
   const contentMeterEnable = cmConfig.enabled;
-  console.log('here: ', contentMeterEnable, cmConfig)
   // determin to use newsletterstate or contentMeter middleware
   routesList.forEach((route) => {
     if (route.withContentMeter && contentMeterEnable) {
