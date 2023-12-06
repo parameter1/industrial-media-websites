@@ -7,6 +7,7 @@ const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitem
 const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 const omedaCookie = require('@parameter1/base-cms-marko-web-omeda/olytics/customer-cookie');
+const newsletterState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-state');
 const fetch = require('node-fetch');
 
 const document = require('./components/document');
@@ -15,7 +16,6 @@ const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
 const stealthLink = require('./routes/stealth-link');
-const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
 const leadsMiddleware = require('./middleware/leads');
 const idxRouteTemplates = require('./templates/user');
@@ -65,10 +65,7 @@ module.exports = (options = {}) => {
       app.use(htmlSitemapPagination());
 
       // Use newsletterState middleware
-      const pushdown = get(options, 'siteConfig.newsletter.pushdown');
-      if (pushdown && !pushdown.disabled) {
-        app.use(newsletterState());
-      }
+      app.use(newsletterState());
 
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);

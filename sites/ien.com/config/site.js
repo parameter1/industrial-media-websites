@@ -1,6 +1,7 @@
 const { brandLogos } = require('@industrial-media/package-global/config/footer-brand-logos');
 
 const navigation = require('./navigation');
+const contentMeter = require('./content-meter');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
@@ -12,6 +13,7 @@ const omeda = require('./omeda');
 
 module.exports = {
   navigation,
+  contentMeter,
   gam,
   omeda,
   omedaIdentityX,

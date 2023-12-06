@@ -7,8 +7,8 @@ $ const {
   nativeX,
   GAM,
   omedaConfig,
+  contentMeterState,
 } = out.global;
-
 <marko-web-document ...input>
   <@head>
     <if(site.get('simpleFavicon'))>
@@ -113,5 +113,14 @@ $ const {
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
+    <if(contentMeterState && !contentMeterState.isLoggedIn)>
+      <theme-content-meter-block
+        views=contentMeterState.views
+        view-limit=contentMeterState.viewLimit
+        display-overlay=contentMeterState.displayOverlay
+        display-gate=contentMeterState.displayGate
+        dynamic-title="We hope you’ve enjoyed your articles."
+      />
+    </if>
   </@below-wrapper>
 </marko-web-document>
