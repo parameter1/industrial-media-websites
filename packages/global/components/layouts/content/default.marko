@@ -18,7 +18,6 @@ $ const belowContentSections = getAsArray(input, "belowContentSections");
 
 $ const displayPrimaryImage = defaultValue(input.displayPrimaryImage, true);
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
-$ const displayReadNext = showReadNextBlock && ["article"].includes(type);
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 $ const displayComments = (site.get('identityX.comments.enabled') && !["contact"].includes(type)) ? true : false;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
@@ -45,6 +44,15 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
       <if(type !== "contact")>
         <theme-content-attribution obj=content />
+      </if>
+
+      <if(type === "contact")>
+        <marko-web-block name="details">
+          <div class="page-contact-details__field">
+            <marko-web-content-title obj=content />
+          </div>
+          <global-content-company-details obj=content show-email=true show-labels=false />
+        </marko-web-block>
       </if>
 
       <if(type === "events" || type === "webinars" || displayPublishedDate)>
@@ -195,6 +203,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
               <theme-identity-x-comment-stream content=content />
             </if>
 
+            $ const displayReadNext = showReadNextBlock && ["article"].includes(type) && primarySection.alias !== 'home';
             <if(displayReadNext)>
               <theme-read-next-block
                 content-id=id

@@ -1,9 +1,21 @@
 $ const { id, alias, name, pageNode } = input;
 
-<global-website-section-default-layout
-  id=id
-  alias=alias
-  name=name
-  page-node=pageNode
->
-</global-website-section-default-layout>
+<if(alias === "5-minutes-with-id")>
+  <global-website-section-default-layout
+    id=id
+    alias=alias
+    name=name
+    page-node=pageNode
+    right-rail-header="More Interviews"
+  >
+  </global-website-section-default-layout>
+</if>
+<else>
+  <global-website-section-default-layout
+    id=id
+    alias=alias
+    name=name
+    page-node=pageNode
+  >
+  </global-website-section-default-layout>
+</else>

@@ -1,27 +1,29 @@
 const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
 
 const topics = sortNavItems([
-  { href: '/best-practices', label: 'Best Practices' },
-  { href: '/business-intelligence', label: 'Business Intelligence' },
+  { href: '/artificial-intelligence', label: 'Artificial Intelligence' },
   { href: '/cloud-computing', label: 'Cloud Computing' },
-  { href: '/crm', label: 'CRM' },
-  { href: '/erp', label: 'ERP' },
-  { href: '/global', label: 'Global' },
-  { href: '/quality-control', label: 'Quality Control' },
   { href: '/cybersecurity', label: 'Cybersecurity' },
+  { href: '/global', label: 'Global' },
+  { href: '/industry-4-0', label: 'Industry 4.0' },
+  { href: '/operations', label: 'Operations' },
+  { href: '/quality-control', label: 'Quality Control' },
+  { href: '/software', label: 'Software' },
 ]);
 
 const secondary = [
   { href: '/video', label: 'Video' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.mbtmag.com/formstack/advertise_with_im_mbt', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=mbt_signup', label: 'Newsletter Signup', target: '_blank' },
+  { href: '/podcast', label: 'Podcast' },
 ];
 
 const resources = [
   { href: '/video', label: 'Video' },
+  { href: '/podcast', label: 'Podcast' },
   { href: '/page/mbt-about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.mbtmag.com/formstack/advertise_with_im_mbt', label: 'Advertise', target: '_blank' },
 ];
 
 const utilities = [
@@ -88,7 +90,7 @@ module.exports = {
     items: [
       { href: '/page/mbt-about-us', label: 'About Us' },
       { href: '/page/contact-us', label: 'Contact Us' },
-      { href: 'https://ien.formstack.com/forms/advertise_with_industrial_media', label: 'Advertise', target: '_blank' },
+      { href: 'https://www.mbtmag.com/formstack/advertise_with_im_mbt', label: 'Advertise', target: '_blank' },
       { href: '/page/mbt-privacy-policy', label: 'Privacy Policy' },
       { href: '/page/mbt-terms-conditions', label: 'Terms & Conditions' },
       { href: 'https://www.manufacturing.net/page/CCPA', label: 'CA Consumer Privacy Act', target: '_blank' },
