@@ -2,6 +2,16 @@ $content-meter-mobile-breakpoint: 600px !default;
 
 .content-meter {
   $self: &;
+  &--display-overlay {
+    ~ .site-footer {
+      display: none;
+      margin-bottom: 0;
+    }
+    ~ .document-container {
+      height: 0;
+      overflow: hidden;
+    }
+  }
   &__overlay {
     z-index: 1499;
     position: fixed;
@@ -86,7 +96,7 @@ $content-meter-mobile-breakpoint: 600px !default;
       font-family: $skin-font-family-secondary;
       font-weight: $font-weight-medium;
     }
-    fieldset {
+    form {
       @media (min-width: $content-meter-mobile-breakpoint) {
         display: flex;
         .form-group {
@@ -135,6 +145,9 @@ $content-meter-mobile-breakpoint: 600px !default;
 .content-meter--display-overlay~.document-container {
   height: 0;
   overflow: hidden;
+}
+.content-meter--display-overlay~.document-container>.page:first-of-type {
+  margin-top: 0;
 }
 .content-meter--display-overlay ~ .document-container ~ .site-footer {
   display: none;
