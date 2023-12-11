@@ -97,15 +97,6 @@ $ const {
       <global-site-header-custom has-user=hasUser reg-enabled=isEnabled />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
-    <theme-site-newsletter-menu />
-    <${input.aboveContainer} />
-  </@above-container>
-  <@below-container>
-    <${input.belowContainer} />
-    <global-site-footer />
-  </@below-container>
-  <@below-wrapper>
-    <marko-web-deferred-script-loader-load />
     <if(contentMeterState && !contentMeterState.isLoggedIn)>
       <theme-content-meter-block
         views=contentMeterState.views
@@ -115,5 +106,13 @@ $ const {
         dynamic-title="We hope you’ve enjoyed your articles."
       />
     </if>
+    <${input.aboveContainer} />
+  </@above-container>
+  <@below-container>
+    <${input.belowContainer} />
+    <global-site-footer />
+  </@below-container>
+  <@below-wrapper>
+    <marko-web-deferred-script-loader-load />
   </@below-wrapper>
 </marko-web-document>
