@@ -97,6 +97,7 @@ $ const {
       <global-site-header-custom has-user=hasUser reg-enabled=isEnabled />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
+    <${input.aboveContainer} />
     <if(contentMeterState && !contentMeterState.isLoggedIn)>
       <theme-content-meter-block
         views=contentMeterState.views
@@ -106,7 +107,6 @@ $ const {
         dynamic-title="We hope you’ve enjoyed your articles."
       />
     </if>
-    <${input.aboveContainer} />
   </@above-container>
   <@below-container>
     <${input.belowContainer} />

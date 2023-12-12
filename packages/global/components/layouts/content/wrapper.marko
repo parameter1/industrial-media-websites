@@ -23,6 +23,7 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
       <marko-web-resolve-page|{ data: content }| node=pageNode>
         $ const aliases = hierarchyAliases(content.primarySection);
         <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
+        <global-fixed-ad-bottom aliases=hierarchyAliases(content.primarySection) />
       </marko-web-resolve-page>
     </if>
   </@above-container>
@@ -84,11 +85,4 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
       </marko-web-page-container>
     </if>
   </@below-page>
-  <@foot>
-    <if(!showOverlay && displayAds)>
-      <marko-web-resolve-page|{ data: content }| node=pageNode>
-        <global-fixed-ad-bottom aliases=hierarchyAliases(content.primarySection) />
-      </marko-web-resolve-page>
-    </if>
-  </@foot>
 </theme-content-page>
