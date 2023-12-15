@@ -1,4 +1,5 @@
 const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
+const user = require('@industrial-media/package-global/config/user');
 
 const topics = sortNavItems([
   { href: '/industries/aerospace', label: 'Aerospace' },
@@ -49,9 +50,7 @@ const desktopMenu = {};
 
 module.exports = {
   type: 'navbar-custom',
-  user: {
-    items: [],
-  },
+  user,
   desktopMenu,
   mobileMenu,
   topics,
