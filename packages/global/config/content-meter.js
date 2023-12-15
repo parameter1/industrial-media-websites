@@ -4,10 +4,18 @@ module.exports = {
   excludeLabels: [
     'Sponsored',
   ],
-  // excludeContentTypes: [
-  //   'company',
-  //   'contact',
-  // ],
+  excludeContentTypes: [
+    'company',
+    'contact',
+    'document',
+    'event',
+    'news',
+    'podcast',
+    'press_release',
+    'product',
+    'video',
+    'webinar',
+  ],
   // excludePrimarySectionIds: [
   //   75347,
   // ],
