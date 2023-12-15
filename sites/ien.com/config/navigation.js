@@ -1,4 +1,5 @@
 const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
+const user = require('@industrial-media/package-global/config/user');
 
 const subscribe = require('./subscribe');
 
@@ -61,9 +62,7 @@ module.exports = {
       link: subscribe.href,
     },
   ],
-  user: {
-    items: [],
-  },
+  user,
   desktopMenu,
   mobileMenu,
   topics,
