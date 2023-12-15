@@ -2,12 +2,33 @@ const IdentityXConfiguration = require('@parameter1/base-cms-marko-web-identity-
 const newrelic = require('newrelic');
 
 module.exports = ({
-  appId,
-  hiddenFields = [],
-  defaultCountryCode,
+  appId = '5e28a3dd58e67b229e55ae43',
+  hiddenFields = [
+    'organizationTitle', // @todo make this a custom field somehow
+    'phoneNumber',
+    'street',
+    'city',
+    'regionCode', // Only require client-side for non-us/ca
+    'postalCode', // Only require client-side for non-us/ca
+  ],
+  defaultCountryCode = '',
   comments = { enabled: false },
-  requiredServerFields = [],
-  requiredClientFields = [],
+  requiredServerFields = [
+    'givenName',
+    'familyName',
+    'organization',
+    'countryCode',
+  ],
+  requiredClientFields = [
+    'givenName',
+    'familyName',
+    'organization',
+    'countryCode',
+  ],
+  gtmUserFields = {
+    primary_business: '60104e959fdc650033d91e91',
+    job_title: '6575cf1827f0a7b1c503cd24',
+  },
   ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({
@@ -17,6 +38,7 @@ module.exports = ({
     hiddenFields,
     requiredServerFields,
     requiredClientFields,
+    gtmUserFields,
     onHookError: newrelic.noticeError.bind(newrelic),
     ...rest,
   });

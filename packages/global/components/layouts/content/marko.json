@@ -52,6 +52,8 @@
     "@sections <section>[]": {},
     "@id": "number",
     "@type": "string",
-    "@page-node": "object"
+    "@page-node": "object",
+    "@display-ads": "boolean",
+    "@show-overlay": "boolean"
   }
 }

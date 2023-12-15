@@ -7,6 +7,7 @@ $ const {
   nativeX,
   GAM,
   omedaConfig,
+  contentMeterState,
 } = out.global;
 
 <marko-web-document ...input>
@@ -93,19 +94,19 @@ $ const {
       clear-data=true
     />
     <marko-web-identity-x-context|{ hasUser, isEnabled }|>
-      <if("navbar-custom" === site.get("navigation.type"))>
-        <global-site-header-custom has-user=hasUser reg-enabled=isEnabled />
-      </if>
-      <else-if("navbar2" === site.get("navigation.type"))>
-        <global-site-header-2 has-user=hasUser reg-enabled=isEnabled />
-      </else-if>
-      <else>
-        <global-site-header has-user=hasUser reg-enabled=isEnabled />
-      </else>
+      <global-site-header-custom has-user=hasUser reg-enabled=isEnabled />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
-    <theme-site-newsletter-menu />
     <${input.aboveContainer} />
+    <if(contentMeterState && !contentMeterState.isLoggedIn)>
+      <theme-content-meter-block
+        views=contentMeterState.views
+        view-limit=contentMeterState.viewLimit
+        display-overlay=contentMeterState.displayOverlay
+        display-gate=contentMeterState.displayGate
+        dynamic-title="We hope you’ve enjoyed your articles."
+      />
+    </if>
   </@above-container>
   <@below-container>
     <${input.belowContainer} />

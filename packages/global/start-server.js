@@ -15,7 +15,6 @@ const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
 const stealthLink = require('./routes/stealth-link');
-const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
 const leadsMiddleware = require('./middleware/leads');
 const idxRouteTemplates = require('./templates/user');
@@ -65,10 +64,7 @@ module.exports = (options = {}) => {
       app.use(htmlSitemapPagination());
 
       // Use newsletterState middleware
-      const pushdown = get(options, 'siteConfig.newsletter.pushdown');
-      if (pushdown && !pushdown.disabled) {
-        app.use(newsletterState());
-      }
+      // app.use(newsletterState());
 
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);
