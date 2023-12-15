@@ -6,7 +6,6 @@ const rapidIdentify = require('@parameter1/base-cms-marko-web-omeda-identity-x/r
 const authenticate = require('../templates/user/authenticate');
 const login = require('../templates/user/login');
 const logout = require('../templates/user/logout');
-const register = require('../templates/user/register');
 const profile = require('../templates/user/profile');
 
 const countQuery = gql`
@@ -32,10 +31,6 @@ module.exports = (app) => {
 
   app.get(config.getEndpointFor('logout'), (_, res) => {
     res.marko(logout);
-  });
-
-  app.get(config.getEndpointFor('register'), (_, res) => {
-    res.marko(register);
   });
 
   app.get(config.getEndpointFor('profile'), (_, res) => {
