@@ -1,13 +1,21 @@
 module.exports = {
   enabled: process.env.ENABLE_CONTENT_METER === 'true',
-  viewLimit: Number(process.env.CONTENT_METER_VIEW_LIMIT) || 1,
+  viewLimit: Number(process.env.CONTENT_METER_VIEW_LIMIT) || 2,
   excludeLabels: [
     'Sponsored',
   ],
-  // excludeContentTypes: [
-  //   'company',
-  //   'contact',
-  // ],
+  excludeContentTypes: [
+    'company',
+    'contact',
+    'document',
+    'event',
+    'news',
+    'podcast',
+    'press_release',
+    'product',
+    'video',
+    'webinar',
+  ],
   // excludePrimarySectionIds: [
   //   75347,
   // ],

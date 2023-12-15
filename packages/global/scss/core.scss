@@ -318,10 +318,9 @@
 /*! critical:end */
 /*! critical:start|content */
 @import "./components/content-page";
+@import "./components/content-meter";
 /*! critical:end */
 /*! critical:start */
-/*! critical:start|content */
-@import "./components/content-meter";
 @import "./components/node";
 /*! critical:end */
 @import "./components/site-footer";

@@ -1,10 +1,13 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import { getAsArray, get } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { id, type, pageNode } = input;
 $ const { GAM } = out.global;
 $ const sections = getAsArray(input, "sections");
 $ const alias = get(input, "primarySection.alias");
+$ const displayAds = defaultValue(input.displayAds, true);
+$ const showOverlay = defaultValue(input.showOverlay, false);
 
 <theme-content-page id=id type=type>
   <@head>
@@ -16,45 +19,14 @@ $ const alias = get(input, "primarySection.alias");
     </marko-web-resolve-page>
   </@head>
   <@above-container>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      $ const aliases = hierarchyAliases(content.primarySection);
-      <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
-    </marko-web-resolve-page>
-  </@above-container>
-  <@below-page>
-    <marko-web-page-container for="content" tag="div" id=id type=type modifiers=["below"]>
-      <!-- Refresh sticky, right-rail infinite scroll ad -->
-      <marko-web-gam-refresh-ad on="load-more-in-view" slot-id="gpt-ad-rail-infinite" />
-
-      <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
-        $ const section = content.primarySection;
-        <marko-web-page-wrapper>
-          <@section|{ aliases }| modifiers=["first-sm"]>
-            <theme-gam-define-display-ad
-              name="billboard"
-              position="content_page"
-              aliases=aliases
-              modifiers=["inter-block"]
-            />
-          </@section>
-          <@section|{ aliases }|>
-            <div class="row">
-              <div class="col-lg-12 infinite-scroll-target">
-                <global-content-page-load-more-block
-                  aliases=aliases
-                  limit=15
-                >
-                  <@content id=id type=type name=content.name />
-                  <@section id=section.id name=section.name />
-                  <@native-x indexes=[0] name="default" aliases=aliases />
-                </global-content-page-load-more-block>
-              </div>
-            </div>
-          </@section>
-        </marko-web-page-wrapper>
+    <if(!showOverlay && displayAds)>
+      <marko-web-resolve-page|{ data: content }| node=pageNode>
+        $ const aliases = hierarchyAliases(content.primarySection);
+        <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
+        <global-fixed-ad-bottom aliases=hierarchyAliases(content.primarySection) />
       </marko-web-resolve-page>
-    </marko-web-page-container>
-  </@below-page>
+    </if>
+  </@above-container>
   <@page>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
@@ -71,9 +43,46 @@ $ const alias = get(input, "primarySection.alias");
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
-  <@foot>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      <global-fixed-ad-bottom aliases=hierarchyAliases(content.primarySection) />
-    </marko-web-resolve-page>
-  </@foot>
+<@below-page>
+    <if(!showOverlay)>
+      <marko-web-page-container for="content" tag="div" id=id type=type modifiers=["below"]>
+
+        <if(displayAds)>
+          <!-- Refresh sticky, right-rail infinite scroll ad -->
+          <marko-web-gam-refresh-ad on="load-more-in-view" slot-id="gpt-ad-rail-infinite" />
+        </if>
+
+
+        <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+          $ const section = content.primarySection;
+          <marko-web-page-wrapper>
+            <if(displayAds)>
+              <@section|{ aliases }| modifiers=["first-sm"]>
+                <theme-gam-define-display-ad
+                  name="billboard"
+                  position="content_page"
+                  aliases=aliases
+                  modifiers=["inter-block"]
+                />
+              </@section>
+            </if>
+            <@section|{ aliases }|>
+              <div class="row">
+                <div class="col-lg-12 infinite-scroll-target">
+                  <global-content-page-load-more-block
+                    aliases=aliases
+                    limit=15
+                  >
+                    <@content id=id type=type name=content.name />
+                    <@section id=section.id name=section.name />
+                    <@native-x indexes=[0] name="default" aliases=aliases />
+                  </global-content-page-load-more-block>
+                </div>
+              </div>
+            </@section>
+          </marko-web-page-wrapper>
+        </marko-web-resolve-page>
+      </marko-web-page-container>
+    </if>
+  </@below-page>
 </theme-content-page>

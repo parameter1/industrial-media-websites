@@ -11,7 +11,7 @@ const newsletterState = ({ setCookie = true } = {}) => (req, res, next) => {
     const { device } = parser(req.headers['user-agent']);
     const disableMobileCBIE = defaultValue(newsletterConfig.pushdown.disableMobileCBIE, false);
     const disableExpandOnMobile = disableMobileCBIE && (device && device.type === 'mobile');
-    const siteConfigCBIE = defaultValue(newsletterConfig.pushdown.canBeInitiallyExpanded, true);
+    const siteConfigCBIE = defaultValue(newsletterConfig.pushdown.canBeInitiallyExpanded, false);
     const hasCookie = Boolean(get(req, `cookies.${cookieName}`));
     const utmMedium = get(req, 'query.utm_medium');
     const olyEncId = get(req, 'query.oly_enc_id');

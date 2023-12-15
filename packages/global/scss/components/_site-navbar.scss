@@ -29,18 +29,20 @@
 }
 
 .site-header {
-  position: fixed;
-  border-bottom: none;
-}
-.document-container,
-.site-newsletter-menu__container {
-  margin-top: calculate-navbar-height-for(default);
+  &--sticky {
+    position: fixed;
+    ~ .document-container,
+    ~ .site-newsletter-menu__container {
+      margin-top: calculate-navbar-height-for(default);
 
-  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
-    @media (max-width: $width) {
-      margin-top: calculate-navbar-height-for($breakpoint);
+      @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+        @media (max-width: $width) {
+          margin-top: calculate-navbar-height-for($breakpoint);
+        }
+      }
     }
   }
+  border-bottom: none;
 }
 
 .site-menu {

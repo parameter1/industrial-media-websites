@@ -9,6 +9,7 @@ $ const {
   omedaConfig,
   contentMeterState,
 } = out.global;
+
 <marko-web-document ...input>
   <@head>
     <if(site.get('simpleFavicon'))>
@@ -93,26 +94,10 @@ $ const {
       clear-data=true
     />
     <marko-web-identity-x-context|{ hasUser, isEnabled }|>
-      <if("navbar-custom" === site.get("navigation.type"))>
-        <global-site-header-custom has-user=hasUser reg-enabled=isEnabled />
-      </if>
-      <else-if("navbar2" === site.get("navigation.type"))>
-        <global-site-header-2 has-user=hasUser reg-enabled=isEnabled />
-      </else-if>
-      <else>
-        <global-site-header has-user=hasUser reg-enabled=isEnabled />
-      </else>
+      <global-site-header-custom has-user=hasUser reg-enabled=isEnabled />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
-    <theme-site-newsletter-menu />
     <${input.aboveContainer} />
-  </@above-container>
-  <@below-container>
-    <${input.belowContainer} />
-    <global-site-footer />
-  </@below-container>
-  <@below-wrapper>
-    <marko-web-deferred-script-loader-load />
     <if(contentMeterState && !contentMeterState.isLoggedIn)>
       <theme-content-meter-block
         views=contentMeterState.views
@@ -122,5 +107,12 @@ $ const {
         dynamic-title="We hope you’ve enjoyed your articles."
       />
     </if>
+  </@above-container>
+  <@below-container>
+    <${input.belowContainer} />
+    <global-site-footer />
+  </@below-container>
+  <@below-wrapper>
+    <marko-web-deferred-script-loader-load />
   </@below-wrapper>
 </marko-web-document>
