@@ -1,5 +1,5 @@
+const content = require('@industrial-media/package-global/routes/content');
 const home = require('./home');
-const content = require('./content');
 const dynamicPages = require('./dynamic-page');
 // const magazine = require('./magazine');
 const websiteSections = require('./website-section');
