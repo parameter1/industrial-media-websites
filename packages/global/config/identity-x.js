@@ -29,6 +29,7 @@ module.exports = ({
     primary_business: '60104e959fdc650033d91e91',
     job_title: '6575cf1827f0a7b1c503cd24',
   },
+  booleanQuestionsLabel = 'Preferences:',
   ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({
@@ -40,6 +41,7 @@ module.exports = ({
     requiredClientFields,
     gtmUserFields,
     onHookError: newrelic.noticeError.bind(newrelic),
+    booleanQuestionsLabel,
     ...rest,
   });
   config.comments = comments;
