@@ -9,7 +9,6 @@ module.exports = {
     'contact',
     'document',
     'event',
-    'news',
     'podcast',
     'press_release',
     'product',

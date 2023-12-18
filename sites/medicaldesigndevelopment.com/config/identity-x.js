@@ -42,6 +42,7 @@ module.exports = configureIdentityX({
   activeCustomFieldIds: [
     '657b03f46135407e614f1e8b',
     '657b04b76135405c3a4f2a68',
+    '657caa9c2107a73d08eb1dc5',
   ],
   forms: {
     default: formDefault,

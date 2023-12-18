@@ -1,3 +1,5 @@
+const user = require('@industrial-media/package-global/config/user');
+
 const topics = [
   { href: '/big-50', label: 'Big 50' },
   { href: '/business-technology', label: 'Business Technology' },
@@ -45,9 +47,7 @@ const desktopMenu = {};
 
 module.exports = {
   type: 'navbar-custom',
-  user: {
-    items: [],
-  },
+  user,
   desktopMenu,
   mobileMenu,
   topics,
