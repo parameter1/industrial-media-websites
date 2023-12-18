@@ -39,6 +39,10 @@ module.exports = configureIdentityX({
     '6575cf1827f0a7b1c503cd24',
     '657cad502abe211e9ea0c86f',
   ],
+  gtmUserFields: {
+    job_title: '60104e959fdc650033d91e91',
+    primary_business: '6575cf1827f0a7b1c503cd24',
+  },
   forms: {
     default: formDefault,
   },
