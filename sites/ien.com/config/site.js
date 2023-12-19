@@ -18,9 +18,6 @@ module.exports = {
   omeda,
   omedaIdentityX,
   identityX,
-  idxNavItems: {
-    enable: true,
-  },
   magazine,
   nativeX,
   newsletter,
