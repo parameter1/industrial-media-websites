@@ -24,6 +24,7 @@ formDefault.fieldRows.push(
 );
 
 module.exports = configureIdentityX({
+  comments: { enabled: true },
   appContextId: '5e7e5fac88f2fa00cdebab24',
   requiredClientFields: [
     'givenName',
