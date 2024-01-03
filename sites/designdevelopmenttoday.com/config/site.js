@@ -73,7 +73,4 @@ module.exports = {
       email: 'reply@ien.com',
     },
   },
-  brightCovePlayerData: {
-    playerId: 'wgf5YSjmG',
-  },
 };
