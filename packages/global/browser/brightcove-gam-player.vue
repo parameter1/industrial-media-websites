@@ -1,6 +1,7 @@
 <template>
-  <div v-if="open" id="brightcove-floating-player" class="brightcove-gam-player">
+  <div v-if="open" id="brightcove-gam-player">
     <button
+      id="brightcove-gam-player-button"
       class="btn btn-dark text-light p-0"
       type="button"
       title="Close video player"
@@ -122,6 +123,7 @@ export default {
           this.player.pause();
           this.open = true;
           this.setAutoPlayObserver();
+          document.getElementById('brightcove-gam-player-button').classList.add('active');
         } catch (e) {
           const { error } = console;
           error(e);
@@ -160,7 +162,7 @@ export default {
 </script>
 
 <style scoped>
-#brightcove-floating-player {
+#brightcove-gam-player {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
@@ -169,7 +171,7 @@ export default {
   z-index: 1;
 }
 
-#brightcove-floating-player >>> .btn {
+#brightcove-gam-player >>> .btn {
   position: absolute;
   right: 0;
   top: 0;
@@ -178,11 +180,11 @@ export default {
   width: 32px;
 }
 
-#brightcove-floating-player >>> .video-js .vjs-overlay {
+#brightcove-gam-player >>> .video-js .vjs-overlay {
   background-color: transparent;
 }
 
-.page-rail #brightcove-floating-player {
+.page-rail #brightcove-gam-player {
   position: sticky;
 
   top: 150px;
@@ -197,13 +199,13 @@ export default {
 }
 
 @media (max-width: 1100px) {
-  .page-rail #brightcove-floating-player {
+  .page-rail #brightcove-gam-player {
     top: 120px;
   }
 }
 
 @media (max-width: 992px) {
-  .page-rail #brightcove-floating-player {
+  .page-rail #brightcove-gam-player {
     position: relative;
     top: initial;
   }
@@ -219,7 +221,7 @@ export default {
 }
 
 .marko-web-gam-fixed-ad-bottom.marko-web-gam-fixed-ad-bottom--visible
-~ #brightcove-floating-player {
+~ #brightcove-gam-player {
   animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 </style>
