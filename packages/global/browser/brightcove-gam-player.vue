@@ -1,40 +1,22 @@
 <template>
-  <div style="height: 0;">
-    <div class="billboard-leave-behind-observer" />
-    <div :class="blockClasses">
-      <div v-if="canDisplay" :class="containerClasses">
-        <div :class="backgroundClasses" />
-        <div :class="adClasses">
-          <a :href="href" target="_blank">
-            <img
-              v-if="src"
-              :class="imageClasses()"
-              :href="href"
-              :src="src"
-            >
-            <img
-              v-if="mobileSrc"
-              :class="imageClasses('mobile')"
-              :href="href"
-              :src="mobileSrc"
-            >
-          </a>
-        </div>
-        <button
-          v-if="closeable"
-          :class="buttonClasses"
-          title="Close Advertisement"
-          @click="close"
-        >
-          &times;
-        </button>
-      </div>
-    </div>
+  <div v-if="open" id="brightcove-floating-player" class="brightcove-gam-player">
+    <button
+      class="btn btn-dark text-light p-0"
+      type="button"
+      title="Close video player"
+      @click="close"
+    >
+      <icon-x :modifiers="iconMods" />
+    </button>
+    <slot />
   </div>
 </template>
 
 <script>
-const block = 'billboard-leave-behind';
+import IconX from '@parameter1/base-cms-marko-web-icons/browser/x.vue';
+import brightcovePlayerLoader from '@brightcove/player-loader';
+
+const { warn } = console;
 
 const parseJson = (str) => {
   try {
@@ -45,118 +27,197 @@ const parseJson = (str) => {
 };
 
 export default {
+  components: {
+    IconX,
+  },
   props: {
-    closeable: {
-      type: Boolean,
-      default: true,
+    identityParams: {
+      type: String,
+      default: '',
+    },
+    olyEncId: {
+      type: String,
+      default: '',
+    },
+    path: {
+      type: String,
+      default: '',
     },
   },
   data() {
     return {
-      visible: false,
-      initialized: false,
-      hasClosed: false,
-      href: null,
-      src: null,
-      mobileSrc: null,
+      autoPlayObserver: null,
+      player: null,
+      open: true,
+      error: null,
+      iconMods: ['light'],
     };
   },
-  computed: {
-    canDisplay() {
-      if ((this.src || this.mobileSrc) && this.href) return true;
-      return false;
-    },
-    adClasses() {
-      return `${block}__ad`;
-    },
-    blockClasses() {
-      const classes = [block];
-      if (this.visible && !this.hasClosed) {
-        return [...classes, `${block}--visible`];
-      }
-      return classes;
-    },
-    containerClasses() {
-      const blockClass = `${block}__container`;
-      const classes = [blockClass];
-      if (this.src) classes.push(`${blockClass}--with-desktop`);
-      if (this.mobileSrc) classes.push(`${blockClass}--with-mobile`);
-      return classes;
-    },
-    buttonClasses() {
-      return `${block}__close`;
-    },
-    backgroundClasses() {
-      return `${block}__background`;
-    },
-  },
   created() {
-    // window.addEventListener('message', this.listener);
+    if (!this.path) {
+      warn('GAM path was not defined, bailing early.');
+      return;
+    }
     const { googletag } = window;
     if (!googletag) {
-      console.warn('The googletag object was not found. Bailing early.');
+      warn('The googletag object was not found. Bailing early.');
+      return;
     }
-
+    window.addEventListener('resize', this.handleScreenResize);
     window.addEventListener('message', this.listener);
     googletag.cmd.push(() => {
-      this.slot = googletag.defineOutOfPageSlot('/137873098/IEN/default_brightcove', 'hooplah').addService(googletag.pubads());
+      this.slot = googletag.defineOutOfPageSlot(this.path, 'brightcove-gam-ad').addService(googletag.pubads());
       const div = document.createElement('div');
-      div.id = 'hooplah';
+      div.id = 'brightcove-gam-ad';
       div.dataset.path = this.path;
+      div.style = 'height: 1px;';
       this.$el.appendChild(div);
       googletag.pubads().refresh([this.slot], { changeCorrelator: false });
     });
-    this.observer = new IntersectionObserver((event) => {
-      if (event[0].isIntersecting) {
-        this.visible = false;
-      } else {
-        this.display();
-      }
-    }, {
-      threshold: 0,
-    });
   },
-  mounted() {
-    this.observer.observe(this.$el.querySelector('.billboard-leave-behind-observer'));
+  destroyed() {
+    window.removeEventListener('resize', this.handleScreenResize);
   },
   beforeDestroy() {
     window.removeEventListener('message', this.listener);
   },
   methods: {
-    imageClasses(type = 'desktop') {
-      return [`${block}__image`, `${block}__image--${type}`];
-    },
-    listener(event) {
+    async listener(event) {
       const payload = parseJson(event.data);
-      console.log(payload);
-      if (['href'].every((k) => payload[k]) && ['lb1300x100', 'lb600x100'].some((j) => payload[j])) {
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', () => {
-            this.setProps(payload);
-            this.display();
+      const brightcoveKeys = ['bcAccountId', 'bcPlayerId', 'bcPlaylistId'];
+      if (brightcoveKeys.every((j) => payload[j])) {
+        try {
+          const { ref } = await brightcovePlayerLoader({
+            accountId: payload.bcAccountId,
+            playerId: payload.bcPlayerId,
+            embedId: payload.embedId || 'default',
+            videoId: payload.bcVideoId,
+            playlistId: payload.bcPlaylistId,
+            refNode: this.$el,
+            options: {
+              autoplay: false,
+            },
+            embedOptions: {
+              responsive: {
+                maxWidth: '340px',
+              },
+            },
           });
-        } else {
-          // attempt to set props and display if requirments are met.
-          this.setProps(payload);
-          this.display();
+          this.player = ref;
+
+          const { identityParams, olyEncId } = this;
+          this.player.ready(function setIdentityParams() {
+            const player = this;
+            if (olyEncId) player.bcAnalytics.client.setUser(olyEncId);
+            if (!player.ima3) return;
+            player.ima3.adMacroReplacement = function leadManagementReplacer(url) {
+              if (!url) return url;
+              const addr = new URL(url);
+              addr.searchParams.set('cust_params', identityParams);
+              return addr.toString();
+            };
+          });
+          this.player.pause();
+          this.open = true;
+          this.setAutoPlayObserver();
+        } catch (e) {
+          const { error } = console;
+          error(e);
         }
       }
     },
+    setAutoPlayObserver() {
+      if (this.autoPlayObserver) this.autoPlayObserver.disconnect();
+      const header = document.getElementsByClassName('site-header')[0];
+      const rootMargin = `-${header.offsetTop + header.offsetHeight}px 0px 0px 0px`;
+      const options = {
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin,
+      };
+      this.autoPlayObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.intersectionRatio || entry.intersectionRatio <= 0.75) {
+            this.player.pause();
+          } else {
+            this.player.play();
+          }
+        });
+      }, options);
+      this.autoPlayObserver.observe(this.$el);
+    },
+    handleScreenResize() {
+      this.setAutoPlayObserver();
+    },
     close() {
-      this.hasClosed = true;
-      this.visible = false;
-    },
-    display() {
-      if (this.canDisplay && !this.hasClosed) this.visible = true;
-    },
-    setProps(payload) {
-      const { lb1300x100, lb600x100, href } = payload;
-      this.src = lb1300x100;
-      this.mobileSrc = lb600x100;
-      this.href = href;
-      // This will add a class to the related top leaderboard to be able to adjust styling.
-      document.querySelector('[data-gam-path*="top-leaderboard"]').classList.add('ad-container--template-leaderboard-4x1');
+      this.player.pause();
+      this.player.reset();
+      this.open = false;
     },
   },
 };
 </script>
+
+<style scoped>
+#brightcove-floating-player {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  min-width: 340px;
+  box-shadow: 5px 5px 15px 5px #000000;
+  z-index: 1;
+}
+
+#brightcove-floating-player >>> .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  height: 32px;
+  width: 32px;
+}
+
+#brightcove-floating-player >>> .video-js .vjs-overlay {
+  background-color: transparent;
+}
+
+.page-rail #brightcove-floating-player {
+  position: sticky;
+
+  top: 150px;
+  right: initial;
+  bottom: initial;
+
+  min-width: initial;
+  max-width: 340px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 1100px) {
+  .page-rail #brightcove-floating-player {
+    top: 120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .page-rail #brightcove-floating-player {
+    position: relative;
+    top: initial;
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-90px - 1rem));
+  }
+}
+
+.marko-web-gam-fixed-ad-bottom.marko-web-gam-fixed-ad-bottom--visible
+~ #brightcove-floating-player {
+  animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+</style>
