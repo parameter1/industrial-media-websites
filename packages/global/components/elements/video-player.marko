@@ -3,7 +3,7 @@ import getEncryptedId from "@parameter1/base-cms-marko-web-omeda/olytics/get-ome
 
 $ const { identity } = out.global.leads;
 $ const { GAM, req, site } = out.global;
-$ const brightCovePlayerEnabled = defaultValue(site.get("brightCovePlayerEnabled"), true);
+$ const brightCovePlayerEnabled = defaultValue(process.env.BRIGHTCOVE_ENABLED === 'true', false);
 $ const olyEncId = defaultValue(getEncryptedId(req), '');
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {

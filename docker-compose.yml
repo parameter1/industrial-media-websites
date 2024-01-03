@@ -76,6 +76,7 @@ services:
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-id.dev.parameter1.com
     ports:
       - "9710:80"
@@ -91,6 +92,7 @@ services:
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-mnet.dev.parameter1.com
     ports:
       - "9711:80"
@@ -106,6 +108,7 @@ services:
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-fm.dev.parameter1.com
     ports:
       - "9712:80"
@@ -121,6 +124,7 @@ services:
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-impo.dev.parameter1.com
     ports:
       - "9713:80"
@@ -136,6 +140,7 @@ services:
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-mbt.dev.parameter1.com
     ports:
       - "9714:80"
@@ -151,6 +156,7 @@ services:
       EXPOSED_PORT: 9715
       LIVERELOAD_PORT: 19715
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-ien.dev.parameter1.com
     ports:
       - "9715:80"
@@ -166,6 +172,7 @@ services:
       EXPOSED_PORT: 9716
       LIVERELOAD_PORT: 19716
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-cen.dev.parameter1.com
     ports:
       - "9716:80"
@@ -181,6 +188,7 @@ services:
       EXPOSED_PORT: 9717
       LIVERELOAD_PORT: 19717
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-ddt.dev.parameter1.com
     ports:
       - "9717:80"
@@ -196,6 +204,7 @@ services:
       EXPOSED_PORT: 9718
       LIVERELOAD_PORT: 19718
       GAM_TRACK_API_KEY: ${GAM_TRACK_API_KEY-}
+      BRIGHTCOVE_ENABLED: ${BRIGHTCOVE_ENABLED-}
     hostname: www-indm-mdd.dev.parameter1.com
     ports:
       - "9718:80"
