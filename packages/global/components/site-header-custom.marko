@@ -1,6 +1,6 @@
 import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 
-$ const { config, site } = out.global;
+$ const { config, site, GAM } = out.global;
 
 $ const { enabled: contentMeterEnabled } = site.getAsObject("contentMeter");
 
@@ -23,6 +23,7 @@ $ const navigation = {
 >
   <${input.aboveNav} />
 
+<marko-web-browser-component name="BrightCoveGAMPlayer" />
   <theme-site-navbar modifiers=["top"] attrs={ "aria-label": "Top Navigation" }>
     <div class='site-navbar__left'>
       <theme-site-navbar-brand title=`${config.website("name")} Homepage`>
