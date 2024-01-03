@@ -56,11 +56,13 @@ export default {
   created() {
     if (!this.path) {
       warn('GAM path was not defined, bailing early.');
+      this.open = false;
       return;
     }
     const { googletag } = window;
     if (!googletag) {
       warn('The googletag object was not found. Bailing early.');
+      this.open = false;
       return;
     }
     window.addEventListener('resize', this.handleScreenResize);

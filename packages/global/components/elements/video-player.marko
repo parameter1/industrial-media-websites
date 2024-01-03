@@ -20,6 +20,6 @@ $ const props={
     path: GAM.getAdUnit({ name: "brightcove" }).path
   };
 
-<if(brightCovePlayerEnabled)>
+<if(brightCovePlayerEnabled && props.path)>
   <marko-web-browser-component name="BrightCoveGAMPlayer" props=props />
 </if>
