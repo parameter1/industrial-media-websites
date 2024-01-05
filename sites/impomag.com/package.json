@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/impomag.com",
-  "version": "2.13.3",
+  "version": "2.14.0",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/impomag.com",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "win32"
   ],
   "dependencies": {
-    "@industrial-media/package-global": "^2.13.3",
+    "@industrial-media/package-global": "^2.14.0",
     "@parameter1/base-cms-marko-core": "^4.40.3",
     "@parameter1/base-cms-marko-web": "^4.40.3",
     "@parameter1/base-cms-marko-web-native-x": "^4.40.3",
