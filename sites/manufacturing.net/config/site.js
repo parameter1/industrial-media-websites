@@ -72,8 +72,4 @@ module.exports = {
       email: 'reply@ien.com',
     },
   },
-  brightCovePlayerData: {
-    playerId: '2JK0gluXe',
-    playlistId: '1771866934994667656',
-  },
 };
