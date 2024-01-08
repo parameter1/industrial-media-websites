@@ -233,7 +233,7 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
               excludeContentTypes,
             }
           >
-          <@native-x indexes=[0] name="default" aliases=aliases />
+            <@native-x indexes=[0] name="related-content" aliases=aliases />
           </theme-latest-content-list-block>
           <!-- Only Fire when brightcove player is not included via content.embedCode -->
           <if(!content.embedCode)>
@@ -258,13 +258,15 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
   </if>
 
   <if(!showOverlay)>
-    <@section|{ content }|>
+    <@section|{ content, aliases }|>
       <theme-related-stories-block
         content-id=content.id
         section-id=content.primarySection.id
         with-native-x=true
         native-x={ sectionName: "Sponsored" }
-      />
+      >
+        <@native-x index=3 name="related-content" aliases=aliases />
+      </theme-related-stories-block>
     </@section>
   </if>
 
