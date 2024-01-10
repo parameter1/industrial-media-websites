@@ -7,22 +7,22 @@ config
     { name: 'default', id: '6032aa80e7c97d0001078716' },
     { name: 'related-content', id: '6032aa80e7c97d0001078716' },
   ])
-  .setAliasPlacements('aerospace', [
+  .setAliasPlacements('industries/aerospace', [
     { name: 'related-content', id: '6039afdd2a687f000184f6ef' },
   ])
-  .setAliasPlacements('automotive', [
+  .setAliasPlacements('industries/automotive', [
     { name: 'related-content', id: '6039affee7c97d00013d9728' },
   ])
   .setAliasPlacements('exclusives', [
     { name: 'related-content', id: '6039afa92a687f000184f525' },
   ])
-  .setAliasPlacements('manufacturing', [
+  .setAliasPlacements('industries/manufacturing', [
     { name: 'related-content', id: '6039b01de7c97d00013d9896' },
   ])
-  .setAliasPlacements('medical', [
+  .setAliasPlacements('industries/medical', [
     { name: 'related-content', id: '6039b03ae7c97d00013d99ec' },
   ])
-  .setAliasPlacements('military', [
+  .setAliasPlacements('industries/military', [
     { name: 'related-content', id: '6039b05a2a687f000184fc46' },
   ])
   .setAliasPlacements('new-products', [
