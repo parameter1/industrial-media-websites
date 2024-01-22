@@ -12,6 +12,7 @@ const newsletter = require('./newsletter');
 
 module.exports = {
   navigation,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY || false,
   contentMeter,
   gam,
   omeda,

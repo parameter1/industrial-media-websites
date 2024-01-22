@@ -12,8 +12,9 @@ const omedaIdentityX = require('./omeda-identity-x');
 const newsletter = require('./newsletter');
 
 module.exports = {
-  magazine,
   navigation,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY || false,
+  magazine,
   contentMeter,
   gam,
   omeda,
