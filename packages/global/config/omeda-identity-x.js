@@ -77,7 +77,6 @@ module.exports = ({
   appendPromoCodeToHook = [],
   appendBehaviorToHook = [],
   appendDemographicToHook = [],
-  createFromIdentity = false,
 }) => {
   const { brandKey } = omedaConfig;
   const { behaviors, behaviorAttributes } = getBehaviors(brandKey, websiteBehaviorAttributeId);
@@ -93,6 +92,5 @@ module.exports = ({
     appendPromoCodeToHook,
     appendBehaviorToHook,
     appendDemographicToHook,
-    createFromIdentity,
   };
 };
