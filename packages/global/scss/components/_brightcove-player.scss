@@ -9,3 +9,11 @@
     }
   }
 }
+
+#brightcove-gam-player-button {
+  display: none;
+}
+
+#brightcove-gam-player-button.active {
+  display: inline-block;
+}

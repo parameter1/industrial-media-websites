@@ -12,6 +12,7 @@ const newsletter = require('./newsletter');
 
 module.exports = {
   navigation,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY || false,
   contentMeter,
   gam,
   omeda,
@@ -72,10 +73,5 @@ module.exports = {
     support: {
       email: 'reply@cannabisequipmentnews.com',
     },
-  },
-  brightCovePlayerEnabled: true,
-  brightCovePlayerData: {
-    playerId: 'kln2UOlrO',
-    playlistId: '1739634672452634754',
   },
 };

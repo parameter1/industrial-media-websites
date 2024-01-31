@@ -25,10 +25,7 @@ module.exports = ({
     'organization',
     'countryCode',
   ],
-  gtmUserFields = {
-    primary_business: '60104e959fdc650033d91e91',
-    job_title: '6575cf1827f0a7b1c503cd24',
-  },
+  gtmUserFields = {},
   booleanQuestionsLabel = 'Preferences:',
   ...rest
 } = {}) => {

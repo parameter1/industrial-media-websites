@@ -87,7 +87,15 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
         <div class="content-page-body" role="region" aria-label="Content Body">
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
-              <global-content-embed-code block-name=blockName content=content />
+              <if(showOverlay)>
+                <theme-primary-image-block
+                  obj=content.primaryImage
+                  fluid-width=700
+                />
+              </if>
+              <else>
+                <global-content-embed-code block-name=blockName content=content />
+              </else>
               <if(content.transcript)>
                 <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
                   <marko-web-icon name="file" modifiers=["lg"] /> Transcript
@@ -195,29 +203,28 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
                 />
               </div>
             </if>
-            <!-- <if(displayNewsletterSignup)>
-              <global-newsletter-signup-banner-block />
-            </if> -->
 
-            <if(displaySocialShare)>
-              <marko-web-social-sharing
-                path=content.siteContext.path
-                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
-                print-path=`/print/content/${content.id}`
-              />
-            </if>
+            <if(!showOverlay)>
+              <if(displaySocialShare)>
+                <marko-web-social-sharing
+                  path=content.siteContext.path
+                  providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                  print-path=`/print/content/${content.id}`
+                />
+              </if>
 
-            <if(displayComments)>
-              <theme-identity-x-comment-stream content=content />
-            </if>
+              <if(displayComments)>
+                <theme-identity-x-comment-stream content=content />
+              </if>
 
-            $ const displayReadNext = showReadNextBlock && ["article"].includes(type) && primarySection.alias !== 'home';
-            <if(displayReadNext)>
-              <theme-read-next-block
-                content-id=id
-                section-id=primarySection.id
-                published=content.published
-              />
+              $ const displayReadNext = showReadNextBlock && ["article"].includes(type) && primarySection.alias !== 'home';
+              <if(displayReadNext)>
+                <theme-read-next-block
+                  content-id=id
+                  section-id=primarySection.id
+                  published=content.published
+                />
+              </if>
             </if>
           </theme-page-contents>
         </div>
@@ -233,7 +240,7 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
               excludeContentTypes,
             }
           >
-          <@native-x indexes=[0] name="default" aliases=aliases />
+            <@native-x indexes=[0] name="related-content" aliases=aliases />
           </theme-latest-content-list-block>
           <!-- Only Fire when brightcove player is not included via content.embedCode -->
           <if(!content.embedCode)>
@@ -258,13 +265,15 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
   </if>
 
   <if(!showOverlay)>
-    <@section|{ content }|>
+    <@section|{ content, aliases }|>
       <theme-related-stories-block
         content-id=content.id
         section-id=content.primarySection.id
         with-native-x=true
         native-x={ sectionName: "Sponsored" }
-      />
+      >
+        <@native-x index=3 name="related-content" aliases=aliases />
+      </theme-related-stories-block>
     </@section>
   </if>
 

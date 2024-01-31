@@ -12,8 +12,9 @@ const omedaIdentityX = require('./omeda-identity-x');
 const newsletter = require('./newsletter');
 
 module.exports = {
-  magazine,
   navigation,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY || false,
+  magazine,
   contentMeter,
   gam,
   omeda,
@@ -73,9 +74,5 @@ module.exports = {
     support: {
       email: 'reply@ien.com',
     },
-  },
-  brightCovePlayerData: {
-    playerId: 'h9sJwPtoD',
-    playlistId: '1760277013816281219',
   },
 };

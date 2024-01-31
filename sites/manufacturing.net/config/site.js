@@ -12,6 +12,7 @@ const newsletter = require('./newsletter');
 
 module.exports = {
   navigation,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY || false,
   contentMeter,
   gam,
   omeda,
@@ -71,9 +72,5 @@ module.exports = {
     support: {
       email: 'reply@ien.com',
     },
-  },
-  brightCovePlayerData: {
-    playerId: '2JK0gluXe',
-    playlistId: '1771866934994667656',
   },
 };
