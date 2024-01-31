@@ -37,7 +37,10 @@ module.exports = configureIdentityX({
   activeCustomFieldIds: [
     '60104e959fdc650033d91e91',
     '6575cf1827f0a7b1c503cd24',
-    '657cad502abe211e9ea0c86f',
+    '65b90c2eb4946d06112cf501',
+    '65b90b1ab4946d38962cd8df',
+    '65b90c7af22eb7010672eeab',
+    '65b90e13abfae4b94ee7a66c',
   ],
   gtmUserFields: {
     job_title: '60104e959fdc650033d91e91',
