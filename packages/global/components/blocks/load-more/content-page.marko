@@ -3,7 +3,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { GAM } = out.global;
 
-$ const { aliases } = input;
+$ const { aliases, name } = input;
 
 $ const content = getAsObject(input, "content");
 $ const section = getAsObject(input, "section");
@@ -79,5 +79,5 @@ $ const attrs = createAttrs();
     ...GAM.getAdUnit({ name: "infinite-interstitial", aliases })
     modifiers=["max-width-300", "margin-auto-x"]
   />
-  <@native-x indexes=[0] name="default" aliases=aliases />
+  <@native-x indexes=[0] name=name aliases=aliases />
 </global-latest-content-feed-load-more-block>
