@@ -30,9 +30,9 @@ config
   ])
   .setAliasPlacements('news', [
     { name: 'related-content', id: '6039b095e7c97d00013d9e71' },
-  ])
-  .setAliasPlacements('video', [
-    { name: 'related-content', id: '6039b0b2e7c97d00013d9fd6' },
   ]);
+  // .setAliasPlacements('video', [
+  //   { name: 'related-content', id: '6039b0b2e7c97d00013d9fd6' },
+  // ]);
 
 module.exports = config;
