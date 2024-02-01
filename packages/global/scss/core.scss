@@ -530,3 +530,13 @@ label {
   }
 }
 /*! critical:end */
+
+/*! critical:start|user */
+#profile-form-wrapper {
+  form {
+    .boolean-questions-label {
+      font-size: 1rem;
+    }
+  }
+}
+/*! critical:end */

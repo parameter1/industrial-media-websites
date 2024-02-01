@@ -1,0 +1,80 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const { config, site, contentMeterState } = out.global;
+$ const {
+  displayGate,
+  displayOverlay,
+  viewLimit,
+  views,
+} = contentMeterState;
+$ const additionalEventData = {
+  promoCode: site.get("contentMeter.promoCode", undefined),
+  views,
+  viewLimit,
+  displayGate,
+  displayOverlay,
+  contentGateType: "metered",
+};
+
+
+
+$ const setTextVariables = () => {
+  // Set title based on views remaining
+  let dynamicTitle = defaultValue(input.dynamicTitle, "Create an account");
+  if (views < viewLimit) dynamicTitle = `You have ${viewLimit - views} views remaining.`;
+  if (viewLimit - views === 1) dynamicTitle = `You have 1 view remaining.`;
+  if (viewLimit === views && !displayOverlay) dynamicTitle = `This is your last free view.`;
+  if (viewLimit === 1 && !displayOverlay) dynamicTitle = 'Enjoy this free content.';
+
+  return [
+    dynamicTitle,
+    "Create a free account",
+    `Create a free <span class="content-meter__call-to-action--site-name">${config.siteName()}</span> account to continue`,
+    "Continue",
+  ];
+}
+$ const [title, collapsedTitle, callToAction, registerText] = setTextVariables();
+
+$ const classes = [
+  "content-meter",
+  "content-meter--open",
+  `${(displayGate && displayOverlay) ? "content-meter--display-overlay" : "" }`,
+].join(" ");
+
+<if(displayGate)>
+  <div class=classes>
+    <if(displayOverlay)>
+      <div class="content-meter__overlay"/>
+    </if>
+    <div class="content-meter__bar" role="region" aria-label="Content Meter">
+      <marko-web-browser-component name="ContentMeterTrack" props=contentMeterState />
+      <div class="content-meter__title">
+        <theme-menu-toggle-button
+          class="content-meter__toggler"
+          targets=[
+            ".content-meter"
+          ]
+          beforeExpanded=`${title}`
+          beforeCollapsed=`${collapsedTitle}`
+          toggle-class="content-meter--open"
+          icon-modifiers=["xl"]
+          initially-expanded=true
+          icon-name="chevron-up"
+          expanded-icon-name="chevron-down"
+        />
+      </div>
+      <p class="content-meter__call-to-action">
+        $!{callToAction}
+      </p>
+      <div class="content-meter__body">
+        <div class="content-meter__login-form">
+          <marko-web-identity-x-form-login
+            login-email-placeholder="your@email.com"
+            source="content_meter_login"
+            additional-event-data=additionalEventData
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</if>
