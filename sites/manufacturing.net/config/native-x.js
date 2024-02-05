@@ -30,6 +30,9 @@ config
   ])
   .setAliasPlacements('aerospace', [
     { name: 'related-content', id: '603aa3dd0057fb0001ef6f4a' },
+  ])
+  .setAliasPlacements('artificial-intelligence', [
+    { name: 'related-content', id: '65bbd7b23072e90001db3dec' }
   ]);
 
 module.exports = config;
