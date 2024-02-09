@@ -127,6 +127,12 @@ export default {
           this.player.pause();
           this.open = true;
           this.setAutoPlayObserver();
+          // append trasnparent tracking pixel
+          const tracker = document.createElement('img');
+          tracker.setAttribute('src', `${payload.VIEW_URL_UNESC}`);
+          tracker.style.display = 'none';
+          document.getElementById('brightcove-gam-player').appendChild(tracker);
+
           document.getElementById('brightcove-gam-player-button').classList.add('active');
         } catch (e) {
           const { error } = console;
