@@ -87,15 +87,19 @@ export default {
   methods: {
     async listener(event) {
       const payload = parseJson(event.data);
-      const brightcoveKeys = ['bcAccountId', 'bcPlayerId', 'bcPlaylistId'];
-      if (brightcoveKeys.every((j) => payload[j])) {
+      // you must have a accountId, playerID & (videoId || playlistId)
+      if (
+        ['bcAccountId', 'bcPlayerId'].every((j) => payload[j])
+        && ['bcPlaylistId', 'bclVideoId'].some((k) => payload[k])
+      ) {
         try {
           const { ref } = await brightcovePlayerLoader({
             accountId: payload.bcAccountId,
             playerId: payload.bcPlayerId,
             embedId: payload.embedId || 'default',
+            // use videoId over playlistId, should be more specific
             videoId: payload.bcVideoId,
-            playlistId: payload.bcPlaylistId,
+            ...(!payload.bcVideoId && { playlistId: payload.bcPlaylistId }),
             refNode: this.$el,
             options: {
               autoplay: false,
