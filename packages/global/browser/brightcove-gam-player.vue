@@ -129,7 +129,7 @@ export default {
           this.setAutoPlayObserver();
           // append trasnparent tracking pixel
           const tracker = document.createElement('img');
-          tracker.setAttribute('src', `${payload.VIEW_URL_UNESC}`);
+          tracker.setAttribute('src', payload.VIEW_URL_UNESC);
           tracker.style.display = 'none';
           document.getElementById('brightcove-gam-player').appendChild(tracker);
 
