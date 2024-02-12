@@ -33,6 +33,9 @@ config
   ])
   .setAliasPlacements('big-50', [
     { name: 'related-content', id: '603aa4cc0057fb0001ef7542' },
+  ])
+  .setAliasPlacements('new-products', [
+    { name: 'related-content', id: '65bbce623072e90001db3644' },
   ]);
 
 module.exports = config;
