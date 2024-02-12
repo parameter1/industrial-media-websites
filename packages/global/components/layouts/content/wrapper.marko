@@ -55,9 +55,10 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
 
         <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
           $ const section = content.primarySection;
+          $ const aliases = hierarchyAliases(content.primarySection);
           <marko-web-page-wrapper>
             <if(displayAds)>
-              <@section|{ aliases }| modifiers=["first-sm"]>
+              <@section modifiers=["first-sm"]>
                 <theme-gam-define-display-ad
                   name="billboard"
                   position="content_page"
@@ -66,7 +67,7 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
                 />
               </@section>
             </if>
-            <@section|{ aliases }|>
+            <@section>
               <div class="row">
                 <div class="col-lg-12 infinite-scroll-target">
                   <global-content-page-load-more-block
