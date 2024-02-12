@@ -2,6 +2,12 @@ $content-meter-mobile-breakpoint: 600px !default;
 
 .content-meter {
   $self: &;
+  &:not(:has(.content-meter__login-form form)) {
+    #{ $self }__title,
+    #{ $self }__call-to-action {
+      display: none;
+    }
+  }
   &--display-overlay {
     ~ .site-footer {
       display: none;

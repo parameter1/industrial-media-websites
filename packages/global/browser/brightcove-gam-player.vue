@@ -87,15 +87,19 @@ export default {
   methods: {
     async listener(event) {
       const payload = parseJson(event.data);
-      const brightcoveKeys = ['bcAccountId', 'bcPlayerId', 'bcPlaylistId'];
-      if (brightcoveKeys.every((j) => payload[j])) {
+      // you must have a accountId, playerID & (videoId || playlistId)
+      if (
+        ['bcAccountId', 'bcPlayerId'].every((j) => payload[j])
+        && ['bcPlaylistId', 'bclVideoId'].some((k) => payload[k])
+      ) {
         try {
           const { ref } = await brightcovePlayerLoader({
             accountId: payload.bcAccountId,
             playerId: payload.bcPlayerId,
             embedId: payload.embedId || 'default',
+            // use videoId over playlistId, should be more specific
             videoId: payload.bcVideoId,
-            playlistId: payload.bcPlaylistId,
+            ...(!payload.bcVideoId && { playlistId: payload.bcPlaylistId }),
             refNode: this.$el,
             options: {
               autoplay: false,
@@ -123,6 +127,12 @@ export default {
           this.player.pause();
           this.open = true;
           this.setAutoPlayObserver();
+          // append trasnparent tracking pixel
+          const tracker = document.createElement('img');
+          tracker.setAttribute('src', payload.VIEW_URL_UNESC);
+          tracker.style.display = 'none';
+          document.getElementById('brightcove-gam-player').appendChild(tracker);
+
           document.getElementById('brightcove-gam-player-button').classList.add('active');
         } catch (e) {
           const { error } = console;
