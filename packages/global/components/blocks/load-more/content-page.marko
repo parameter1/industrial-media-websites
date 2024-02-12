@@ -6,7 +6,7 @@ $ const { GAM } = out.global;
 $ const { aliases } = input;
 
 $ const nativeX = getAsObject(input, "nativeX");
-$ const nativeXPlacementName = "nativeX.name" || "default";
+$ const nativeXPlacementName = nativeX.name || "default";
 
 $ const content = getAsObject(input, "content");
 $ const section = getAsObject(input, "section");
