@@ -33,9 +33,9 @@
   "dependencies": {
     "@industrial-media/package-global": "^2.16.2",
     "@parameter1/base-cms-marko-core": "^4.42.0",
-    "@parameter1/base-cms-marko-web": "^4.42.0",
+    "@parameter1/base-cms-marko-web": "^4.47.1",
     "@parameter1/base-cms-marko-web-native-x": "^4.42.0",
-    "@parameter1/base-cms-marko-web-theme-monorail": "^4.45.0",
+    "@parameter1/base-cms-marko-web-theme-monorail": "^4.47.2",
     "@parameter1/base-cms-object-path": "^4.40.3",
     "@parameter1/base-cms-utils": "^4.40.3",
     "@parameter1/base-cms-web-cli": "^4.40.3",
