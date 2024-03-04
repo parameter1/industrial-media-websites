@@ -1,5 +1,5 @@
 module.exports = {
-  // onAuthenticationSuccess: {
-  //   productIds: [44],
-  // },
+  onAuthenticationSuccess: {
+    productIds: [19],
+  },
 };
