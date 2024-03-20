@@ -6,7 +6,7 @@ const topics = sortNavItems([
   { href: '/artificial-intelligence', label: 'AI' },
   { href: '/automotive', label: 'Automotive' },
   { href: '/energy', label: 'Energy' },
-  { href: 'gen-z-in-manufacturing-podcast', label: 'Gen Z' },
+  { href: '/gen-z-in-manufacturing-podcast', label: 'Gen Z' },
   { href: '/industry40', label: 'Industry 4.0' },
   { href: '/cybersecurity', label: 'Cybersecurity' },
   { href: '/operations', label: 'Operations' },
