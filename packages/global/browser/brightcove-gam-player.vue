@@ -138,6 +138,8 @@ export default {
           const { error } = console;
           error(e);
         }
+      } else {
+        document.getElementById('brightcove-gam-player-backup').removeAttribute('style');
       }
     },
     setAutoPlayObserver() {
