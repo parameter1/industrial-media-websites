@@ -22,5 +22,4 @@ module.exports = ({
   ],
   collapseBeforeAdFetch: true,
   withWrapper: true,
-  oop: true,
 });
