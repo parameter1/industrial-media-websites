@@ -1,17 +1,10 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import getEncryptedId from "@parameter1/base-cms-marko-web-omeda/olytics/get-omeda-encrypted-id";
-import videoPlayerBackup from './video-player-backup';
 
 $ const { identity } = out.global.leads;
 $ const { GAM, req, res, site } = out.global;
 $ const brightCovePlayerEnabled = defaultValue(site.get("brightCovePlayerEnabled"), true);
 $ const olyEncId = defaultValue(getEncryptedId(req), '');
-$ const backup = videoPlayerBackup({
-  req,
-  res,
-  site,
-  adUnit: GAM.getAdUnit({ name: "brightcove" })
-});
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
   const v = identity[key];
@@ -30,6 +23,6 @@ $ const props={
 <if(brightCovePlayerEnabled && props.path)>
   <marko-web-browser-component name="BrightCoveGAMPlayer" props=props />
   <div id="brightcove-gam-player-backup" style="display: none;">
-    $!{backup}
+    <theme-gam-define-display-ad name="brightcove" />
   </div>
 </if>
