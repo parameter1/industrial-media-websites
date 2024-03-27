@@ -34,7 +34,7 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.ien.com/files/base/indm/all/site-logos/industrial-equipment-news.svg?h=65&auto=format,compress',
+      src: 'https://img.ien.com/files/base/indm/all/site-logos/ien.svg?h=65&auto=format,compress',
       srcset: [
         'https://img.ien.com/files/base/indm/all/site-logos/ien.svg?h=130&auto=format,compress&dpr=2 2x',
       ],
