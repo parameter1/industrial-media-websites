@@ -1,15 +1,29 @@
 <template>
-  <div v-if="open" id="brightcove-gam-player">
-    <button
-      id="brightcove-gam-player-button"
-      class="btn btn-dark text-light p-0"
-      type="button"
-      title="Close video player"
-      @click="close"
-    >
-      <icon-x :modifiers="iconMods" />
-    </button>
-    <slot />
+  <div>
+    <div v-if="open" id="brightcove-gam-player">
+      <button
+        id="brightcove-gam-player-button"
+        class="btn btn-dark text-light p-0"
+        type="button"
+        title="Close video player"
+        @click="close"
+      >
+        <icon-x :modifiers="iconMods" />
+      </button>
+      <slot />
+    </div>
+    <div id="brightcove-gam-player-backup-wrapper" style="display: none;">
+      <button
+        id="brightcove-gam-player-backup-button"
+        class="btn btn-dark text-light p-0"
+        type="button"
+        title="Close Ad"
+        @click="closeBackup"
+      >
+        <icon-x :modifiers="iconMods" />
+      </button>
+      <div id="brightcove-gam-player-backup" />
+    </div>
   </div>
 </template>
 
@@ -138,6 +152,23 @@ export default {
           const { error } = console;
           error(e);
         }
+      } else if (['bcAdClickUrl', 'bcAdImagePath'].every((j) => payload[j])) {
+        const anchorElem = document.createElement('a');
+        anchorElem.setAttribute('href', payload.bcAdClickUrl);
+        anchorElem.setAttribute('target', '_blank');
+        anchorElem.setAttribute('rel', 'noopener noreferrer');
+        anchorElem.setAttribute('title', payload.bcAdTitle || 'CLICK HERE FOR MORE INFORMATION');
+        anchorElem.onclick = () => {
+          if (!window.p1events) return;
+          window.p1events('trackGamSlot', { action: 'CLick', slot: this.slot });
+        };
+        const imgElem = document.createElement('img');
+        imgElem.setAttribute('src', payload.bcAdImagePath);
+        imgElem.setAttribute('alt', payload.bcAdTitle || 'CLICK HERE FOR MORE INFORMATION');
+        anchorElem.appendChild(imgElem);
+        document.getElementById('brightcove-gam-player-backup').appendChild(anchorElem);
+        document.getElementById('brightcove-gam-player-backup').setAttribute('class', 'ad-container--with-label');
+        document.getElementById('brightcove-gam-player-backup-wrapper').setAttribute('style', '');
       }
     },
     setAutoPlayObserver() {
@@ -166,6 +197,11 @@ export default {
       this.player.pause();
       this.player.reset();
       this.open = false;
+    },
+    closeBackup() {
+      if (document.getElementById('brightcove-gam-player-backup-wrapper')) {
+        document.getElementById('brightcove-gam-player-backup-wrapper').remove();
+      }
     },
   },
 };

@@ -56,7 +56,12 @@ module.exports = ({
         { viewport: [980, 0], size: [300, 250] },
         { viewport: [0, 0], size: [] },
       ],
+    })
+    .setTemplate('BRIGHTCOVE', {
+      size: [300, 250],
+      sizeMapping: [
+        { viewport: [0, 0], size: [300, 250] },
+      ],
     });
-
   return config;
 };
