@@ -153,7 +153,6 @@ export default {
           error(e);
         }
       } else if (['bcAdClickUrl', 'bcAdImagePath'].every((j) => payload[j])) {
-        console.log(payload);
         const anchorElem = document.createElement('a');
         anchorElem.setAttribute('href', payload.bcAdClickUrl);
         anchorElem.setAttribute('target', '_blank');
@@ -167,7 +166,6 @@ export default {
         imgElem.setAttribute('src', payload.bcAdImagePath);
         imgElem.setAttribute('alt', payload.bcAdTitle || 'CLICK HERE FOR MORE INFORMATION');
         anchorElem.appendChild(imgElem);
-        console.log(document.getElementById('brightcove-gam-player-backup'));
         document.getElementById('brightcove-gam-player-backup').appendChild(anchorElem);
         document.getElementById('brightcove-gam-player-backup').setAttribute('class', 'ad-container--with-label');
         document.getElementById('brightcove-gam-player-backup-wrapper').setAttribute('style', '');
