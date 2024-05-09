@@ -29,7 +29,14 @@ $ const adName = "load-more";
         attrs=getAsObject(node, "attributes.container")
         link-attrs=getAsObject(node, "attributes.link")
       >
-        <@image fluid=true width=330 ar="3:2" />
+        <!-- If native x force primary image display to be fit: fill and fill with white with no crop. -->
+        <if(node.primaryImage && node.primaryImage.src.includes('https://native-x.imgix.net/'))>
+          <@image fluid=false width=330 ar="3:2" options={ fit: "fill", "fill-color": "#fff",  crop : "none" }/>
+        </if>
+        <else>
+          <@image fluid=true width=330 ar="3:2" />
+        </else>
+
       </theme-content-node>
     </@slot>
     <if(adIndices !== null)>
