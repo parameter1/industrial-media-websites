@@ -103,7 +103,7 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
                   aliases=aliases
                   modifiers=["inter-block"]
                 />
-              <if>
+              </if>
               <if(content.transcript)>
                 <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
                   <marko-web-icon name="file" modifiers=["lg"] /> Transcript
