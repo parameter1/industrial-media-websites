@@ -318,9 +318,9 @@
 /*! critical:end */
 /*! critical:start|content */
 @import "./components/content-page";
+@import "./components/content-meter";
 /*! critical:end */
 /*! critical:start */
-/*! critical:start|content */
 @import "./components/node";
 /*! critical:end */
 @import "./components/site-footer";
@@ -526,6 +526,16 @@ label {
   &__content-body {
     li, ul {
       list-style-position: initial;
+    }
+  }
+}
+/*! critical:end */
+
+/*! critical:start|user */
+#profile-form-wrapper {
+  form {
+    .boolean-questions-label {
+      font-size: 1rem;
     }
   }
 }

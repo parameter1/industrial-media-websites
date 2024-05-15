@@ -1,4 +1,4 @@
-$ const { config } = out.global;
+$ const { config, req } = out.global;
 
 $ const type = "logout";
 $ const title = "Log out";
@@ -12,7 +12,7 @@ $ const description = `Log out of ${config.siteName()}`;
   </@head>
   <@page>
     <marko-web-page-wrapper>
-      <@section>
+      <@section modifiers=["user-form"]>
         <h1 class="page-wrapper__title">${description}</h1>
         <marko-web-identity-x-form-logout />
       </@section>

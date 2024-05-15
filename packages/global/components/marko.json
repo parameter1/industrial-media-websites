@@ -24,12 +24,6 @@
   "<global-site-menu>": {
     "template": "./site-menu/index.marko"
   },
-  "<global-site-header>": {
-    "template": "./site-header.marko"
-  },
-  "<global-site-header-2>": {
-    "template": "./site-header-2.marko"
-  },
   "<global-site-header-custom>": {
     "template": "./site-header-custom.marko"
   },

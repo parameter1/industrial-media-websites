@@ -2,8 +2,10 @@ import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
 
+import { cmShowOverlay, cmRestrictContentByReg, cmTruncateBody } from "../../../utils/content-meter-helpers";
 
-$ const { site } = out.global;
+$ const { site, contentMeterState } = out.global;
+
 $ const {
   id,
   type,
@@ -13,21 +15,27 @@ $ const {
   showTopStoryBlock,
   ...rest
 } = input;
+
 $ const sections = getAsArray(input, "sections");
 $ const belowContentSections = getAsArray(input, "belowContentSections");
+
+$ const showOverlay = cmShowOverlay(contentMeterState);
+$ const displayAds = !showOverlay;
 
 $ const displayPrimaryImage = defaultValue(input.displayPrimaryImage, true);
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 $ const displayComments = (site.get('identityX.comments.enabled') && !["contact"].includes(type)) ? true : false;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
-$ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
+$ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].includes(type);
 
 <global-content-wrapper-layout
   id=id
   type=type
   page-node=pageNode
   ...rest
+  display-ads=displayAds
+  show-overlay=showOverlay
 >
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
     $ const { primarySection } = content;
@@ -79,7 +87,15 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         <div class="content-page-body" role="region" aria-label="Content Body">
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
-              <global-content-embed-code block-name=blockName content=content />
+              <if(showOverlay)>
+                <theme-primary-image-block
+                  obj=content.primaryImage
+                  fluid-width=700
+                />
+              </if>
+              <else>
+                <global-content-embed-code block-name=blockName content=content />
+              </else>
               <if(content.transcript)>
                 <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
                   <marko-web-icon name="file" modifiers=["lg"] /> Transcript
@@ -187,56 +203,57 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 />
               </div>
             </if>
-            <!-- <if(displayNewsletterSignup)>
-              <global-newsletter-signup-banner-block />
-            </if> -->
 
-            <if(displaySocialShare)>
-              <marko-web-social-sharing
-                path=content.siteContext.path
-                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
-                print-path=`/print/content/${content.id}`
-              />
-            </if>
+            <if(!showOverlay)>
+              <if(displaySocialShare)>
+                <marko-web-social-sharing
+                  path=content.siteContext.path
+                  providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                  print-path=`/print/content/${content.id}`
+                />
+              </if>
 
-            <if(displayComments)>
-              <theme-identity-x-comment-stream content=content />
-            </if>
+              <if(displayComments)>
+                <theme-identity-x-comment-stream content=content />
+              </if>
 
-            $ const displayReadNext = showReadNextBlock && ["article"].includes(type) && primarySection.alias !== 'home';
-            <if(displayReadNext)>
-              <theme-read-next-block
-                content-id=id
-                section-id=primarySection.id
-                published=content.published
-              />
+              $ const displayReadNext = showReadNextBlock && ["article"].includes(type) && primarySection.alias !== 'home';
+              <if(displayReadNext)>
+                <theme-read-next-block
+                  content-id=id
+                  section-id=primarySection.id
+                  published=content.published
+                />
+              </if>
             </if>
           </theme-page-contents>
         </div>
       </div>
       <div class="col-lg-4 page-rail">
-        $ const excludeContentTypes = ["Contact", "Company", "Document", "TextAd", "Promotion"];
-        <theme-latest-content-list-block
-          title=`Latest in ${primarySection.name}`
-          alias=primarySection.alias
-          query-params={
-            optionName: ["Standard", "Featured Content"],
-            excludeContentTypes,
-          }
-        >
-        <@native-x indexes=[0] name="default" aliases=aliases />
-        </theme-latest-content-list-block>
-        <!-- Only Fire when brightcove player is not included via content.embedCode -->
-        <if(!content.embedCode)>
-          <div class="sticky-top" >
-            <global-video-player />
-          </div>
+        <if(!showOverlay)>
+          $ const excludeContentTypes = ["Contact", "Company", "Document", "TextAd", "Promotion"];
+          <theme-latest-content-list-block
+            title=`Latest in ${primarySection.name}`
+            alias=primarySection.alias
+            query-params={
+              optionName: ["Standard", "Featured Content"],
+              excludeContentTypes,
+            }
+          >
+            <@native-x indexes=[0] name="related-content" aliases=aliases />
+          </theme-latest-content-list-block>
+          <!-- Only Fire when brightcove player is not included via content.embedCode -->
+          <if(!content.embedCode)>
+            <div class="sticky-top" >
+              <global-video-player />
+            </div>
+          </if>
         </if>
       </div>
     </div>
   </@section>
 
-  <if(showBottomAdBlock)>
+  <if(showBottomAdBlock && !showOverlay)>
     <@section|{ aliases }|>
       <theme-gam-define-display-ad
         name="rotation"
@@ -247,22 +264,28 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     </@section>
   </if>
 
-  <@section|{ content }|>
-    <theme-related-stories-block
-      content-id=content.id
-      section-id=content.primarySection.id
-      with-native-x=true
-      native-x={ sectionName: "Sponsored" }
-    />
-  </@section>
-
-  <for|s| of=sections>
-    <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
-      <${s.renderBody}
-        block-name=blockName
-        content=content
-        aliases=aliases
-      />
+  <if(!showOverlay)>
+    <@section|{ content, aliases }|>
+      <theme-related-stories-block
+        content-id=content.id
+        section-id=content.primarySection.id
+        with-native-x=true
+        native-x={ sectionName: "Sponsored" }
+      >
+        <@native-x index=3 name="related-content" aliases=aliases />
+      </theme-related-stories-block>
     </@section>
-  </for>
+  </if>
+
+  <if(!showOverlay)>
+    <for|s| of=sections>
+      <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
+        <${s.renderBody}
+          block-name=blockName
+          content=content
+          aliases=aliases
+        />
+      </@section>
+    </for>
+  </if>
 </global-content-wrapper-layout>

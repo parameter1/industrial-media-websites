@@ -1,6 +1,10 @@
 import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 
-$ const { config, site } = out.global;
+$ const { config, site, GAM } = out.global;
+
+$ const { enabled: contentMeterEnabled } = site.getAsObject("contentMeter");
+
+$ const modifiers = contentMeterEnabled ? [...getAsArray(input, "modifiers")] : [...getAsArray(input, "modifiers"), "sticky"];
 
 $ const blockName = input.blockName || "site-header";
 
@@ -14,7 +18,7 @@ $ const navigation = {
   name=blockName
   tag=(input.tag || "header")
   class=input.class
-  modifiers=input.modifiers
+  modifiers=modifiers
   attrs=input.attrs
 >
   <${input.aboveNav} />
@@ -40,6 +44,17 @@ $ const navigation = {
       </theme-site-navbar>
     </div>
     <div class='site-navbar__right'>
+      <theme-site-navbar-items
+        items=site.getAsArray("navigation.user.items")
+        modifiers=["user"]
+        reg-enabled=input.regEnabled
+        has-user=input.hasUser
+      />
+      <if (input.hasUser)>
+        <a href="/user/profile" class="site-navbar__toggler d-flex align-items-center justify-content-center">
+          <marko-web-icon name="person" modifiers=["lg"] />
+        </a>
+      </if>
       <if(site.getAsObject("newsletter.pushdown") && !site.getAsObject("newsletter.pushdown.disabled"))>
         <theme-menu-toggle-button
           class="site-navbar__newsletter-toggler btn btn-primary btn-subscribe"

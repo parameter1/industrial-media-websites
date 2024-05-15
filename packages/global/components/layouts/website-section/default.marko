@@ -35,6 +35,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <marko-web-resolve-page|{ data: section }| node=pageNode>
           $ const aliases = hierarchyAliases(section);
           <global-reveal-ad-handler select-all-targets=true path=GAM.getAdUnit({ name: "reskin", aliases }).path id="reveal-ad" />
+          <global-fixed-ad-bottom aliases=hierarchyAliases(section) />
         </marko-web-resolve-page>
       </@above-container>
       <@page>
@@ -170,7 +171,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
                           ...GAM.getAdUnit({ name: "infinite-interstitial", aliases })
                           modifiers=["max-width-300", "margin-auto-x"]
                         />
-                        <@native-x indexes=[0] name="default" aliases=aliases />
+                        <@native-x indexes=[0] name="related-content" aliases=aliases />
                       </global-latest-content-feed-load-more-block>
                     </div>
                   </div>
@@ -181,10 +182,5 @@ $ const promise = websiteSectionContentLoader(apollo, {
           </marko-web-page-container>
         </else>
       </@below-page>
-      <@foot>
-        <marko-web-resolve-page|{ data: section }| node=pageNode>
-          <global-fixed-ad-bottom aliases=hierarchyAliases(section) />
-        </marko-web-resolve-page>
-      </@foot>
     </theme-website-section-page>
 </marko-web-resolve>

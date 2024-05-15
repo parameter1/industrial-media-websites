@@ -1,10 +1,12 @@
 const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
+const user = require('@industrial-media/package-global/config/user');
 
 const topics = sortNavItems([
   { href: '/aerospace', label: 'Aerospace' },
-  { href: '/artificial-intelligence', label: 'Artificial Intelligence' },
+  { href: '/artificial-intelligence', label: 'AI' },
   { href: '/automotive', label: 'Automotive' },
   { href: '/energy', label: 'Energy' },
+  { href: '/gen-z-in-manufacturing-podcast', label: 'Gen Z' },
   { href: '/industry40', label: 'Industry 4.0' },
   { href: '/cybersecurity', label: 'Cybersecurity' },
   { href: '/operations', label: 'Operations' },
@@ -46,9 +48,7 @@ const desktopMenu = {};
 
 module.exports = {
   type: 'navbar-custom',
-  user: {
-    items: [],
-  },
+  user,
   desktopMenu,
   mobileMenu,
   topics,
