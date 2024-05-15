@@ -7,18 +7,21 @@ const contentMeter = require('./content-meter');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
 const identityX = require('./identity-x');
+const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const omeda = require('./omeda');
 const omedaIdentityX = require('./omeda-identity-x');
 const newsletter = require('./newsletter');
 
 module.exports = {
-  magazine,
   navigation,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY || false,
+  magazine,
   contentMeter,
   gam,
   omeda,
   omedaIdentityX,
   identityX,
+  identityXOptInHooks,
   nativeX,
   newsletter,
   socialMediaLinks,

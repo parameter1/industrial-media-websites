@@ -26,7 +26,7 @@ module.exports = ({
     'countryCode',
   ],
   gtmUserFields = {},
-  booleanQuestionsLabel = 'Preferences:',
+  booleanQuestionsLabel = 'If you’d like to receive our content on a regular basis, please subscribe to any of our daily or weekly e-newsletters by checking the box below:',
   ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({

@@ -26,18 +26,24 @@ formDefault.fieldRows.push(
 module.exports = configureIdentityX({
   comments: { enabled: true },
   appContextId: '5e7e5fac88f2fa00cdebab24',
+  requiredServerFields: [
+    // 'givenName',
+    // 'familyName',
+    // 'organization',
+    // 'countryCode',
+  ],
   requiredClientFields: [
-    'givenName',
-    'familyName',
-    'organization',
-    'countryCode',
-    '60104e959fdc650033d91e91',
-    '6575cf1827f0a7b1c503cd24',
+    // 'givenName',
+    // 'familyName',
+    // 'organization',
+    // 'countryCode',
+    // '60104e959fdc650033d91e91',
+    // '6575cf1827f0a7b1c503cd24',
   ],
   activeCustomFieldIds: [
     '60104e959fdc650033d91e91',
     '6575cf1827f0a7b1c503cd24',
-    '657cad502abe211e9ea0c86f',
+    // '657cad502abe211e9ea0c86f',
   ],
   gtmUserFields: {
     job_title: '60104e959fdc650033d91e91',

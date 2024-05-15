@@ -13,13 +13,13 @@ config
   .setAliasPlacements('safety', [
     { name: 'related-content', id: '603a9fd54a44ce000168ed68' },
   ])
-  .setAliasPlacements('recall-alerts', [
+  .setAliasPlacements('recalls-alerts', [
     { name: 'related-content', id: '603a9fb70057fb0001ef4c87' },
   ])
   .setAliasPlacements('packaging', [
     { name: 'related-content', id: '603a9f770057fb0001ef49e1' },
   ])
-  .setAliasPlacements('new-products', [
+  .setAliasPlacements('products', [
     { name: 'related-content', id: '603a9f904a44ce000168eaf7' },
   ])
   .setAliasPlacements('labor', [
