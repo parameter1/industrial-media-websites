@@ -96,12 +96,14 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
               <else>
                 <global-content-embed-code block-name=blockName content=content />
               </else>
-              <theme-gam-define-display-ad
-                name="video"
-                position="content_page"
-                aliases=aliases
-                modifiers=["inter-block"]
-              />
+              <if(type === "video")>
+                <theme-gam-define-display-ad
+                  name="video"
+                  position="content_page"
+                  aliases=aliases
+                  modifiers=["inter-block"]
+                />
+              <if>
               <if(content.transcript)>
                 <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
                   <marko-web-icon name="file" modifiers=["lg"] /> Transcript
