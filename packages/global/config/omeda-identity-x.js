@@ -1,3 +1,6 @@
+const { getOmedaCustomerRecord } = require('@parameter1/base-cms-marko-web-omeda-identity-x/omeda-data');
+const { get, getAsArray } = require('@parameter1/base-cms-object-path');
+
 const getBehaviors = ((key, websiteBehaviorAttributeId) => {
   const behaviors = {
     imcd: {
@@ -92,5 +95,66 @@ module.exports = ({
     appendPromoCodeToHook,
     appendBehaviorToHook,
     appendDemographicToHook,
+    onAuthenticationSuccessFormatter: (async ({
+      req,
+      payload,
+      loginSource,
+      additionalEventData,
+    }) => {
+      // BAIL if omedaGraphQLCLient isnt available return payload.
+      if (!req.$omedaGraphQLClient) return payload;
+
+      const identityXOptInHooks = req.app.locals.site.getAsObject('identityXOptInHooks');
+      const omeda = req.app.locals.site.getAsObject('omeda');
+      if (identityXOptInHooks.onAuthenticationSuccess) {
+        const { productIds, promoCode } = identityXOptInHooks.onAuthenticationSuccess;
+        const { user } = payload;
+
+        const found = getAsArray(user, 'externalIds')
+          .find(({ identifier, namespace }) => identifier.type === 'encrypted'
+            && namespace.provider === 'omeda'
+            && namespace.tenant === omeda.brandKey);
+
+        // BAIL if no encryptedCustomerId and return payload
+        if (!found) return payload;
+        const encryptedCustomerId = get(found, 'identifier.value');
+
+        // Retrive the omeda customer
+        const omedaCustomer = await getOmedaCustomerRecord({
+          omedaGraphQLClient: req.$omedaGraphQLClient,
+          encryptedCustomerId,
+        });
+        // Get the current user subscriptions
+        const subscriptions = getAsArray(omedaCustomer, 'subscriptions');
+        // For each autoOptinProduct check if they have a subscription.
+        // Sign the user up if they do not
+
+        const newSubscriptions = productIds.filter(
+          (id) => !subscriptions.some(({ product }) => product.deploymentTypeId === id),
+        );
+        if (newSubscriptions && newSubscriptions.length) {
+          // eslint-disable-next-line no-param-reassign
+          additionalEventData.autoSignups = [];
+          const deploymentTypes = newSubscriptions.map((id) => {
+            // eslint-disable-next-line no-param-reassign
+            additionalEventData.autoSignups.push({
+              userId: user.id,
+              productId: id,
+              loginSource,
+            });
+            return { id, optedIn: true };
+          });
+          return ({
+            ...payload,
+            deploymentTypes,
+            promoCode,
+            appendPromoCodes: [
+              { promoCode },
+            ],
+          });
+        }
+      }
+      return payload;
+    }),
   };
 };

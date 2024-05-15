@@ -1,6 +1,7 @@
 google.com, pub-5642385512695035, DIRECT, f08c47fec0942fa0
 google.com, pub-3760561780175838, DIRECT, f08c47fec0942fa0
 google.com, pub-3760561780175838, RESELLER, f08c47fec0942fa0
+google.com, pub-1317314767311971, DIRECT, f08c47fec0942fa0
 media.adfrontiers.com,670, DIRECT
 indexexchange.com, 184284, RESELLER
 openx.com, 128220, RESELLER, 6a698e2ec38604c6

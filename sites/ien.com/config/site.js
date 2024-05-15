@@ -1,10 +1,12 @@
 const { brandLogos } = require('@industrial-media/package-global/config/footer-brand-logos');
 
 const navigation = require('./navigation');
+const contentMeter = require('./content-meter');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const socialMediaLinks = require('./social-links');
 const identityX = require('./identity-x');
+const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const omedaIdentityX = require('./omeda-identity-x');
 const magazine = require('./magazine');
 const newsletter = require('./newsletter');
@@ -12,13 +14,13 @@ const omeda = require('./omeda');
 
 module.exports = {
   navigation,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY || false,
+  contentMeter,
   gam,
   omeda,
   omedaIdentityX,
   identityX,
-  idxNavItems: {
-    enable: true,
-  },
+  identityXOptInHooks,
   magazine,
   nativeX,
   newsletter,
@@ -32,7 +34,7 @@ module.exports = {
   simpleFavicon: true,
   logos: {
     navbar: {
-      src: 'https://img.ien.com/files/base/indm/all/site-logos/industrial-equipment-news.svg?h=65&auto=format,compress',
+      src: 'https://img.ien.com/files/base/indm/all/site-logos/ien.svg?h=65&auto=format,compress',
       srcset: [
         'https://img.ien.com/files/base/indm/all/site-logos/ien.svg?h=130&auto=format,compress&dpr=2 2x',
       ],

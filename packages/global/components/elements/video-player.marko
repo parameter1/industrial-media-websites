@@ -2,9 +2,8 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import getEncryptedId from "@parameter1/base-cms-marko-web-omeda/olytics/get-omeda-encrypted-id";
 
 $ const { identity } = out.global.leads;
-$ const { req, site } = out.global;
+$ const { GAM, req, res, site } = out.global;
 $ const brightCovePlayerEnabled = defaultValue(site.get("brightCovePlayerEnabled"), true);
-$ const brightCovePlayerData = defaultValue(site.get("brightCovePlayerData"), {});
 $ const olyEncId = defaultValue(getEncryptedId(req), '');
 
 $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, key) => {
@@ -15,14 +14,12 @@ $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, k
   return arr;
 }, []).join("&"));
 
-<if(brightCovePlayerEnabled)>
-  <marko-web-browser-component name="GlobalFloatingVideoPlayer" props={
-    enabled: true,
+$ const props={
     identityParams: identityParams,
     olyEncId: olyEncId,
-    accountId: "4684385816001",
-    playerId: brightCovePlayerData.playerId ? brightCovePlayerData.playerId : "kxlefI771",
-    playerEmbed: "default",
-    playlistId: brightCovePlayerData.playlistId ? brightCovePlayerData.playlistId : "1771865757557065862"
-  } />
+    path: GAM.getAdUnit({ name: "brightcove" }).path,
+  };
+
+<if(brightCovePlayerEnabled && props.path)>
+  <marko-web-browser-component name="BrightCoveGAMPlayer" props=props />
 </if>
