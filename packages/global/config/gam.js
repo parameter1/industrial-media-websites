@@ -32,7 +32,7 @@ module.exports = ({
         [600, 100],
       ],
       sizeMapping: [
-        { viewport: [980, 0], size: [600, 100] },
+        { viewport: [750, 0], size: [600, 100] },
       ],
     })
     .setTemplate('BILLBOARD', {
