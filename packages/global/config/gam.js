@@ -27,6 +27,14 @@ module.exports = ({
         { viewport: [320, 0], size: [[300, 50], [320, 50]] },
       ],
     })
+    .setTemplate('VIDEO', {
+      size: [
+        [600, 100],
+      ],
+      sizeMapping: [
+        { viewport: [750, 0], size: [600, 100] },
+      ],
+    })
     .setTemplate('BILLBOARD', {
       size: [
         [970, 250],
