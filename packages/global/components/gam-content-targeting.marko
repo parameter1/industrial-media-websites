@@ -1,0 +1,28 @@
+import { getAsObject, get, getAsArray } from "@parameter1/base-cms-object-path";
+import gamContentTags from "../utils/gam-content-tags";
+
+$ const content = getAsObject(input, "obj");
+
+$ const { id, type } = content;
+$ const companyIds = getAsArray(content, "companies.edges").map(({ node }) => node.id);
+$ const companyId = get(content, "company.id");
+$ const tags = gamContentTags(content);
+$ if (companyId) companyIds.unshift(companyId);
+
+$ const labels = getAsArray(content, "labels");
+$ const sponsored = labels.includes("Sponsored");
+<!-- If there are no Channels apply the General Fallback value -->
+$ const keyValues = {
+  cont_id: id,
+  cont_type: type,
+  ...(companyIds.length && {
+    companies: companyIds.join("|"),
+    Company: companyIds.shift(),
+  }),
+  section: get(content, "primarySection.alias"),
+  ...(tags && { tag_list: tags }),
+  ...(sponsored && { sponsored: "yes" }),
+};
+$ console.log('hitting: ', keyValues)
+<marko-web-gam-targeting key-values=keyValues />
+<${input.renderBody} />
