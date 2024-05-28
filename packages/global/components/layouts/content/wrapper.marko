@@ -11,11 +11,13 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
 
 <theme-content-page id=id type=type>
   <@head>
-    <marko-web-gtm-content-context|{ context }| id=id>
-      <marko-web-gtm-push data=context />
-    </marko-web-gtm-content-context>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       <marko-web-p1-events-track-content node=content />
+      <global-gam-content-targeting obj=content>
+        <marko-web-gtm-content-context|{ context }| id=id>
+          <marko-web-gtm-push data=context />
+        </marko-web-gtm-content-context>
+      </global-gam-content-targeting>
     </marko-web-resolve-page>
   </@head>
   <@above-container>
