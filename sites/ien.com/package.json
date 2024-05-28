@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/ien.com",
-  "version": "2.19.1",
+  "version": "2.19.3",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/ien.com",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "win32"
   ],
   "dependencies": {
-    "@industrial-media/package-global": "^2.19.1",
+    "@industrial-media/package-global": "^2.19.3",
     "@parameter1/base-cms-marko-core": "^4.48.1",
     "@parameter1/base-cms-marko-web": "^4.48.1",
     "@parameter1/base-cms-marko-web-native-x": "^4.54.0",
