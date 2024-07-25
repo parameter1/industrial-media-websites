@@ -3,6 +3,27 @@
 
 User-agent: *
 Disallow: /__
+Disallow: /*/21427920/
+Disallow: /*/21451897/
+Disallow: /print/content
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: Bingbot
+Crawl-delay: 10
+
+User-agent: DataForSeoBot
+Crawl-delay: 10
+
+User-agent: dotbot
+Crawl-delay: 10
+
+User-Agent: ImagesiftBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
 
 Sitemap: https://www.designdevelopmenttoday.com/sitemap.xml
 Sitemap: https://www.designdevelopmenttoday.com/sitemap-google-news.xml
