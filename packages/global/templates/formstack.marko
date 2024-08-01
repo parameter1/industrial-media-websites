@@ -16,6 +16,15 @@ $ const title = `Customer Survey - ${formId}` ;
     <marko-web-gtm-default-context|{ context }| type=type>
       <marko-web-gtm-push data=context />
     </marko-web-gtm-default-context>
+    <style>
+      div.fsBody > div {
+        padding: 0 !important;
+      }
+      form.fsForm {
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+    </style>
   </@head>
   <@above-container>
     $ const aliases = [`formstack/${formId}`];

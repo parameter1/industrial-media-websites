@@ -2,9 +2,15 @@ $content-meter-mobile-breakpoint: 600px !default;
 
 .content-meter {
   $self: &;
+<<<<<<< HEAD
   &:not(:has(.content-meter__login-form form)) {
     #{ $self }__title,
     #{ $self }__call-to-action {
+=======
+  .login-link-sent {
+    & ~ #{ $self }__title,
+    & ~ #{ $self }__call-to-action {
+>>>>>>> a4afa44723c27005744fc12d46f8bab2fdbd0528
       display: none;
     }
   }

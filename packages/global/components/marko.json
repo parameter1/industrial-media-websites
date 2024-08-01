@@ -9,6 +9,9 @@
     "template": "./fixed-ad-bottom.marko",
     "@aliases": "array"
   },
+  "<global-gam-content-targeting>": {
+    "template": "./gam-content-targeting.marko"
+  },
   "<global-document>": {
     "template": "./document.marko",
     "<head>": {},

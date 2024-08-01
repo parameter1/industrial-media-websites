@@ -2,7 +2,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import getEncryptedId from "@parameter1/base-cms-marko-web-omeda/olytics/get-omeda-encrypted-id";
 
 $ const { identity } = out.global.leads;
-$ const { GAM, req, site } = out.global;
+$ const { GAM, req, res, site } = out.global;
 $ const brightCovePlayerEnabled = defaultValue(site.get("brightCovePlayerEnabled"), true);
 $ const olyEncId = defaultValue(getEncryptedId(req), '');
 
@@ -17,7 +17,7 @@ $ const identityParams = encodeURIComponent(Object.keys(identity).reduce((arr, k
 $ const props={
     identityParams: identityParams,
     olyEncId: olyEncId,
-    path: GAM.getAdUnit({ name: "brightcove" }).path
+    path: GAM.getAdUnit({ name: "brightcove" }).path,
   };
 
 <if(brightCovePlayerEnabled && props.path)>

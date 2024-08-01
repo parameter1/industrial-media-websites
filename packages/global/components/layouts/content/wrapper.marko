@@ -11,11 +11,13 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
 
 <theme-content-page id=id type=type>
   <@head>
-    <marko-web-gtm-content-context|{ context }| id=id>
-      <marko-web-gtm-push data=context />
-    </marko-web-gtm-content-context>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       <marko-web-p1-events-track-content node=content />
+      <global-gam-content-targeting obj=content>
+        <marko-web-gtm-content-context|{ context }| id=id>
+          <marko-web-gtm-push data=context />
+        </marko-web-gtm-content-context>
+      </global-gam-content-targeting>
     </marko-web-resolve-page>
   </@head>
   <@above-container>
@@ -55,9 +57,10 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
 
         <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
           $ const section = content.primarySection;
+          $ const aliases = hierarchyAliases(content.primarySection);
           <marko-web-page-wrapper>
             <if(displayAds)>
-              <@section|{ aliases }| modifiers=["first-sm"]>
+              <@section modifiers=["first-sm"]>
                 <theme-gam-define-display-ad
                   name="billboard"
                   position="content_page"
@@ -66,7 +69,7 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
                 />
               </@section>
             </if>
-            <@section|{ aliases }|>
+            <@section>
               <div class="row">
                 <div class="col-lg-12 infinite-scroll-target">
                   <global-content-page-load-more-block
@@ -75,7 +78,7 @@ $ const showOverlay = defaultValue(input.showOverlay, false);
                   >
                     <@content id=id type=type name=content.name />
                     <@section id=section.id name=section.name />
-                    <@native-x indexes=[0] name="default" aliases=aliases />
+                    <@native-x indexes=[0] name="related-content" aliases=aliases />
                   </global-content-page-load-more-block>
                 </div>
               </div>
