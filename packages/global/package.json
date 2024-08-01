@@ -1,10 +1,6 @@
 {
   "name": "@industrial-media/package-global",
-<<<<<<< HEAD
-  "version": "2.15.3",
-=======
   "version": "2.19.4",
->>>>>>> a4afa44723c27005744fc12d46f8bab2fdbd0528
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/packages/global",
   "license": "MIT",
