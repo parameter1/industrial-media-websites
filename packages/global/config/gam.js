@@ -27,6 +27,14 @@ module.exports = ({
         { viewport: [320, 0], size: [[300, 50], [320, 50]] },
       ],
     })
+    .setTemplate('VIDEO', {
+      size: [
+        [600, 100],
+      ],
+      sizeMapping: [
+        { viewport: [750, 0], size: [600, 100] },
+      ],
+    })
     .setTemplate('BILLBOARD', {
       size: [
         [970, 250],
@@ -56,7 +64,12 @@ module.exports = ({
         { viewport: [980, 0], size: [300, 250] },
         { viewport: [0, 0], size: [] },
       ],
+    })
+    .setTemplate('BRIGHTCOVE', {
+      size: [300, 250],
+      sizeMapping: [
+        { viewport: [0, 0], size: [300, 250] },
+      ],
     });
-
   return config;
 };
