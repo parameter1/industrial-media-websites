@@ -9,7 +9,7 @@ const content = require('../templates/content');
 module.exports = (app) => {
   const { site } = app.locals;
   const useLinkInjectedBody = site.get('useLinkInjectedBody');
-  const queryFragment = qf.factory ? qf.factory({ useLinkInjectedBody }) : qf;
+  const queryFragment = qf.factory ? qf.factory({ useLinkInjectedBody, leadersAlias: site.get('leaders.alias') }) : qf;
   const routesList = [
     { // company
       regex: '/*?company/:id(\\d{8})*',
