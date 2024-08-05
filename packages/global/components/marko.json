@@ -3,6 +3,7 @@
     "./blocks/marko.json",
     "./elements/marko.json",
     "./flows/marko.json",
+    "./leaders/marko.json",
     "./layouts/marko.json"
   ],
   "<global-fixed-ad-bottom>": {
