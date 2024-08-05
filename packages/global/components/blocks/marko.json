@@ -16,5 +16,10 @@
   },
   "<global-content-meter-block>": {
     "template": "./content-meter.marko"
+  },
+  "<global-leaders-featured-projects-block>": {
+    "template": "./leaders-featured-projects.marko",
+    "@graphql-client": "object",
+    "@short-ids": "string"
   }
 }
