@@ -13,5 +13,15 @@
       "@with-standard-query": "boolean"
     },
     "@right-rail-header": "string"
+  },
+  "<global-website-section-leaders-layout>": {
+    "template": "./leaders.marko",
+    "<page-description>": {},
+    "<page-body>": {},
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@page-node": "object"
   }
 }
