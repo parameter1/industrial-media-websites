@@ -246,7 +246,7 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
           </theme-page-contents>
         </div>
       </div>
-      <if(site.get("leaders.enabled") && displayRail)>
+      <if(site.get("leaders.enabled"))>
         <div class="col-lg-4">
           <if(content.company && content.company.enableRmi)>
             <div class="mb-block">
@@ -258,7 +258,7 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
           </if>
         </div>
       </if>
-      <else-if(!site.get("leaders.enabled") && displayRail)>
+      <else-if(!site.get("leaders.enabled"))>
        <div class="col-lg-4 page-rail">
           <if(!showOverlay)>
             $ const excludeContentTypes = ["Contact", "Company", "Document", "TextAd", "Promotion"];
