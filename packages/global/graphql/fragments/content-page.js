@@ -119,19 +119,9 @@ const factory = ({ useLinkInjectedBody = false, leadersAlias = '' } = {}) => {
       publicEmail
     }
     ... on ContentCompany {
-      address1
-      address2
-      cityStateZip
-      country
-
-      phone
-      tollfree
-      fax
-      website
-      title
-      mobile
       email
-      publicEmail
+
+      isLeader: hasWebsiteSchedule(input: { sectionAlias: "${leadersAlias}" })
 
       youtube {
         username
@@ -152,37 +142,30 @@ const factory = ({ useLinkInjectedBody = false, leadersAlias = '' } = {}) => {
       trainingInformation
       warrantyInformation
 
-      # circle image
-      primaryImage {
-        id
-        src(input: { options: { auto: "format,compress", q: 70, fillColor: "fff", fit: "fill", h: 125, w: 125, pad: 5, mask: "ellipse" } })
-        alt
-      }
-      isLeader: hasWebsiteSchedule(input: { sectionAlias: "${leadersAlias}" })
-
       contacts: publicContacts {
-      edges {
-        node {
-          id
-          name
-          title
-          publicEmail
-          primaryImage {
+        edges {
+          node {
             id
-            src(input: { options: { auto: "format,compress", q: 70, h: 100, w: 100, mask: "ellipse", fit: "facearea", facepad: 3 } })
+            name
+            title
+            publicEmail
+            primaryImage {
+              id
+              src(input: { options: { auto: "format,compress", q: 70, h: 100, w: 100, mask: "ellipse", fit: "facearea", facepad: 3 } })
+            }
           }
         }
       }
-    }
 
-    videos: youtubeVideos(input: { pagination: { limit: 3 } }) {
-      edges {
-        node {
-          id
-          url
-          title
-          published
-          thumbnail(input: { size: high })
+      videos: youtubeVideos(input: { pagination: { limit: 3 } }) {
+        edges {
+          node {
+            id
+            url
+            title
+            published
+            thumbnail(input: { size: high })
+          }
         }
       }
     }
