@@ -9,7 +9,7 @@ $ const loader = getAsObject(input, "loader");
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 $ const excludedSectionIds = [];
-$ const { GAM, apollo, i18n } = out.global;
+$ const { GAM, apollo, i18n, site } = out.global;
 
 $ const rightRailHeader = defaultValue(input.rightRailHeader, "Top Headlines");
 
@@ -117,6 +117,9 @@ $ const promise = websiteSectionContentLoader(apollo, {
                         </@slot>
                       </theme-card-deck-flow>
                     </if>
+                  </if>
+                  <if(site.get('leaders.enabled'))>
+                    <global-leaders-home-page />
                   </if>
                 </div>
                 <div class="col-lg-4 page-rail">
