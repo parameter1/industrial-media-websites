@@ -216,6 +216,13 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/flows/hero";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/flows/incremented-nodes";
 
+// import theme leaders css
+/*! critical:start|home */
+/*! critical:start|content */
+/*! critical:start|website-section.leaders */
+@import "@parameter1/base-cms-marko-web-leaders/scss/leaders";
+/*! critical:end */
+
 // 8. everything else...
 
 // magazine component
@@ -319,6 +326,7 @@
 /*! critical:start|content */
 @import "./components/content-page";
 @import "./components/content-meter";
+@import "./components/leaders";
 /*! critical:end */
 /*! critical:start */
 @import "./components/node";

@@ -14,46 +14,79 @@ $ const sections = getAsArray(input, "sections");
 
   <@section|{ aliases, blockName, content }| modifiers=["content-header"]>
     $ const { primarySection } = content;
+        <if(content.isLeader && site.get('leaders.enabled'))>
+      <div>
+        <div class="content-page-header  content-page-header--full-width">
+          <theme-content-page-breadcrumbs section=primarySection />
+          <div class="row">
+            <div class="col-md-9 col-sm-12 col-lg-10">
+              <div class="ldp">
+                <div class="ldp__logo">
+                  <global-company-logo content=content />
+                </div>
+                <div class="ldp__title">
+                  <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
+                  <marko-web-content-city-state-zip tag="p" class="text-small text-muted" obj=content />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-2 col-sm-12 justify-content-center d-flex flex-column px-3 py-3">
+              <div class="ldp__social">
+                <marko-web-leaders-company-website-link company=content lang=lang/>
+                <div class="mt-2 d-flex justify-content-around">
+                  <for|item| of=content.socialLinks>
+                    <marko-web-leaders-company-social-link company=content item=item />
+                  </for>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </if>
     <div class="row">
       <div class="col-lg-8">
-        <div class="content-page-header">
-          <theme-content-page-breadcrumbs section=primarySection />
+        <if(!content.isLeader || !site.get('leaders.enabled'))>
+          <div class="content-page-header">
+            <theme-content-page-breadcrumbs section=primarySection />
 
-          <marko-web-content-name tag="h1" block-name=blockName obj=content />
-          $ const { primaryImage } = content;
-          $ const detailsBlock = "details";
-          <marko-web-block name=detailsBlock>
-            <if(primaryImage && primaryImage.src)>
-              $ const imgWidth = 320;
-              $ const imgHeight = imageHeight(imgWidth, "16:9");
-              $ const src = buildImgixUrl(primaryImage.src, {
-                w: imgWidth,
-                h: imgHeight,
-                fit: "crop"
-              });
-              $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
-              <marko-web-img
-                src=src
-                srcset=srcset
-                alt=primaryImage.alt
-                class=`${detailsBlock}__image`
-              />
-            </if>
-            <global-content-company-details obj=content />
-          </marko-web-block>
-        </div>
+            <marko-web-content-name tag="h1" block-name=blockName obj=content />
+            $ const { primaryImage } = content;
+            $ const detailsBlock = "details";
+            <marko-web-block name=detailsBlock>
+              <if(primaryImage && primaryImage.src)>
+                $ const imgWidth = 320;
+                $ const imgHeight = imageHeight(imgWidth, "16:9");
+                $ const src = buildImgixUrl(primaryImage.src, {
+                  w: imgWidth,
+                  h: imgHeight,
+                  fit: "crop"
+                });
+                $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
+                <marko-web-img
+                  src=src
+                  srcset=srcset
+                  alt=primaryImage.alt
+                  class=`${detailsBlock}__image`
+                />
+              </if>
+              <global-content-company-details obj=content />
+            </marko-web-block>
+          </div>
 
-        <div class="content-page-body">
-          <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-            $ const bodyId = `content-body-${content.id}`;
-            <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
-          </theme-page-contents>
-        </div>
-        <${input.afterBody}
-          aliases=aliases
-          block-name=blockName
-          content=content
-        />
+          <div class="content-page-body">
+            <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+              $ const bodyId = `content-body-${content.id}`;
+              <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+            </theme-page-contents>
+          </div>
+          <${input.afterBody}
+            aliases=aliases
+            block-name=blockName
+            content=content
+          />
+        </if>
       </div>
 
       <div class="col-lg-4 pt-block">

@@ -1,0 +1,57 @@
+.leaders-featured-companies {
+  $self: &;
+  margin-bottom: 24px;
+
+  .node-list {
+    &__header {
+      background-color: $primary;
+      border-radius: 4px 4px 0 0;
+      color: #fff;
+      padding: 12px;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    &__nodes {
+      border-left: 2px solid $gray-200;
+      border-right: 2px solid $gray-200;
+      border-bottom: 2px solid $gray-200;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+}
+
+.content-card-deck {
+  $self: &;
+  &--leaders {
+    margin-bottom: map-get($spacers, block);
+
+    #{ $self }__header {
+      background-color: $primary;
+      border-radius: 4px 4px 0 0;
+      color: #fff;
+      padding: 12px;
+      margin-bottom: 0;
+      font-size: 18px;
+      #{ $self }__view-more a,
+      #{ $self }__view-more a:hover {
+        font-size: 12px;
+        color: $white;
+      }
+    }
+
+    #{ $self }__body {
+      border-left: 2px solid $gray-200;
+      border-right: 2px solid $gray-200;
+      border-bottom: 2px solid $gray-200;
+      border-radius: 0 0 4px 4px;
+    }
+
+    #{ $self }__view-more-bottom {
+      padding: map-get($spacers, block);
+    }
+
+    .card-deck-flow__node {
+      margin-bottom: 0;
+    }
+  }
+}

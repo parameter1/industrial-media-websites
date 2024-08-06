@@ -22,6 +22,7 @@ $ const belowContentSections = getAsArray(input, "belowContentSections");
 $ const showOverlay = cmShowOverlay(contentMeterState);
 $ const displayAds = !showOverlay;
 
+$ const leadersContentTypes = input.leadersContentTypes || ["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"];
 $ const displayPrimaryImage = defaultValue(input.displayPrimaryImage, true);
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
@@ -194,6 +195,10 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
               </else>
             </marko-web-identity-x-access>
 
+            <!-- <if(site.get("leaders.enabled") && leadersContentTypes.includes(content.type))>
+              <marko-web-leaders-featured-companies content=content />
+            </if> -->
+
             <if(type === "document" || type === "whitepaper")>
               <theme-content-download obj=content>
                 <@wufoo user-name=site.get("wufoo.userName") />
@@ -221,6 +226,10 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
                 />
               </if>
 
+              <!-- <if(site.get("leaders.enabled") && leadersContentTypes.includes(content.type))>
+                <marko-web-leaders-company-videos content-id=content.id />
+              </if> -->
+
               <if(displayComments)>
                 <theme-identity-x-comment-stream content=content />
               </if>
@@ -237,27 +246,41 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
           </theme-page-contents>
         </div>
       </div>
-      <div class="col-lg-4 page-rail">
-        <if(!showOverlay)>
-          $ const excludeContentTypes = ["Contact", "Company", "Document", "TextAd", "Promotion"];
-          <theme-latest-content-list-block
-            title=`Latest in ${primarySection.name}`
-            alias=primarySection.alias
-            query-params={
-              optionName: ["Standard", "Featured Content"],
-              excludeContentTypes,
-            }
-          >
-            <@native-x indexes=[0] name="related-content" aliases=aliases />
-          </theme-latest-content-list-block>
-          <!-- Only Fire when brightcove player is not included via content.embedCode -->
-          <if(!content.embedCode)>
-            <div class="sticky-top" >
-              <global-video-player />
+      <if(site.get("leaders.enabled"))>
+        <div class="col-lg-4">
+          <if(content.company && content.company.enableRmi)>
+            <div class="mb-block">
+              <theme-company-inquiry-form-block content=content initially-expanded=false consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
             </div>
           </if>
-        </if>
-      </div>
+          <if(type !== "document")>
+            <global-leaders-contextual content-id=id />
+          </if>
+        </div>
+      </if>
+      <else-if(!site.get("leaders.enabled"))>
+       <div class="col-lg-4 page-rail">
+          <if(!showOverlay)>
+            $ const excludeContentTypes = ["Contact", "Company", "Document", "TextAd", "Promotion"];
+            <theme-latest-content-list-block
+              title=`Latest in ${primarySection.name}`
+              alias=primarySection.alias
+              query-params={
+                optionName: ["Standard", "Featured Content"],
+                excludeContentTypes,
+              }
+            >
+              <@native-x indexes=[0] name="related-content" aliases=aliases />
+            </theme-latest-content-list-block>
+            <!-- Only Fire when brightcove player is not included via content.embedCode -->
+            <if(!content.embedCode)>
+              <div class="sticky-top" >
+                <global-video-player />
+              </div>
+            </if>
+          </if>
+        </div>
+      </else-if>
     </div>
   </@section>
 
