@@ -10,17 +10,18 @@ const content = require('../templates/content');
 module.exports = (app) => {
   const { site } = app.locals;
   const useLinkInjectedBody = site.get('useLinkInjectedBody');
-  const queryFragment = site.get('leaders.enabled') && site.get('leaders.alias') ? standardQF : leadersQF.factory({ useLinkInjectedBody, leadersAlias: site.get('leaders.alias') });
+  const companyQF = site.get('leaders.enabled') && site.get('leaders.alias') ? standardQF : leadersQF.factory({ useLinkInjectedBody, leadersAlias: site.get('leaders.alias') });
+  console.log('hitting content rouyte: ', companyQF, site, site.get('leaders'));
   const routesList = [
     { // company
       regex: '/*?company/:id(\\d{8})*',
       template: company,
-      queryFragment,
+      queryFragment: companyQF,
     },
     { // default
       regex: '/*?/:id(\\d{8})/*|/:id(\\d{8})(/|$)*',
       template: content,
-      queryFragment,
+      queryFragment: standardQF,
       withContentMeter: true,
     },
   ];
