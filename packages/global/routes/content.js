@@ -10,7 +10,7 @@ const content = require('../templates/content');
 module.exports = (app) => {
   const { site } = app.locals;
   const useLinkInjectedBody = site.get('useLinkInjectedBody');
-  const companyQF = site.get('leaders.enabled') && site.get('leaders.alias') ? standardQF : leadersQF.factory({ useLinkInjectedBody, leadersAlias: site.get('leaders.alias') });
+  const companyQF = site.get('leaders.enabled') && site.get('leaders.alias') ? leadersQF.factory({ useLinkInjectedBody, leadersAlias: site.get('leaders.alias') }) : standardQF;
   console.log('hitting content rouyte: ', companyQF, site, site.get('leaders'));
   const routesList = [
     { // company
