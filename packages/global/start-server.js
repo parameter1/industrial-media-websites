@@ -24,7 +24,7 @@ const idxNavItems = require('./config/identity-x-nav');
 
 const { error } = console;
 
-const routes = (siteRoutes) => (app, siteConfig) => {
+const routes = (siteRoutes, siteConfig) => (app) => {
   // load contact us route
   contactUsHandler(app);
   // Shared/global routes (all sites)

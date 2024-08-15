@@ -22,6 +22,9 @@ module.exports = {
   identityX,
   identityXOptInHooks,
   magazine,
+  mindful: {
+    namespace: 'im/default',
+  },
   nativeX,
   newsletter,
   socialMediaLinks,
