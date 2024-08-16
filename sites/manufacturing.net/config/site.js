@@ -20,6 +20,9 @@ module.exports = {
   omedaIdentityX,
   identityX,
   identityXOptInHooks,
+  mindful: {
+    namespace: 'im/default',
+  },
   nativeX,
   newsletter,
   socialMediaLinks,

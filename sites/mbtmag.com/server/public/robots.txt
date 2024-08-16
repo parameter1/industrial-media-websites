@@ -3,6 +3,7 @@
 
 User-agent: *
 Disallow: /__
+Disallow: /ad-preview
 Disallow: /*/21427920/
 Disallow: /*/21451897/
 Disallow: /print/content

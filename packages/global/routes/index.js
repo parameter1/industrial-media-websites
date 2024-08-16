@@ -1,8 +1,10 @@
+const { get } = require('@parameter1/base-cms-object-path');
 const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
 const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine/routes');
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
 const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
+const mindfulPreview = require('@parameter1/base-cms-marko-web-theme-monorail/routes/ad-preview');
 
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
@@ -15,6 +17,9 @@ const search = require('./search');
 const formstack = require('../templates/formstack');
 
 module.exports = (app, siteConfig) => {
+  const namespace = get(siteConfig, 'mindful.namespace');
+  mindfulPreview(app, namespace);
+
   // HTML Sitemap
   htmlSitemap(app);
 
