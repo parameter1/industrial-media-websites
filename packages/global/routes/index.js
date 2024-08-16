@@ -4,7 +4,7 @@ const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
 const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
-const mindfulPreview = require('@parameter1/base-cms-marko-web-theme-monorail/routes/mindful-preview');
+const mindfulPreview = require('@parameter1/base-cms-marko-web-theme-monorail/routes/ad-preview');
 
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
