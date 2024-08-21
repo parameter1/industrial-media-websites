@@ -105,14 +105,14 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
                 />
               </if>
               <if(content.transcript)>
-                <button
+                <a
+                  href=`#transcript-${id}`
                   class="btn btn-transcript mt-block mb-2"
-                  onclick=`
-                    document.getElementById("transcript-${id}").removeAttribute("style");
-                    window.location.hash = "transcript-${id}";
-                `>
+                  title="Transcript"
+                  onclick=`document.getElementById("transcript-${id}").removeAttribute("style");`
+                >
                   <marko-web-icon name="file" modifiers=["lg"] /> Transcript
-                </button>
+                </a>
               </if>
             </if>
             <else-if(type === "media-gallery")>
