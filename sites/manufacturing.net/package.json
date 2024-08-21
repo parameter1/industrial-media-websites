@@ -1,6 +1,6 @@
 {
   "name": "@industrial-media/manufacturing.net",
-  "version": "2.19.8",
+  "version": "2.19.9",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/industrial-media-websites/tree/master/sites/manufacturing.net",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "win32"
   ],
   "dependencies": {
-    "@industrial-media/package-global": "^2.19.8",
+    "@industrial-media/package-global": "^2.19.9",
     "@parameter1/base-cms-marko-core": "^4.55.4",
     "@parameter1/base-cms-marko-web": "^4.60.0",
     "@parameter1/base-cms-marko-web-native-x": "^4.60.2",
