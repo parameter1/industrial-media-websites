@@ -105,9 +105,14 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
                 />
               </if>
               <if(content.transcript)>
-                <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
+                <a
+                  href=`#transcript-${id}`
+                  class="btn btn-transcript mt-block mb-2"
+                  title="Transcript"
+                  onclick=`document.getElementById("transcript-${id}").removeAttribute("style");`
+                >
                   <marko-web-icon name="file" modifiers=["lg"] /> Transcript
-                </marko-web-link>
+                </a>
               </if>
             </if>
             <else-if(type === "media-gallery")>
@@ -166,7 +171,7 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
                   preventHTMLInjection=!shouldInjectAds
                 />
                 <if(content.transcript)>
-                  <div id=`transcript-${id}` class="page-contents__content-transcript">
+                  <div id=`transcript-${id}` class="page-contents__content-transcript" style="display: none;">
                     <marko-web-element block-name="page-contents" name="content-transcript-title">
                       <marko-web-icon name="file" modifiers=["lg"] /> Transcript
                     </marko-web-element>
