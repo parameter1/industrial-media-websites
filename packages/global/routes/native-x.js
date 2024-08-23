@@ -5,5 +5,10 @@ const template = require('../templates/content/native-x-story');
 
 module.exports = (app) => {
   const config = getAsObject(app, 'locals.nativeX');
-  app.get('/sponsored/:section/:slug/:id', withNativeXStory({ config, template, queryFragment }));
+  app.get('/brand-insights/:section/:slug/:id', withNativeXStory({
+    config,
+    template,
+    queryFragment,
+    headers: { 'x-no-legacy-ids': true },
+  }));
 };
