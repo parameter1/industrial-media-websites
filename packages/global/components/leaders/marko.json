@@ -1,4 +1,69 @@
 {
+  "<global-leaders-company-overview>": {
+    "template": "./company/overview.marko",
+    "@content": "object",
+    "@class": "string"
+  },
+  "<global-leaders-company-details>": {
+    "template": "./company/details.marko",
+    "@content": "object",
+    "@class": "string"
+  },
+  "<global-leaders-company-at-a-glance>": {
+    "template": "./company/at-a-glance.marko",
+    "<header>": {},
+    "@content": "object"
+  },
+  "<global-leaders-company-logo>": {
+    "template": "./company/logo.marko",
+    "@content": "object"
+  },
+  "<global-leaders-company-label>": {
+    "template": "./company/label.marko",
+    "@tag": "string",
+    "@modifiers": "array"
+  },
+  "<global-leaders-company-key-contacts>": {
+    "template": "./company/key-contacts.marko",
+    "@contacts": "array",
+    "@class": "string"
+  },
+  "<global-leaders-company-key-categories>": {
+    "template": "./company/key-categories.marko",
+    "@header": "string",
+    "@limit": "number",
+    "@content": "object"
+  },
+  "<global-leaders-company-featured-videos>": {
+    "template": "./company/featured-videos.marko",
+    "<company>": {
+      "@id": "number",
+      "@name": "string"
+    },
+    "@videos": "array",
+    "@class": "string",
+    "@href": "string"
+  },
+  "<global-leaders-key-contact-card-node>": {
+    "template": "./nodes/key-contact-card.marko",
+    "@node": "object",
+    "@with-email": "boolean"
+  },
+  "<global-leaders-youtube-card-node>": {
+    "template": "./nodes/youtube-card.marko",
+    "@node": "object",
+    "@link-attrs": "object"
+  },
+  "<global-leaders-premium-content-card-node>": {
+    "template": "./nodes/premium-content-card.marko",
+    "@node": "object"
+  },
+  "<global-leaders-company-premium-content>": {
+    "template": "./company/premium-content.marko",
+    "@content": "array",
+    "@class": "string",
+    "@href": "string"
+  },
   "<global-leaders-all>": {
     "template": "./all.marko"
   },
@@ -8,5 +73,9 @@
   "<global-leaders-contextual>": {
     "template": "./contextual.marko",
     "@content-id": "number"
+  },
+  "<global-leaders-section-context>": {
+    "template": "./section.marko",
+    "@related-section-ids": "array"
   }
 }
