@@ -1,0 +1,32 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { site, apollo } = out.global;
+$ const enabled = defaultValue(site.get("leaders.enabled"), false);
+$ const relatedSectionIds = defaultValue(input.relatedSectionIds, []);
+$ const currentLeadersAlias = site.get("leaders.alias");
+
+<if(enabled)>
+  <marko-web-resolve|{ resolved: relatedSection }| promise=promise>
+    <marko-web-leaders props={
+      sectionAlias: currentLeadersAlias,
+      relatedSectionIds: relatedSectionIds,
+      expanded: expanded,
+      open: "left",
+      headerImgSrc: site.get("leaders.header.imgSrc"),
+      headerImgAlt: site.get("leaders.title"),
+      displayCallout: false,
+      offsetTop: site.get("leaders.offsetTop", 105),
+      promotionLimit: site.get("leaders.promotionLimit", 3),
+      videoLimit: site.get("leaders.videoLimit", 2),
+      viewAllText: site.get("leaders.viewAllText", "View All Companies"),
+      viewAllHref: site.get("leaders.viewAllHref", "/leaders"),
+      useContentPrimarySection: true,
+      mediaQueries: [
+        { prop: "columns", value: 2, query: "(max-width: 991px)" },
+        { prop: "open", value: null, query: "(max-width: 991px)" },
+        { prop: "columns", value: 1, query: "(max-width: 700px)" },
+      ],
+    }/>
+  </marko-web-resolve>
+</if>
