@@ -1,0 +1,30 @@
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
+import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
+
+$ const { content } = input;
+$ const blockName = "page-key-categories";
+$ const header = defaultValue(input.header, "Business Offerings");
+$ const limit = defaultValue(input.limit, 10);
+$ const taxonomy = getAsArray(content, "taxonomy.edges").map(({ node }) => ({
+  id: node.id,
+  name: node.name,
+  fullName: node.fullName,
+  hierarchy: node.hierarchy,
+}));
+$ const companyCategories = getKeyCategories(taxonomy, limit);
+
+<marko-web-block name=blockName>
+  <marko-web-element name="section" block-name=blockName>
+    <global-leaders-company-label>${header}</global-leaders-company-label>
+    <ul>
+      <for|keyCategory| of=keyCategories>
+        <marko-web-element tag="li" name="label" block-name=blockName>
+          <strong>${keyCategory.main}</strong>
+          <if(keyCategory.subs.length)>
+            <span class="mx-2 text-muted">(${keyCategory.abbr})</span>
+          </if>
+        </marko-web-element>
+      </for>
+    </ul>
+  </marko-web-element>
+</marko-web-block>

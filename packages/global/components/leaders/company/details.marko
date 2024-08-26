@@ -1,0 +1,47 @@
+import { getAsObject, get } from "@parameter1/base-cms-object-path";
+
+$ const content = getAsObject(input, "content");
+$ const { socialLinks, ...contentSansSocial } = content;
+$ const contactNeeds = [
+  "address1", "address2", "cityStateZip", "country",
+  "phone", "fax", "mobile", "tollfree",
+  "title", "website",
+  "publicEmail",
+];
+$ const needs = [
+  "yearsInOperation",
+  "numberOfEmployees",
+  "salesRegion",
+  "salesChannels",
+  "warrantyInformation",
+  "serviceInformation",
+  "trainingInformation",
+  "servicesProvided",
+  "productSummary",
+  ...contactNeeds,
+];
+$ const hasValues = needs.map(field => get(content, field)).some(v => v);
+$ const hasContactValues = contactNeeds.map(field => get(content, field)).some(v => v);
+
+<if(hasValues)>
+  <marko-web-node-list
+    collapsible=false
+    class=input.class
+    flush-x=true
+  >
+    <@body>
+
+      <if(hasContactValues)>
+        <global-leaders-company-label>Contact</global-leaders-company-label>
+        <theme-content-contact-details obj=contentSansSocial />
+      </if>
+
+      <marko-web-content-body|{ value }| obj=content>
+        <global-leaders-company-label>About $!{content.name}</global-leaders-company-label>
+        $!{value}
+      </marko-web-content-body>
+      <global-leaders-company-at-a-glance content=content />
+      <global-leaders-company-key-categories content=content limit=10 />
+    </@body>
+  </marko-web-node-list>
+</if>
