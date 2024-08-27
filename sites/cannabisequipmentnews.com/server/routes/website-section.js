@@ -7,7 +7,7 @@ const leaders = require('@industrial-media/package-global/templates/website-sect
 module.exports = (app) => {
   app.get('/:alias(leaders)', withWebsiteSection({
     template: leaders,
-    queryFragment:leadersFragment,
+    queryFragment: leadersFragment,
   }));
   app.get('/:alias([a-z0-9-/]+)', withWebsiteSection({
     template: section,
