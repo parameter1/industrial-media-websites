@@ -1,6 +1,7 @@
 const enabled = (process.env.LEADERS_ENABLED === 'true' || process.env.LEADERS_ENABLED === true) || false;
 
 module.exports = {
+  // eslint-disable-next-line no-unused-vars
   enabled: true,
   title: 'Cannabis Connect',
   alias: process.env.LEADERS_ALIAS || 'leaders/2025',
