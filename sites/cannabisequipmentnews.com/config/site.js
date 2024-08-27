@@ -78,4 +78,10 @@ module.exports = {
       email: 'reply@cannabisequipmentnews.com',
     },
   },
+  inquiry: {
+    enabled: true,
+    sendTo: 'david@cannabisequipmentnews.com',
+    sendFrom: 'Support <noreply@parameter1.com>',
+    logo: 'https://img.cannabisequipmentnews.com/files/base/indm/all/cen_logo.jpg?h=60&auto=format,compress',
+  },
 };
