@@ -1,0 +1,19 @@
+import { getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+
+$ const content = getAsArray(input, "content");
+
+
+<marko-web-node-list class=input.class>
+  <@header>Featured</@header>
+
+  <@nodes|{ nodes }| nodes=content>
+    <theme-card-deck-flow
+      cols=1
+      nodes=nodes
+    >
+      <@slot|{ node }|>
+        <global-leaders-premium-content-card-node node=node />
+      </@slot>
+    </theme-card-deck-flow>
+  </@nodes>
+  </marko-web-node-list>

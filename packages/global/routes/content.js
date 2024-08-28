@@ -2,24 +2,25 @@ const contentMetering = require('@parameter1/base-cms-marko-web-theme-monorail/m
 
 const { newsletterState, formatContentResponse } = require('../middleware/newsletter-state');
 const withContent = require('../middleware/with-content');
-const qf = require('../graphql/fragments/content-page');
+const standardQF = require('../graphql/fragments/content-page');
+const leadersQF = require('../graphql/fragments/content-page-with-leader-info');
 const company = require('../templates/content/company');
 const content = require('../templates/content');
 
 module.exports = (app) => {
   const { site } = app.locals;
   const useLinkInjectedBody = site.get('useLinkInjectedBody');
-  const queryFragment = qf.factory ? qf.factory({ useLinkInjectedBody }) : qf;
+  const companyQF = site.get('leaders.enabled') && site.get('leaders.alias') ? leadersQF.factory({ useLinkInjectedBody, leadersAlias: site.get('leaders.alias') }) : standardQF;
   const routesList = [
     { // company
       regex: '/*?company/:id(\\d{8})*',
       template: company,
-      queryFragment,
+      queryFragment: companyQF,
     },
     { // default
       regex: '/*?/:id(\\d{8})/*|/:id(\\d{8})(/|$)*',
       template: content,
-      queryFragment,
+      queryFragment: standardQF,
       withContentMeter: true,
     },
   ];

@@ -55,5 +55,14 @@
     "@page-node": "object",
     "@display-ads": "boolean",
     "@show-overlay": "boolean"
+  },
+  "<global-leaders-details>": {
+    "template": "./leaders-details.marko",
+    "@company": "object",
+    "@lang": "string"
+  },
+  "<global-company-logo>": {
+    "template": "./company-logo.marko",
+    "@content": "object"
   }
 }

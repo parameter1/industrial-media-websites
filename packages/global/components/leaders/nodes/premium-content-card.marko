@@ -1,0 +1,26 @@
+import { getAsObject, get } from "@parameter1/base-cms-object-path";
+
+$ const contentPiece = getAsObject(input, "node");
+$ const primaryImage = getAsObject(contentPiece, "primaryImage");
+
+<marko-web-node
+  image-position="left"
+  card=false
+  flush=true
+  full-height=false
+>
+  <@image
+    src=primaryImage.src
+    alt=primaryImage.alt
+    ar="4:3"
+    link={ href: contentPiece.linkUrl, target: "_blank" }
+    width=100
+      align="left"
+      fluid=false
+  />
+  <@body>
+    <@title tag="h5" modifiers=["small"]>
+      <marko-web-obj-text type="content" obj=contentPiece field="linkText" tag=null link={ href: contentPiece.linkUrl, target: "_blank" } />
+    </@title>
+  </@body>
+</marko-web-node>
