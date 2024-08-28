@@ -1,9 +1,6 @@
 $ const { site, req } = out.global;
 $ const { contentId } = input;
 
-// @todo Utilize site.get("lang") === "es" to determine this once all sites have launched for 2024
-$ const useContentSchedules = site.get("leaders.alias") === 'company-categories-2024' ? true : false;
-
 <if(contentId && site.get("leaders.enabled"))>
   <marko-web-leaders props={
     contentId,
@@ -16,7 +13,7 @@ $ const useContentSchedules = site.get("leaders.alias") === 'company-categories-
     offsetTop: 50,
     viewAllHref: '/leaders',
     columns: 1,
-    useContentSchedules,
+    useContentPrimarySection: true,
     calloutPrefix: site.get("leaders.calloutPrefix") || "Browse these",
     calloutValue: site.get("leaders.calloutValue") || "leading suppliers",
     viewAllText: site.get("leaders.viewAllText") || "View All Companies &gt;",
