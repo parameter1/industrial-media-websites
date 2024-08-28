@@ -1,5 +1,3 @@
-// const enabled = (process.env.LEADERS_ENABLED === 'true' || process.env.LEADERS_ENABLED === true) || false;
-
 module.exports = {
   enabled: true,
   title: 'Cannabis Connect',
