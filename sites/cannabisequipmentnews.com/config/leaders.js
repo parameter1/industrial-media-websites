@@ -6,6 +6,7 @@ module.exports = {
   alias: process.env.LEADERS_ALIAS || 'leaders/2025',
   header: {
     imgSrc: 'https://img.cannabisequipmentnews.com/files/base/indm/all/site-logos/cen.svg?h=70&auto=format,compress',
-    imgSrcset: 'https://img.cannabisequipmentnews.com/files/base/indm/all/site-logos/cen.svg?h=70&auto=format,compress&dpr=2 2x',
+    imgSrcset:
+    'https://img.cannabisequipmentnews.com/files/base/indm/all/site-logos/cen.svg?h=70&auto=format,compress&dpr=2 2x',
   },
 };
