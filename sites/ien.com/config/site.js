@@ -13,6 +13,7 @@ const newsletter = require('./newsletter');
 const omeda = require('./omeda');
 
 module.exports = {
+  established: 1933,
   navigation,
   useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY || false,
   contentMeter,
