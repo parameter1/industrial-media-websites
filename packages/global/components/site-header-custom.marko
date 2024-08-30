@@ -21,6 +21,11 @@ $ const navigation = {
   modifiers=modifiers
   attrs=input.attrs
 >
+  <if(site.get('established'))>
+    <div class="site-navbar__established">
+      ${site.get('established')}
+    </div>
+  </if>
   <${input.aboveNav} />
 
   <theme-site-navbar modifiers=["top"] attrs={ "aria-label": "Top Navigation" }>
@@ -32,11 +37,6 @@ $ const navigation = {
           srcset=site.getAsArray("logos.navbar.srcset").join(",")
         />
       </theme-site-navbar-brand>
-      <if(site.get('established'))>
-        <div class="site-navbar__established">
-          ${site.get('established')}
-        </div>
-      </if>
     </div>
     <div class='site-navbar__center'>
       <theme-site-navbar modifiers=["secondary"]>

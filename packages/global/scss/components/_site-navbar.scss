@@ -44,11 +44,14 @@
     }
   }
   &__established {
-    font-size: 10px;
+    font-size: 13px;
     font-style: italic;
     font-weight: $font-weight-bold;
     width: 100%;
     text-align: center;
+    width: 100%;
+    background-color: $primary;
+    color: $white;
     &:before {
       content: "Since ";
     }
