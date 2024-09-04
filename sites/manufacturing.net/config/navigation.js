@@ -2,7 +2,7 @@
 const user = require('@industrial-media/package-global/config/user');
 
 const topics = [
-  { href: '/page/about-us', label: 'Since 1998' },
+  { href: '/page/mnet-about-us', label: 'Since 1998' },
   // { href: '/aerospace', label: 'Aerospace' },
   { href: '/artificial-intelligence', label: 'AI' },
   { href: '/automotive', label: 'Automotive' },
