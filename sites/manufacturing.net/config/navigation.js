@@ -1,8 +1,9 @@
-const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
+// const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
 const user = require('@industrial-media/package-global/config/user');
 
-const topics = sortNavItems([
-  { href: '/aerospace', label: 'Aerospace' },
+const topics = [
+  { href: '/page/about-us', label: 'Since 1998' },
+  // { href: '/aerospace', label: 'Aerospace' },
   { href: '/artificial-intelligence', label: 'AI' },
   { href: '/automotive', label: 'Automotive' },
   { href: '/energy', label: 'Energy' },
@@ -12,7 +13,7 @@ const topics = sortNavItems([
   { href: '/operations', label: 'Operations' },
   { href: '/software', label: 'Software' },
   { href: '/supply-chain', label: 'Supply Chain' },
-]);
+];
 
 const secondary = [
   { href: '/video', label: 'Video' },
