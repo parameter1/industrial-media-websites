@@ -1,9 +1,8 @@
-// const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
+const sortNavItems = require('@industrial-media/package-global/utils/sort-nav-items');
 const user = require('@industrial-media/package-global/config/user');
 
-const topics = [
-  { href: '/page/mnet-about-us', label: 'Since 1998' },
-  // { href: '/aerospace', label: 'Aerospace' },
+const topics = sortNavItems([
+  { href: '/aerospace', label: 'Aerospace' },
   { href: '/artificial-intelligence', label: 'AI' },
   { href: '/automotive', label: 'Automotive' },
   { href: '/energy', label: 'Energy' },
@@ -13,9 +12,10 @@ const topics = [
   { href: '/operations', label: 'Operations' },
   { href: '/software', label: 'Software' },
   { href: '/supply-chain', label: 'Supply Chain' },
-];
+]);
 
 const secondary = [
+  { href: '/page/mnet-about-us', label: 'Since 1998' },
   { href: '/video', label: 'Video' },
   { href: 'https://www.manufacturing.net/formstack/advertise_with_im_mnet', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=mnet_signup', label: 'Newsletter Signup', target: '_blank' },
