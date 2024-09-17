@@ -17,6 +17,11 @@ $ const title = `Customer Survey - ${formId}` ;
       <marko-web-gtm-push data=context />
     </marko-web-gtm-default-context>
     <style>
+      @media only screen and (max-width: 768px) {
+        .page-wrapper {
+          padding: 0 !important;
+        }
+      }
       div.fsBody > div {
         padding: 0 !important;
       }
