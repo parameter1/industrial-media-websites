@@ -17,6 +17,7 @@ const topics = sortNavItems([
 ]);
 
 const secondary = [
+  { href: '/page/about-us', label: 'Since 1933' },
   { href: '/video', label: 'Video' },
   { href: 'https://www.ien.com/formstack/advertise_with_im_ien', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=ien_signup', label: 'Newsletter Signup', target: '_blank' },

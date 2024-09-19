@@ -15,6 +15,7 @@ const topics = sortNavItems([
 ]);
 
 const secondary = [
+  { href: '/page/fm-about-us', label: 'Since 1987' },
   { href: '/video', label: 'Video' },
   { href: 'https://www.foodmanufacturing.com/formstack/advertise_with_im_foodmfg', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=fm_signup', label: 'Newsletter Signup', target: '_blank' },

@@ -15,6 +15,7 @@ const topics = sortNavItems([
 ]);
 
 const secondary = [
+  { href: '/page/mnet-about-us', label: 'Since 1998' },
   { href: '/video', label: 'Video' },
   { href: 'https://www.manufacturing.net/formstack/advertise_with_im_mnet', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=mnet_signup', label: 'Newsletter Signup', target: '_blank' },
