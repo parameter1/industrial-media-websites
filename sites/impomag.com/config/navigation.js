@@ -12,6 +12,7 @@ const topics = sortNavItems([
 ]);
 
 const secondary = [
+  { href: '/page/impo-about-us', label: 'Since 1939' },
   { href: '/video', label: 'Video' },
   { href: 'https://www.impomag.com/formstack/advertise_with_im_impo', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=impo_signup', label: 'Newsletter Signup', target: '_blank' },

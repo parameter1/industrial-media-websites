@@ -14,6 +14,7 @@ const topics = [
 ];
 
 const secondary = [
+  { href: '/page/id-about-us', label: 'Since 1911' },
   { href: '/video', label: 'Video' },
   { href: 'https://www.inddist.com/formstack/advertise_with_im_id', label: 'Advertise', target: '_blank' },
   { href: 'https://industrialmedia.dragonforms.com/loading.do?omedasite=id_signup', label: 'Newsletter Signup', target: '_blank' },
