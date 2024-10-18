@@ -172,6 +172,11 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/more-products";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/most-popular";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/newsletter-signup-banner";
+/*! critical:start */
+/*! purgecss start ignore */
+@import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/newsletter-signup-modal";
+/*! purgecss end ignore */
+/*! critical:end */
 /*! critical:start|home */
 /*! critical:start|website-section */
 /*! critical:start|content */
@@ -333,6 +338,14 @@
 /*! purgecss start ignore */
 @import "./components/brightcove-player";
 /*! purgecss end ignore */
+/*! critical:end */
+
+/*! critical:start|content */
+.content-survey-access-idx__wrapper {
+  .btn {
+    margin-top: map-get($spacers, block)
+  }
+}
 /*! critical:end */
 
 /*! critical:start */
@@ -529,6 +542,7 @@ label {
     }
   }
 }
+
 /*! critical:end */
 
 /*! critical:start|user */
