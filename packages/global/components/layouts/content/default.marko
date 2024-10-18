@@ -1,10 +1,15 @@
 import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
+import { shouldOverlay, restrictContentByReg, shouldTruncate } from "@parameter1/base-cms-marko-web-theme-monorail/utils/content-meter-helpers";
 
-import { cmShowOverlay, cmRestrictContentByReg, cmTruncateBody } from "../../../utils/content-meter-helpers";
-
-$ const { site, contentMeterState } = out.global;
+$ const {
+    site,
+    req,
+    contentAccessState,
+    contentGatingHandler,
+    contentMeterState,
+  } = out.global;
 
 $ const {
   id,
@@ -19,7 +24,9 @@ $ const {
 $ const sections = getAsArray(input, "sections");
 $ const belowContentSections = getAsArray(input, "belowContentSections");
 
-$ const showOverlay = cmShowOverlay(contentMeterState);
+$ contentAccessState.setFormDisplay({ req });
+$ const { formId: idxFormId, displayForm: displayIdxForm, cookie: idxSuveyCookie } = contentAccessState;
+$ const showOverlay = shouldOverlay(contentMeterState);
 $ const displayAds = !showOverlay;
 
 $ const displayPrimaryImage = defaultValue(input.displayPrimaryImage, true);
@@ -135,14 +142,74 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
               />
             </else-if>
 
-            $ const requiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
+            $ const requiresRegistration = contentGatingHandler({ content }) || restrictContentByReg(contentMeterState, contentGatingHandler, content);
             $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
-
             <marko-web-identity-x-access|context|
               enabled=requiresRegistration
               required-access-level-ids=accessLevels
             >
-              <if(!context.canAccess || context.requiresUserInput)>
+              <if(idxFormId)>
+                <if(displayIdxForm)>
+                  $ const body = getContentPreview({ body: content.body, selector: "p:lt(3)" });
+                  <marko-web-content-body block-name=blockName obj={ body } />
+                  <div class="content-page-preview-overlay" />
+                  <marko-web-content-body block-name=blockName attrs={ style: "display: none;" } obj=content modifiers=["ld-json"] />
+                    <marko-web-identity-x-context|{ hasUser, user, application }|>
+                    <if(hasUser)>
+                      <marko-web-identity-x-form-access
+                        content=content
+                        user=user
+                        formId=idxFormId
+                        application=application
+                      />
+                    </if>
+                    <else>
+                      <marko-web-identity-x-non-auth-identify|{ user: identifiedUser }|>
+                        <marko-web-identity-x-form-access
+                          updateProfileOnSubmit=false
+                          content=content
+                          user=identifiedUser
+                          formId=idxFormId
+                          application=application
+                        />
+                      </marko-web-identity-x-non-auth-identify>
+                    </else>
+                  </marko-web-identity-x-context>
+                </if>
+                <else>
+                  $ const bodyId = `content-body-${content.id}`;
+                  <theme-body-with-injection
+                    content=content
+                    aliases=[]
+                    block-name=blockName
+                    selector=bodyId
+                    preventHTMLInjection=true
+                  />
+                </else>
+              </if>
+
+              <else-if(shouldTruncate(contentMeterState))>
+                $ const body = showOverlay ? getContentPreview({ body: content.body, selector: "p:lt(7)" }) : getContentPreview({ body: content.body, selector: "p:lt(3)" });
+                <marko-web-content-body block-name=blockName obj={ body } />
+
+                <div class="content-page-preview-overlay" />
+                <if(!showOverlay)>
+                  <theme-content-page-gate
+                    can-access=context.canAccess
+                    is-logged-in=context.isLoggedIn
+                    has-required-access-level=context.hasRequiredAccessLevel
+                    requires-access-level=context.requiresAccessLevel
+                    requires-user-input=context.requiresUserInput
+                    messages=context.messages
+                    user-input-title="Step 2 of 2"
+                    profile-call-to-action=""
+                    profile-button-label="Create Account"
+                    profile-event-name="content_meter_profile"
+                  />
+                </if>
+                <marko-web-content-body block-name=blockName attrs={ style: "display: none;" } obj=content modifiers=["ld-json"] />
+              </else-if>
+              <else-if(!context.canAccess || context.requiresUserInput)>
                 $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
                 <marko-web-content-body block-name=blockName obj={ body } />
 
@@ -155,7 +222,7 @@ $ const shouldInjectAds = displayAds && ["article", "video", "news", "podcast"].
                   requires-user-input=context.requiresUserInput
                   messages=context.messages
                 />
-              </if>
+              </else-if>
               <else>
                 $ const profiles = getAsArray(content, 'profiles');
                 <for|profile| of=profiles>

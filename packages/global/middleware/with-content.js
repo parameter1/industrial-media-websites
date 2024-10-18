@@ -13,6 +13,10 @@ module.exports = (params = {}) => withContent({
         id
         alias
       }
+      gating {
+        surveyId
+        surveyType
+      }
     }
   `,
   formatResponse: ({ res, content: node }) => {
