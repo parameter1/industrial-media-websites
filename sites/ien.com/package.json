@@ -32,14 +32,14 @@
   ],
   "dependencies": {
     "@industrial-media/package-global": "^2.19.13",
-    "@parameter1/base-cms-marko-core": "^4.55.4",
-    "@parameter1/base-cms-marko-web": "^4.60.0",
-    "@parameter1/base-cms-marko-web-native-x": "^4.60.2",
-    "@parameter1/base-cms-marko-web-theme-monorail": "^4.63.1",
-    "@parameter1/base-cms-marko-web-theme-monorail-magazine": "^4.60.2",
-    "@parameter1/base-cms-object-path": "^4.40.3",
-    "@parameter1/base-cms-utils": "^4.40.3",
-    "@parameter1/base-cms-web-cli": "^4.57.1",
+    "@parameter1/base-cms-marko-core": "^4.80.0",
+    "@parameter1/base-cms-marko-web": "^4.80.0",
+    "@parameter1/base-cms-marko-web-native-x": "^4.80.0",
+    "@parameter1/base-cms-marko-web-theme-monorail": "^4.80.0",
+    "@parameter1/base-cms-marko-web-theme-monorail-magazine": "^4.80.0",
+    "@parameter1/base-cms-object-path": "^4.74.0",
+    "@parameter1/base-cms-utils": "^4.74.0",
+    "@parameter1/base-cms-web-cli": "^4.74.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }

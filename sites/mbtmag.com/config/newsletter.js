@@ -49,6 +49,14 @@ module.exports = {
     description: 'Subscribe to receive the latest information.',
   },
 
+  modal: {
+    ...defaults,
+    enabled: false,
+    cookieValueToMatch: 1,
+    name: 'Subscribe To Our Newsletters',
+    description: 'Subscribe to receive the latest information.',
+  },
+
   // links off to seperate omeda dragonform
   signupBannerLarge: {
     ...baseConfig,

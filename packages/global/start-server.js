@@ -8,6 +8,9 @@ const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 const omedaCookie = require('@parameter1/base-cms-marko-web-omeda/olytics/customer-cookie');
 const fetch = require('node-fetch');
+const contentGating = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-gating');
+const newsletterModalState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-modal-state');
+const MindfulMarkoWebService = require('@parameter1/base-cms-mindful/marko-web/middleware/service');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -63,8 +66,14 @@ module.exports = (options = {}) => {
       // Use paginated middleware
       app.use(htmlSitemapPagination());
 
-      // Use newsletterState middleware
-      // app.use(newsletterState());
+      // Use newsletterModalState middleware
+      app.use(newsletterModalState());
+
+      const { namespace } = getAsObject(options, 'siteConfig.mindful');
+      app.use(MindfulMarkoWebService({ namespace }));
+
+      // Install custom content gating middleware
+      contentGating(app);
 
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);

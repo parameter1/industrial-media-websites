@@ -1,6 +1,7 @@
 const contentMetering = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-metering');
 
-const { newsletterState, formatContentResponse } = require('../middleware/newsletter-state');
+const { newsletterState } = require('../middleware/newsletter-state');
+const { formatContentResponse } = require('../middleware/format-content-response');
 const withContent = require('../middleware/with-content');
 const qf = require('../graphql/fragments/content-page');
 const company = require('../templates/content/company');
