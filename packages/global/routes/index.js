@@ -41,7 +41,7 @@ module.exports = (app, siteConfig) => {
 
   // NativeX (Story rendering)
   getAdvertisingPostAsNativeStory(app, {
-    route: '/story/:section/:slug/:id',
+    route: '/sponsored/:section/:slug/:id',
     tenant: 'indm',
     template: advertisingPostTemplate,
   });
