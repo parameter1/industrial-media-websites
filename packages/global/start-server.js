@@ -10,6 +10,7 @@ const omedaCookie = require('@parameter1/base-cms-marko-web-omeda/olytics/custom
 const fetch = require('node-fetch');
 const contentGating = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-gating');
 const newsletterModalState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-modal-state');
+const MindfulMarkoWebService = require('@parameter1/base-cms-mindful/marko-web/middleware/service');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -67,6 +68,9 @@ module.exports = (options = {}) => {
 
       // Use newsletterModalState middleware
       app.use(newsletterModalState());
+
+      const { namespace } = getAsObject(options, 'siteConfig.mindful');
+      app.use(MindfulMarkoWebService({ namespace }));
 
       // Install custom content gating middleware
       contentGating(app);

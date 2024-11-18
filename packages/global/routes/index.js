@@ -5,11 +5,12 @@ const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/om
 const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
 const mindfulPreview = require('@parameter1/base-cms-marko-web-theme-monorail/routes/ad-preview');
+const getAdvertisingPostAsNativeStory = require('@parameter1/base-cms-mindful/marko-web/middleware/get-advertising-post-as-native-story');
 
+const advertisingPostTemplate = require('../templates/content/advertising-post');
 const dynamicPage = require('./dynamic-page');
 const feed = require('./feed');
-// const identityX = require('./identity-x');
-const nativeX = require('./native-x');
+
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
@@ -38,11 +39,12 @@ module.exports = (app, siteConfig) => {
   // magazine
   magazine(app);
 
-  // // IdentityX (user routing and app context)
-  // identityX(app);
-
   // NativeX (Story rendering)
-  nativeX(app);
+  getAdvertisingPostAsNativeStory(app, {
+    route: '/story/:section/:slug/:id',
+    tenant: 'indm',
+    template: advertisingPostTemplate,
+  });
 
   // Shared Print Content
   printContent(app);
