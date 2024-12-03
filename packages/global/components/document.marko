@@ -2,6 +2,7 @@ import createOmedaIdentityBuilder from "@parameter1/base-cms-marko-web-p1-events
 import { getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const {
+  config,
   site,
   req,
   nativeX,
@@ -99,12 +100,31 @@ $ const {
     </marko-web-identity-x-context>
     <${input.aboveContainer} />
     <if(contentMeterState && !contentMeterState.isLoggedIn)>
-      <global-content-meter-block
+      $ const {
+        displayOverlay,
+        viewLimit,
+        views,
+      } = contentMeterState;
+      $ const customSetTextVariablesFunction = () => {
+        // Set title based on views remaining
+        let dynamicTitle = "Create an account";
+        if (views < viewLimit) dynamicTitle = `You have ${viewLimit - views} views remaining.`;
+        if (viewLimit - views === 1) dynamicTitle = `You have 1 view remaining.`;
+        if (viewLimit === views && !displayOverlay) dynamicTitle = `This is your last free view.`;
+        if (viewLimit === 1 && !displayOverlay) dynamicTitle = 'Enjoy this free content.';
+
+        return {
+          title: dynamicTitle,
+          collapsedTitle: "Create a free account",
+          callToAction: `Create a free <span class="content-meter__call-to-action--site-name">${config.siteName()}</span> account to continue`,
+        };
+      }
+      <theme-content-meter-block
         views=contentMeterState.views
         view-limit=contentMeterState.viewLimit
         display-overlay=contentMeterState.displayOverlay
         display-gate=contentMeterState.displayGate
-        dynamic-title="We hope you’ve enjoyed your 1 free piece of content."
+        custom-set-text-variables-function=customSetTextVariablesFunction
       />
     </if>
   </@above-container>
